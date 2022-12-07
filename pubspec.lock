@@ -102,6 +102,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.2"
+  quran_transliteration:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: b833d9c2266c3175df9ba4eaa8f1e28e4932939b
+      resolved-ref: b833d9c2266c3175df9ba4eaa8f1e28e4932939b
+      url: "https://github.com/hndrbrm/quran_transliteration"
+    source: git
+    version: "1.0.0"
   sky_engine:
     dependency: transitive
     description: flutter

@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:quran_transliteration/quran_transliteration.dart';
 
 import '../quran/quran.dart';
 
@@ -11,15 +12,21 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Transliteration transliteration = ExtendedBuckwalterTransliteration();
+
     return Scaffold(
       body: ListView.builder(
         itemCount: 114,
         itemBuilder: (BuildContext context, int index) {
           return ListTile(
+            leading: Text('${index + 1}'),
             title: Text(Quran.instance.getLatin(index + 1)),
             subtitle: Text(Quran.instance.getTranslate(index + 1)),
+            trailing: Text(
+              transliteration.forward(Quran.instance.getTransliterate(index + 1)),
+            ),
           );
-        }
+        },
       ),
     );
   }

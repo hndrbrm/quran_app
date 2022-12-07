@@ -2,17 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:meta/meta.dart';
-import 'package:quran_app/quran/surah_translate.dart';
-
 import 'surah_latin.dart';
+import 'surah_translate.dart';
+import 'surah_transliterate.dart';
 
 abstract class QuranBinder {
   const QuranBinder();
 }
 
 class Quran extends QuranBinder with
-  Surah, SurahLatin, SurahTranslate,
+  Surah, SurahLatin, SurahTranslate, SurahTransliterate,
   FatihahLatin, BaqarahLatin, ImranLatin, NisaLatin, MaidahLatin, AnamLatin,
   ArafLatin, AnfalLatin, TaubahLatin, YunusLatin, HudLatin, YusufLatin,
   RadLatin, IbrahimLatin, HijrLatin, NahlLatin, IsraLatin, KahfLatin,
@@ -59,7 +58,41 @@ class Quran extends QuranBinder with
   QariahTranslate, TakasurTranslate, AsrTranslate, HumazahTranslate,
   FilTranslate, QuraisyTranslate, MaunTranslate, KausarTranslate,
   KafirunTranslate, NasrTranslate, LahabTranslate, IkhlasTranslate,
-  FalaqTranslate, NasTranslate
+  FalaqTranslate, NasTranslate,
+  FatihahTransliterate, BaqarahTransliterate, ImranTransliterate,
+  NisaTransliterate, MaidahTransliterate, AnamTransliterate, ArafTransliterate,
+  AnfalTransliterate, TaubahTransliterate, YunusTransliterate, HudTransliterate,
+  YusufTransliterate, RadTransliterate, IbrahimTransliterate, HijrTransliterate,
+  NahlTransliterate, IsraTransliterate, KahfTransliterate, MaryamTransliterate,
+  TahaTransliterate, AnbiyaTransliterate, HajjTransliterate,
+  MukminunTransliterate, NurTransliterate, FurqanTransliterate,
+  SyuaraTransliterate, NamlTransliterate, QasasTransliterate,
+  AnkabutTransliterate, RumTransliterate, LuqmanTransliterate,
+  SajdahTransliterate, AhzabTransliterate, SabaTransliterate, FatirTransliterate,
+  YasinTransliterate, SaffatTransliterate, SadTransliterate, ZumarTransliterate,
+  GafirTransliterate, FussilatTransliterate, SyuraTransliterate,
+  ZukhrufTransliterate, DukhanTransliterate, JasiyahTransliterate,
+  AhqafTransliterate, MuhammadTransliterate, FathTransliterate,
+  HujuratTransliterate, QafTransliterate, ZariyatTransliterate, TurTransliterate,
+  NajmTransliterate, QamarTransliterate, RahmanTransliterate,
+  WaqiahTransliterate, HadidTransliterate, MujadalahTransliterate,
+  HasyrTransliterate, MumtahanahTransliterate, SaffTransliterate,
+  JumuahTransliterate, MunafiqunTransliterate, TagabunTransliterate,
+  TalaqTransliterate, TahrimTransliterate, MulkTransliterate, QalamTransliterate,
+  HaqqahTransliterate, MaarijTransliterate, NuhTransliterate, JinnTransliterate,
+  MuzzamilTransliterate, MuddassirTransliterate, QiyamahTransliterate,
+  InsanTransliterate, MursalatTransliterate, NabaTransliterate,
+  NaziatTransliterate, AbasaTransliterate, TakwirTransliterate,
+  InfitarTransliterate, MutaffifinTransliterate, InsyiqaqTransliterate,
+  BurujTransliterate, TariqTransliterate, AklaTransliterate,
+  GasyiyahTransliterate, FajrTransliterate, BaladTransliterate,
+  SyamsTransliterate, LailTransliterate, DuhaTransliterate, SyarhTransliterate,
+  TinTransliterate, AlaqTransliterate, QadrTransliterate, BayyinahTransliterate,
+  ZalzalahTransliterate, AdiyatTransliterate, QariahTransliterate,
+  TakasurTransliterate, AsrTransliterate, HumazahTransliterate, FilTransliterate,
+  QuraisyTransliterate, MaunTransliterate, KausarTransliterate,
+  KafirunTransliterate, NasrTransliterate, LahabTransliterate,
+  IkhlasTransliterate, FalaqTransliterate, NasTransliterate
 {
   const Quran._();
 
