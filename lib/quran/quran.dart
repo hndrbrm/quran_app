@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:meta/meta.dart';
+import 'package:quran_app/quran/surah_translate.dart';
 
 import 'surah_latin.dart';
 
@@ -11,7 +12,7 @@ abstract class QuranBinder {
 }
 
 class Quran extends QuranBinder with
-  Surah, SurahLatin,
+  Surah, SurahLatin, SurahTranslate,
   FatihahLatin, BaqarahLatin, ImranLatin, NisaLatin, MaidahLatin, AnamLatin,
   ArafLatin, AnfalLatin, TaubahLatin, YunusLatin, HudLatin, YusufLatin,
   RadLatin, IbrahimLatin, HijrLatin, NahlLatin, IsraLatin, KahfLatin,
@@ -31,7 +32,34 @@ class Quran extends QuranBinder with
   SyarhLatin, TinLatin, AlaqLatin, QadrLatin, BayyinahLatin, ZalzalahLatin,
   AdiyatLatin, QariahLatin, TakasurLatin, AsrLatin, HumazahLatin, FilLatin,
   QuraisyLatin, MaunLatin, KausarLatin, KafirunLatin, NasrLatin, LahabLatin,
-  IkhlasLatin, FalaqLatin, NasLatin
+  IkhlasLatin, FalaqLatin, NasLatin,
+  FatihahTranslate, BaqarahTranslate, ImranTranslate, NisaTranslate,
+  MaidahTranslate, AnamTranslate, ArafTranslate, AnfalTranslate, TaubahTranslate,
+  YunusTranslate, HudTranslate, YusufTranslate, RadTranslate, IbrahimTranslate,
+  HijrTranslate, NahlTranslate, IsraTranslate, KahfTranslate, MaryamTranslate,
+  TahaTranslate, AnbiyaTranslate, HajjTranslate, MukminunTranslate, NurTranslate,
+  FurqanTranslate, SyuaraTranslate, NamlTranslate, QasasTranslate,
+  AnkabutTranslate, RumTranslate, LuqmanTranslate, SajdahTranslate,
+  AhzabTranslate, SabaTranslate, FatirTranslate, YasinTranslate, SaffatTranslate,
+  SadTranslate, ZumarTranslate, GafirTranslate, FussilatTranslate,
+  SyuraTranslate, ZukhrufTranslate, DukhanTranslate, JasiyahTranslate,
+  AhqafTranslate, MuhammadTranslate, FathTranslate, HujuratTranslate,
+  QafTranslate, ZariyatTranslate, TurTranslate, NajmTranslate, QamarTranslate,
+  RahmanTranslate, WaqiahTranslate, HadidTranslate, MujadalahTranslate,
+  HasyrTranslate, MumtahanahTranslate, SaffTranslate, JumuahTranslate,
+  MunafiqunTranslate, TagabunTranslate, TalaqTranslate, TahrimTranslate,
+  MulkTranslate, QalamTranslate, HaqqahTranslate, MaarijTranslate, NuhTranslate,
+  JinnTranslate, MuzzamilTranslate, MuddassirTranslate, QiyamahTranslate,
+  InsanTranslate, MursalatTranslate, NabaTranslate, NaziatTranslate,
+  AbasaTranslate, TakwirTranslate, InfitarTranslate, MutaffifinTranslate,
+  InsyiqaqTranslate, BurujTranslate, TariqTranslate, AklaTranslate,
+  GasyiyahTranslate, FajrTranslate, BaladTranslate, SyamsTranslate,
+  LailTranslate, DuhaTranslate, SyarhTranslate, TinTranslate, AlaqTranslate,
+  QadrTranslate, BayyinahTranslate, ZalzalahTranslate, AdiyatTranslate,
+  QariahTranslate, TakasurTranslate, AsrTranslate, HumazahTranslate,
+  FilTranslate, QuraisyTranslate, MaunTranslate, KausarTranslate,
+  KafirunTranslate, NasrTranslate, LahabTranslate, IkhlasTranslate,
+  FalaqTranslate, NasTranslate
 {
   const Quran._();
 

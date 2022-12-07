@@ -17,6 +17,7 @@ class Home extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return ListTile(
             title: Text(Quran.instance.getLatin(index + 1)),
+            subtitle: Text(Quran.instance.getTranslate(index + 1)),
           );
         }
       ),
