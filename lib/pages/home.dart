@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:quran_transliteration/quran_transliteration.dart';
 
 import '../quran/quran.dart';
+import '../routes.dart';
 
 class Home extends StatelessWidget {
   const Home({ super.key });
@@ -24,6 +25,12 @@ class Home extends StatelessWidget {
             subtitle: Text(Quran.instance.getTranslate(index + 1)),
             trailing: Text(
               transliteration.forward(Quran.instance.getTransliterate(index + 1)),
+            ),
+            onTap: () => Navigator.of(context).pushNamed(
+              SurahRoute.name,
+              arguments: {
+                'surah': index + 1,
+              },
             ),
           );
         },

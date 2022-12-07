@@ -5,6 +5,7 @@
 import 'package:flutter/material.dart';
 
 import 'pages/home.dart';
+import 'pages/surah.dart';
 
 abstract class RouteBinder {
   @protected
@@ -14,7 +15,7 @@ abstract class RouteBinder {
   Route<dynamic>? onUnknownRoute(RouteSettings settings) => null;
 }
 
-class RouteBound extends RouteBinder with HomeRoute {
+class RouteBound extends RouteBinder with HomeRoute, SurahRoute {
   RouteBound._();
 
   static RouteBound get instance => _instance;
@@ -44,5 +45,22 @@ mixin HomeRoute on RouteBinder {
     return MaterialPageRoute(
       builder: (BuildContext context) => const Home(),
     );
+  }
+}
+
+mixin SurahRoute on RouteBinder {
+  static const String name = 'surah';
+
+  @override
+  Route? onGenerateRoute(RouteSettings settings) {
+    if (settings.name == name) {
+      final Map<String, dynamic>? arguments = settings.arguments as Map<String, dynamic>?;
+
+      return MaterialPageRoute(
+        builder: (BuildContext context) => Surah(arguments?['surah']),
+      );
+    }
+
+    return super.onGenerateRoute(settings);
   }
 }

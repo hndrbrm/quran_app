@@ -2,6 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'ayah_length.dart';
+import 'ayah_translate.dart';
+import 'ayah_transliterate.dart';
 import 'surah_latin.dart';
 import 'surah_translate.dart';
 import 'surah_transliterate.dart';
@@ -11,7 +14,8 @@ abstract class QuranBinder {
 }
 
 class Quran extends QuranBinder with
-  Surah, SurahLatin, SurahTranslate, SurahTransliterate,
+  Surah, Ayah, SurahLatin, SurahTranslate, SurahTransliterate, AyahLength,
+  AyahTransliterate, AyahTranslate,
   FatihahLatin, BaqarahLatin, ImranLatin, NisaLatin, MaidahLatin, AnamLatin,
   ArafLatin, AnfalLatin, TaubahLatin, YunusLatin, HudLatin, YusufLatin,
   RadLatin, IbrahimLatin, HijrLatin, NahlLatin, IsraLatin, KahfLatin,
@@ -92,7 +96,10 @@ class Quran extends QuranBinder with
   TakasurTransliterate, AsrTransliterate, HumazahTransliterate, FilTransliterate,
   QuraisyTransliterate, MaunTransliterate, KausarTransliterate,
   KafirunTransliterate, NasrTransliterate, LahabTransliterate,
-  IkhlasTransliterate, FalaqTransliterate, NasTransliterate
+  IkhlasTransliterate, FalaqTransliterate, NasTransliterate,
+  FatihahLength,
+  FatihahAyahTransliterate,
+  FatihahAyahTranslate
 {
   const Quran._();
 
@@ -101,3 +108,5 @@ class Quran extends QuranBinder with
 }
 
 mixin Surah on QuranBinder {}
+
+mixin Ayah on QuranBinder {}
