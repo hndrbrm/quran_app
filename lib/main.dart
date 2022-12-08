@@ -19,6 +19,9 @@ class QuranApp extends StatelessWidget {
       title: 'Quran',
       onGenerateRoute: RouteBound.instance.onGenerateRoute,
       onUnknownRoute: RouteBound.instance.onUnknownRoute,
+      theme: ThemeData(
+        fontFamily: 'Kemenag',
+      ),
     );
   }
 }

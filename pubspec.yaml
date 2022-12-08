@@ -54,6 +54,11 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
 
+  quran_kemenag:
+    git:
+      url: https://github.com/hndrbrm/quran_kemenag
+      ref: c8478774103dc589b44d844488d5e536c8ce4934
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -95,3 +100,8 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: Kemenag
+      fonts:
+        - asset: fonts/Kemenag-Regular.ttf
+          weight: 400
