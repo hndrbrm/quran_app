@@ -22,11 +22,18 @@ class Surah extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return ListTile(
             leading: Text('${index + 1}'),
-            title: Text(
-              Quran.instance.getAyahTransliterate(surah, index + 1),
-              textDirection: TextDirection.rtl,
+            title: Column(
+              children: <Widget>[
+                Text(
+                  Quran.instance.getAyahTransliterate(surah, index + 1),
+                  textDirection: TextDirection.rtl,
+                ),
+                Text(
+                  Quran.instance.getAyahTranslate(surah, index + 1),
+                ),
+              ],
             ),
-            subtitle: Text(Quran.instance.getAyahTranslate(surah, index + 1)),
+            subtitle: Text(Quran.instance.getAyahAnnotation(surah, index + 1)),
           );
         },
       ),

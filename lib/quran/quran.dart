@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'ayah_annotation.dart';
 import 'ayah_length.dart';
 import 'ayah_translate.dart';
 import 'ayah_transliterate.dart';
@@ -17,7 +18,7 @@ abstract class QuranBinder {
 class Quran extends QuranBinder with
   Surah, SurahAlphabet, SurahLatin, SurahTranslate, SurahTransliterate,
 
-  Ayah, AyahLength, AyahTransliterate, AyahTranslate,
+  Ayah, AyahLength, AyahTransliterate, AyahTranslate, AyahAnnotation,
 
   FatihahAlphabet, BaqarahAlphabet, ImranAlphabet, NisaAlphabet, MaidahAlphabet,
   AnamAlphabet, ArafAlphabet, AnfalAlphabet, TaubahAlphabet, YunusAlphabet,
@@ -226,7 +227,46 @@ class Quran extends QuranBinder with
   TakasurAyahTranslate, AsrAyahTranslate, HumazahAyahTranslate,
   FilAyahTranslate, QuraisyAyahTranslate, MaunAyahTranslate,
   KausarAyahTranslate, KafirunAyahTranslate, NasrAyahTranslate,
-  LahabAyahTranslate, IkhlasAyahTranslate, FalaqAyahTranslate, NasAyahTranslate
+  LahabAyahTranslate, IkhlasAyahTranslate, FalaqAyahTranslate, NasAyahTranslate,
+
+  FatihahAyahAnnotation, BaqarahAyahAnnotation, ImranAyahAnnotation,
+  NisaAyahAnnotation, MaidahAyahAnnotation, AnamAyahAnnotation,
+  ArafAyahAnnotation, AnfalAyahAnnotation, TaubahAyahAnnotation,
+  YunusAyahAnnotation, HudAyahAnnotation, YusufAyahAnnotation,
+  RadAyahAnnotation, IbrahimAyahAnnotation, HijrAyahAnnotation,
+  NahlAyahAnnotation, IsraAyahAnnotation, KahfAyahAnnotation,
+  MaryamAyahAnnotation, TahaAyahAnnotation, AnbiyaAyahAnnotation,
+  HajjAyahAnnotation, MukminunAyahAnnotation, NurAyahAnnotation,
+  FurqanAyahAnnotation, SyuaraAyahAnnotation, NamlAyahAnnotation,
+  QasasAyahAnnotation, AnkabutAyahAnnotation, RumAyahAnnotation,
+  LuqmanAyahAnnotation, SajdahAyahAnnotation, AhzabAyahAnnotation,
+  SabaAyahAnnotation, FatirAyahAnnotation, YasinAyahAnnotation,
+  SaffatAyahAnnotation, SadAyahAnnotation, ZumarAyahAnnotation,
+  GafirAyahAnnotation, FussilatAyahAnnotation, SyuraAyahAnnotation,
+  ZukhrufAyahAnnotation, DukhanAyahAnnotation, JasiyahAyahAnnotation,
+  AhqafAyahAnnotation, MuhammadAyahAnnotation, FathAyahAnnotation,
+  HujuratAyahAnnotation, QafAyahAnnotation, ZariyatAyahAnnotation,
+  TurAyahAnnotation, NajmAyahAnnotation, QamarAyahAnnotation,
+  RahmanAyahAnnotation, WaqiahAyahAnnotation, HadidAyahAnnotation,
+  MujadalahAyahAnnotation, HasyrAyahAnnotation, MumtahanahAyahAnnotation,
+  SaffAyahAnnotation, JumuahAyahAnnotation, MunafiqunAyahAnnotation,
+  TagabunAyahAnnotation, TalaqAyahAnnotation, TahrimAyahAnnotation,
+  MulkAyahAnnotation, QalamAyahAnnotation, HaqqahAyahAnnotation,
+  MaarijAyahAnnotation, NuhAyahAnnotation, JinnAyahAnnotation,
+  MuzzamilAyahAnnotation, MuddassirAyahAnnotation, QiyamahAyahAnnotation,
+  InsanAyahAnnotation, MursalatAyahAnnotation, NabaAyahAnnotation,
+  NaziatAyahAnnotation, AbasaAyahAnnotation, TakwirAyahAnnotation,
+  InfitarAyahAnnotation, MutaffifinAyahAnnotation, InsyiqaqAyahAnnotation,
+  BurujAyahAnnotation, TariqAyahAnnotation, AklaAyahAnnotation,
+  GasyiyahAyahAnnotation, FajrAyahAnnotation, BaladAyahAnnotation,
+  SyamsAyahAnnotation, LailAyahAnnotation, DuhaAyahAnnotation,
+  SyarhAyahAnnotation, TinAyahAnnotation, AlaqAyahAnnotation,
+  QadrAyahAnnotation, BayyinahAyahAnnotation, ZalzalahAyahAnnotation,
+  AdiyatAyahAnnotation, QariahAyahAnnotation, TakasurAyahAnnotation,
+  AsrAyahAnnotation, HumazahAyahAnnotation, FilAyahAnnotation,
+  QuraisyAyahAnnotation, MaunAyahAnnotation, KausarAyahAnnotation,
+  KafirunAyahAnnotation, NasrAyahAnnotation, LahabAyahAnnotation,
+  IkhlasAyahAnnotation, FalaqAyahAnnotation, NasAyahAnnotation
 {
   const Quran._();
 
