@@ -47,5 +47,6 @@ mixin ${alphabet}TafsirWajiz on AyahAnnotation {
     );
     surah = ayah.location.surah;
     ayahs.clear();
+    ayahs.add(ayah);
   }
 }

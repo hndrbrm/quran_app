@@ -42,5 +42,6 @@ mixin ${alphabet}Length on AyahLength {
     );
     surah = ayah.location.surah;
     ayahs.clear();
+    ayahs.add(ayah);
   }
 }

@@ -34,6 +34,7 @@ mixin FatihahAyahAnnotation on AyahAnnotation {
 
 mixin BaqarahAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '4) Dalam Al-Qur’an terdapat 29 surah yang dibuka dengan huruf Arab yang muqaṭṭa‘ah (dibaca nama hurufnya), seperti Alif lām mīm, Alif lām rā, dan sebagainya. Hanya Allah Swt. yang mengetahui makna sesungguhnya dari rangkaian huruf-huruf tersebut. Namun, dilihat dari fungsinya, ada yang berpendapat bahwa rangkaian huruf-huruf itu bertujuan untuk menarik perhatian atau untuk menunjukkan kemukjizatan Al-Qur’an.',
     '',
     '',
     '',
@@ -337,6 +338,7 @@ mixin ImranAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     '83) Berawal dari sel telur yang dibuahi, janin secara bertahap tumbuh membentuk organ-organ tubuh di dalam rahim.',
     '84)  Ayat muhkamat adalah ayat yang maksudnya terang, tegas, dan dapat dipahami dengan mudah.|85)  Ayat mutasyabihat adalah ayat yang mengandung beberapa pengertian, sulit dipahami, atau hanya Allah yang mengetahui.',
     '',
@@ -546,6 +548,7 @@ mixin ImranAyahAnnotation on AyahAnnotation {
 
 mixin NisaAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '143) Ayat ini menegaskan bahwa Nabi Adam a.s. dan Hawa tidak diciptakan melalui proses evolusi hayati seperti makhluk hidup lainnya, tetapi diciptakan secara khusus seorang diri, lalu diciptakanlah pasangannya dari dirinya. Mekanismenya tidak dapat dijelaskan secara sains. Selanjutnya, barulah anak-anaknya lahir dari proses biologis secara berpasangan-pasangan sesuai kehendak-Nya.',
     '',
     '',
     '',
@@ -735,6 +738,7 @@ mixin NisaAyahAnnotation on AyahAnnotation {
 
 mixin MaidahAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '192) Maksud janji di sini adalah janji kepada Allah Swt. untuk mengikuti ajaran-Nya dan janji kepada manusia dalam muamalah.',
     '193) Syiar-syiar kesucian Allah ialah segala amalan yang dilakukan dalam rangka ibadah haji, seperti tata cara melakukan tawaf dan sa’i, serta tempat-tempat mengerjakannya, seperti Ka‘bah, Safa, dan Marwah.|194) Bulan haram ialah Zulkaidah, Zulhijah, Muharam, dan Rajab. Pada bulan-bulan itu dilarang melakukan peperangan.|195) Hadyu ialah hewan yang disembelih sebagai pengganti (dam) pekerjaan wajib yang ditinggalkan atau sebagai denda karena melanggar hal-hal yang terlarang di dalam ibadah haji.|196) Qalā’id ialah hewan hadyu yang diberi kalung sebagai tanda bahwa hewan itu telah ditetapkan untuk dibawa ke Ka‘bah.|197)Yang dimaksud dengan karunia di sini ialah keuntungan yang diberikan Allah Swt. dalam perjalanan ibadah haji, sedangkan keridaan-Nya ialah pahala yang diberikannya atas ibadah haji.',
     '198) Hewan yang tercekik, dipukul, jatuh, ditanduk, dan diterkam binatang buas hukumnya halal apabila sempat disembelih sebelum mati.|199) Al-Azlām artinya ‘anak panah yang tidak memakai bulu’. Orang Arab Jahiliah menggunakannya untuk mengundi apakah melakukan sesuatu atau tidak. Mereka mengambil tiga buah anak panah: yang pertama ditulis “lakukanlah”, yang kedua ditulis “jangan lakukan”, dan yang ketiga dibiarkan kosong. Ketiganya lalu diletakkan dalam sebuah tempat dan disimpan di dalam Ka‘bah. Apabila hendak melakukan sesuatu, mereka meminta juru kunci Ka‘bah untuk mengambil sebuah anak panah. Mereka akan menaati apa pun yang tertulis pada anak panah yang terambil. Akan tetapi, jika yang terambil adalah anak panah yang kosong, mereka akan mengulang undian.|200) Maksud kata hari ini adalah pada waktu haji wada‘.',
     '201) Maksudnya adalah hewan buruan yang ditangkap oleh binatang pemburu yang sengaja dilepas oleh pemiliknya untuk berburu dan binatang pemburu itu tidak memakannya.',
@@ -868,6 +872,7 @@ mixin MaidahAyahAnnotation on AyahAnnotation {
 
 mixin AnamAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '236) Ayat di sini berarti mukjizat, ayat Al-Qur’an, atau peristiwa-peristiwa yang terjadi di alam yang menunjukkan kekuasaan Allah Swt.',
@@ -1046,6 +1051,7 @@ mixin AnamAyahAnnotation on AyahAnnotation {
 
 mixin ArafAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '267) Lihat catatan kaki surah Āli ‘Imrān/3: 28.',
     '',
@@ -1265,6 +1271,7 @@ mixin ArafAyahAnnotation on AyahAnnotation {
 
 mixin AnfalAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '304) Menyebut nama Allah Swt. di sini berarti menyebut sifat-sifat yang mengagungkan dan memuliakan-Nya.',
     '',
     '',
@@ -1353,6 +1360,7 @@ mixin AnfalAyahAnnotation on AyahAnnotation {
 
 mixin TaubahAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '319) Para mufasir berbeda pendapat tentang pengertian haji akbar pada ayat ini. Ada yang mengatakannya hari nahar, ada yang mengatakannya hari Arafah. Yang dimaksud dengan haji akbar di sini adalah haji yang terjadi pada tahun ke-9 Hijriah.',
     '',
@@ -1496,6 +1504,7 @@ mixin TaubahAyahAnnotation on AyahAnnotation {
 mixin YunusAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
     '',
+    '',
     '341) Lihat catatan kaki surah al-A‘rāf/7: 54.|342) Bersemayam di atas ʻArasy sesuai dengan keagungan dan kesucian-Nya.',
     '',
     '343) Allah Swt. menjadikan matahari dan bulan berbeda sifat fisisnya. Matahari bersinar karena memancarkan cahayanya dari proses reaksi nuklir di dalam intinya, sedangkan bulan bercahaya karena memantulkan cahaya matahari.|344) Pergerakan bulan mengitari bumi menyebabkan pemantulan cahaya matahari oleh bulan berubah-ubah bentuknya, dari bentuk sabit sampai purnama dan kembali menjadi sabit lagi, sesuai dengan posisinya. Keteraturan periode bulan mengitari bumi dijadikan sebagai perhitungan waktu bulanan. Dua belas bulan setara dengan satu tahun (surah at-Taubah/9: 36).',
@@ -1617,6 +1626,7 @@ mixin YunusAyahAnnotation on AyahAnnotation {
 
 mixin HudAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -1759,6 +1769,7 @@ mixin YusufAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     '365) Yang dimaksud saudara kandung Nabi Yusuf a.s. adalah Bunyamin.',
     '',
     '',
@@ -1877,6 +1888,7 @@ mixin YusufAyahAnnotation on AyahAnnotation {
 
 mixin RadAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '377) Lihat catatan kaki surah al-A‘rāf/7: 54.',
     '378) Topografi daratan bumi berupa hamparan dan gunung-gunung. Di antaranya ada sungai-sungai. Daratan itu menjadi tempat tumbuhnya tanaman penghasil buah-buahan yang penyerbukannya dapat terjadi karena struktur bunga yang berpasangan, jantan dan betina. Semuanya mengalami siang dan malam karena proses perputaran bumi.',
     '',
@@ -1933,6 +1945,7 @@ mixin RadAyahAnnotation on AyahAnnotation {
 
 mixin IbrahimAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -1998,6 +2011,7 @@ mixin IbrahimAyahAnnotation on AyahAnnotation {
 
 mixin HijrAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -2110,6 +2124,7 @@ mixin HijrAyahAnnotation on AyahAnnotation {
 
 mixin NahlAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '411) Ketetapan Allah Swt. yang dimaksud adalah hari Kiamat yang telah diperingatkan kepada orang musyrik.',
     '',
     '',
     '',
@@ -2251,6 +2266,7 @@ mixin NahlAyahAnnotation on AyahAnnotation {
 
 mixin IsraAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '425) Masjidilaqsa dan daerah sekitarnya diberkahi Allah Swt., di antaranya, dengan diutusnya banyak nabi di sana dan dengan kesuburan tanahnya.',
     '',
     '',
     '',
@@ -2375,6 +2391,7 @@ mixin IsraAyahAnnotation on AyahAnnotation {
 
 mixin KahfAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '442) Dalam Al-Qur’an, tidak ada makna yang saling berlawanan dan tidak ada penyimpangan dari kebenaran.',
     '',
     '',
     '',
@@ -2505,6 +2522,7 @@ mixin MaryamAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     '459) Sebagian mufasir berpendapat bahwa yang berkata di sini adalah Allah Swt. Sebagiannya lagi berpendapat bahwa yang berkata di sini adalah Jibril.',
     '',
     '',
@@ -2609,6 +2627,7 @@ mixin MaryamAyahAnnotation on AyahAnnotation {
 
 mixin TahaAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -2757,6 +2776,7 @@ mixin TahaAyahAnnotation on AyahAnnotation {
 
 mixin AnbiyaAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '488) Yang mereka maksud dengan sihir di sini ialah ayat-ayat Al-Qur’an.',
     '',
@@ -2908,6 +2928,7 @@ mixin HajjAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     '497) Hari raya haji dan hari Tasyriq, yaitu tanggal 10, 11, 12, dan 13 Zulhijah.',
     '498) Yang dimaksud dengan menghilangkan kotoran di sini ialah memotong rambut, memotong kuku, dan sebagainya.|499) Al-Bait al-‘Atīq berarti ‘rumah tua’. Dinamakan demikian karena merupakan rumah ibadah yang pertama kali dibangun di muka bumi. Al-‘Atīq bisa juga bermakna ‘yang dibebaskan dari ancaman para pendurhaka’.',
     '500) Arti yang terhormat (ḥurumāt) pada ayat ini ialah bulan haram (Zulkaidah, Zulhijah, Muharam, Rajab), tanah haram, dan maqam Ibrahim.',
@@ -2973,6 +2994,7 @@ mixin HajjAyahAnnotation on AyahAnnotation {
 
 mixin MukminunAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -3109,6 +3131,7 @@ mixin NurAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     '514) Seorang suami yang menuduh istrinya berbuat zina, tetapi tidak dapat menghadirkan empat orang saksi, harus bersumpah dengan nama Allah Swt. sebanyak empat kali bahwa tuduhannya adalah benar adanya. Kemudian, dia bersumpah sekali lagi bahwa dia siap menerima laknat Allah jika dia berdusta. Masalah ini dalam fikih dikenal dengan lian.',
     '',
     '',
@@ -3181,6 +3204,7 @@ mixin NurAyahAnnotation on AyahAnnotation {
 
 mixin FurqanAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -3271,6 +3295,7 @@ mixin FurqanAyahAnnotation on AyahAnnotation {
 
 mixin SyuaraAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -3521,6 +3546,7 @@ mixin NamlAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     '544) Yang dimaksud adalah meletakkan tangan ke dada melalui leher baju.',
     '',
     '',
@@ -3617,6 +3643,7 @@ mixin NamlAyahAnnotation on AyahAnnotation {
 
 mixin QasasAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -3726,6 +3753,7 @@ mixin AnkabutAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     '570) Orang itu menganggap dahsyatnya kezaliman manusia sama seperti dahsyatnya azab Allah Swt. sehingga dia meninggalkan imannya.',
     '',
     '',
@@ -3800,6 +3828,7 @@ mixin AnkabutAyahAnnotation on AyahAnnotation {
 
 mixin RumAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '579) Maksudnya adalah bangsa Romawi Timur yang berpusat di Konstantinopel.',
     '580) Yakni dekat dari negeri Arab, yaitu Suriah dan Palestina.|581) Bangsa Romawi (pada saat ayat ini diturunkan) adalah suatu bangsa yang beragama Nasrani yang memiliki Kitab Suci, sedangkan bangsa Persia yang beragama Majusi menyembah api dan berhala (musyrik). Ketika tersiar berita kekalahan bangsa Romawi oleh bangsa Persia, kaum musyrik Makkah menyambutnya dengan penuh gembira karena berpihak kepada kaum musyrik Persia. Sebaliknya, kaum muslim berduka cita karenanya. Ayat ini dan ayat berikutnya turun untuk menerangkan bahwa setelah kalah bangsa Romawi akan menang dalam masa beberapa tahun saja. Hal itu benar-benar terjadi. Beberapa tahun setelah itu, bangsa Romawi berbalik mengalahkan bangsa Persia. Dengan kejadian itu, nyatalah kebenaran Nabi Muhammad saw. sebagai nabi dan rasul serta kebenaran Al-Qur’an sebagai firman Allah Swt.',
     '582) Kata biḍ‘ menunjukkan bilangan antara tiga sampai sembilan. Waktu antara kekalahan bangsa Romawi (tahun 614‒615) dan kemenangannya (tahun 622 M) adalah sekitar tujuh tahun.',
@@ -3878,6 +3907,7 @@ mixin LuqmanAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     '597) Pesan dari ayat ini ditujukan kepada orang yang mempergunakan percakapan kosong (segala hal yang memalingkan hati dari ketaatan kepada Allah Swt.) untuk menyesatkan manusia.',
     '',
     '',
@@ -3922,6 +3952,7 @@ mixin SajdahAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
     '',
     '',
+    '',
     '604) Lihat catatan kaki surah al-A‘rāf/7: 54.',
     '605) Yang dimaksud urusan itu naik kepada-Nya adalah beritanya dibawa oleh malaikat. Ayat ini merupakan tamsil bagi kebesaran Allah Swt. dan keagungan-Nya.',
     '',
@@ -3963,6 +3994,7 @@ mixin SajdahAyahAnnotation on AyahAnnotation {
 
 mixin AhzabAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -4059,6 +4091,7 @@ mixin SabaAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     '623) Apabila Nabi Sulaiman a.s. melakukan perjalanan dari pagi sampai dengan tengah hari, jarak yang ditempuhnya sama dengan jarak perjalanan unta dalam sebulan.',
     '',
     '',
@@ -4124,6 +4157,7 @@ mixin FatirAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     '631) Menurut sebagian mufasir, perkataan yang baik itu adalah kalimat lā ilāha illallāh. Namun, ada pula yang mengatakan bahwa yang dimaksud adalah zikir kepada Allah Swt. atau semua perkataan yang baik yang diucapkan karena Allah Swt.',
     '',
     '',
@@ -4174,6 +4208,7 @@ mixin FatirAyahAnnotation on AyahAnnotation {
 
 mixin YasinAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -4270,6 +4305,7 @@ mixin YasinAyahAnnotation on AyahAnnotation {
 
 mixin SaffatAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -4506,6 +4542,7 @@ mixin SadAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     '656) Nabi Ayyub a.s. menderita penyakit kulit beberapa waktu lamanya. Dia memohon kepada Allah Swt. untuk disembuhkan. Allah Swt. mengabulkan permohonan tersebut dan memerintahkannya untuk mengentakkan kaki ke tanah. Nabi Ayyub a.s. menaati perintah itu. Maka, keluarlah air dari bekas entakan kakinya. Dia mandi dan minum dari air itu. Dia pun sembuh dari penyakitnya dan dapat berkumpul kembali dengan keluarganya. Mereka kemudian berkembang biak dua kali lipat dari jumlah sebelumnya. Pada suatu ketika, Nabi Ayyub a.s. teringat akan sumpahnya untuk memukul istrinya apabila ia sembuh dari sakitnya lantaran sang istri pernah lalai mengurusnya ketika dia masih sakit. Namun, timbul rasa iba dan sayang kepada istrinya sehingga dia urung memenuhi sumpah tersebut. Maka, turunlah petunjuk Allah Swt. dalam ayat 44 bahwa dia dapat melaksanakan sumpahnya tanpa perlu menyakiti istrinya, yaitu dengan memukulnya dengan seikat rumput.',
     '',
     '',
@@ -4566,6 +4603,7 @@ mixin SadAyahAnnotation on AyahAnnotation {
 
 mixin ZumarAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -4671,6 +4709,7 @@ mixin GafirAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     '665) Maksud ungkapan pandangan yang khianat adalah pandangan pada hal-hal yang terlarang, seperti memandang lawan jenis yang bukan mahram tanpa alasan yang dibenarkan syariat.',
     '',
     '',
@@ -4752,6 +4791,7 @@ mixin GafirAyahAnnotation on AyahAnnotation {
 
 mixin FussilatAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -4870,6 +4910,7 @@ mixin SyuraAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     ''
   ];
 
@@ -4885,6 +4926,7 @@ mixin SyuraAyahAnnotation on AyahAnnotation {
 
 mixin ZukhrufAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -4988,6 +5030,7 @@ mixin ZukhrufAyahAnnotation on AyahAnnotation {
 mixin DukhanAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
     '',
+    '',
     '681) Yang dimaksud dengan turunnya Al-Qur’an pada malam lailatulqadar adalah bahwa Al-Qur’an untuk pertama kalinya diturunkan pada malam tersebut.',
     '682) Yang dimaksud dengan segala urusan yang penuh hikmah adalah segala sesuatu yang berhubungan dengan kehidupan makhluk, seperti hidup, mati, rezeki, nasib baik, dan nasib buruk.',
     '',
@@ -5080,6 +5123,7 @@ mixin JasiyahAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     '688) Allah membiarkan orang itu sesat karena Allah mengetahui bahwa ia tidak menerima petunjuk yang Dia berikan kepadanya.',
     '',
     '',
@@ -5109,6 +5153,7 @@ mixin JasiyahAyahAnnotation on AyahAnnotation {
 
 mixin AhqafAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -5193,6 +5238,7 @@ mixin MuhammadAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     ''
   ];
 
@@ -5208,6 +5254,7 @@ mixin MuhammadAyahAnnotation on AyahAnnotation {
 
 mixin FathAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -5250,6 +5297,7 @@ mixin FathAyahAnnotation on AyahAnnotation {
 
 mixin HujuratAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '698) Maksudnya adalah bahwa orang-orang mukmin tidak boleh menetapkan suatu hukum sebelum ada ketetapan dari Allah dan Rasul-Nya dalam hal yang dimungkinkan adanya penjelasan dari Allah atau Rasul-Nya.',
     '',
     '',
     '',
@@ -5324,6 +5372,7 @@ mixin QafAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     ''
   ];
 
@@ -5339,6 +5388,7 @@ mixin QafAyahAnnotation on AyahAnnotation {
 
 mixin ZariyatAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -5412,6 +5462,7 @@ mixin ZariyatAyahAnnotation on AyahAnnotation {
 
 mixin TurAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '703) Menurut riwayat al-Bukhari dan Muslim, Baitulmakmur adalah rumah di langit ketujuh yang senantiasa diramaikan oleh 70.000 malaikat yang beribadah salat.',
@@ -5521,6 +5572,7 @@ mixin NajmAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     '704) Syi‘ra adalah nama bintang yang disembah oleh sebagian orang Arab pada masa Jahiliah.',
     '',
     '',
@@ -5549,6 +5601,7 @@ mixin NajmAyahAnnotation on AyahAnnotation {
 
 mixin QamarAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -5617,6 +5670,7 @@ mixin QamarAyahAnnotation on AyahAnnotation {
 
 mixin RahmanAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -5758,6 +5812,7 @@ mixin WaqiahAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     '707) Zaqum adalah jenis pohon di neraka yang mengakibatkan derita yang luar biasa bagi yang memakannya.',
     '',
     '',
@@ -5818,6 +5873,7 @@ mixin WaqiahAyahAnnotation on AyahAnnotation {
 mixin HadidAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
     '',
+    '',
     '709) Mahaawalberarti telah ada sebelum segala sesuatu ada sehingga tidak ada yang mendahului-Nya; Mahaakhirberarti akan hidup selamanya setelah segala sesuatu musnah; Mahazahir berarti wujud-Nya begitu nyata, baik melalui perenungan atas alam semesta yang Dia ciptakan maupunmelalui pembuktian logika dan rasa; dan Mahabatinberarti bahwa zat dan hakikat-Nya tidak bisa dijangkau, baik dengan mata, akal, maupun khayal.',
     '710) Yang dimaksud dengan yang naik, antara lain, adalah amal-amal dan doa-doa hamba-Nya.',
     '',
@@ -5859,6 +5915,7 @@ mixin HadidAyahAnnotation on AyahAnnotation {
 
 mixin MujadalahAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '711) Ayat ini turun berkenaan dengan Khaulah binti Ṡa‘labah yang dizihar oleh suaminya, Aus bin aṣ-Ṣamit, dengan mengatakan, “Kamu bagiku seperti punggung ibuku,” dengan maksud tidak akan lagi menggauli istrinya sebagaimana ia tidak akan menggauli ibunya. Dalam adat Jahiliah, kalimat zihar seperti itu sama dengan menalak istri. Khaulah mengadukan hal itu kepada Rasulullah saw. Rasulullah menjawab bahwa Allah belum menurunkan ketentuan hukum tentang zihar. Dalam riwayat lain beliau bersabda, “Engkau telah diharamkan bergaul dengan dia.” Khaulah lalu berkata, “Suamiku belum menyebut kata-kata talak.” Ia berulang kali mendesak Rasulullah agar menetapkan keputusan. Maka, turunlah ayat ini dan ayat-ayat berikutnya.',
     '',
     '',
     '',
@@ -5898,6 +5955,7 @@ mixin HasyrAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     '712) Harta rampasan yang diperoleh dari musuh tanpa melalui pertempuran disebut fai’, sedangkan yang diperoleh melalui pertempuran disebut ganimah. Pembagian harta fai’ dijelaskan pada ayat 7 surah ini, sedangkan pembagian ganimah dijelaskan pada surah al-Anfāl/8: 41.',
     '',
     '',
@@ -5933,6 +5991,7 @@ mixin MumtahanahAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
     '',
     '',
+    '',
     '713) Nabi Ibrahim a.s. pernah meminta ampunan kepada Allah untuk ayahnya yang musyrik. Ini tidak boleh ditiru karena Allah tidak membenarkan orang mukmin memintakan ampunan untuk orang-orang kafir (lihat surah an-Nisā’/4: 48).',
     '',
     '',
@@ -5957,6 +6016,7 @@ mixin MumtahanahAyahAnnotation on AyahAnnotation {
 
 mixin SaffAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -5993,6 +6053,7 @@ mixin JumuahAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     ''
   ];
 
@@ -6008,6 +6069,7 @@ mixin JumuahAyahAnnotation on AyahAnnotation {
 
 mixin MunafiqunAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '717) Mereka bersumpah telah beriman agar tidak ditawan atau dibunuh dan harta mereka tidak dirampas.',
     '',
     '718) Orang-orang munafik bagaikan seonggok kayu yang tersandar tanpa daya hidup, tanpa pijakan yang kukuh, dan tanpa buah yang bisa dimanfaatkan.',
@@ -6032,6 +6094,7 @@ mixin MunafiqunAyahAnnotation on AyahAnnotation {
 
 mixin TagabunAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -6073,6 +6136,7 @@ mixin TalaqAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     ''
   ];
 
@@ -6088,6 +6152,7 @@ mixin TalaqAyahAnnotation on AyahAnnotation {
 
 mixin TahrimAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '721) Nabi bersumpah untuk tidak menggauli istrinya, yaitu Mariah al-Qibtiyah. Dengan sumpah ini, sesuatu yang halal menjadi tidak diperbolehkan. Jadi, ayat ini tidak bermakna bahwa Nabi mengubah hukum halal menjadi haram.',
     '',
     '',
     '',
@@ -6141,6 +6206,7 @@ mixin MulkAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     ''
   ];
 
@@ -6156,6 +6222,7 @@ mixin MulkAyahAnnotation on AyahAnnotation {
 
 mixin QalamAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -6271,6 +6338,7 @@ mixin HaqqahAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     ''
   ];
 
@@ -6286,6 +6354,7 @@ mixin HaqqahAyahAnnotation on AyahAnnotation {
 
 mixin MaarijAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '722) Maksudnya, Jibril dan para malaikat lain butuh waktu satu hari perjalanan untuk menghadap Allah Swt. Satu hari dalam dunia malaikat sama dengan lima puluh ribu tahun dalam dunia manusia.',
@@ -6349,6 +6418,7 @@ mixin NuhAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     '727) Dakwah ini dilakukan setelah dakwah dengan cara diam-diam tidak berhasil.',
     '728) Setelah gagalnya dakwah secara diam-diam dan dakwah secara terang-terangan, Nabi Nuh a.s. melakukan keduanya sekaligus.',
     '',
@@ -6391,6 +6461,7 @@ mixin JinnAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     '731) Yang dimaksud dengan sekarang adalah waktu setelah Nabi Muhammad saw. diutus menjadi rasul.',
     '',
     '',
@@ -6425,6 +6496,7 @@ mixin JinnAyahAnnotation on AyahAnnotation {
 
 mixin MuzzamilAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '732) Salat malam hukumnya wajib sebelum ayat ke-20 surah ini diturunkan. Setelah itu, hukumnya menjadi sunah.',
     '',
     '',
@@ -6458,6 +6530,7 @@ mixin MuzzamilAyahAnnotation on AyahAnnotation {
 
 mixin MuddassirAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -6539,6 +6612,7 @@ mixin QiyamahAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     '735) Anggota badan manusia menjadi saksi atas perbuatan yang telah mereka lakukan, seperti tersebut dalam surah an-Nūr/24: 24.',
     '',
     '',
@@ -6583,6 +6657,7 @@ mixin InsanAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     '737) Kafur merupakan nama suatu mata air di surga yang warnanya putih, aromanya harum, dan enak rasanya. Kafur disediakan untuk hamba Allah yang taat.',
     '',
     '',
@@ -6624,6 +6699,7 @@ mixin InsanAyahAnnotation on AyahAnnotation {
 
 mixin MursalatAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '738) Yang dimaksud adalah malaikat yang turun untuk membawa wahyu. Sebagian mufasir berpendapat bahwa yang dimaksud dengan an-nāsyirāt ialah angin yang bertiup disertai hujan.',
     '',
@@ -6695,6 +6771,7 @@ mixin NabaAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     '742) Malam disebut sebagai pakaian karena kegelapannya menutupi alam sebagaimana pakaian menutupi tubuh manusia.',
     '',
     '',
@@ -6740,6 +6817,7 @@ mixin NabaAyahAnnotation on AyahAnnotation {
 
 mixin NaziatAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -6799,6 +6877,7 @@ mixin NaziatAyahAnnotation on AyahAnnotation {
 
 mixin AbasaAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -6878,6 +6957,7 @@ mixin TakwirAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     '747) Setelah diterangkan bahwa Al-Qur’an itu benar-benar datang dari Allah dan di dalamnya ada pelajaran dan petunjuk yang memimpin manusia ke jalan yang lurus, ditanyakanlah kepada orang-orang kafir itu, “Jalan manakah yang akan kamu tempuh?”',
     '',
     '',
@@ -6913,6 +6993,7 @@ mixin InfitarAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     ''
   ];
 
@@ -6928,6 +7009,7 @@ mixin InfitarAyahAnnotation on AyahAnnotation {
 
 mixin MutaffifinAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -6977,6 +7059,7 @@ mixin MutaffifinAyahAnnotation on AyahAnnotation {
 
 mixin InsyiqaqAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -7035,6 +7118,7 @@ mixin BurujAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     ''
   ];
 
@@ -7050,6 +7134,7 @@ mixin BurujAyahAnnotation on AyahAnnotation {
 
 mixin TariqAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -7080,6 +7165,7 @@ mixin TariqAyahAnnotation on AyahAnnotation {
 
 mixin AklaAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -7136,6 +7222,7 @@ mixin GasyiyahAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     ''
   ];
 
@@ -7151,6 +7238,7 @@ mixin GasyiyahAyahAnnotation on AyahAnnotation {
 
 mixin FajrAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '754) Yang dimaksud dengan malam yang sepuluh adalah sepuluh malam terakhir bulan Ramadan. Ada pula yang mengatakan sepuluh pertama dari bulan Muharam, termasuk di dalamnya hari Asyura, dan ada pula yang mengatakan sepuluh malam pertama dari bulan Zulhijah.',
     '',
     '',
@@ -7212,6 +7300,7 @@ mixin BaladAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     ''
   ];
 
@@ -7227,6 +7316,7 @@ mixin BaladAyahAnnotation on AyahAnnotation {
 
 mixin SyamsAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -7272,6 +7362,7 @@ mixin LailAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     '758) Maksudnya adalah bahwa orang-orang yang bertakwa membantu orang lain bukan karena orang itu berjasa kepadanya sehingga perlu membalasnya, melainkan hanya mengharap rida Allah.',
     '',
     ''
@@ -7289,6 +7380,7 @@ mixin LailAyahAnnotation on AyahAnnotation {
 
 mixin DuhaAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -7319,6 +7411,7 @@ mixin SyarhAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     ''
   ];
 
@@ -7334,6 +7427,7 @@ mixin SyarhAyahAnnotation on AyahAnnotation {
 
 mixin TinAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -7371,6 +7465,7 @@ mixin AlaqAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     '759) Zabaniah adalah malaikat yang bertugas menyiksa orang-orang yang berdosa.',
     ''
   ];
@@ -7390,6 +7485,7 @@ mixin QadrAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     ''
   ];
 
@@ -7405,6 +7501,7 @@ mixin QadrAyahAnnotation on AyahAnnotation {
 
 mixin BayyinahAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -7432,6 +7529,7 @@ mixin ZalzalahAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     ''
   ];
 
@@ -7447,6 +7545,7 @@ mixin ZalzalahAyahAnnotation on AyahAnnotation {
 
 mixin AdiyatAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -7480,6 +7579,7 @@ mixin QariahAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     ''
   ];
 
@@ -7495,6 +7595,7 @@ mixin QariahAyahAnnotation on AyahAnnotation {
 
 mixin TakasurAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '760) Maksudnya adalah bersaing memperbanyak anak, harta, pengikut, kemuliaan, dan sebagainya telah melalaikan manusia dari ketaatan kepada Allah Swt.',
     '',
     '',
     '',
@@ -7517,6 +7618,7 @@ mixin TakasurAyahAnnotation on AyahAnnotation {
 mixin AsrAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
     '',
+    '',
     ''
   ];
 
@@ -7532,6 +7634,7 @@ mixin AsrAyahAnnotation on AyahAnnotation {
 
 mixin HumazahAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -7557,6 +7660,7 @@ mixin FilAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     ''
   ];
 
@@ -7574,6 +7678,7 @@ mixin QuraisyAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
     '',
     '',
+    '',
     ''
   ];
 
@@ -7589,6 +7694,7 @@ mixin QuraisyAyahAnnotation on AyahAnnotation {
 
 mixin MaunAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -7610,6 +7716,7 @@ mixin MaunAyahAnnotation on AyahAnnotation {
 mixin KausarAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
     '',
+    '',
     ''
   ];
 
@@ -7625,6 +7732,7 @@ mixin KausarAyahAnnotation on AyahAnnotation {
 
 mixin KafirunAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
@@ -7645,6 +7753,7 @@ mixin KafirunAyahAnnotation on AyahAnnotation {
 mixin NasrAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
     '',
+    '',
     ''
   ];
 
@@ -7660,6 +7769,7 @@ mixin NasrAyahAnnotation on AyahAnnotation {
 
 mixin LahabAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '763) Yang dimaksud dengan kedua tangan Abu Lahab adalah Abu Lahab itu sendiri.',
     '',
     '',
     '',
@@ -7680,6 +7790,7 @@ mixin IkhlasAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
     '',
     '',
+    '',
     ''
   ];
 
@@ -7698,6 +7809,7 @@ mixin FalaqAyahAnnotation on AyahAnnotation {
     '',
     '',
     '',
+    '',
     ''
   ];
 
@@ -7713,6 +7825,7 @@ mixin FalaqAyahAnnotation on AyahAnnotation {
 
 mixin NasAyahAnnotation on AyahAnnotation {
   static const List ayahs = <String>[
+    '',
     '',
     '',
     '',
