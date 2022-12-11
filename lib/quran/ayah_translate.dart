@@ -35,6 +35,7 @@ mixin FatihahAyahTranslate on AyahTranslate {
 
 mixin BaqarahAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Alif Lām Mīm.<sup>4)</sup>',
     'Kitab (Al-Qur’an) ini tidak ada keraguan di dalamnya; (ia merupakan) petunjuk bagi orang-orang yang bertakwa,',
     '(yaitu) orang-orang yang beriman pada yang gaib, menegakkan salat, dan menginfakkan sebagian rezeki yang Kami anugerahkan kepada mereka,',
     'dan mereka yang beriman pada (Al-Qur’an) yang diturunkan kepadamu (Nabi Muhammad) dan (kitab-kitab suci) yang telah diturunkan sebelum engkau dan mereka yakin akan adanya akhirat.',
@@ -334,6 +335,7 @@ mixin BaqarahAyahTranslate on AyahTranslate {
 
 mixin ImranAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Alif Lām Mīm.',
     'Allah, tidak ada tuhan selain Dia, Yang Mahahidup lagi Maha Mengurus (makhluk-Nya) secara terus-menerus.',
     'Dia menurunkan kepadamu (Nabi Muhammad) Kitab (Al-Qur’an) dengan hak, membenarkan (kitab-kitab) sebelumnya, serta telah menurunkan Taurat dan Injil',
     'sebelum (turunnya Al-Qur’an) sebagai petunjuk bagi manusia, dan menurunkan Al-Furqān (pembeda yang hak dan yang batil). Sesungguhnya orang-orang yang kufur terhadap ayat-ayat Allah, bagi mereka azab yang sangat keras. Allah Mahaperkasa lagi mempunyai balasan (siksa).',
@@ -547,6 +549,7 @@ mixin ImranAyahTranslate on AyahTranslate {
 
 mixin NisaAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Wahai manusia, bertakwalah kepada Tuhanmu yang telah menciptakanmu dari diri yang satu (Adam) dan Dia menciptakan darinya pasangannya (Hawa). Dari keduanya Allah memperkembangbiakkan laki-laki dan perempuan yang banyak.<sup>143)</sup> Bertakwalah kepada Allah yang dengan nama-Nya kamu saling meminta dan (peliharalah) hubungan kekeluargaan. Sesungguhnya Allah selalu menjaga dan mengawasimu.',
     'Berikanlah kepada anak-anak yatim (yang sudah dewasa) harta mereka. Janganlah kamu menukar yang baik dengan yang buruk dan janganlah kamu makan harta mereka bersama hartamu. Sesungguhnya (tindakan menukar dan memakan) itu adalah dosa yang besar.',
     'Jika kamu khawatir tidak akan mampu berlaku adil terhadap (hak-hak) perempuan yatim (bilamana kamu menikahinya), nikahilah perempuan (lain) yang kamu senangi: dua, tiga, atau empat. Akan tetapi, jika kamu khawatir tidak akan mampu berlaku adil, (nikahilah) seorang saja atau hamba sahaya perempuan yang kamu miliki. Yang demikian itu lebih dekat untuk tidak berbuat zalim.',
     'Berikanlah mahar kepada wanita (yang kamu nikahi) sebagai pemberian yang penuh kerelaan. Kemudian, jika mereka menyerahkan kepada kamu sebagian dari (mahar) itu dengan senang hati, terimalah dan nikmatilah pemberian itu dengan senang hati.',
@@ -736,6 +739,7 @@ mixin NisaAyahTranslate on AyahTranslate {
 
 mixin MaidahAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Wahai orang-orang yang beriman, penuhilah janji-janji!<sup>192)</sup> Dihalalkan bagimu hewan ternak, kecuali yang akan disebutkan kepadamu (keharamannya) dengan tidak menghalalkan berburu ketika kamu sedang berihram (haji atau umrah). Sesungguhnya Allah menetapkan hukum sesuai dengan yang Dia kehendaki.',
     'Wahai orang-orang yang beriman, janganlah kamu melanggar syiar-syiar (kesucian) Allah,<sup>193)</sup> jangan (melanggar kehormatan) bulan-bulan haram,<sup>194)</sup> jangan (mengganggu) hadyu (hewan-hewan kurban)<sup>195)</sup> dan qalā’id (hewan-hewan kurban yang diberi tanda),<sup>196)</sup> dan jangan (pula mengganggu) para pengunjung Baitulharam sedangkan mereka mencari karunia dan rida Tuhannya!<sup>197)</sup> Apabila kamu telah bertahalul (menyelesaikan ihram), berburulah (jika mau). Janganlah sekali-kali kebencian(-mu) kepada suatu kaum, karena mereka menghalang-halangimu dari Masjidilharam, mendorongmu berbuat melampaui batas (kepada mereka). Tolong-menolonglah kamu dalam (mengerjakan) kebajikan dan takwa, dan jangan tolong-menolong dalam berbuat dosa dan permusuhan. Bertakwalah kepada Allah, sesungguhnya Allah sangat berat siksaan-Nya.',
     'Diharamkan bagimu (memakan) bangkai, darah, daging babi, dan (daging hewan) yang disembelih bukan atas (nama) Allah, yang tercekik, yang dipukul, yang jatuh, yang ditanduk, dan yang diterkam binatang buas, kecuali yang (sempat) kamu sembelih.<sup>198)</sup> (Diharamkan pula) apa yang disembelih untuk berhala. (Demikian pula) mengundi nasib dengan azlām (anak panah),<sup>199)</sup> (karena) itu suatu perbuatan fasik. Pada hari ini<sup>200)</sup> orang-orang kafir telah putus asa untuk (mengalahkan) agamamu. Oleh sebab itu, janganlah kamu takut kepada mereka, tetapi takutlah kepada-Ku. Pada hari ini telah Aku sempurnakan agamamu untukmu, telah Aku cukupkan nikmat-Ku bagimu, dan telah Aku ridai Islam sebagai agamamu. Maka, siapa yang terpaksa karena lapar, bukan karena ingin berbuat dosa, sesungguhnya Allah Maha Pengampun lagi Maha Penyayang.',
     'Mereka bertanya kepadamu (Nabi Muhammad), “Apakah yang dihalalkan bagi mereka?” Katakanlah, “Yang dihalalkan bagimu adalah (makanan-makanan) yang baik dan (buruan yang ditangkap) oleh binatang pemburu yang telah kamu latih untuk berburu, yang kamu latih menurut apa yang telah diajarkan Allah kepadamu. Maka, makanlah apa yang ditangkapnya untukmu<sup>201)</sup> dan sebutlah nama Allah (waktu melepasnya). Bertakwalah kepada Allah. Sesungguhnya Allah sangat cepat perhitungan-Nya.”',
@@ -869,6 +873,7 @@ mixin MaidahAyahTranslate on AyahTranslate {
 
 mixin AnamAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Segala puji bagi Allah yang telah menciptakan langit dan bumi, dan menjadikan kegelapan-kegelapan dan cahaya. Sungguhpun demikian, orang-orang yang kufur mempersamakan tuhan mereka (dengan sesuatu yang lain).',
     'Dialah yang menciptakan kamu dari tanah, kemudian Dia menentukan batas waktu hidup (masing-masing). Waktu yang ditentukan (untuk kebangkitan setelah mati) ada pada-Nya. Kemudian, kamu masih meragukannya.',
     'Dialah Allah (yang disembah) di langit dan di bumi. Dia mengetahui apa pun yang kamu rahasiakan dan kamu tampakkan serta mengetahui apa pun yang kamu usahakan.',
     'Tidaklah datang kepada mereka satu ayat pun dari ayat-ayat<sup>236)</sup> Tuhan mereka, kecuali mereka (pasti) berpaling darinya.',
@@ -1047,6 +1052,7 @@ mixin AnamAyahTranslate on AyahTranslate {
 
 mixin ArafAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Alif Lām Mīm Ṣād.',
     '(Inilah) Kitab yang diturunkan kepadamu (Nabi Muhammad), maka janganlah engkau sesak dada karenanya supaya dengan (kitab itu) engkau memberi peringatan, dan menjadi pelajaran bagi orang-orang yang beriman.',
     'Ikutilah apa yang diturunkan kepadamu dari Tuhanmu dan janganlah kamu ikuti pelindung<sup>267)</sup> selain Dia. Sedikit sekali kamu mengambil pelajaran.',
     'Betapa banyak negeri yang telah Kami binasakan. Siksaan Kami datang (menimpa penduduknya) pada malam hari atau pada saat mereka beristirahat pada siang hari.',
@@ -1266,6 +1272,7 @@ mixin ArafAyahTranslate on AyahTranslate {
 
 mixin AnfalAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Mereka bertanya kepadamu (Nabi Muhammad) tentang (pembagian) harta rampasan perang. Katakanlah, “Harta rampasan perang itu milik Allah dan Rasul (menurut ketentuan Allah dan Rasul-Nya). Maka, bertakwalah kepada Allah dan perbaikilah hubungan di antara sesamamu dan taatlah kepada Allah dan Rasul-Nya jika kamu orang-orang mukmin.”',
     'Sesungguhnya orang-orang mukmin adalah mereka yang jika disebut nama Allah,<sup>304)</sup> gemetar hatinya dan jika dibacakan ayat-ayat-Nya kepada mereka, bertambah (kuat) imannya dan hanya kepada Tuhannya mereka bertawakal,',
     '(yaitu) orang-orang yang melaksanakan salat dan menginfakkan sebagian rezeki yang Kami anugerahkan kepada mereka.',
     'Mereka itulah orang-orang yang benar-benar beriman. Bagi mereka derajat (tinggi) di sisi Tuhannya dan ampunan serta rezeki yang mulia.',
@@ -1354,6 +1361,7 @@ mixin AnfalAyahTranslate on AyahTranslate {
 
 mixin TaubahAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    '(Inilah pernyataan) pemutusan hubungan dari Allah dan Rasul-Nya (Nabi Muhammad) kepada orang-orang musyrik yang kamu telah mengadakan perjanjian dengan mereka (untuk tidak saling berperang).',
     'Berjalanlah kamu (kaum musyrik) di bumi selama empat bulan dan ketahuilah bahwa kamu tidak dapat melemahkan Allah. Sesungguhnya Allah menghinakan orang-orang kafir.',
     'Suatu maklumat dari Allah dan Rasul-Nya kepada umat manusia pada hari haji akbar<sup>319)</sup> bahwa sesungguhnya Allah dan Rasul-Nya berlepas diri dari orang-orang musyrik. Jika kamu (kaum musyrik) bertobat, itu lebih baik bagimu; dan jika kamu berpaling, ketahuilah bahwa kamu tidak dapat melemahkan Allah. Berilah kabar ‘gembira’ (Nabi Muhammad) kepada orang-orang yang kufur (bahwa mereka akan mendapat) azab yang pedih.',
     '(Ketetapan itu berlaku,) kecuali atas orang-orang musyrik yang telah mengadakan perjanjian dengan kamu dan mereka sedikit pun tidak mengurangi (isi perjanjian) dan tidak (pula) mereka membantu seseorang pun yang memusuhi kamu. Maka, terhadap mereka itu penuhilah janjinya sampai batas waktunya. Sesungguhnya Allah menyukai orang-orang yang bertakwa.',
@@ -1496,6 +1504,7 @@ mixin TaubahAyahTranslate on AyahTranslate {
 
 mixin YunusAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Alif Lām Rā. Itulah ayat-ayat Kitab (Al-Qur’an) yang penuh hikmah',
     'Pantaskah menjadi suatu keheranan bagi manusia bahwa Kami mewahyukan kepada seorang laki-laki di antara mereka (yaitu), “Berilah peringatan kepada manusia dan berilah kabar gembira kepada orang-orang yang beriman bahwa mereka mempunyai kedudukan yang tinggi di sisi Tuhan mereka.” Orang-orang kafir berkata, “Sesungguhnya dia (Nabi Muhammad) ini benar-benar seorang penyihir yang nyata.”',
     'Sesungguhnya Tuhanmu adalah Allah yang menciptakan langit dan bumi dalam enam masa,<sup>341)</sup> kemudian Dia bersemayam di atas ʻArasy<sup>342)</sup> (seraya) mengatur segala urusan. Tidak ada seorang pun pemberi syafaat, kecuali setelah (mendapat) izin-Nya. Itulah Allah, Tuhanmu. Maka, sembahlah Dia! Apakah kamu tidak mengambil pelajaran?',
     'Hanya kepada-Nya kamu semua akan kembali. Itu merupakan janji Allah yang benar dan pasti. Sesungguhnya Dialah yang memulai penciptaan (makhluk), kemudian mengembalikannya (menghidupkannya lagi) agar Dia memberi balasan dengan adil kepada orang-orang yang beriman dan beramal saleh. Adapun untuk orang-orang yang kufur, untuk mereka (disediakan) minuman dari air yang mendidih dan azab yang sangat pedih karena mereka selalu kufur.',
@@ -1618,6 +1627,7 @@ mixin YunusAyahTranslate on AyahTranslate {
 
 mixin HudAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Alif Lām Rā. (Inilah) Kitab yang ayat-ayatnya telah disusun dengan rapi kemudian dijelaskan secara terperinci (dan diturunkan) dari sisi (Allah) Yang Mahabijaksana lagi Mahateliti.',
     '(Katakanlah Nabi Muhammad,) “Janganlah kamu menyembah (sesuatu), kecuali Allah. Sesungguhnya aku adalah pemberi peringatan dan pembawa berita gembira dari-Nya untukmu.',
     'Mohonlah ampunan kepada Tuhanmu kemudian bertobatlah kepada-Nya, niscaya Dia akan memberi kesenangan yang baik kepadamu (di dunia) sampai waktu yang telah ditentukan (kematian) dan memberikan pahala-Nya (di akhirat) kepada setiap orang yang beramal saleh. Jika kamu berpaling, sesungguhnya aku takut kamu (akan) ditimpa azab pada hari yang besar (kiamat).',
     'Kepada Allahlah kembalimu. Dia Mahakuasa atas segala sesuatu.”',
@@ -1754,6 +1764,7 @@ mixin HudAyahTranslate on AyahTranslate {
 
 mixin YusufAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Alif Lām Rā. Itulah ayat-ayat Kitab (Al-Qur’an) yang jelas (arti dan petunjuknya).',
     'Sesungguhnya Kami menurunkannya (Kitab Suci) berupa Al-Qur’an berbahasa Arab agar kamu mengerti.',
     'Kami menceritakan kepadamu (Nabi Muhammad) kisah yang paling baik dengan mewahyukan Al-Qur’an ini kepadamu. Sesungguhnya engkau sebelum itu termasuk orang-orang yang tidak mengetahui.',
     '(Ingatlah) ketika Yusuf berkata kepada ayahnya (Ya‘qub), “Wahai ayahku, sesungguhnya aku telah (bermimpi) melihat sebelas bintang, matahari, dan bulan. Aku melihat semuanya sujud kepadaku.”',
@@ -1878,6 +1889,7 @@ mixin YusufAyahTranslate on AyahTranslate {
 
 mixin RadAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Alif Lām Mīm Rā. Itulah ayat-ayat Kitab (Al-Qur’an). (Kitab) yang diturunkan kepadamu (Nabi Muhammad) dari Tuhanmu itu adalah kebenaran, tetapi kebanyakan manusia tidak beriman.',
     'Allah yang meninggikan langit tanpa tiang yang (dapat) kamu lihat. Kemudian, Dia bersemayam di atas ‘Arasy<sup>377)</sup> serta menundukkan matahari dan bulan. Masing-masing beredar hingga waktu yang telah ditentukan (kiamat). Dia (Allah) mengatur urusan (makhluk-Nya) dan memerinci tanda-tanda (kebesaran-Nya) agar kamu meyakini pertemuan (kamu) dengan Tuhanmu.',
     'Dialah yang menghamparkan bumi dan menjadikan gunung-gunung dan sungai-sungai padanya. Dia menjadikan padanya (semua) buah-buahan berpasang-pasangan (dan) menutupkan malam pada siang.<sup>378)</sup> Sesungguhnya pada yang demikian itu terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.',
     'Di bumi terdapat bagian-bagian yang berdampingan, kebun-kebun anggur, tanaman-tanaman, dan pohon kurma yang bercabang dan yang tidak bercabang. (Semua) disirami dengan air yang sama, tetapi Kami melebihkan tanaman yang satu atas yang lainnya dalam hal rasanya. Sesungguhnya pada yang demikian itu benar-benar (terdapat) tanda-tanda (kebesaran Allah) bagi kaum yang mengerti.',
@@ -1934,6 +1946,7 @@ mixin RadAyahTranslate on AyahTranslate {
 
 mixin IbrahimAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Alif Lām Rā. (Ini adalah) Kitab (Al-Qur’an) yang Kami turunkan kepadamu (Nabi Muhammad) agar engkau mengeluarkan manusia dari berbagai kegelapan pada cahaya (terang-benderang) dengan izin Tuhan mereka, (yaitu) menuju jalan Tuhan Yang Mahaperkasa lagi Maha Terpuji.',
     '(Dialah) Allah yang memiliki segala apa yang ada di langit dan apa yang ada di bumi. Kecelakaanlah bagi orang-orang kafir karena siksaan yang sangat berat.',
     '(Yaitu) orang-orang yang lebih menyukai kehidupan dunia daripada (kehidupan) akhirat, menghalang-halangi (manusia) dari jalan Allah, dan menginginkannya menjadi bengkok. Mereka itu berada dalam kesesatan yang jauh.',
     'Kami tidak mengutus seorang rasul pun, kecuali dengan bahasa kaumnya, agar dia dapat memberi penjelasan kepada mereka. Maka, Allah menyesatkan siapa yang Dia kehendaki (karena kecenderungannya untuk sesat), dan memberi petunjuk kepada siapa yang Dia kehendaki (berdasarkan kesiapannya untuk menerima petunjuk). Dia Yang Mahaperkasa lagi Mahabijaksana.',
@@ -1999,6 +2012,7 @@ mixin IbrahimAyahTranslate on AyahTranslate {
 
 mixin HijrAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Alif Lām Rā. Itulah ayat-ayat Kitab, yaitu (ayat-ayat) Al-Qur’an yang memberi penjelasan.',
     'Orang-orang yang kufur itu sering kali (nanti di akhirat) menginginkan, sekiranya mereka dahulu (di dunia) menjadi orang-orang muslim.',
     'Biarkanlah mereka (di dunia ini) makan, bersenang-senang, dan dilalaikan oleh angan-angan (kosong). Kelak mereka akan mengetahui (akibat perbuatannya).',
     'Kami tidak membinasakan suatu negeri, kecuali sudah ada ketentuan yang ditetapkan baginya.',
@@ -2111,6 +2125,7 @@ mixin HijrAyahTranslate on AyahTranslate {
 
 mixin NahlAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Ketetapan Allah<sup>411)</sup> pasti datang. Maka, janganlah kamu meminta agar dipercepat (kedatangan)-nya. Mahasuci dan Mahatinggi Dia dari apa yang mereka persekutukan.',
     'Dia menurunkan para malaikat membawa wahyu atas perintah-Nya kepada siapa yang Dia kehendaki di antara hamba-hamba-Nya, yaitu (dengan berfirman), “Peringatkanlah (hamba-hamba-Ku) bahwa tidak ada tuhan selain Aku. Maka, bertakwalah kepada-Ku.”',
     'Dia menciptakan langit dan bumi dengan hak. Mahatinggi Dia dari apa yang mereka persekutukan.',
     'Dia telah menciptakan manusia dari mani, lalu ternyata dia menjadi pembantah yang nyata.',
@@ -2252,6 +2267,7 @@ mixin NahlAyahTranslate on AyahTranslate {
 
 mixin IsraAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Mahasuci (Allah) yang telah memperjalankan hamba-Nya (Nabi Muhammad) pada malam hari dari Masjidilharam ke Masjidilaqsa yang telah Kami berkahi sekelilingnya<sup>425)</sup> agar Kami perlihatkan kepadanya sebagian tanda-tanda (kebesaran) Kami. Sesungguhnya Dia Maha Mendengar lagi Maha Melihat.',
     'Kami memberi Musa Kitab (Taurat) dan menjadikannya sebagai petunjuk bagi Bani Israil (dengan firman), “Janganlah kamu mengambil pelindung selain Aku.',
     '(Wahai) keturunan orang yang Kami bawa bersama Nuh, sesungguhnya dia (Nuh) adalah hamba (Allah) yang banyak bersyukur.”',
     'Kami wahyukan kepada Bani Israil di dalam Kitab (Taurat) itu, “Kamu benar-benar akan berbuat kerusakan di bumi ini dua kali dan benar-benar akan menyombongkan diri dengan kesombongan yang besar.”',
@@ -2376,6 +2392,7 @@ mixin IsraAyahTranslate on AyahTranslate {
 
 mixin KahfAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Segala puji bagi Allah yang telah menurunkan Kitab Suci (Al-Qur’an) kepada hamba-Nya dan Dia tidak membuat padanya sedikit pun kebengkokan.<sup>442)</sup>',
     '(Dia juga menjadikannya kitab) yang lurus agar Dia memberi peringatan akan siksa yang sangat pedih dari sisi-Nya dan memberi kabar gembira kepada orang-orang mukmin yang mengerjakan kebajikan bahwa mereka akan mendapat balasan yang baik.',
     'Mereka kekal di dalamnya untuk selama-lamanya.',
     '(Dia menurunkan Al-Qur’an itu) juga agar Dia memberi peringatan kepada orang-orang yang berkata, “Allah mengangkat seorang anak.”',
@@ -2499,6 +2516,7 @@ mixin KahfAyahTranslate on AyahTranslate {
 
 mixin MaryamAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Kāf Hā Yā ‘Ain Ṣād.',
     '(Yang dibacakan ini adalah) penjelasan tentang rahmat Tuhanmu kepada hamba-Nya, Zakaria,',
     '(yaitu) ketika dia berdoa kepada Tuhannya dengan suara yang lirih.',
     'Dia (Zakaria) berkata, “Wahai Tuhanku, sesungguhnya tulangku telah lemah, kepalaku telah dipenuhi uban, dan aku tidak pernah kecewa dalam berdoa kepada-Mu, wahai Tuhanku.',
@@ -2610,6 +2628,7 @@ mixin MaryamAyahTranslate on AyahTranslate {
 
 mixin TahaAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Ṭā Hā.',
     'Kami tidak menurunkan Al-Qur’an ini kepadamu (Nabi Muhammad) supaya engkau menjadi susah.',
     '(Kami tidak menurunkannya,) kecuali sebagai peringatan bagi orang yang takut (kepada Allah).',
     '(Al-Qur’an) diturunkan dari (Allah) yang telah menciptakan bumi dan langit yang tinggi.',
@@ -2758,6 +2777,7 @@ mixin TahaAyahTranslate on AyahTranslate {
 
 mixin AnbiyaAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Telah makin dekat kepada manusia perhitungan (amal) mereka, sedangkan mereka dalam keadaan lengah lagi berpaling (darinya).',
     'Tidaklah diturunkan kepada mereka peringatan yang baru dari Tuhan, kecuali mereka mendengarkannya sambil bermain-main',
     '(dan) hati mereka dalam keadaan lalai. Mereka, orang-orang yang zalim itu, merahasiakan pembicaraan (dengan saling berbisik), “Bukankah (orang) ini (Nabi Muhammad) tidak lain hanyalah seorang manusia seperti kamu? Apakah kamu mengikuti sihir itu<sup>488)</sup> padahal kamu menyaksikannya?”',
     'Dia (Nabi Muhammad) berkata, “Tuhanku mengetahui (semua) perkataan di langit serta di bumi dan Dia Maha Mendengar lagi Maha Mengetahui.”',
@@ -2883,6 +2903,7 @@ mixin AnbiyaAyahTranslate on AyahTranslate {
 
 mixin HajjAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Wahai manusia, bertakwalah kepada Tuhanmu. Sesungguhnya guncangan hari Kiamat itu adalah sesuatu yang sangat besar.',
     'Pada hari kamu melihatnya (guncangan itu), semua perempuan yang menyusui melupakan anak yang disusuinya, setiap perempuan yang hamil akan keguguran kandungannya dan kamu melihat manusia mabuk, padahal sebenarnya mereka tidak mabuk. Akan tetapi, azab Allah itu sangat keras.',
     'Di antara manusia ada yang berdebat tentang Allah tanpa ilmu dan (hanya) mengikuti setiap (langkah dan tipu daya) setan yang sangat jahat.',
     'Telah ditetapkan atasnya (setan) bahwa siapa yang berteman dengannya akan disesatkan dan dibawanya ke azab (neraka) yang menyala-nyala.',
@@ -2974,6 +2995,7 @@ mixin HajjAyahTranslate on AyahTranslate {
 
 mixin MukminunAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Sungguh, beruntunglah orang-orang mukmin.',
     '(Yaitu) orang-orang yang khusyuk dalam salatnya,',
     'orang-orang yang meninggalkan (perbuatan dan perkataan) yang tidak berguna,',
     'orang-orang yang menunaikan zakat,',
@@ -3105,6 +3127,7 @@ mixin MukminunAyahTranslate on AyahTranslate {
 
 mixin NurAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    '(Inilah) surah yang Kami turunkan, Kami wajibkan (menjalankan hukum-hukum)-nya, dan Kami turunkan di dalamnya ayat-ayat yang jelas agar kamu mengambil pelajaran.',
     'Pezina perempuan dan pezina laki-laki, deralah masing-masing dari keduanya seratus kali dan janganlah rasa belas kasihan kepada keduanya mencegah kamu untuk (melaksanakan) agama (hukum) Allah jika kamu beriman kepada Allah dan hari Kemudian. Hendaklah (pelaksanaan) hukuman atas mereka disaksikan oleh sebagian orang-orang mukmin.',
     'Pezina laki-laki tidak pantas menikah, kecuali dengan pezina perempuan atau dengan perempuan musyrik dan pezina perempuan tidak pantas menikah, kecuali dengan pezina laki-laki atau dengan laki-laki musyrik. Yang demikian itu diharamkan bagi orang-orang mukmin.',
     'Orang-orang yang menuduh (berzina terhadap) perempuan yang baik-baik dan mereka tidak mendatangkan empat orang saksi, maka deralah mereka (para penuduh itu) delapan puluh kali dan janganlah kamu menerima kesaksian mereka untuk selama-lamanya. Mereka itulah orang-orang yang fasik,',
@@ -3182,6 +3205,7 @@ mixin NurAyahTranslate on AyahTranslate {
 
 mixin FurqanAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Maha melimpah anugerah (Allah) yang telah menurunkan Furqan (Al-Qur’an) kepada hamba-Nya (Nabi Muhammad) agar dia menjadi pemberi peringatan kepada seluruh alam.',
     '(Yaitu Zat) yang milik-Nyalah kerajaan langit dan bumi, (Dia) tidak mempunyai anak, dan tidak ada satu sekutu pun dalam kekuasaan(-Nya). Dia telah menciptakan segala sesuatu, lalu menetapkan ukuran-ukurannya dengan tepat.',
     'Mereka mengambil sembahan selain Dia, padahal mereka (sembahan itu) tidak dapat menciptakan apa pun. Bahkan, mereka sendiri diciptakan dan tidak kuasa untuk (menolak) bahaya terhadap dirinya, tidak dapat (mendatangkan) manfaat, serta tidak kuasa mematikan, menghidupkan, dan tidak (pula) membangkitkan.',
     'Orang-orang kafir berkata, “(Al-Qur’an) ini tidak lain hanyalah kebohongan yang diada-adakan oleh dia (Nabi Muhammad) dengan dibantu oleh orang-orang lain,” Sungguh, mereka telah berbuat zalim dan dusta yang besar.',
@@ -3272,6 +3296,7 @@ mixin FurqanAyahTranslate on AyahTranslate {
 
 mixin SyuaraAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Ṭā Sīn Mīm.',
     'Itulah ayat-ayat Kitab (Al-Qur’an) yang jelas.',
     'Boleh jadi engkau (Nabi Muhammad) akan membinasakan dirimu (dengan kesedihan) karena mereka (penduduk Makkah) tidak beriman.',
     'Jika berkehendak, niscaya Kami turunkan bukti (mukjizat) kepada mereka dari langit sehingga tengkuk mereka selalu tunduk kepadanya.',
@@ -3512,6 +3537,7 @@ mixin SyuaraAyahTranslate on AyahTranslate {
 
 mixin NamlAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Ṭā Sīn. Inilah ayat-ayat Al-Qur’an dan Kitab Suci yang jelas (kandungannya),',
     '(sebagai) petunjuk dan berita gembira bagi orang-orang mukmin,',
     '(yaitu) orang-orang yang menegakkan salat, menunaikan zakat, dan meyakini adanya akhirat.',
     'Sesungguhnya orang-orang yang tidak beriman kepada akhirat, Kami jadikan terasa indah bagi mereka perbuatan-perbuatannya (yang buruk). Maka, mereka terombang-ambing (dalam kesesatan).',
@@ -3618,6 +3644,7 @@ mixin NamlAyahTranslate on AyahTranslate {
 
 mixin QasasAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Ṭā Sīn Mīm.',
     'Itulah ayat-ayat Kitab (Al-Qur’an) yang jelas.',
     'Kami membacakan kepadamu sebagian dari kisah Musa dan Firʻaun dengan sebenarnya untuk kaum beriman.',
     'Sesungguhnya Firʻaun telah berbuat sewenang-wenang di bumi dan menjadikan penduduknya berpecah-belah. Dia menindas segolongan dari mereka (Bani Israil). Dia menyembelih anak laki-laki mereka dan membiarkan hidup anak perempuannya. Sesungguhnya dia (Firʻaun) termasuk orang-orang yang berbuat kerusakan.',
@@ -3719,6 +3746,7 @@ mixin QasasAyahTranslate on AyahTranslate {
 
 mixin AnkabutAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Alif Lām Mīm.',
     'Apakah manusia mengira bahwa mereka akan dibiarkan (hanya dengan) berkata, “Kami telah beriman,” sedangkan mereka tidak diuji?',
     'Sungguh, Kami benar-benar telah menguji orang-orang sebelum mereka. Allah pasti mengetahui orang-orang yang benar dan pasti mengetahui para pendusta.',
     'Ataukah orang-orang yang mengerjakan kejahatan itu mengira bahwa mereka akan luput dari (azab) Kami? (Alangkah) buruk apa yang mereka tetapkan itu!',
@@ -3801,6 +3829,7 @@ mixin AnkabutAyahTranslate on AyahTranslate {
 
 mixin RumAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Alif Lām Mīm.',
     'Bangsa Romawi telah dikalahkan,<sup>579)</sup>',
     'di negeri yang terdekat<sup>580)</sup>dan mereka setelah kekalahannya itu akan menang<sup>581)</sup>',
     'dalam beberapa tahun (lagi).<sup>582)</sup> Milik Allahlah urusan sebelum dan setelah (mereka menang). Pada hari (kemenangan bangsa Romawi) itu bergembiralah orang-orang mukmin',
@@ -3874,6 +3903,7 @@ mixin RumAyahTranslate on AyahTranslate {
 
 mixin LuqmanAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Alif Lām Mīm.',
     'Itulah ayat-ayat Al-Kitab (Al-Qur’an) yang penuh hikmah,',
     'sebagai petunjuk dan rahmat bagi orang-orang yang berbuat kebaikan,',
     '(yaitu) orang-orang yang menegakkan salat, menunaikan zakat, dan meyakini adanya akhirat.',
@@ -3921,6 +3951,7 @@ mixin LuqmanAyahTranslate on AyahTranslate {
 
 mixin SajdahAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Alif Lām Mīm.',
     'Turunnya Al-Qur’an yang tidak ada keraguan di dalamnya berasal dari Tuhan semesta alam.',
     'Akan tetapi, mengapa mereka (orang kafir) mengatakan, “Dia (Nabi Muhammad) telah mengada-adakannya.” Sebaliknya, Al-Qur’an itulah kebenaran (yang datang) dari Tuhanmu agar engkau memberi peringatan kepada kaum yang sama sekali belum pernah didatangi seorang pemberi peringatan sebelum engkau. (Demikian ini) agar mereka mendapat petunjuk.',
     'Allah adalah Zat yang menciptakan langit dan bumi serta apa yang ada di antara keduanya dalam enam masa, kemudian Dia bersemayam di atas ‘Arasy.<sup>604)</sup> Bagimu tidak ada seorang pun pelindung dan pemberi syafaat selain Dia. Maka, apakah kamu tidak memperhatikan?',
@@ -3964,6 +3995,7 @@ mixin SajdahAyahTranslate on AyahTranslate {
 
 mixin AhzabAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Wahai Nabi, bertakwalah kepada Allah dan janganlah engkau menuruti (keinginan) orang-orang kafir dan orang-orang munafik. Sesungguhnya Allah Maha Mengetahui lagi Mahabijaksana.',
     'Ikutilah apa yang diwahyukan Tuhanmu kepadamu. Sesungguhnya Allah Mahateliti terhadap apa yang kamu kerjakan.',
     'Bertawakallah kepada Allah. Cukuplah Allah sebagai pemelihara.',
     'Allah tidak menjadikan bagi seseorang dua hati dalam rongganya, Dia tidak menjadikan istri-istrimu yang kamu zihar itu sebagai ibumu, dan Dia pun tidak menjadikan anak angkatmu sebagai anak kandungmu (sendiri). Yang demikian itu hanyalah perkataan di mulutmu saja. Allah mengatakan sesuatu yang hak dan Dia menunjukkan jalan (yang benar).',
@@ -4050,6 +4082,7 @@ mixin AhzabAyahTranslate on AyahTranslate {
 
 mixin SabaAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Segala puji bagi Allah yang memiliki segala yang di langit dan yang di bumi serta bagi-Nya segala puji di akhirat. Dialah Yang Mahabijaksana lagi Mahateliti.',
     'Dia mengetahui apa yang masuk ke dalam bumi, apa yang keluar darinya, apa yang turun dari langit dan apa yang naik kepadanya. Dialah Yang Maha Penyayang lagi Maha Pengampun.',
     'Orang-orang yang kufur berkata, “Hari Kiamat itu tidak akan datang kepada kami.” Katakanlah (Nabi Muhammad), “Pasti datang. Demi Tuhanku yang mengetahui yang gaib, kiamat itu pasti mendatangi kamu. Tidak ada yang tersembunyi bagi-Nya sekalipun seberat atom, baik yang di langit maupun yang di bumi, yang lebih kecil daripada itu atau yang lebih besar, kecuali semuanya ada dalam kitab yang jelas (Lauh Mahfuz).”',
     'Supaya Dia memberi balasan kepada orang-orang yang beriman dan beramal saleh. Mereka itulah orang-orang yang memperoleh ampunan dan rezeki yang mulia.',
@@ -4117,6 +4150,7 @@ mixin SabaAyahTranslate on AyahTranslate {
 
 mixin FatirAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Segala puji bagi Allah, Pencipta langit dan bumi yang menjadikan malaikat sebagai utusan-utusan (untuk mengurus berbagai macam urusan) yang mempunyai sayap. Masing-masing (ada yang) dua, tiga, dan empat. Dia menambahkan pada ciptaan-Nya apa yang Dia kehendaki. Sesungguhnya Allah Mahakuasa atas segala sesuatu.',
     'Apa saja yang Allah anugerahkan kepada manusia berupa rahmat, tidak ada yang dapat menahannya. (Demikian pula) apa saja yang ditahan-Nya, tidak ada yang sanggup untuk melepaskannya. Dialah Yang Mahaperkasa lagi Mahabijaksana.',
     'Wahai manusia, ingatlah nikmat Allah kepadamu! Adakah pencipta selain Allah yang dapat memberikan rezeki kepadamu dari langit dan bumi? Tidak ada Tuhan selain Dia. Lalu, bagaimana kamu dapat dipalingkan (dari ketauhidan)?',
     'Jika mereka mendustakan engkau (Nabi Muhammad), sungguh rasul-rasul sebelum engkau telah didustakan pula. Hanya kepada Allah segala urusan dikembalikan.',
@@ -4175,6 +4209,7 @@ mixin FatirAyahTranslate on AyahTranslate {
 
 mixin YasinAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Yā Sīn.',
     'Demi Al-Qur’an yang penuh hikmah,',
     'sesungguhnya engkau (Nabi Muhammad) benar-benar salah seorang dari rasul-rasul',
     '(yang berada) di atas jalan yang lurus,',
@@ -4271,6 +4306,7 @@ mixin YasinAyahTranslate on AyahTranslate {
 
 mixin SaffatAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Demi (rombongan malaikat) yang berbaris bersaf-saf, (untuk beribadah kepada Allah),',
     'demi (rombongan malaikat) yang mencegah (segala sesuatu) dengan sungguh-sungguh,',
     'demi (rombongan malaikat) yang membacakan peringatan,',
     'sungguh, Tuhanmu benar-benar Esa.',
@@ -4466,6 +4502,7 @@ mixin SaffatAyahTranslate on AyahTranslate {
 
 mixin SadAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Ṣād, demi Al-Qur’an yang mengandung peringatan.',
     'Akan tetapi, orang-orang yang kufur (berada) dalam kesombongan dan permusuhan.',
     'Betapa banyak generasi sebelum mereka yang telah Kami binasakan. Lalu, mereka meminta tolong (ketika datang azab), padahal (waktu itu) bukanlah saat untuk melepaskan diri.',
     'Mereka heran karena telah datang kepada mereka seorang pemberi peringatan (rasul) dari kalangan mereka. Orang-orang kafir berkata, “Orang ini adalah penyihir yang banyak berdusta.',
@@ -4567,6 +4604,7 @@ mixin SadAyahTranslate on AyahTranslate {
 
 mixin ZumarAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Diturunkannya Kitab (Al-Qur’an) ini (berasal) dari Allah Yang Mahaperkasa lagi Mahabijaksana.',
     'Sesungguhnya Kami menurunkan Kitab (Al-Qur’an) kepadamu (Nabi Muhammad) dengan hak. Maka, sembahlah Allah dengan mengikhlaskan ketaatan kepada-Nya.',
     'Ketahuilah, hanya untuk Allah agama yang bersih (dari syirik). Orang-orang yang mengambil pelindung selain Dia (berkata,) “Kami tidak menyembah mereka, kecuali (berharap) agar mereka mendekatkan kami kepada Allah dengan sedekat-dekatnya.” Sesungguhnya Allah akan memberi putusan di antara mereka tentang apa yang mereka perselisihkan. Sesungguhnya Allah tidak memberi petunjuk kepada pendusta lagi sangat ingkar.',
     'Seandainya Allah hendak mengambil (makhluk-Nya sebagai) anak, pasti akan memilih yang Dia kehendaki dari apa yang Dia ciptakan. Mahasuci Dia. Dialah Allah Yang Maha Esa lagi Maha Mengalahkan.',
@@ -4655,6 +4693,7 @@ mixin ZumarAyahTranslate on AyahTranslate {
 
 mixin GafirAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Ḥā Mīm.',
     'Diturunkannya Kitab (Al-Qur’an) ini dari Allah Yang Mahaperkasa lagi Maha Mengetahui.',
     '(Dia) Pengampun dosa, Penerima tobat, Pemberi hukuman yang keras, (dan) Pemilik karunia. Tidak ada tuhan  selain Dia. Hanya kepada-Nyalah (semua makhluk) kembali.',
     'Tidak ada yang memperdebatkan ayat-ayat Allah, kecuali orang-orang yang kufur. Oleh karena itu, janganlah engkau (Nabi Muhammad) tertipu oleh bolak-balik perjalanan mereka di seluruh negeri.',
@@ -4753,6 +4792,7 @@ mixin GafirAyahTranslate on AyahTranslate {
 
 mixin FussilatAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Ḥa Mīm.',
     '(Al-Qur’an ini) diturunkan dari Tuhan Yang Maha Pengasih lagi Maha Penyayang.',
     'Kitab yang ayat-ayatnya dijelaskan sebagai bacaan dalam bahasa Arab untuk kaum yang mengetahui,',
     'yang membawa berita gembira dan peringatan. Akan tetapi, kebanyakan mereka berpaling (darinya) serta tidak mendengarkan.',
@@ -4820,6 +4860,7 @@ mixin FussilatAyahTranslate on AyahTranslate {
 
 mixin SyuraAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Ḥā Mīm',
     '‘Aīn Sīn Qāf',
     'Demikianlah Allah Yang Mahaperkasa lagi Mahabijaksana menurunkan wahyu kepadamu (Nabi Muhammad) dan kepada orang-orang sebelummu.',
     'Milik-Nyalah apa yang ada di langit dan apa yang ada di bumi. Dialah Zat Yang Mahatinggi lagi Mahaagung.',
@@ -4886,6 +4927,7 @@ mixin SyuraAyahTranslate on AyahTranslate {
 
 mixin ZukhrufAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Ḥā Mīm.',
     'Demi Kitab (Al-Qur’an) yang jelas,',
     'sesungguhnya Kami menjadikannya sebagai Al-Qur’an yang berbahasa Arab agar kamu mengerti',
     'dan sesungguhnya (Al-Qur’an) itu berada di dalam Ummul Kitāb (Lauh Mahfuz) di sisi Kami, benar-benar (bernilai) tinggi, dan penuh hikmah.',
@@ -4988,6 +5030,7 @@ mixin ZukhrufAyahTranslate on AyahTranslate {
 
 mixin DukhanAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Ḥā Mīm.',
     'Demi Kitab (Al-Qur’an) yang jelas.',
     'Sesungguhnya Kami (mulai menurunkannya pada malam yang diberkahi (Lailatulqadar).<sup>681)</sup> Sesungguhnya Kamilah pemberi peringatan.',
     'Pada (malam itu) dijelaskan segala urusan yang penuh hikmah.<sup>682)</sup>',
@@ -5060,6 +5103,7 @@ mixin DukhanAyahTranslate on AyahTranslate {
 
 mixin JasiyahAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Ḥā Mīm.',
     'Diturunkannya Kitab (Al-Qur’an) ini (berasal) dari Allah Yang Mahaperkasa lagi Mahabijaksana.',
     'Sesungguhnya di langit dan bumi benar-benar terdapat tanda-tanda (kebesaran Allah) bagi orang-orang mukmin.',
     'Pada penciptaan kamu dan makhluk bergerak yang ditebarkan-Nya terdapat tanda-tanda (kebesaran Allah) bagi kaum yang meyakini.',
@@ -5110,6 +5154,7 @@ mixin JasiyahAyahTranslate on AyahTranslate {
 
 mixin AhqafAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Ḥā Mīm.',
     'Diturunkannya Kitab (Al-Qur’an) ini (berasal) dari Allah Yang Mahaperkasa lagi Mahabijaksana.',
     'Kami tidak menciptakan langit, bumi, dan apa yang ada di antara keduanya, kecuali dengan hak dan dalam waktu yang ditentukan. Namun demikian, orang-orang yang kufur berpaling dari peringatan yang diberikan kepada mereka.',
     'Katakanlah (Nabi Muhammad), “Terangkanlah kepadaku tentang apa yang kamu sembah selain Allah! Perlihatkanlah kepadaku (bagian) manakah dari bumi ini yang telah mereka ciptakan ataukah mereka memiliki peran serta dalam (penciptaan) langit! Datangkanlah kepadaku kitab yang sebelum ini (Al-Qur’an) atau peninggalan dari pengetahuan (generasi terdahulu) jika kamu adalah orang-orang benar.”',
@@ -5158,6 +5203,7 @@ mixin AhqafAyahTranslate on AyahTranslate {
 
 mixin MuhammadAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Orang-orang yang kufur dan menghalang-halangi (manusia) dari jalan Allah, Dia akan menggugurkan amal-amal mereka.',
     'Orang-orang yang beriman, beramal saleh, dan beriman pada apa yang diturunkan kepada (Nabi) Muhammad bahwa ia merupakan kebenaran dari Tuhan mereka, Allah menghapuskan kesalahan-kesalahan mereka dan memperbaiki keadaannya.',
     '(Hal) itu (terjadi) karena sesungguhnya orang-orang yang kufur mengikuti kebatilan, sedangkan orang-orang yang beriman mengikuti kebenaran dari Tuhan mereka. Demikianlah Allah membuat perumpamaan-perumpamaan mereka kepada manusia.',
     'Maka, apabila kamu bertemu (di medan perang) dengan orang-orang yang kufur, tebaslah batang leher mereka. Selanjutnya, apabila kamu telah mengalahkan mereka, tawanlah mereka. Setelah itu, kamu boleh membebaskan mereka atau menerima tebusan. (Hal itu berlaku) sampai perang selesai. Demikianlah (hukum Allah tentang mereka). Sekiranya Allah menghendaki, niscaya Dia menolong (kamu) dari mereka (tanpa perang). Akan tetapi, Dia hendak menguji sebagian kamu dengan sebagian yang lain. Orang-orang yang gugur di jalan Allah, Dia tidak menyia-nyiakan amal-amalnya.',
@@ -5209,6 +5255,7 @@ mixin MuhammadAyahTranslate on AyahTranslate {
 
 mixin FathAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Sesungguhnya Kami telah menganugerahkan kepadamu kemenangan yang nyata',
     'agar Allah memberikan ampunan kepadamu (Nabi Muhammad) atas dosamu yang lalu dan yang akan datang, menyempurnakan nikmat-Nya atasmu, menunjukimu ke jalan yang lurus,',
     'dan agar Allah menolongmu dengan pertolongan yang besar.',
     'Dialah yang telah menurunkan ketenangan ke dalam hati orang-orang mukmin untuk menambah keimanan atas keimanan mereka (yang telah ada). Milik Allahlah bala tentara langit dan bumi dan Allah Maha Mengetahui lagi Mahabijaksana.',
@@ -5251,6 +5298,7 @@ mixin FathAyahTranslate on AyahTranslate {
 
 mixin HujuratAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Wahai orang-orang yang beriman, janganlah mendahului Allah dan Rasul-Nya<sup>698)</sup> dan bertakwalah kepada Allah. Sesungguhnya Allah Maha Mendengar lagi Maha Mengetahui.',
     'Wahai orang-orang yang beriman, janganlah meninggikan suaramu melebihi suara Nabi dan janganlah berkata kepadanya dengan suara keras sebagaimana kerasnya (suara) sebagian kamu terhadap yang lain. Hal itu dikhawatirkan akan membuat (pahala) segala amalmu terhapus, sedangkan kamu tidak menyadarinya.',
     'Sesungguhnya orang-orang yang merendahkan suaranya di sisi Rasulullah, mereka itulah orang-orang yang telah diuji hatinya oleh Allah untuk bertakwa. Mereka akan memperoleh ampunan dan pahala yang besar.',
     'Sesungguhnya orang-orang yang memanggil engkau (Nabi Muhammad) dari luar kamar(-mu), kebanyakan mereka tidak mengerti.',
@@ -5282,6 +5330,7 @@ mixin HujuratAyahTranslate on AyahTranslate {
 
 mixin QafAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Qāf. Demi Al-Qur’an yang mulia.',
     '(Mereka menolaknya,) bahkan mereka heran karena telah datang kepada mereka seorang pemberi peringatan dari (kalangan) mereka sendiri. Berkatalah orang-orang kafir, “Ini adalah sesuatu yang sangat mengherankan.',
     'Apakah setelah kami mati dan sudah menjadi tanah (akan dikembalikan)? Itu adalah pengembalian yang sangat jauh.”',
     'Sungguh, Kami telah mengetahui apa yang dimakan bumi dari (tubuh) mereka karena pada Kami ada kitab (catatan) yang terpelihara baik.',
@@ -5340,6 +5389,7 @@ mixin QafAyahTranslate on AyahTranslate {
 
 mixin ZariyatAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Demi (angin) yang menerbangkan debu,',
     'demi (awan) yang mengandung muatan (hujan),',
     'demi (kapal-kapal) yang melaju (di atas air) dengan mudah,',
     'dan demi (malaikat-malaikat) yang membagi-bagi segala urusan,',
@@ -5413,6 +5463,7 @@ mixin ZariyatAyahTranslate on AyahTranslate {
 
 mixin TurAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Demi gunung (Sinai),',
     'demi Kitab yang ditulis',
     'pada lembaran yang terbuka,',
     'demi Baitulmakmur,<sup>703)</sup>',
@@ -5475,6 +5526,7 @@ mixin TurAyahTranslate on AyahTranslate {
 
 mixin NajmAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Demi bintang ketika terbenam,',
     'kawanmu (Nabi Muhammad) tidak sesat, tidak keliru,',
     'dan tidak pula berucap (tentang Al-Qur’an dan penjelasannya) berdasarkan hawa nafsu(-nya).',
     'Ia (Al-Qur’an itu) tidak lain, kecuali wahyu yang disampaikan (kepadanya)',
@@ -5550,6 +5602,7 @@ mixin NajmAyahTranslate on AyahTranslate {
 
 mixin QamarAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Hari Kiamat makin dekat dan bulan terbelah.',
     'Jika mereka (kaum musyrik Makkah) melihat suatu tanda (mukjizat), mereka berpaling dan berkata, “(Ini adalah) sihir yang terus-menerus.”',
     'Mereka mendustakan (Nabi Muhammad) dan mengikuti keinginan mereka, padahal setiap urusan telah ada ketetapannya.',
     'Sungguh, benar-benar telah datang kepada mereka beberapa berita yang di dalamnya terdapat ancaman (terhadap orang-orang kafir).',
@@ -5618,6 +5671,7 @@ mixin QamarAyahTranslate on AyahTranslate {
 
 mixin RahmanAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    '(Allah) Yang Maha Pengasih,',
     'telah mengajarkan Al-Qur’an.',
     'Dia menciptakan manusia.',
     'Dia mengajarinya pandai menjelaskan.',
@@ -5709,6 +5763,7 @@ mixin RahmanAyahTranslate on AyahTranslate {
 
 mixin WaqiahAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Apabila terjadi hari Kiamat (yang pasti terjadi),',
     'tidak ada seorang pun yang (dapat) mendustakan terjadinya.',
     '(Kejadian itu) merendahkan (satu golongan) dan meninggikan (golongan yang lain).',
     'Apabila bumi diguncangkan sedahsyat-dahsyatnya',
@@ -5818,6 +5873,7 @@ mixin WaqiahAyahTranslate on AyahTranslate {
 
 mixin HadidAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Apa yang ada di langit dan di bumi bertasbih kepada Allah. Dialah Yang Mahaperkasa lagi Mahabijaksana.',
     'Milik-Nyalah kerajaan langit dan bumi. Dia menghidupkan dan mematikan. Dia Mahakuasa atas segala sesuatu.',
     'Dialah Yang Mahaawal, Mahaakhir, Mahazahir, dan Mahabatin.<sup>709)</sup> Dia Maha Mengetahui segala sesuatu.',
     'Dialah yang menciptakan langit dan bumi dalam enam masa. Kemudian, Dia bersemayam di atas ʻArasy. Dia mengetahui apa yang masuk ke dalam bumi dan apa yang keluar darinya serta apa yang turun dari langit dan apa yang naik ke sana.<sup>710)</sup> Dia bersamamu di mana saja kamu berada. Allah Maha Melihat apa yang kamu kerjakan.',
@@ -5860,6 +5916,7 @@ mixin HadidAyahTranslate on AyahTranslate {
 
 mixin MujadalahAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Sungguh, Allah telah mendengar ucapan wanita yang mengajukan gugatan kepadamu (Nabi Muhammad) tentang suaminya dan mengadukan kepada Allah, padahal Allah mendengar percakapan kamu berdua. Sesungguhnya Allah Maha Mendengar lagi Maha Melihat.<sup>711)</sup>',
     'Orang-orang yang menzihar istrinya (menganggapnya sebagai ibu) di antara kamu, istri mereka itu bukanlah ibunya. Ibu-ibu mereka tidak lain hanyalah perempuan yang melahirkannya. Sesungguhnya mereka benar-benar telah mengucapkan suatu perkataan yang mungkar dan dusta. Sesungguhnya Allah benar-benar Maha Pemaaf lagi Maha Pengampun.',
     'Orang-orang yang menzihar istrinya kemudian menarik kembali apa yang telah mereka ucapkan wajib memerdekakan seorang budak sebelum kedua suami istri itu berhubungan badan. Demikianlah yang diajarkan kepadamu. Allah Mahateliti terhadap apa yang kamu kerjakan.',
     'Siapa yang tidak mendapatkan (hamba sahaya) wajib berpuasa dua bulan berturut-turut sebelum keduanya berhubungan badan. Akan tetapi, siapa yang tidak mampu, (wajib) memberi makan enam puluh orang miskin. Demikianlah agar kamu beriman kepada Allah dan Rasul-Nya. Itulah ketentuan-ketentuan Allah. Orang-orang kafir mendapat azab yang pedih.',
@@ -5895,6 +5952,7 @@ mixin MujadalahAyahTranslate on AyahTranslate {
 
 mixin HasyrAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Apa yang ada di langit dan apa yang ada di bumi bertasbih kepada Allah. Dialah Yang Mahaperkasa lagi Mahabijaksana.',
     'Dialah yang mengeluarkan orang-orang yang kufur di antara Ahlulkitab (Yahudi Bani Nadir) dari kampung halaman mereka pada saat pengusiran yang pertama. Kamu tidak menyangka bahwa mereka akan keluar. Mereka pun yakin bahwa benteng-benteng mereka akan dapat menjaganya dari (azab) Allah. Maka, (azab) Allah datang kepada mereka dari arah yang tidak mereka sangka. Dia menanamkan rasa takut di dalam hati mereka sehingga mereka menghancurkan rumah-rumahnya dengan tangannya sendiri dan tangan orang-orang mukmin. Maka, ambillah pelajaran (dari kejadian itu), wahai orang-orang yang mempunyai penglihatan (mata hati).',
     'Sekiranya tidak karena Allah telah menetapkan pengusiran terhadap mereka, Dia pasti mengazab mereka di dunia. Di akhirat mereka akan mendapat azab neraka.',
     'Hal yang demikian itu karena sesungguhnya mereka telah menentang Allah dan Rasul-Nya. Siapa yang menentang Allah, sesungguhnya Allah sangat keras hukuman-Nya.',
@@ -5932,6 +5990,7 @@ mixin HasyrAyahTranslate on AyahTranslate {
 
 mixin MumtahanahAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Wahai orang-orang yang beriman. Janganlah kamu menjadikan musuh-Ku dan musuhmu sebagai teman setia. Kamu sampaikan kepada mereka (hal-hal yang seharusnya dirahasiakan) karena rasa kasih sayang (kamu kepada mereka). Padahal, mereka telah mengingkari kebenaran yang datang kepadamu. Mereka mengusir Rasul dan kamu (dari Makkah) karena kamu beriman kepada Allah, Tuhanmu. Jika kamu keluar untuk berjihad pada jalan-Ku dan mencari keridaan-Ku, (janganlah kamu berbuat demikian). Kamu memberitahukan secara rahasia (hal-hal yang seharusnya dirahasiakan) kepada mereka karena rasa kasih sayang. Aku lebih tahu tentang apa yang kamu sembunyikan dan apa yang kamu nyatakan. Siapa di antara kamu yang melakukannya sungguh telah tersesat dari jalan yang lurus.',
     'Jika (suatu saat) mereka menangkapmu, niscaya mereka bertindak sebagai musuh bagimu. Lalu, mereka melepaskan tangan dan lidahnya kepadamu untuk menyakiti dan mereka ingin agar kamu (kembali) kafir.',
     'Kaum kerabatmu dan anak-anakmu tidak akan bermanfaat bagimu pada hari Kiamat. Kelak Dia akan memisahkan antara kamu. Allah Maha Melihat apa yang kamu kerjakan.',
     'Sungguh, benar-benar ada suri teladan yang baik bagimu pada (diri) Ibrahim dan orang-orang yang bersama dengannya ketika mereka berkata kepada kaumnya, “Sesungguhnya kami berlepas diri dari kamu dan dari apa yang kamu sembah selain Allah. Kami mengingkari (kekufuran)-mu dan telah nyata antara kami dan kamu ada permusuhan dan kebencian untuk selama-lamanya sampai kamu beriman kepada Allah saja.” Akan tetapi, (janganlah engkau teladani) perkataan Ibrahim kepada ayahnya,<sup>713)</sup> “Sungguh, aku akan memohonkan ampunan bagimu, tetapi aku sama sekali tidak dapat menolak (siksaan) Allah terhadapmu.” (Ibrahim berkata,) “Ya Tuhan kami, hanya kepada Engkau kami bertawakal, hanya kepada Engkau kami bertobat, dan hanya kepada Engkaulah kami kembali.',
@@ -5958,6 +6017,7 @@ mixin MumtahanahAyahTranslate on AyahTranslate {
 
 mixin SaffAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Apa yang ada di langit dan apa yang ada di bumi bertasbih kepada Allah. Dialah Yang Mahaperkasa lagi Mahabijaksana.',
     'Wahai orang-orang yang beriman, mengapa kamu mengatakan sesuatu yang tidak kamu kerjakan?',
     'Sangat besarlah kemurkaan di sisi Allah bahwa kamu mengatakan apa yang tidak kamu kerjakan.',
     'Sesungguhnya Allah mencintai orang-orang yang berperang di jalan-Nya dalam satu barisan, seakan-akan mereka suatu bangunan yang tersusun kukuh.',
@@ -5985,6 +6045,7 @@ mixin SaffAyahTranslate on AyahTranslate {
 
 mixin JumuahAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Apa yang ada di langit dan apa yang ada di bumi senantiasa bertasbih kepada Allah Yang Maharaja, Mahasuci, Mahaperkasa, lagi Mahabijaksana.',
     'Dialah yang mengutus seorang Rasul (Nabi Muhammad) kepada kaum yang buta huruf dari (kalangan) mereka sendiri, yang membacakan kepada mereka ayat-ayat-Nya, menyucikan (jiwa) mereka, serta mengajarkan kepada mereka Kitab (Al-Qur’an) dan Hikmah (Sunah), meskipun sebelumnya mereka benar-benar dalam kesesatan yang nyata.',
     '(Allah juga mengutus Nabi Muhammad) kepada (kaum) selain mereka yang belum (datang) menyusul mereka. Dialah Yang Mahaperkasa lagi Mahabijaksana.',
     'Itulah karunia Allah yang dianugerahkan kepada siapa yang Dia kehendaki. Allah memiliki karunia yang besar.',
@@ -6009,6 +6070,7 @@ mixin JumuahAyahTranslate on AyahTranslate {
 
 mixin MunafiqunAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Apabila orang-orang munafik datang kepadamu (Nabi Muhammad), mereka berkata, “Kami bersaksi bahwa engkau adalah benar-benar utusan Allah.” Allah mengetahui bahwa engkau benar-benar utusan-Nya. Allah pun bersaksi bahwa orang-orang munafik itu benar-benar para pendusta.',
     'Mereka menjadikan sumpah-sumpah mereka sebagai perisai<sup>717)</sup> lalu mereka menghalang-halangi (orang lain) dari jalan Allah. Sesungguhnya apa yang selalu mereka kerjakan itu sangatlah buruk.',
     'Yang demikian itu karena sesungguhnya mereka telah beriman, kemudian kufur. Maka, hati mereka dikunci sehingga tidak dapat mengerti.',
     'Apabila engkau melihat mereka, tubuhnya mengagumkanmu. Jika mereka bertutur kata, engkau mendengarkan tutur katanya (dengan saksama karena kefasihannya). Mereka bagaikan (seonggok) kayu yang tersandar.<sup>718)</sup> Mereka mengira bahwa setiap teriakan (kutukan) ditujukan kepada mereka. Mereka itulah musuh (yang sebenarnya). Maka, waspadalah terhadap mereka. Semoga Allah membinasakan mereka. Bagaimanakah mereka dapat dipalingkan (dari kebenaran)?',
@@ -6033,6 +6095,7 @@ mixin MunafiqunAyahTranslate on AyahTranslate {
 
 mixin TagabunAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Apa yang ada di langit dan apa yang ada di bumi senantiasa bertasbih kepada Allah. Milik-Nyalah segala kerajaan dan segala pujian, dan Dia Mahakuasa atas segala sesuatu.',
     'Dialah yang menciptakan kamu, lalu di antara kamu ada yang kafir dan ada yang mukmin. Allah Maha Melihat apa yang kamu kerjakan.',
     'Dia menciptakan langit dan bumi dengan benar, Dia membentuk kamu lalu memperindah bentukmu, dan kepada-Nyalah kembali(-mu).',
     'Dia mengetahui apa yang di langit dan di bumi. Dia juga mengetahui apa yang kamu rahasiakan dan apa yang kamu tampakkan. Allah Maha Mengetahui segala isi hati.',
@@ -6064,6 +6127,7 @@ mixin TagabunAyahTranslate on AyahTranslate {
 
 mixin TalaqAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Wahai Nabi, apabila kamu menceraikan istri-istrimu, hendaklah kamu ceraikan mereka pada waktu mereka dapat (menghadapi) idahnya (yang wajar), dan hitunglah waktu idah itu, serta bertakwalah kepada Allah Tuhanmu. Janganlah kamu keluarkan mereka dari rumahnya dan janganlah (diizinkan) keluar kecuali jika mereka mengerjakan perbuatan keji yang jelas. Itulah hukum-hukum Allah. Siapa melanggar hukum-hukum Allah, maka sungguh, dia telah berbuat zalim terhadap dirinya sendiri. Kamu tidak mengetahui boleh jadi setelah itu Allah mengadakan suatu ketentuan yang baru.',
     'Apabila mereka telah mendekati akhir idahnya, rujuklah dengan mereka secara baik atau lepaskanlah mereka secara baik dan persaksikanlah dengan dua orang saksi yang adil dari kamu dan hendaklah kamu tegakkan kesaksian itu karena Allah. Yang demikian itu dinasihatkan kepada orang-orang di antara kamu yang beriman kepada Allah dan hari akhir. Siapa yang bertakwa kepada Allah, niscaya Dia akan membukakan jalan keluar baginya',
     'dan menganugerahkan kepadanya rezeki dari arah yang tidak dia duga. Siapa yang bertawakal kepada Allah, niscaya Allah akan mencukupkan (keperluan)-nya. Sesungguhnya Allahlah yang menuntaskan urusan-Nya. Sungguh, Allah telah membuat ketentuan bagi setiap sesuatu.',
     'Perempuan-perempuan yang tidak mungkin haid lagi (menopause) di antara istri-istrimu jika kamu ragu-ragu (tentang masa idahnya) maka idahnya adalah tiga bulan. Begitu (pula) perempuan-perempuan yang tidak haid (belum dewasa). Adapun perempuan-perempuan yang hamil, waktu idah mereka adalah sampai mereka melahirkan kandungannya. Siapa yang bertakwa kepada Allah, niscaya Dia menjadikan kemudahan baginya dalam urusannya.',
@@ -6089,6 +6153,7 @@ mixin TalaqAyahTranslate on AyahTranslate {
 
 mixin TahrimAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Wahai Nabi (Muhammad), mengapa engkau mengharamkan apa yang dihalalkan Allah bagimu? Engkau bermaksud menyenangkan hati istri-istrimu. Allah Maha Pengampun lagi Maha Penyayang.<sup>721)</sup>',
     'Sungguh, Allah telah mensyariatkan untukmu pembebasan diri dari sumpahmu. Allah adalah pelindungmu dan Dia Maha Mengetahui lagi Mahabijaksana.',
     '(Ingatlah) ketika Nabi membicarakan secara rahasia suatu peristiwa kepada salah seorang istrinya (Hafsah). Kemudian, ketika dia menceritakan (peristiwa) itu (kepada Aisyah) dan Allah memberitahukannya (kejadian ini) kepadanya (Nabi), dia (Nabi) memberitahukan (kepada Hafsah) sebagian dan menyembunyikan sebagian yang lain. Ketika dia (Nabi) memberitahukan (pembicaraan) itu kepadanya (Hafsah), dia bertanya, “Siapa yang telah memberitahumu hal ini?” Nabi menjawab, “Yang memberitahuku adalah Allah Yang Maha Mengetahui lagi Mahateliti.”',
     'Jika kamu berdua bertobat kepada Allah, sungguh hati kamu berdua telah condong (pada kebenaran) dan jika kamu berdua saling membantu menyusahkan dia (Nabi), sesungguhnya Allahlah pelindungnya. Demikian juga Jibril dan orang-orang mukmin yang saleh. Selain itu, malaikat-malaikat (juga ikut) menolong.',
@@ -6114,6 +6179,7 @@ mixin TahrimAyahTranslate on AyahTranslate {
 
 mixin MulkAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Mahaberkah Zat yang menguasai (segala) kerajaan dan Dia Mahakuasa atas segala sesuatu,',
     'yaitu yang menciptakan kematian dan kehidupan untuk menguji kamu, siapa di antara kamu yang lebih baik amalnya. Dia Mahaperkasa lagi Maha Pengampun.',
     '(Dia juga) yang menciptakan tujuh langit berlapis-lapis. Kamu tidak akan melihat pada ciptaan Tuhan Yang Maha Pengasih ketidakseimbangan sedikit pun. Maka, lihatlah sekali lagi! Adakah kamu melihat suatu cela?',
     'Kemudian, lihatlah sekali lagi (dan) sekali lagi (untuk mencari cela dalam ciptaan Allah), niscaya pandanganmu akan kembali kepadamu dengan kecewa dan dalam keadaan letih (karena tidak menemukannya).',
@@ -6157,6 +6223,7 @@ mixin MulkAyahTranslate on AyahTranslate {
 
 mixin QalamAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Nūn. Demi pena dan apa yang mereka tuliskan,',
     'berkat karunia Tuhanmu engkau (Nabi Muhammad) bukanlah orang gila.',
     'Sesungguhnya bagi engkaulah pahala yang tidak putus-putus.',
     'Sesungguhnya engkau benar-benar berbudi pekerti yang agung.',
@@ -6222,6 +6289,7 @@ mixin QalamAyahTranslate on AyahTranslate {
 
 mixin HaqqahAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Al-Ḥāqqah (hari Kiamat yang pasti datang).',
     'Apakah al-Ḥāqqah itu?',
     'Tahukah kamu apakah al-Ḥāqqah itu?',
     '(Kaum) Samud dan ‘Ad telah mendustakan al-Qāri‘ah (hari Kiamat yang menggetarkan hati).',
@@ -6287,6 +6355,7 @@ mixin HaqqahAyahTranslate on AyahTranslate {
 
 mixin MaarijAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Seseorang (dengan nada mengejek) meminta (didatangkan) azab yang pasti akan terjadi',
     'bagi orang-orang kafir. Tidak seorang pun yang dapat menolaknya (azab)',
     'dari Allah, Pemilik tempat-tempat (untuk) naik.',
     'Para malaikat dan Rūḥ (Jibril) naik (menghadap) kepada-Nya dalam sehari yang kadarnya lima puluh ribu tahun.<sup>722)</sup>',
@@ -6344,6 +6413,7 @@ mixin MaarijAyahTranslate on AyahTranslate {
 
 mixin NuhAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Sesungguhnya Kami telah mengutus Nuh kepada kaumnya (dengan perintah), “Berilah peringatan kepada kaummu sebelum datang azab yang pedih kepadanya!”',
     'Dia (Nuh) berkata, “Wahai kaumku, sesungguhnya aku ini adalah seorang pemberi peringatan yang menjelaskan kepadamu,',
     '(yaitu) sembahlah Allah, bertakwalah kepada-Nya, dan taatlah kepadaku,',
     'niscaya Dia akan mengampuni sebagian dosa-dosamu dan menangguhkanmu (memanjangkan umurmu) sampai pada batas waktu yang ditentukan. Sesungguhnya ketetapan Allah itu, apabila telah datang, tidak dapat ditunda. Seandainya kamu mengetahui(-nya).”',
@@ -6385,6 +6455,7 @@ mixin NuhAyahTranslate on AyahTranslate {
 
 mixin JinnAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Katakanlah (Nabi Muhammad), “Telah diwahyukan kepadaku bahwa sekumpulan jin telah mendengarkan (Al-Qur’an yang kubaca).” Lalu, mereka berkata, “Kami telah mendengarkan bacaan yang menakjubkan,',
     'yang memberi petunjuk kepada kebenaran, sehingga kami pun beriman padanya dan tidak akan mempersekutukan sesuatu pun dengan Tuhan kami.',
     'Sesungguhnya Mahatinggi keagungan Tuhan kami. Dia tidak beristri dan tidak (pula) beranak.',
     'Sesungguhnya orang yang bodoh di antara kami selalu mengucapkan (perkataan) yang melampaui batas terhadap Allah.',
@@ -6426,6 +6497,7 @@ mixin JinnAyahTranslate on AyahTranslate {
 
 mixin MuzzamilAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Wahai orang yang berkelumun (Nabi Muhammad),',
     'bangunlah (untuk salat) pada malam hari, kecuali sebagian kecil,<sup>732)</sup>',
     '(yaitu) seperduanya, kurang sedikit dari itu,',
     'atau lebih dari (seperdua) itu. Bacalah Al-Qur’an itu dengan perlahan-lahan.',
@@ -6459,6 +6531,7 @@ mixin MuzzamilAyahTranslate on AyahTranslate {
 
 mixin MuddassirAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Wahai orang yang berselimut (Nabi Muhammad),',
     'bangunlah, lalu berilah peringatan!',
     'Tuhanmu, agungkanlah!',
     'Pakaianmu, bersihkanlah!',
@@ -6528,6 +6601,7 @@ mixin MuddassirAyahTranslate on AyahTranslate {
 
 mixin QiyamahAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Aku bersumpah demi hari Kiamat.',
     'Aku bersumpah demi jiwa yang sangat menyesali (dirinya sendiri).',
     'Apakah manusia mengira bahwa Kami tidak akan mengumpulkan (kembali) tulang-belulangnya?',
     'Tentu, (bahkan) Kami mampu menyusun (kembali) jari-jemarinya dengan sempurna.',
@@ -6581,6 +6655,7 @@ mixin QiyamahAyahTranslate on AyahTranslate {
 
 mixin InsanAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Bukankah telah datang kepada manusia suatu waktu dari masa yang ia belum merupakan sesuatu yang dapat disebut?',
     'Sesungguhnya Kami telah menciptakan manusia dari setetes mani yang bercampur. Kami hendak mengujinya (dengan perintah dan larangan) sehingga menjadikannya dapat mendengar dan melihat.',
     'Sesungguhnya Kami telah menunjukkan kepadanya jalan (yang lurus); ada yang bersyukur dan ada pula yang sangat kufur.',
     'Sesungguhnya Kami telah menyediakan bagi orang-orang kafir rantai, belenggu, dan api (neraka) Sa‘ir (yang menyala-nyala).',
@@ -6625,6 +6700,7 @@ mixin InsanAyahTranslate on AyahTranslate {
 
 mixin MursalatAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Demi (malaikat-malaikat) yang diutus untuk membawa kebaikan',
     'dan (malaikat-malaikat) yang terbang dengan kencang;',
     'demi (malaikat-malaikat) yang menyebarkan (rahmat Allah) dengan seluas-luasnya,<sup>738)</sup>',
     'dan (malaikat-malaikat) yang membedakan (antara yang baik dan yang buruk) dengan sejelas-jelasnya,',
@@ -6688,6 +6764,7 @@ mixin MursalatAyahTranslate on AyahTranslate {
 
 mixin NabaAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Tentang apakah mereka saling bertanya?',
     'Tentang berita yang besar (hari Kebangkitan)',
     'yang dalam hal itu mereka berselisih.',
     'Sekali-kali tidak! Kelak mereka akan mengetahui.',
@@ -6741,6 +6818,7 @@ mixin NabaAyahTranslate on AyahTranslate {
 
 mixin NaziatAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Demi (malaikat) yang mencabut (nyawa orang kafir) dengan keras,',
     'demi (malaikat) yang mencabut (nyawa orang mukmin) dengan lemah lembut,',
     'demi (malaikat) yang cepat (menunaikan tugasnya) dengan mudah,',
     '(malaikat) yang bergegas (melaksanakan perintah Allah) dengan cepat,',
@@ -6800,6 +6878,7 @@ mixin NaziatAyahTranslate on AyahTranslate {
 
 mixin AbasaAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Dia (Nabi Muhammad) berwajah masam dan berpaling',
     'karena seorang tunanetra (Abdullah bin Ummi Maktum) telah datang kepadanya.',
     'Tahukah engkau (Nabi Muhammad) boleh jadi dia ingin menyucikan dirinya (dari dosa)',
     'atau dia (ingin) mendapatkan pengajaran sehingga pengajaran itu bermanfaat baginya?',
@@ -6855,6 +6934,7 @@ mixin AbasaAyahTranslate on AyahTranslate {
 
 mixin TakwirAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Apabila matahari digulung,',
     'apabila bintang-bintang berjatuhan,',
     'apabila gunung-gunung dihancurkan,',
     'apabila unta-unta yang bunting ditinggalkan (tidak terurus),',
@@ -6897,6 +6977,7 @@ mixin TakwirAyahTranslate on AyahTranslate {
 
 mixin InfitarAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Apabila langit terbelah,',
     'apabila bintang-bintang jatuh berserakan,',
     'apabila lautan diluapkan,',
     'dan apabila kuburan-kuburan dibongkar,',
@@ -6929,6 +7010,7 @@ mixin InfitarAyahTranslate on AyahTranslate {
 
 mixin MutaffifinAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Celakalah orang-orang yang curang (dalam menakar dan menimbang)!',
     '(Mereka adalah) orang-orang yang apabila menerima takaran dari orang lain, mereka minta dipenuhi.',
     '(Sebaliknya,) apabila mereka menakar atau menimbang untuk orang lain, mereka kurangi.',
     'Tidakkah mereka mengira (bahwa) sesungguhnya mereka akan dibangkitkan',
@@ -6978,6 +7060,7 @@ mixin MutaffifinAyahTranslate on AyahTranslate {
 
 mixin InsyiqaqAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Apabila langit terbelah',
     'serta patuh kepada Tuhannya dan sudah semestinya patuh.',
     'Apabila bumi diratakan,',
     'memuntahkan apa yang ada di dalamnya dan menjadi kosong,',
@@ -7016,6 +7099,7 @@ mixin InsyiqaqAyahTranslate on AyahTranslate {
 
 mixin BurujAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Demi langit yang mempunyai gugusan bintang,',
     'demi hari yang dijanjikan,',
     'demi yang menyaksikan dan yang disaksikan,',
     'binasalah orang-orang yang membuat parit (tempat menyiksa orang mukmin)',
@@ -7051,6 +7135,7 @@ mixin BurujAyahTranslate on AyahTranslate {
 
 mixin TariqAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Demi langit dan yang datang pada malam hari.',
     'Tahukah kamu apakah yang datang pada malam hari itu?',
     '(Itulah) bintang yang bersinar tajam.',
     'Setiap orang pasti ada penjaganya.',
@@ -7081,6 +7166,7 @@ mixin TariqAyahTranslate on AyahTranslate {
 
 mixin AklaAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Sucikanlah nama Tuhanmu Yang Mahatinggi,',
     'yang menciptakan, lalu menyempurnakan (ciptaan-Nya),',
     'yang menentukan kadar (masing-masing) dan memberi petunjuk,',
     'dan yang menumbuhkan (rerumputan) padang gembala,',
@@ -7113,6 +7199,7 @@ mixin AklaAyahTranslate on AyahTranslate {
 
 mixin GasyiyahAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Sudahkah sampai kepadamu berita tentang al-Gāsyiyah (hari Kiamat yang menutupi kesadaran manusia dengan kedahsyatannya)?',
     'Pada hari itu banyak wajah yang tertunduk hina',
     '(karena) berusaha keras (menghindari azab neraka) lagi kepayahan (karena dibelenggu).',
     'Mereka memasuki api (neraka) yang sangat panas.',
@@ -7152,6 +7239,7 @@ mixin GasyiyahAyahTranslate on AyahTranslate {
 
 mixin FajrAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Demi waktu fajar,',
     'demi malam yang sepuluh,<sup>754)</sup>',
     'demi yang genap dan yang ganjil,',
     'dan demi malam apabila berlalu.',
@@ -7195,6 +7283,7 @@ mixin FajrAyahTranslate on AyahTranslate {
 
 mixin BaladAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Aku bersumpah demi negeri ini (Makkah),',
     'sedangkan engkau (Nabi Muhammad) bertempat tinggal di negeri (Makkah) ini.',
     '(Aku juga bersumpah) demi bapak dan anaknya,',
     'sungguh, Kami benar-benar telah menciptakan manusia dalam keadaan susah payah.',
@@ -7228,6 +7317,7 @@ mixin BaladAyahTranslate on AyahTranslate {
 
 mixin SyamsAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Demi matahari dan sinarnya pada waktu duha (ketika matahari naik sepenggalah),',
     'demi bulan saat mengiringinya,',
     'demi siang saat menampakkannya,',
     'demi malam saat menutupinya (gelap gulita),',
@@ -7256,6 +7346,7 @@ mixin SyamsAyahTranslate on AyahTranslate {
 
 mixin LailAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Demi malam apabila menutupi (cahaya siang),',
     'demi siang apabila terang benderang,',
     'dan demi penciptaan laki-laki dan perempuan,',
     'sesungguhnya usahamu benar-benar beraneka ragam.',
@@ -7290,6 +7381,7 @@ mixin LailAyahTranslate on AyahTranslate {
 
 mixin DuhaAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Demi waktu duha',
     'dan demi waktu malam apabila telah sunyi,',
     'Tuhanmu (Nabi Muhammad) tidak meninggalkan dan tidak (pula) membencimu.',
     'Sungguh, akhirat itu lebih baik bagimu daripada yang permulaan (dunia).',
@@ -7314,6 +7406,7 @@ mixin DuhaAyahTranslate on AyahTranslate {
 
 mixin SyarhAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Bukankah Kami telah melapangkan dadamu (Nabi Muhammad),',
     'meringankan beban (tugas-tugas kenabian) darimu',
     'yang memberatkan punggungmu,',
     'dan meninggikan (derajat)-mu (dengan selalu) menyebut-nyebut (nama)-mu?',
@@ -7335,6 +7428,7 @@ mixin SyarhAyahTranslate on AyahTranslate {
 
 mixin TinAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Demi (buah) tin dan (buah) zaitun,',
     'demi gunung Sinai,',
     'dan demi negeri (Makkah) yang aman ini,',
     'sungguh, Kami benar-benar telah menciptakan manusia dalam bentuk yang sebaik-baiknya.',
@@ -7356,6 +7450,7 @@ mixin TinAyahTranslate on AyahTranslate {
 
 mixin AlaqAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Bacalah dengan (menyebut) nama Tuhanmu yang menciptakan!',
     'Dia menciptakan manusia dari segumpal darah.',
     'Bacalah! Tuhanmulah Yang Mahamulia,',
     'yang mengajar (manusia) dengan pena.',
@@ -7388,6 +7483,7 @@ mixin AlaqAyahTranslate on AyahTranslate {
 
 mixin QadrAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Sesungguhnya Kami telah menurunkannya (Al-Qur’an) pada Lailatulqadar.',
     'Tahukah kamu apakah Lailatulqadar itu?',
     'Lailatulqadar itu lebih baik daripada seribu bulan.',
     'Pada malam itu turun para malaikat dan Rūḥ (Jibril) dengan izin Tuhannya untuk mengatur semua urusan.',
@@ -7406,6 +7502,7 @@ mixin QadrAyahTranslate on AyahTranslate {
 
 mixin BayyinahAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Orang-orang yang kufur dari golongan Ahlulkitab dan orang-orang musyrik tidak akan meninggalkan (kekufuran mereka) sampai datang kepada mereka bukti yang nyata,',
     '(yaitu) seorang Rasul dari Allah (Nabi Muhammad) yang membacakan lembaran-lembaran suci (Al-Qur’an)',
     'yang di dalamnya terdapat (isi) kitab-kitab yang lurus (benar).',
     'Tidaklah terpecah-belah orang-orang Ahlulkitab, melainkan setelah datang kepada mereka bukti yang nyata.',
@@ -7427,6 +7524,7 @@ mixin BayyinahAyahTranslate on AyahTranslate {
 
 mixin ZalzalahAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Apabila bumi diguncangkan dengan guncangan yang dahsyat,',
     'bumi mengeluarkan isi perutnya,',
     'dan manusia bertanya, “Apa yang terjadi dengannya (bumi)?”',
     'Pada hari itu (bumi) menyampaikan berita (tentang apa yang diperbuat manusia di atasnya)',
@@ -7448,6 +7546,7 @@ mixin ZalzalahAyahTranslate on AyahTranslate {
 
 mixin AdiyatAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Demi kuda-kuda perang yang berlari kencang terengah-engah,',
     'yang memercikkan bunga api (dengan entakan kakinya),',
     'yang menyerang (dengan tiba-tiba) pada waktu pagi',
     'sehingga menerbangkan debu,',
@@ -7472,6 +7571,7 @@ mixin AdiyatAyahTranslate on AyahTranslate {
 
 mixin QariahAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Al-Qāri‘ah (hari Kiamat yang menggetarkan).',
     'Apakah al-Qāri‘ah itu?',
     'Tahukah kamu apakah al-Qāri‘ah itu?',
     'Pada hari itu manusia seperti laron yang beterbangan',
@@ -7496,6 +7596,7 @@ mixin QariahAyahTranslate on AyahTranslate {
 
 mixin TakasurAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Berbangga-bangga dalam memperbanyak (dunia) telah melalaikanmu<sup>760)</sup>',
     'sampai kamu masuk ke dalam kubur.',
     'Sekali-kali tidak! Kelak kamu akan mengetahui (akibat perbuatanmu itu).',
     'Sekali-kali tidak (jangan melakukan itu)! Kelak kamu akan mengetahui (akibatnya).',
@@ -7517,6 +7618,7 @@ mixin TakasurAyahTranslate on AyahTranslate {
 
 mixin AsrAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Demi masa,',
     'sesungguhnya manusia benar-benar berada dalam kerugian,',
     'kecuali orang-orang yang beriman dan beramal saleh serta saling menasihati untuk kebenaran dan kesabaran.'
   ];
@@ -7533,6 +7635,7 @@ mixin AsrAyahTranslate on AyahTranslate {
 
 mixin HumazahAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Celakalah setiap pengumpat lagi pencela',
     'yang mengumpulkan harta dan menghitung-hitungnya.',
     'Dia (manusia) mengira bahwa hartanya dapat mengekalkannya.',
     'Sekali-kali tidak! Pasti dia akan dilemparkan ke dalam (neraka) Hutamah.',
@@ -7555,6 +7658,7 @@ mixin HumazahAyahTranslate on AyahTranslate {
 
 mixin FilAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Tidakkah engkau (Nabi Muhammad) memperhatikan bagaimana Tuhanmu telah bertindak terhadap pasukan bergajah?',
     'Bukankah Dia telah menjadikan tipu daya mereka itu sia-sia?',
     'Dia mengirimkan kepada mereka burung yang berbondong-bondong',
     'yang melempari mereka dengan batu dari tanah liat yang dibakar,',
@@ -7573,6 +7677,7 @@ mixin FilAyahTranslate on AyahTranslate {
 
 mixin QuraisyAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Disebabkan oleh kebiasaan orang-orang Quraisy,',
     '(yaitu) kebiasaan mereka bepergian pada musim dingin dan musim panas (sehingga mendapatkan banyak keuntungan),',
     'maka hendaklah mereka menyembah Tuhan (pemilik) rumah ini (Ka‘bah)',
     'yang telah memberi mereka makanan untuk menghilangkan lapar dan mengamankan mereka dari rasa takut.'
@@ -7590,6 +7695,7 @@ mixin QuraisyAyahTranslate on AyahTranslate {
 
 mixin MaunAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Tahukah kamu (orang) yang mendustakan agama?',
     'Itulah orang yang menghardik anak yatim',
     'dan tidak menganjurkan untuk memberi makan orang miskin.',
     'Celakalah orang-orang yang melaksanakan salat,',
@@ -7610,6 +7716,7 @@ mixin MaunAyahTranslate on AyahTranslate {
 
 mixin KausarAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Sesungguhnya Kami telah memberimu (Nabi Muhammad) nikmat yang banyak.',
     'Maka, laksanakanlah salat karena Tuhanmu dan berkurbanlah!',
     'Sesungguhnya orang yang membencimu, dialah yang terputus (dari rahmat Allah).'
   ];
@@ -7626,6 +7733,7 @@ mixin KausarAyahTranslate on AyahTranslate {
 
 mixin KafirunAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Katakanlah (Nabi Muhammad), “Wahai orang-orang kafir,',
     'aku tidak akan menyembah apa yang kamu sembah.',
     'Kamu juga bukan penyembah apa yang aku sembah.',
     'Aku juga tidak pernah menjadi penyembah apa yang kamu sembah.',
@@ -7645,6 +7753,7 @@ mixin KafirunAyahTranslate on AyahTranslate {
 
 mixin NasrAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Apabila telah datang pertolongan Allah dan kemenangan',
     'dan engkau melihat manusia berbondong-bondong masuk agama Allah,',
     'bertasbihlah dengan memuji Tuhanmu dan mohonlah ampun kepada-Nya. Sesungguhnya Dia Maha Penerima tobat.'
   ];
@@ -7661,6 +7770,7 @@ mixin NasrAyahTranslate on AyahTranslate {
 
 mixin LahabAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Binasalah kedua tangan Abu Lahab dan benar-benar binasa dia.<sup>763)</sup>',
     'Tidaklah berguna baginya hartanya dan apa yang dia usahakan.',
     'Kelak dia akan memasuki api yang bergejolak (neraka),',
     '(begitu pula) istrinya, pembawa kayu bakar (penyebar fitnah).',
@@ -7679,6 +7789,7 @@ mixin LahabAyahTranslate on AyahTranslate {
 
 mixin IkhlasAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Katakanlah (Nabi Muhammad), “Dialah Allah Yang Maha Esa.',
     'Allah tempat meminta segala sesuatu.',
     'Dia tidak beranak dan tidak pula diperanakkan',
     'serta tidak ada sesuatu pun yang setara dengan-Nya.”'
@@ -7696,6 +7807,7 @@ mixin IkhlasAyahTranslate on AyahTranslate {
 
 mixin FalaqAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Katakanlah (Nabi Muhammad), “Aku berlindung kepada Tuhan yang (menjaga) fajar (subuh)',
     'dari kejahatan (makhluk yang) Dia ciptakan,',
     'dari kejahatan malam apabila telah gelap gulita,',
     'dari kejahatan perempuan-perempuan (penyihir) yang meniup pada buhul-buhul (talinya),',
@@ -7714,6 +7826,7 @@ mixin FalaqAyahTranslate on AyahTranslate {
 
 mixin NasAyahTranslate on AyahTranslate {
   static const List ayahs = <String>[
+    'Katakanlah (Nabi Muhammad), “Aku berlindung kepada Tuhan manusia,',
     'raja manusia,',
     'sembahan manusia',
     'dari kejahatan (setan) pembisik yang bersembunyi',

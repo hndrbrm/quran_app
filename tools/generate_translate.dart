@@ -46,5 +46,6 @@ mixin ${alphabet}AyahTranslate on AyahTranslate {
     );
     surah = ayah.location.surah;
     ayahs.clear();
+    ayahs.add(ayah);
   }
 }
