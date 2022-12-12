@@ -16,6 +16,18 @@ class Home extends StatelessWidget {
     final Transliteration transliteration = ExtendedBuckwalterTransliteration();
 
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Daftar Surah'),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: const <Widget>[
+            ListTile(
+              title: Text('Pengaturan'),
+            ),
+          ],
+        ),
+      ),
       body: ListView.builder(
         itemCount: 114,
         itemBuilder: (BuildContext context, int index) {
