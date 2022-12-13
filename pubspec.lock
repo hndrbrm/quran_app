@@ -120,8 +120,8 @@ packages:
     dependency: "direct dev"
     description:
       path: "."
-      ref: "14a964cf781f66e9dca8c90a1550430d182e40cb"
-      resolved-ref: "14a964cf781f66e9dca8c90a1550430d182e40cb"
+      ref: "4f7dc0e92c2fe1d7567b0f179989a697fadbf424"
+      resolved-ref: "4f7dc0e92c2fe1d7567b0f179989a697fadbf424"
       url: "https://github.com/hndrbrm/quran_kemenag"
     source: git
     version: "1.0.0"

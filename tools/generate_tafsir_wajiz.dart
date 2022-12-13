@@ -15,7 +15,6 @@ void main() {
   final List<Ayah> ayahs = <Ayah>[];
   for (int i = 2; i < lines.length; i++) {
     final String line = lines[i];
-    print('line: $line');
     final Ayah ayah = Ayah.parse(line);
 
     if (ayah.location.surah == surah) {
@@ -29,18 +28,18 @@ void main() {
     final String alphabet = Quran.instance.getSurahAlphabet(surah);
     print(
 '''
-mixin ${alphabet}TafsirWajiz on AyahAnnotation {
+mixin ${alphabet}TafsirWajiz on AyahTafsirWajiz {
   static const List ayahs = <String>[
-    ${ayahs.map((e) => '\'${e.tafsirWajiz}\'').join(',\n    ')}
+    ${ayahs.map((e) => '"${e.tafsirWajiz}"').join(',\n    ')}
   ];
 
   @override
-  String getTafsirWajiz(int surah, int ayah) {
+  String getAyahTafsirWajiz(int surah, int ayah) {
     if (surah == $surah) {
       return ayahs[ayah - 1];
     }
 
-    return super.getTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(surah, ayah);
   }
 }
 '''

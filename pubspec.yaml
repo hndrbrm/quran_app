@@ -57,7 +57,7 @@ dev_dependencies:
   quran_kemenag:
     git:
       url: https://github.com/hndrbrm/quran_kemenag
-      ref: 14a964cf781f66e9dca8c90a1550430d182e40cb
+      ref: 4f7dc0e92c2fe1d7567b0f179989a697fadbf424
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
