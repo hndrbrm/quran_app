@@ -23,6 +23,7 @@ class Surah extends StatelessWidget {
           return ListTile(
             leading: Text('${index + 1}'),
             title: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: <Widget>[
                 Text(
                   '${Quran.instance.getAyahTransliterate(surah, index + 1)} ${(index + 1).toArabic()}',
