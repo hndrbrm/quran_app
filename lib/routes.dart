@@ -57,7 +57,7 @@ mixin SurahRoute on RouteBinder {
       final Map<String, dynamic>? arguments = settings.arguments as Map<String, dynamic>?;
 
       return MaterialPageRoute(
-        builder: (BuildContext context) => Surah(arguments?['surah']),
+        builder: (BuildContext context) => Surah(surah: arguments?['surah']),
       );
     }
 

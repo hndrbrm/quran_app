@@ -5,9 +5,11 @@
 import 'package:flutter/material.dart';
 
 import '../quran/quran.dart';
+import '../widgets/draggable_menu.dart';
+import '../widgets/pop_up_menu.dart';
 
 class Surah extends StatelessWidget {
-  const Surah(this.surah, { super.key });
+  const Surah({ required this.surah, super.key });
 
   final int surah;
 
@@ -20,21 +22,26 @@ class Surah extends StatelessWidget {
       body: ListView.builder(
         itemCount: Quran.instance.getLength(surah),
         itemBuilder: (BuildContext context, int index) {
+          final int ayah = index + 1;
+          final String transliterate = Quran.instance.getAyahTransliterate(surah, ayah);
+          final String translate = Quran.instance.getAyahTranslate(surah, ayah);
+          final String annotation = Quran.instance.getAyahAnnotation(surah, ayah);
+
           return ListTile(
-            leading: Text('${index + 1}'),
+            leading: Text('$ayah'),
             title: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: <Widget>[
-                Text(
-                  '${Quran.instance.getAyahTransliterate(surah, index + 1)} ${(index + 1).toArabic()}',
-                  textDirection: TextDirection.rtl,
+                _TransliterateMenu(
+                  child: Text(
+                    '$transliterate ${ayah.toArabic()}',
+                    textDirection: TextDirection.rtl,
+                  ),
                 ),
-                Text(
-                  Quran.instance.getAyahTranslate(surah, index + 1),
-                ),
+                Text(translate),
               ],
             ),
-            subtitle: Text(Quran.instance.getAyahAnnotation(surah, index + 1)),
+            subtitle: Text(annotation),
           );
         },
       ),
@@ -42,7 +49,72 @@ class Surah extends StatelessWidget {
   }
 }
 
-extension NumberToArabic on num {
+class _TransliterateMenu extends StatefulWidget {
+  const _TransliterateMenu({ required this.child });
+
+  final Widget child;
+
+  @override
+  State<_TransliterateMenu> createState() => _TransliterateMenuState();
+}
+
+class _TransliterateMenuState extends State<_TransliterateMenu> {
+  @override
+  Widget build(BuildContext context) {
+    return PopUpMenu(
+      menuBuilder: (TapUpDetails details) {
+        return DraggableMenu(
+          left: details.globalPosition.dx,
+          top: details.globalPosition.dy,
+          child: Card(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: const <Widget>[
+                _ChangeSizeMenu(),
+              ],
+            ),
+          ),
+        );
+      },
+      child: widget.child,
+    );
+  }
+}
+
+class _ChangeSizeMenu extends StatelessWidget {
+  const _ChangeSizeMenu();
+
+  @override
+  Widget build(BuildContext context) {
+    return PopUpMenu(
+      menuBuilder: (TapUpDetails details) {
+        return DraggableMenu(
+          left: details.globalPosition.dx,
+          top: details.globalPosition.dy,
+          child: SizedBox(
+            width: 100,
+            height: 100,
+            child: Card(
+              child: Slider(
+                min: 9.0,
+                max: 24.0,
+                value: 14.0,
+                onChanged: (double value) {
+                },
+              ),
+            ),
+          ),
+        );
+      },
+      child: const Padding(
+        padding: EdgeInsets.all(4.0),
+        child: Text('Ubah Ukuran...'),
+      ),
+    );
+  }
+}
+
+extension _NumberToArabic on num {
   static const Map<String, String> mapper = <String, String>{
     '0': '\u0660',
     '1': '\u0661',
