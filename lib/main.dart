@@ -4,6 +4,7 @@
 
 import 'package:flutter/material.dart';
 
+import 'provider/surah_font_size.dart';
 import 'routes.dart';
 
 void main() {
@@ -15,12 +16,14 @@ class QuranApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Quran',
-      onGenerateRoute: RouteBound.instance.onGenerateRoute,
-      onUnknownRoute: RouteBound.instance.onUnknownRoute,
-      theme: ThemeData(
-        fontFamily: 'Kemenag',
+    return SurahFontSizeProvider(
+      child: MaterialApp(
+        title: 'Quran',
+        onGenerateRoute: RouteBound.instance.onGenerateRoute,
+        onUnknownRoute: RouteBound.instance.onUnknownRoute,
+        theme: ThemeData(
+          fontFamily: 'Kemenag',
+        ),
       ),
     );
   }

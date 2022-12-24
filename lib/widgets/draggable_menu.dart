@@ -49,32 +49,14 @@ class _DraggableMenuState extends State<DraggableMenu> {
     });
   }
 
-  double _constraintLeft(double left) {
-    if (left < 0) {
-      return 0;
-    }
-
+  double _clampLeft(double left) {
     final double screenWidth = MediaQuery.of(context).size.width;
-
-    if (left + _widgetWidth > screenWidth) {
-      return screenWidth - _widgetWidth;
-    }
-
-    return left;
+    return left.clamp(0.0, screenWidth - _widgetWidth);
   }
 
-  double _constraintTop(double top) {
-    if (top < 0) {
-      return 0;
-    }
-
+  double _clampTop(double top) {
     final double screenHeight = MediaQuery.of(context).size.height;
-
-    if (top + _widgetHeight > screenHeight) {
-      return screenHeight - _widgetHeight;
-    }
-
-    return top;
+    return top.clamp(0.0, screenHeight - _widgetHeight);
   }
 
   @override
@@ -82,8 +64,8 @@ class _DraggableMenuState extends State<DraggableMenu> {
     return Stack(
       children: <Widget>[
         Positioned(
-          left: _constraintLeft(_left ?? widget.left - _centerLeft),
-          top: _constraintTop(_top ?? widget.top - _centerTop),
+          left: _clampLeft(_left ?? widget.left - _centerLeft),
+          top: _clampTop(_top ?? widget.top - _centerTop),
           child: Draggable(
             onDragEnd: (DraggableDetails details) {
               setState(() {

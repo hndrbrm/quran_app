@@ -4,6 +4,7 @@
 
 import 'package:flutter/material.dart';
 
+import '../provider/surah_font_size.dart';
 import '../quran/quran.dart';
 import '../widgets/draggable_menu.dart';
 import '../widgets/pop_up_menu.dart';
@@ -23,25 +24,17 @@ class Surah extends StatelessWidget {
         itemCount: Quran.instance.getLength(surah),
         itemBuilder: (BuildContext context, int index) {
           final int ayah = index + 1;
-          final String transliterate = Quran.instance.getAyahTransliterate(surah, ayah);
-          final String translate = Quran.instance.getAyahTranslate(surah, ayah);
-          final String annotation = Quran.instance.getAyahAnnotation(surah, ayah);
 
           return ListTile(
             leading: Text('$ayah'),
             title: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: <Widget>[
-                _TransliterateMenu(
-                  child: Text(
-                    '$transliterate ${ayah.toArabic()}',
-                    textDirection: TextDirection.rtl,
-                  ),
-                ),
-                Text(translate),
+                _Transliteration(surah: surah, ayah: ayah),
+                _Translation(surah: surah, ayah: ayah),
               ],
             ),
-            subtitle: Text(annotation),
+            subtitle: _Annotation(surah: surah, ayah: ayah),
           );
         },
       ),
@@ -49,16 +42,11 @@ class Surah extends StatelessWidget {
   }
 }
 
-class _TransliterateMenu extends StatefulWidget {
+class _TransliterateMenu extends StatelessWidget {
   const _TransliterateMenu({ required this.child });
 
   final Widget child;
 
-  @override
-  State<_TransliterateMenu> createState() => _TransliterateMenuState();
-}
-
-class _TransliterateMenuState extends State<_TransliterateMenu> {
   @override
   Widget build(BuildContext context) {
     return PopUpMenu(
@@ -70,19 +58,19 @@ class _TransliterateMenuState extends State<_TransliterateMenu> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: const <Widget>[
-                _ChangeSizeMenu(),
+                _ChangeFontSizeMenu(),
               ],
             ),
           ),
         );
       },
-      child: widget.child,
+      child: child,
     );
   }
 }
 
-class _ChangeSizeMenu extends StatelessWidget {
-  const _ChangeSizeMenu();
+class _ChangeFontSizeMenu extends StatelessWidget {
+  const _ChangeFontSizeMenu();
 
   @override
   Widget build(BuildContext context) {
@@ -91,19 +79,7 @@ class _ChangeSizeMenu extends StatelessWidget {
         return DraggableMenu(
           left: details.globalPosition.dx,
           top: details.globalPosition.dy,
-          child: SizedBox(
-            width: 100,
-            height: 100,
-            child: Card(
-              child: Slider(
-                min: 9.0,
-                max: 24.0,
-                value: 14.0,
-                onChanged: (double value) {
-                },
-              ),
-            ),
-          ),
+          child: _ChangeFontSizeSlider(),
         );
       },
       child: const Padding(
@@ -111,6 +87,86 @@ class _ChangeSizeMenu extends StatelessWidget {
         child: Text('Ubah Ukuran...'),
       ),
     );
+  }
+}
+
+class _ChangeFontSizeSlider extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: Column(
+        children: <Widget>[
+          Text('Ukuran Font ${SurahFontSize.of(context).fontSize}'),
+          Slider(
+            min: 4.0,
+            max: 96.0,
+            value: SurahFontSize.of(context).fontSize!,
+            onChanged: (double value) {
+              SurahFontSize.of(context).fontSize = double.parse(value.toStringAsFixed(2));
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _Transliteration extends StatelessWidget {
+  const _Transliteration({
+    required this.surah,
+    required this.ayah,
+  });
+
+  final int surah;
+  final int ayah;
+
+  @override
+  Widget build(BuildContext context) {
+    final String transliterate = Quran.instance.getAyahTransliterate(surah, ayah);
+
+    return _TransliterateMenu(
+      child: Text(
+        '$transliterate ${ayah.toArabic()}',
+        textDirection: TextDirection.rtl,
+        style: TextStyle(
+          fontSize: SurahFontSize.of(context).fontSize,
+        ),
+      ),
+    );
+  }
+}
+
+class _Translation extends StatelessWidget {
+  const _Translation({
+    required this.surah,
+    required this.ayah,
+  });
+
+  final int surah;
+  final int ayah;
+
+  @override
+  Widget build(BuildContext context) {
+    final String translate = Quran.instance.getAyahTranslate(surah, ayah);
+
+    return Text(translate);
+  }
+}
+
+class _Annotation extends StatelessWidget {
+  const _Annotation({
+    required this.surah,
+    required this.ayah,
+  });
+
+  final int surah;
+  final int ayah;
+
+  @override
+  Widget build(BuildContext context) {
+    final String annotation = Quran.instance.getAyahAnnotation(surah, ayah);
+
+    return Text(annotation);
   }
 }
 
