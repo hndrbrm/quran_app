@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:quran_app/pages/bookmark.dart';
+import 'package:quran_app/pages/bookmark_page.dart';
 
 import 'pages/home.dart';
 import 'pages/surah.dart';
@@ -70,7 +70,7 @@ mixin BookmarkRoute on RouteBinder {
   Route? onGenerateRoute(RouteSettings settings) {
     if (settings.name == name) {
       return MaterialPageRoute(
-        builder: (BuildContext context) => const Bookmark(),
+        builder: (BuildContext context) => const BookmarkPage(),
       );
     }
 

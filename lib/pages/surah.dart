@@ -4,10 +4,12 @@
 
 import 'package:flutter/material.dart';
 
+import '../provider/bookmark.dart';
 import '../provider/surah_font_size.dart';
 import '../quran/quran.dart';
 import '../widgets/draggable_menu.dart';
 import '../widgets/pop_up_menu.dart';
+import '../widgets/rounded_ink_well.dart';
 
 class Surah extends StatelessWidget {
   const Surah({ required this.surah, super.key });
@@ -43,8 +45,14 @@ class Surah extends StatelessWidget {
 }
 
 class _TransliterateMenu extends StatelessWidget {
-  const _TransliterateMenu({ required this.child });
+  const _TransliterateMenu({
+    required this.surah,
+    required this.ayah,
+    required this.child,
+  });
 
+  final int surah;
+  final int ayah;
   final Widget child;
 
   @override
@@ -57,35 +65,15 @@ class _TransliterateMenu extends StatelessWidget {
           child: Card(
             child: Column(
               mainAxisSize: MainAxisSize.min,
-              children: const <Widget>[
-                _ChangeFontSizeMenu(),
+              children: <Widget>[
+                const _ChangeFontSizeMenu(),
+                _BookmarkMenu(surah: surah, ayah: ayah),
               ],
             ),
           ),
         );
       },
       child: child,
-    );
-  }
-}
-
-class _ChangeFontSizeMenu extends StatelessWidget {
-  const _ChangeFontSizeMenu();
-
-  @override
-  Widget build(BuildContext context) {
-    return PopUpMenu(
-      menuBuilder: (TapUpDetails details) {
-        return DraggableMenu(
-          left: details.globalPosition.dx,
-          top: details.globalPosition.dy,
-          child: _ChangeFontSizeSlider(),
-        );
-      },
-      child: const Padding(
-        padding: EdgeInsets.all(4.0),
-        child: Text('Ubah Ukuran...'),
-      ),
     );
   }
 }
@@ -111,6 +99,52 @@ class _ChangeFontSizeSlider extends StatelessWidget {
   }
 }
 
+class _ChangeFontSizeMenu extends StatelessWidget {
+  const _ChangeFontSizeMenu();
+
+  @override
+  Widget build(BuildContext context) {
+    return PopUpMenu(
+      menuBuilder: (TapUpDetails details) {
+        return DraggableMenu(
+          left: details.globalPosition.dx,
+          top: details.globalPosition.dy,
+          child: _ChangeFontSizeSlider(),
+        );
+      },
+      child: const Padding(
+        padding: EdgeInsets.all(4.0),
+        child: Text('Ubah Ukuran...'),
+      ),
+    );
+  }
+}
+
+class _BookmarkMenu extends StatelessWidget {
+  const _BookmarkMenu({
+    required this.surah,
+    required this.ayah,
+  });
+
+  final int surah;
+  final int ayah;
+
+  @override
+  Widget build(BuildContext context) {
+    return RoundedInkWell(
+      child: const Padding(
+        padding: EdgeInsets.all(4.0),
+        child: Text('Tandai'),
+      ),
+      onTap: () {
+        final Location location = Location(surah, ayah);
+        Bookmark.of(context).location = location;
+        Navigator.of(context).pop();
+      },
+    );
+  }
+}
+
 class _Transliteration extends StatelessWidget {
   const _Transliteration({
     required this.surah,
@@ -125,6 +159,8 @@ class _Transliteration extends StatelessWidget {
     final String transliterate = Quran.instance.getAyahTransliterate(surah, ayah);
 
     return _TransliterateMenu(
+      surah: surah,
+      ayah: ayah,
       child: Text(
         '$transliterate ${ayah.toArabic()}',
         textDirection: TextDirection.rtl,
