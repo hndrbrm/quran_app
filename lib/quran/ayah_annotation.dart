@@ -5,7 +5,7 @@
 import 'package:meta/meta.dart';
 import 'quran.dart';
 
-mixin AyahAnnotation on Ayah {
+mixin AyahAnnotation implements Ayah {
   @protected
   @mustCallSuper
   String getAyahAnnotation(int surah, int ayah) => '';

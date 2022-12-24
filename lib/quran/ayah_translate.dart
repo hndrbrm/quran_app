@@ -6,7 +6,7 @@ import 'package:meta/meta.dart';
 
 import 'quran.dart';
 
-mixin AyahTranslate on Ayah {
+mixin AyahTranslate implements Ayah {
   @protected
   @mustCallSuper
   String getAyahTranslate(int surah, int ayah) => '';

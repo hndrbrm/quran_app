@@ -16,9 +16,9 @@ abstract class QuranBinder {
 }
 
 class Quran extends QuranBinder with
-  Surah, SurahAlphabet, SurahLatin, SurahTranslate, SurahTransliterate,
+  SurahAlphabet, SurahLatin, SurahTranslate, SurahTransliterate,
 
-  Ayah, AyahLength, AyahTransliterate, AyahTranslate, AyahAnnotation,
+  AyahLength, AyahTransliterate, AyahTranslate, AyahAnnotation,
 
   FatihahAlphabet, BaqarahAlphabet, ImranAlphabet, NisaAlphabet, MaidahAlphabet,
   AnamAlphabet, ArafAlphabet, AnfalAlphabet, TaubahAlphabet, YunusAlphabet,
@@ -274,6 +274,6 @@ class Quran extends QuranBinder with
   static const Quran _instance = Quran._();
 }
 
-mixin Surah on QuranBinder {}
+mixin Surah implements QuranBinder {}
 
-mixin Ayah on QuranBinder {}
+mixin Ayah implements QuranBinder {}

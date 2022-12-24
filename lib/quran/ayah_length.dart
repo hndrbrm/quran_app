@@ -5,7 +5,7 @@
 import 'ayah_transliterate.dart';
 import 'quran.dart';
 
-mixin AyahLength on Ayah {
+mixin AyahLength implements Ayah {
   int getLength(int surah) => 0;
 }
 

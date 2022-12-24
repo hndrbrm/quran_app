@@ -6,7 +6,7 @@ import 'package:meta/meta.dart';
 
 import 'quran.dart';
 
-mixin SurahTranslate on Surah {
+mixin SurahTranslate implements Surah {
   @protected
   @mustCallSuper
   String getTranslate(int surah) => '';
