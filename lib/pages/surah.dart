@@ -63,12 +63,17 @@ class _TransliterateMenu extends StatelessWidget {
           left: details.globalPosition.dx,
           top: details.globalPosition.dy,
           child: Card(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                const _ChangeFontSizeMenu(),
-                _BookmarkMenu(surah: surah, ayah: ayah),
-              ],
+            child: IntrinsicWidth(
+              child: Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    const _ChangeFontSizeMenu(),
+                    _BookmarkMenu(surah: surah, ayah: ayah),
+                  ],
+                ),
+              ),
             ),
           ),
         );
@@ -112,10 +117,7 @@ class _ChangeFontSizeMenu extends StatelessWidget {
           child: _ChangeFontSizeSlider(),
         );
       },
-      child: const Padding(
-        padding: EdgeInsets.all(4.0),
-        child: Text('Ubah Ukuran...'),
-      ),
+      child: const Text('Ubah Ukuran...'),
     );
   }
 }
