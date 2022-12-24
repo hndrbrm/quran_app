@@ -43,6 +43,8 @@ dependencies:
       url: https://github.com/hndrbrm/quran_transliteration
       ref: b833d9c2266c3175df9ba4eaa8f1e28e4932939b
 
+  shared_preferences: ^2.0.15
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
