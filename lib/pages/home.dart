@@ -7,6 +7,7 @@ import 'package:quran_transliteration/quran_transliteration.dart';
 
 import '../quran/quran.dart';
 import '../routes.dart';
+import 'quran_drawer.dart';
 
 class Home extends StatelessWidget {
   const Home({ super.key });
@@ -19,15 +20,7 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Daftar Surah'),
       ),
-      drawer: Drawer(
-        child: ListView(
-          children: const <Widget>[
-            ListTile(
-              title: Text('Pengaturan'),
-            ),
-          ],
-        ),
-      ),
+      drawer: const QuranDrawer(),
       body: ListView.builder(
         itemCount: 114,
         itemBuilder: (BuildContext context, int index) {

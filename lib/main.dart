@@ -11,7 +11,7 @@ void main() {
   runApp(const QuranApp());
 }
 
-class QuranApp extends StatelessWidget {
+class QuranApp extends StatelessWidget with UnknownRoute {
   const QuranApp({ super.key });
 
   @override
@@ -19,8 +19,8 @@ class QuranApp extends StatelessWidget {
     return SurahFontSizeProvider(
       child: MaterialApp(
         title: 'Quran',
-        onGenerateRoute: RouteBound.instance.onGenerateRoute,
-        onUnknownRoute: RouteBound.instance.onUnknownRoute,
+        onGenerateRoute: RouteBound.singleton.onGenerateRoute,
+        onUnknownRoute: onUnknownRoute,
         theme: ThemeData(
           fontFamily: 'Kemenag',
         ),

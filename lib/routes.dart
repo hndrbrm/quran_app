@@ -3,33 +3,38 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:quran_app/pages/bookmark.dart';
 
 import 'pages/home.dart';
 import 'pages/surah.dart';
 
 abstract class RouteBinder {
+  const RouteBinder();
+
   @protected
   @mustCallSuper
   Route<dynamic>? onGenerateRoute(RouteSettings settings) => null;
-
-  Route<dynamic>? onUnknownRoute(RouteSettings settings) => null;
 }
 
-class RouteBound extends RouteBinder with HomeRoute, SurahRoute {
-  RouteBound._();
+class RouteBound extends RouteBinder with
+  UnknownRoute, HomeRoute, SurahRoute, BookmarkRoute
+{
+  const RouteBound._();
 
-  static RouteBound get instance => _instance;
-  static final RouteBound _instance = RouteBound._();
+  static RouteBound get singleton => _singleton;
+  static const RouteBound _singleton = RouteBound._();
 }
 
-mixin HomeRoute on RouteBinder {
-  static const String name = 'home';
-
-  MaterialPageRoute createRoute() {
+mixin UnknownRoute {
+  Route? onUnknownRoute(RouteSettings settings) {
     return MaterialPageRoute(
       builder: (BuildContext context) => const Home(),
     );
   }
+}
+
+mixin HomeRoute on RouteBinder, UnknownRoute {
+  static const String name = '/';
 
   @override
   Route? onGenerateRoute(RouteSettings settings) {
@@ -39,25 +44,33 @@ mixin HomeRoute on RouteBinder {
 
     return super.onGenerateRoute(settings);
   }
-
-  @override
-  Route? onUnknownRoute(RouteSettings settings) {
-    return MaterialPageRoute(
-      builder: (BuildContext context) => const Home(),
-    );
-  }
 }
 
 mixin SurahRoute on RouteBinder {
-  static const String name = 'surah';
+  static const String name = '/surah';
 
   @override
   Route? onGenerateRoute(RouteSettings settings) {
     if (settings.name == name) {
-      final Map<String, dynamic>? arguments = settings.arguments as Map<String, dynamic>?;
+      final arguments = settings.arguments as Map<String, dynamic>?;
 
       return MaterialPageRoute(
         builder: (BuildContext context) => Surah(surah: arguments?['surah']),
+      );
+    }
+
+    return super.onGenerateRoute(settings);
+  }
+}
+
+mixin BookmarkRoute on RouteBinder {
+  static const String name = '/bookmark';
+
+  @override
+  Route? onGenerateRoute(RouteSettings settings) {
+    if (settings.name == name) {
+      return MaterialPageRoute(
+        builder: (BuildContext context) => const Bookmark(),
       );
     }
 
