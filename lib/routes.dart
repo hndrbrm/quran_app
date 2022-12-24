@@ -5,8 +5,8 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/pages/bookmark_page.dart';
 
-import 'pages/home.dart';
-import 'pages/surah.dart';
+import 'pages/home_page.dart';
+import 'pages/surah_page.dart';
 
 abstract class RouteBinder {
   const RouteBinder();
@@ -28,7 +28,7 @@ class RouteBound extends RouteBinder with
 mixin UnknownRoute {
   Route? onUnknownRoute(RouteSettings settings) {
     return MaterialPageRoute(
-      builder: (BuildContext context) => const Home(),
+      builder: (BuildContext context) => const HomePage(),
     );
   }
 }
@@ -55,7 +55,7 @@ mixin SurahRoute on RouteBinder {
       final arguments = settings.arguments as Map<String, dynamic>?;
 
       return MaterialPageRoute(
-        builder: (BuildContext context) => Surah(surah: arguments?['surah']),
+        builder: (BuildContext context) => SurahPage(surah: arguments?['surah']),
       );
     }
 

@@ -11,8 +11,8 @@ import '../widgets/draggable_menu.dart';
 import '../widgets/pop_up_menu.dart';
 import '../widgets/rounded_ink_well.dart';
 
-class Surah extends StatelessWidget {
-  const Surah({ required this.surah, super.key });
+class SurahPage extends StatelessWidget {
+  const SurahPage({ required this.surah, super.key });
 
   final int surah;
 
