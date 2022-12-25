@@ -4,27 +4,28 @@
 
 import 'package:flutter/material.dart';
 
+import '../data/font_size.dart';
 import 'draggable_menu.dart';
 import 'pop_up_menu.dart';
 
-class _FontSizeSlider extends StatelessWidget {
-  const _FontSizeSlider(this.object);
+class _FontSizeSlider<T extends FontSize> extends StatelessWidget {
+  const _FontSizeSlider(this.data);
 
-  final dynamic object;
+  final T Function(BuildContext context) data;
 
   @override
   Widget build(BuildContext context) {
     return Card(
       child: Column(
         children: <Widget>[
-          Text('Ukuran Font ${object.fontSize}'),
+          Text('Ukuran Font ${data(context).fontSize}'),
           Slider(
             min: 4.0,
             max: 96.0,
-            value: object.fontSize!,
+            value: data(context).fontSize!,
             onChanged: (double value) {
               final newFontSize = double.parse(value.toStringAsFixed(2));
-              object.fontSize = newFontSize;
+              data(context).fontSize = newFontSize;
             },
           ),
         ],
@@ -33,13 +34,13 @@ class _FontSizeSlider extends StatelessWidget {
   }
 }
 
-class FontSizeMenu extends StatelessWidget {
+class FontSizeMenu<T extends FontSize> extends StatelessWidget {
   const FontSizeMenu({
     super.key,
-    required this.object,
+    required this.data,
   });
 
-  final dynamic object;
+  final T Function(BuildContext context) data;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +49,7 @@ class FontSizeMenu extends StatelessWidget {
         return DraggableMenu(
           left: details.globalPosition.dx,
           top: details.globalPosition.dy,
-          child: _FontSizeSlider(object),
+          child: _FontSizeSlider<T>(data),
         );
       },
       child: const Text('Ubah Ukuran...'),

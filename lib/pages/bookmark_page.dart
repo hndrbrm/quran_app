@@ -100,7 +100,7 @@ class _TransliterationMenu extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     FontSizeMenu(
-                      object: TransliterationSize.of(context),
+                      data: (context) => TransliterationSize.of(context),
                     ),
                   ],
                 ),
@@ -140,7 +140,7 @@ class _TranslationMenu extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     FontSizeMenu(
-                      object: TranslationSize.of(context),
+                      data: (context) => TranslationSize.of(context),
                     ),
                   ],
                 ),

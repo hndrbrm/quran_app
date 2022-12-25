@@ -2,40 +2,24 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 
 import '../persistent/translation_size.dart';
+import 'font_size.dart';
 
-class TranslationSize extends InheritedWidget {
+class TranslationSize extends FontSize {
   const TranslationSize({
     super.key,
-    this.fontSize,
-    required this.setFontSize,
+    super.fontSize,
+    required super.setFontSize,
     required super.child,
   });
-
-  final double? fontSize;
-  final void Function(double? fontSize) setFontSize;
-
-  set fontSize(double? fontSize) => setFontSize(fontSize);
 
   static TranslationSize of(BuildContext context) {
     final TranslationSize? result =
       context.dependOnInheritedWidgetOfExactType<TranslationSize>();
     assert(result != null, 'No TranslationSize found in context');
     return result!;
-  }
-
-  @override
-  bool updateShouldNotify(TranslationSize oldWidget) {
-    return fontSize != oldWidget.fontSize;
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DoubleProperty('fontSize', fontSize));
   }
 }
 
