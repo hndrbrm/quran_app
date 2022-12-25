@@ -8,10 +8,21 @@ import 'pages/bookmark_page.dart';
 import 'pages/home_page.dart';
 import 'pages/surah_page.dart';
 
-abstract class RouteBinder {
+abstract class GenerateRoute {
+  Route<dynamic>? onGenerateRoute(RouteSettings settings) {
+    final WidgetBuilder? builder = onGenerateBuilder(settings);
+    if (builder == null) {
+      return null;
+    }
+
+    return MaterialPageRoute(
+      builder: builder,
+    );
+  }
+
   @protected
   @mustCallSuper
-  Route<dynamic>? onGenerateRoute(RouteSettings settings) => null;
+  WidgetBuilder? onGenerateBuilder(RouteSettings settings) => null;
 }
 
 mixin UnknownRoute {
@@ -22,47 +33,43 @@ mixin UnknownRoute {
   }
 }
 
-mixin HomeRoute on RouteBinder, UnknownRoute {
+mixin HomeRoute on GenerateRoute {
   static const String name = '/';
 
   @override
-  Route? onGenerateRoute(RouteSettings settings) {
+  WidgetBuilder? onGenerateBuilder(RouteSettings settings) {
     if (settings.name == name) {
-      return onUnknownRoute(settings);
+      return (BuildContext context) => const HomePage();
     }
 
-    return super.onGenerateRoute(settings);
+    return super.onGenerateBuilder(settings);
   }
 }
 
-mixin SurahRoute on RouteBinder {
+mixin SurahRoute on GenerateRoute {
   static const String name = '/surah';
 
   @override
-  Route? onGenerateRoute(RouteSettings settings) {
+  WidgetBuilder? onGenerateBuilder(RouteSettings settings) {
     if (settings.name == name) {
       final arguments = settings.arguments as Map<String, dynamic>?;
 
-      return MaterialPageRoute(
-        builder: (BuildContext context) => SurahPage(surah: arguments?['surah']),
-      );
+      return (BuildContext context) => SurahPage(surah: arguments?['surah']);
     }
 
-    return super.onGenerateRoute(settings);
+    return super.onGenerateBuilder(settings);
   }
 }
 
-mixin BookmarkRoute on RouteBinder {
+mixin BookmarkRoute on GenerateRoute {
   static const String name = '/bookmark';
 
   @override
-  Route? onGenerateRoute(RouteSettings settings) {
+  WidgetBuilder? onGenerateBuilder(RouteSettings settings) {
     if (settings.name == name) {
-      return MaterialPageRoute(
-        builder: (BuildContext context) => const BookmarkPage(),
-      );
+      return (BuildContext context) => const BookmarkPage();
     }
 
-    return super.onGenerateRoute(settings);
+    return super.onGenerateBuilder(settings);
   }
 }
