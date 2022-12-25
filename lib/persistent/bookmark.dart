@@ -7,7 +7,7 @@ import 'dart:convert';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../provider/bookmark.dart';
+import '../data/bookmark.dart';
 
 abstract class BookmarkPersistent {
   FutureOr<List<Location>?> loadLocations();

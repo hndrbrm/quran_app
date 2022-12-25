@@ -6,23 +6,23 @@ import 'dart:async';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
-abstract class SurahFontSizePersistent {
-  FutureOr<double?> loadSurahFontSize();
+abstract class TransliterationSizePersistent {
+  FutureOr<double?> loadTransliterationSize();
 
-  FutureOr<void> saveSurahFontSize(double? value);
+  FutureOr<void> saveTransliterationSize(double? value);
 }
 
-mixin SurahFontSizePreferences implements SurahFontSizePersistent {
-  static const String key = 'surah_font_size';
+mixin TransliterationSizePreferences implements TransliterationSizePersistent {
+  static const String key = 'transliteration_size';
 
   @override
-  Future<double?> loadSurahFontSize() async {
+  Future<double?> loadTransliterationSize() async {
     final SharedPreferences sp = await SharedPreferences.getInstance();
     return sp.getDouble(key);
   }
 
   @override
-  FutureOr<void> saveSurahFontSize(double? value) {
+  FutureOr<void> saveTransliterationSize(double? value) {
     if (value != null) {
       return SharedPreferences.getInstance().then(
         (SharedPreferences sp) => sp.setDouble(key, value),

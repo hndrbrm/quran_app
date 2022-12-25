@@ -4,6 +4,7 @@
 
 import 'package:flutter/widgets.dart';
 
+import '../data/translation_size.dart';
 import '../quran/quran.dart';
 
 class Translation extends StatelessWidget {
@@ -22,7 +23,12 @@ class Translation extends StatelessWidget {
 
     return Align(
       alignment: AlignmentDirectional.centerStart,
-      child: Text(translate),
+      child: Text(
+        translate,
+        style: TextStyle(
+          fontSize: TranslationSize.of(context).fontSize,
+        ),
+      ),
     );
   }
 }

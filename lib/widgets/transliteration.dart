@@ -4,7 +4,7 @@
 
 import 'package:flutter/widgets.dart';
 
-import '../provider/surah_font_size.dart';
+import '../data/transliteration_size.dart';
 import '../quran/quran.dart';
 
 class Transliteration extends StatelessWidget {
@@ -27,7 +27,7 @@ class Transliteration extends StatelessWidget {
         '$transliterate ${ayah.toArabic()}',
         textDirection: TextDirection.rtl,
         style: TextStyle(
-          fontSize: SurahFontSize.of(context).fontSize,
+          fontSize: TransliterationSize.of(context).fontSize,
         ),
       ),
     );

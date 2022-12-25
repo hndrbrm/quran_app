@@ -5,10 +5,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 
-import '../persistent/surah_font_size.dart';
+import '../persistent/translation_size.dart';
 
-class SurahFontSize extends InheritedWidget {
-  const SurahFontSize({
+class TranslationSize extends InheritedWidget {
+  const TranslationSize({
     super.key,
     this.fontSize,
     required this.setFontSize,
@@ -20,14 +20,15 @@ class SurahFontSize extends InheritedWidget {
 
   set fontSize(double? fontSize) => setFontSize(fontSize);
 
-  static SurahFontSize of(BuildContext context) {
-    final SurahFontSize? result = context.dependOnInheritedWidgetOfExactType<SurahFontSize>();
-    assert(result != null, 'No SurahFontSize found in context');
+  static TranslationSize of(BuildContext context) {
+    final TranslationSize? result =
+      context.dependOnInheritedWidgetOfExactType<TranslationSize>();
+    assert(result != null, 'No TranslationSize found in context');
     return result!;
   }
 
   @override
-  bool updateShouldNotify(SurahFontSize oldWidget) {
+  bool updateShouldNotify(TranslationSize oldWidget) {
     return fontSize != oldWidget.fontSize;
   }
 
@@ -38,8 +39,8 @@ class SurahFontSize extends InheritedWidget {
   }
 }
 
-class SurahFontSizeProvider extends StatefulWidget {
-  const SurahFontSizeProvider({
+class TranslationSizeData extends StatefulWidget {
+  const TranslationSizeData({
     super.key,
     required this.child,
   });
@@ -47,11 +48,11 @@ class SurahFontSizeProvider extends StatefulWidget {
   final Widget child;
 
   @override
-  State<SurahFontSizeProvider> createState() => _SurahFontSizeProviderState();
+  State<TranslationSizeData> createState() => _TranslationSizeDataState();
 }
 
-class _SurahFontSizeProviderState extends State<SurahFontSizeProvider> with
-  SurahFontSizePreferences
+class _TranslationSizeDataState extends State<TranslationSizeData> with
+  TranslationSizePreferences
 {
   static const double _defaultFontSize = 14.0;
 
@@ -62,7 +63,7 @@ class _SurahFontSizeProviderState extends State<SurahFontSizeProvider> with
     super.initState();
 
     () async {
-      _fontSize = await loadSurahFontSize() ?? _defaultFontSize;
+      _fontSize = await loadTranslationSize() ?? _defaultFontSize;
       if (mounted) {
         setState(() {});
       }
@@ -71,12 +72,12 @@ class _SurahFontSizeProviderState extends State<SurahFontSizeProvider> with
 
   @override
   Widget build(BuildContext context) {
-    return SurahFontSize(
+    return TranslationSize(
       fontSize: _fontSize,
       setFontSize: (double? fontSize) {
         if (fontSize != _fontSize) {
           setState(() => _fontSize = fontSize);
-          saveSurahFontSize(fontSize);
+          saveTranslationSize(fontSize);
         }
       },
       child: widget.child,

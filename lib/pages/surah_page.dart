@@ -4,12 +4,13 @@
 
 import 'package:flutter/material.dart';
 
-import '../provider/bookmark.dart';
-import '../provider/surah_font_size.dart';
+import '../data/bookmark.dart';
+import '../data/translation_size.dart';
+import '../data/transliteration_size.dart';
 import '../quran/quran.dart';
 import '../widgets/annotation.dart';
-import '../widgets/change_font_size_menu.dart';
 import '../widgets/draggable_menu.dart';
+import '../widgets/font_size_menu.dart';
 import '../widgets/pop_up_menu.dart';
 import '../widgets/rounded_ink_well.dart';
 import '../widgets/translation.dart';
@@ -53,12 +54,16 @@ class _SurahItem extends StatelessWidget {
       leading: Text('$ayah'),
       title: Column(
         children: <Widget>[
-          _TransliterateMenu(
+          _TransliterationMenu(
             surah: surah,
             ayah: ayah,
             child: Transliteration(surah: surah, ayah: ayah),
           ),
-          Translation(surah: surah, ayah: ayah),
+          _TranslationMenu(
+            surah: surah,
+            ayah: ayah,
+            child: Translation(surah: surah, ayah: ayah),
+          ),
         ],
       ),
       subtitle: Annotation(surah: surah, ayah: ayah),
@@ -66,8 +71,8 @@ class _SurahItem extends StatelessWidget {
   }
 }
 
-class _TransliterateMenu extends StatelessWidget {
-  const _TransliterateMenu({
+class _TransliterationMenu extends StatelessWidget {
+  const _TransliterationMenu({
     required this.surah,
     required this.ayah,
     required this.child,
@@ -91,7 +96,50 @@ class _TransliterateMenu extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    const ChangeFontSizeMenu(),
+                    FontSizeMenu(
+                      object: TransliterationSize.of(context),
+                    ),
+                    _BookmarkMenu(surah: surah, ayah: ayah),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        );
+      },
+      child: child,
+    );
+  }
+}
+
+class _TranslationMenu extends StatelessWidget {
+  const _TranslationMenu({
+    required this.surah,
+    required this.ayah,
+    required this.child,
+  });
+
+  final int surah;
+  final int ayah;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return PopUpMenu(
+      menuBuilder: (TapUpDetails details) {
+        return DraggableMenu(
+          left: details.globalPosition.dx,
+          top: details.globalPosition.dy,
+          child: Card(
+            child: IntrinsicWidth(
+              child: Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    FontSizeMenu(
+                      object: TranslationSize.of(context),
+                    ),
                     _BookmarkMenu(surah: surah, ayah: ayah),
                   ],
                 ),

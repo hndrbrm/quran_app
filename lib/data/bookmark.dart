@@ -78,8 +78,8 @@ class Bookmark extends InheritedWidget {
   }
 }
 
-class BookmarkProvider extends StatefulWidget {
-  const BookmarkProvider({
+class BookmarkData extends StatefulWidget {
+  const BookmarkData({
     super.key,
     required this.child,
   });
@@ -87,10 +87,10 @@ class BookmarkProvider extends StatefulWidget {
   final Widget child;
 
   @override
-  State<BookmarkProvider> createState() => _BookmarkProviderState();
+  State<BookmarkData> createState() => _BookmarkDataState();
 }
 
-class _BookmarkProviderState extends State<BookmarkProvider> with
+class _BookmarkDataState extends State<BookmarkData> with
   BookmarkPreferences
 {
   List<Location> _locations = [];

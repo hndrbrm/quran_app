@@ -4,8 +4,9 @@
 
 import 'package:flutter/material.dart';
 
-import 'provider/bookmark.dart';
-import 'provider/surah_font_size.dart';
+import 'data/bookmark.dart';
+import 'data/translation_size.dart';
+import 'data/transliteration_size.dart';
 import 'routes.dart';
 
 void main() {
@@ -19,14 +20,16 @@ class QuranApp extends StatelessWidget with
 
   @override
   Widget build(BuildContext context) {
-    return SurahFontSizeProvider(
-      child: BookmarkProvider(
-        child: MaterialApp(
-          title: 'Quran',
-          onGenerateRoute: onGenerateRoute,
-          onUnknownRoute: onUnknownRoute,
-          theme: ThemeData(
-            fontFamily: 'Kemenag',
+    return TransliterationSizeData(
+      child: TranslationSizeData(
+        child: BookmarkData(
+          child: MaterialApp(
+            title: 'Quran',
+            onGenerateRoute: onGenerateRoute,
+            onUnknownRoute: onUnknownRoute,
+            theme: ThemeData(
+              fontFamily: 'Kemenag',
+            ),
           ),
         ),
       ),
