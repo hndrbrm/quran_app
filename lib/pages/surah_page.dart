@@ -30,7 +30,6 @@ class SurahPage extends StatelessWidget {
           return ListTile(
             leading: Text('$ayah'),
             title: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
               children: <Widget>[
                 _Transliteration(surah: surah, ayah: ayah),
                 _Translation(surah: surah, ayah: ayah),
@@ -163,11 +162,14 @@ class _Transliteration extends StatelessWidget {
     return _TransliterateMenu(
       surah: surah,
       ayah: ayah,
-      child: Text(
-        '$transliterate ${ayah.toArabic()}',
-        textDirection: TextDirection.rtl,
-        style: TextStyle(
-          fontSize: SurahFontSize.of(context).fontSize,
+      child: Align(
+        alignment: AlignmentDirectional.centerEnd,
+        child: Text(
+          '$transliterate ${ayah.toArabic()}',
+          textDirection: TextDirection.rtl,
+          style: TextStyle(
+            fontSize: SurahFontSize.of(context).fontSize,
+          ),
         ),
       ),
     );
@@ -187,7 +189,10 @@ class _Translation extends StatelessWidget {
   Widget build(BuildContext context) {
     final String translate = Quran.instance.getAyahTranslate(surah, ayah);
 
-    return Text(translate);
+    return Align(
+      alignment: AlignmentDirectional.centerStart,
+      child: Text(translate),
+    );
   }
 }
 
@@ -204,7 +209,10 @@ class _Annotation extends StatelessWidget {
   Widget build(BuildContext context) {
     final String annotation = Quran.instance.getAyahAnnotation(surah, ayah);
 
-    return Text(annotation);
+    return Align(
+      alignment: AlignmentDirectional.centerStart,
+      child: Text(annotation),
+    );
   }
 }
 
