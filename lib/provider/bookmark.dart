@@ -5,12 +5,23 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 
+import '../persistent/bookmark.dart';
+
 class Location {
   const Location(this.surah, this.ayah)
     : assert(1 <= surah && surah <= 114);
 
+  Location.fromJson(Map<String, dynamic> json)
+    : surah = json['surah'],
+      ayah = json['ayah'];
+
   final int surah;
   final int ayah;
+
+  Map<String, dynamic> toJson() => {
+    'surah': surah,
+    'ayah': ayah,
+  };
 
   @override
   bool operator ==(Object other) {
@@ -79,8 +90,22 @@ class BookmarkProvider extends StatefulWidget {
   State<BookmarkProvider> createState() => _BookmarkProviderState();
 }
 
-class _BookmarkProviderState extends State<BookmarkProvider> {
+class _BookmarkProviderState extends State<BookmarkProvider> with
+  BookmarkPreferences
+{
   List<Location> _locations = [];
+
+  @override
+  void initState() {
+    super.initState();
+
+    () async {
+      _locations = await loadLocations() ?? [];
+      if (mounted) {
+        setState(() {});
+      }
+    }();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -89,6 +114,7 @@ class _BookmarkProviderState extends State<BookmarkProvider> {
       setLocations: (List<Location> locations) {
         if (locations != _locations) {
           setState(() => _locations = locations);
+          saveLocations(locations);
         }
       },
       child: widget.child,
