@@ -3,26 +3,15 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:quran_app/pages/bookmark_page.dart';
 
+import 'pages/bookmark_page.dart';
 import 'pages/home_page.dart';
 import 'pages/surah_page.dart';
 
 abstract class RouteBinder {
-  const RouteBinder();
-
   @protected
   @mustCallSuper
   Route<dynamic>? onGenerateRoute(RouteSettings settings) => null;
-}
-
-class RouteBound extends RouteBinder with
-  UnknownRoute, HomeRoute, SurahRoute, BookmarkRoute
-{
-  const RouteBound._();
-
-  static RouteBound get singleton => _singleton;
-  static const RouteBound _singleton = RouteBound._();
 }
 
 mixin UnknownRoute {

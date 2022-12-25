@@ -12,7 +12,9 @@ void main() {
   runApp(const QuranApp());
 }
 
-class QuranApp extends StatelessWidget with UnknownRoute {
+class QuranApp extends StatelessWidget with
+  UnknownRoute, RouteBinder, HomeRoute, SurahRoute, BookmarkRoute
+{
   const QuranApp({ super.key });
 
   @override
@@ -21,7 +23,7 @@ class QuranApp extends StatelessWidget with UnknownRoute {
       child: BookmarkProvider(
         child: MaterialApp(
           title: 'Quran',
-          onGenerateRoute: RouteBound.singleton.onGenerateRoute,
+          onGenerateRoute: onGenerateRoute,
           onUnknownRoute: onUnknownRoute,
           theme: ThemeData(
             fontFamily: 'Kemenag',
