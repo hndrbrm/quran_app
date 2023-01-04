@@ -16,12 +16,12 @@ abstract class BookmarkPersistent {
 }
 
 mixin BookmarkPreferences implements BookmarkPersistent {
-  static const String key = 'bookmark';
+  static const String _key = 'bookmark';
 
   @override
   Future<List<Location>?> loadLocations() async {
     final SharedPreferences sp = await SharedPreferences.getInstance();
-    final String? value = sp.getString(key);
+    final String? value = sp.getString(_key);
     if (value == null) {
       return null;
     }
@@ -34,7 +34,7 @@ mixin BookmarkPreferences implements BookmarkPersistent {
   FutureOr<void> saveLocations(List<Location>? locations) {
     if (locations != null) {
       return SharedPreferences.getInstance().then(
-        (SharedPreferences sp) => sp.setString(key, jsonEncode(locations)),
+        (SharedPreferences sp) => sp.setString(_key, jsonEncode(locations)),
       );
     }
   }
