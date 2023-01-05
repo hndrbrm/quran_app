@@ -26,6 +26,7 @@ void main() {
     }
 
     final String alphabet = Quran.instance.getSurahAlphabet(surah);
+    // ignore: avoid_print
     print(
 '''
 mixin ${alphabet}AyahAnnotation on AyahAnnotation {
