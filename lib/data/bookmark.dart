@@ -2,7 +2,6 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 
 import '../persistent/bookmark.dart';
@@ -35,89 +34,52 @@ class Location {
   int get hashCode => Object.hash(surah, ayah);
 }
 
-class Bookmark extends InheritedWidget {
-  const Bookmark({
-    super.key,
-    required this.locations,
-    required this.setLocations,
-    required super.child,
-  });
+mixin InitializeBinder {
+  void initialize() {}
+}
 
-  final List<Location> locations;
-  final void Function(List<Location> locations) setLocations;
+mixin _Locations on InitializeBinder, BookmarkPreferences {
+  ValueNotifier<List<Location>> get notifier;
 
-  set locations(List<Location> locations) => setLocations(locations);
-  set location(Location location) => _setLocation(location);
+  List<Location> get locations => notifier.value;
+  set locations(List<Location> value) => notifier.value = value;
 
-  static Bookmark of(BuildContext context) {
-    final Bookmark? result = context.dependOnInheritedWidgetOfExactType<Bookmark>();
-    assert(result != null, 'No Bookmark found in context');
-    return result!;
+  @override
+  void initialize() {
+    super.initialize();
+
+    () async {
+      final List<Location> locations = await loadLocations() ?? [];
+      notifier.value = locations;
+    }();
   }
+}
 
-  void _setLocation(Location location) {
-    if (locations.contains(location)) {
+mixin _Location on _Locations {
+  set location(Location value) {
+    if (locations.contains(value)) {
       return;
     }
 
-    locations = <Location>[
-      ...locations,
-      location,
-    ];
-  }
-
-  @override
-  bool updateShouldNotify(Bookmark oldWidget) {
-    return locations != oldWidget.locations;
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(IterableProperty('locations', locations));
+    locations = <Location>[ value, ...locations ];
   }
 }
 
-class BookmarkData extends StatefulWidget {
-  const BookmarkData({
-    super.key,
-    required this.child,
-  });
-
-  final Widget child;
-
-  @override
-  State<BookmarkData> createState() => _BookmarkDataState();
-}
-
-class _BookmarkDataState extends State<BookmarkData> with
-  BookmarkPreferences
+class BookmarkScope
+  extends InheritedNotifier<ValueNotifier<List<Location>>>
+  with InitializeBinder, BookmarkPreferences, _Locations, _Location
 {
-  List<Location> _locations = [];
+  BookmarkScope({
+    super.key,
+    required super.child,
+  }) : super(notifier: ValueNotifier<List<Location>>(<Location>[])) {
+    initialize();
+  }
 
-  @override
-  void initState() {
-    super.initState();
-
-    () async {
-      _locations = await loadLocations() ?? [];
-      if (mounted) {
-        setState(() {});
-      }
-    }();
+  static BookmarkScope of(BuildContext context) {
+    return context.dependOnInheritedWidgetOfExactType<BookmarkScope>()!;
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Bookmark(
-      locations: _locations,
-      setLocations: (List<Location> locations) {
-        if (locations != _locations) {
-          setState(() => _locations = locations);
-          saveLocations(locations);
-        }
-      },
-      child: widget.child,
-    );
-  }
+  ValueNotifier<List<Location>> get notifier => super.notifier!;
 }

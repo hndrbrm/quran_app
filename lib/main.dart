@@ -22,7 +22,7 @@ class QuranApp extends StatelessWidget with
   Widget build(BuildContext context) {
     return TransliterationSizeData(
       child: TranslationSizeData(
-        child: BookmarkData(
+        child: BookmarkScope(
           child: MaterialApp(
             title: 'Quran',
             onGenerateRoute: onGenerateRoute,

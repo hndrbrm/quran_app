@@ -171,7 +171,7 @@ class _BookmarkMenu extends StatelessWidget {
       ),
       onTap: () {
         final Location location = Location(surah, ayah);
-        Bookmark.of(context).location = location;
+        BookmarkScope.of(context).location = location;
         Navigator.of(context).pop();
       },
     );
