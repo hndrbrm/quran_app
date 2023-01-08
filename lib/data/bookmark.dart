@@ -38,7 +38,7 @@ mixin InitializeBinder {
   void initialize() {}
 }
 
-mixin _Locations on InitializeBinder, BookmarkPreferences {
+mixin _Locations on InitializeBinder, LocationsPreferences {
   ValueNotifier<List<Location>> get notifier;
 
   List<Location> get locations => notifier.value;
@@ -65,21 +65,86 @@ mixin _Location on _Locations {
   }
 }
 
-class BookmarkScope
+class LocationsScope
   extends InheritedNotifier<ValueNotifier<List<Location>>>
-  with InitializeBinder, BookmarkPreferences, _Locations, _Location
+  with InitializeBinder, LocationsPreferences, _Locations, _Location
 {
-  BookmarkScope({
+  LocationsScope({
     super.key,
     required super.child,
   }) : super(notifier: ValueNotifier<List<Location>>(<Location>[])) {
     initialize();
   }
 
-  static BookmarkScope of(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<BookmarkScope>()!;
+  static LocationsScope of(BuildContext context) {
+    return context.dependOnInheritedWidgetOfExactType<LocationsScope>()!;
   }
 
   @override
   ValueNotifier<List<Location>> get notifier => super.notifier!;
+}
+
+mixin _Groups on InitializeBinder, GroupsPreferences {
+  ValueNotifier<List<String>> get notifier;
+
+  List<String> get groups => notifier.value;
+  set groups(List<String> value) => notifier.value = value;
+
+  @override
+  void initialize() {
+    super.initialize();
+
+    () async {
+      final List<String> locations = await loadGroups() ?? [];
+      notifier.value = locations;
+    }();
+  }
+}
+
+mixin _Group on _Groups {
+  set group(String value) {
+    if (groups.contains(value)) {
+      return;
+    }
+
+    groups = <String>[ value, ...groups ];
+  }
+}
+
+class GroupsScope
+  extends InheritedNotifier<ValueNotifier<List<String>>>
+  with InitializeBinder, GroupsPreferences, _Groups, _Group
+{
+  GroupsScope({
+    super.key,
+    required super.child,
+  }) : super(notifier: ValueNotifier<List<String>>(<String>[])) {
+    initialize();
+  }
+
+  static GroupsScope of(BuildContext context) {
+    return context.dependOnInheritedWidgetOfExactType<GroupsScope>()!;
+  }
+
+  @override
+  ValueNotifier<List<String>> get notifier => super.notifier!;
+
+}
+
+class BookmarkScope extends StatelessWidget {
+  const BookmarkScope({
+    super.key,
+    required this.child,
+  });
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return GroupsScope(
+      child: LocationsScope(
+        child: child,
+      ),
+    );
+  }
 }

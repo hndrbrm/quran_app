@@ -9,13 +9,19 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../data/bookmark.dart';
 
-abstract class BookmarkPersistent {
+abstract class LocationsPersistent {
   FutureOr<List<Location>?> loadLocations();
 
   FutureOr<void> saveLocations(List<Location>? locations);
 }
 
-mixin BookmarkPreferences implements BookmarkPersistent {
+abstract class GroupsPersistent {
+  FutureOr<List<String>?> loadGroups();
+
+  FutureOr<void> saveGroups(List<String>? groups);
+}
+
+mixin LocationsPreferences implements LocationsPersistent {
   static const String _key = 'bookmark';
 
   @override
@@ -35,6 +41,30 @@ mixin BookmarkPreferences implements BookmarkPersistent {
     if (locations != null) {
       return SharedPreferences.getInstance().then(
         (SharedPreferences sp) => sp.setString(_key, jsonEncode(locations)),
+      );
+    }
+  }
+}
+
+mixin GroupsPreferences implements GroupsPersistent {
+  static const String _key = 'groups';
+
+  @override
+  Future<List<String>?> loadGroups() async {
+    final SharedPreferences sp = await SharedPreferences.getInstance();
+    final String? value = sp.getString(_key);
+    if (value == null) {
+      return null;
+    }
+
+    return jsonDecode(value);
+  }
+
+  @override
+  FutureOr<void> saveGroups(List<String>? groups) {
+    if (groups != null) {
+      return SharedPreferences.getInstance().then(
+        (SharedPreferences sp) => sp.setString(_key, jsonEncode(groups)),
       );
     }
   }

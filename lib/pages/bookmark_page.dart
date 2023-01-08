@@ -20,7 +20,7 @@ class BookmarkPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Location> locations = BookmarkScope.of(context).locations;
+    final List<Location> locations = LocationsScope.of(context).locations;
 
     return Scaffold(
       appBar: AppBar(
