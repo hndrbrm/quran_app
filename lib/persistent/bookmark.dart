@@ -57,7 +57,8 @@ mixin GroupsPreferences implements GroupsPersistent {
       return null;
     }
 
-    return jsonDecode(value);
+    final List<dynamic> groups = jsonDecode(value);
+    return groups.map((e) => e as String).toList(growable: false);
   }
 
   @override

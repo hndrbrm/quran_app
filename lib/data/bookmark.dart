@@ -42,7 +42,10 @@ mixin _Locations on InitializeBinder, LocationsPreferences {
   ValueNotifier<List<Location>> get notifier;
 
   List<Location> get locations => notifier.value;
-  set locations(List<Location> value) => notifier.value = value;
+  set locations(List<Location> value) {
+    saveLocations(value);
+    notifier.value = value;
+  }
 
   @override
   void initialize() {
@@ -88,7 +91,10 @@ mixin _Groups on InitializeBinder, GroupsPreferences {
   ValueNotifier<List<String>> get notifier;
 
   List<String> get groups => notifier.value;
-  set groups(List<String> value) => notifier.value = value;
+  set groups(List<String> value) {
+    saveGroups(value);
+    notifier.value = value;
+  }
 
   @override
   void initialize() {

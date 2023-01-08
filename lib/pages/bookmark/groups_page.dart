@@ -4,38 +4,93 @@
 
 import 'package:flutter/material.dart';
 
-import '../data/bookmark.dart';
-import '../data/translation_size.dart';
-import '../data/transliteration_size.dart';
-import '../widgets/annotation.dart';
-import '../widgets/font_size_menu.dart';
-import '../widgets/draggable_menu.dart';
-import '../widgets/pop_up_menu.dart';
-import '../widgets/translation.dart';
-import '../widgets/transliteration.dart';
-import 'quran_drawer.dart';
+import '../../data/bookmark.dart';
+import '../../data/translation_size.dart';
+import '../../data/transliteration_size.dart';
+import '../../widgets/annotation.dart';
+import '../../widgets/font_size_menu.dart';
+import '../../widgets/draggable_menu.dart';
+import '../../widgets/pop_up_menu.dart';
+import '../../widgets/rounded_ink_well.dart';
+import '../../widgets/translation.dart';
+import '../../widgets/transliteration.dart';
+import '../quran_drawer.dart';
 
-class BookmarkPage extends StatelessWidget {
-  const BookmarkPage({ super.key });
+class GroupsPage extends StatelessWidget {
+  const GroupsPage({ super.key });
 
   @override
   Widget build(BuildContext context) {
-    final List<Location> locations = LocationsScope.of(context).locations;
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Penanda'),
       ),
       drawer: const QuranDrawer(),
-      body: ListView.builder(
-        itemCount: locations.length,
-        itemBuilder: (BuildContext context, int index) {
-          final Location location = locations[index];
+      body: const _BookmarkList(),
+    );
+  }
+}
 
-          return _SurahItem(
-            surah: location.surah,
-            ayah: location.ayah,
+class _BookmarkList extends StatelessWidget {
+  const _BookmarkList();
+
+  @override
+  Widget build(BuildContext context) {
+    final List<String> groups = GroupsScope.of(context).groups;
+
+    if (groups.isEmpty) {
+      return const _EmptyList();
+    }
+
+    return ListView.builder(
+      itemCount: groups.length,
+      itemBuilder: (BuildContext context, int index) {
+        return ListTile(
+          title: Text(groups[index]),
+        );
+      },
+    );
+  }
+}
+
+class _EmptyList extends StatelessWidget {
+  const _EmptyList();
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: RoundedInkWell(
+        child: const Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Text('Create Group'),
+        ),
+        onTap: () async {
+          final GroupsScope gs = GroupsScope.of(context);
+          final String group = await showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              final TextEditingController controller = TextEditingController();
+              return AlertDialog(
+                title: TextField(
+                  controller: controller,
+                  decoration: const InputDecoration(
+                    labelText: 'Group Name',
+                  ),
+                ),
+                actions: <Widget>[
+                  TextButton(
+                    onPressed: () => Navigator.of(context).pop(),
+                    child: const Text('Cancel'),
+                  ),
+                  TextButton(
+                    onPressed: () => Navigator.of(context).pop(controller.text),
+                    child: const Text('Ok'),
+                  ),
+                ],
+              );
+            },
           );
+          gs.group = group;
         },
       ),
     );

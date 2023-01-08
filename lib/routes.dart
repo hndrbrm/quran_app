@@ -4,7 +4,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'pages/bookmark_page.dart';
+import 'pages/bookmark/groups_page.dart';
 import 'pages/home_page.dart';
 import 'pages/surah_page.dart';
 
@@ -67,7 +67,7 @@ mixin BookmarkRoute on GenerateRoute {
   @override
   WidgetBuilder? onGenerateBuilder(RouteSettings settings) {
     if (settings.name == name) {
-      return (BuildContext context) => const BookmarkPage();
+      return (BuildContext context) => const GroupsPage();
     }
 
     return super.onGenerateBuilder(settings);
