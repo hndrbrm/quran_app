@@ -39,10 +39,10 @@ mixin InitializeBinder {
 }
 
 mixin _Locations on InitializeBinder, LocationsPreferences {
-  ValueNotifier<List<Location>> get notifier;
+  ValueNotifier<Map<String, List<Location>>> get notifier;
 
-  List<Location> get locations => notifier.value;
-  set locations(List<Location> value) {
+  Map<String, List<Location>> get locations => notifier.value;
+  set locations(Map<String, List<Location>> value) {
     saveLocations(value);
     notifier.value = value;
   }
@@ -52,30 +52,40 @@ mixin _Locations on InitializeBinder, LocationsPreferences {
     super.initialize();
 
     () async {
-      final List<Location> locations = await loadLocations() ?? [];
+      final Map<String, List<Location>> locations = await loadLocations() ?? {};
       notifier.value = locations;
     }();
   }
 }
 
 mixin _Location on _Locations {
-  set location(Location value) {
-    if (locations.contains(value)) {
+  void setLocation(String group, Location value) {
+    locations[group] ??= [];
+
+    if (locations[group]!.contains(value)) {
       return;
     }
 
-    locations = <Location>[ value, ...locations ];
+    final List<Location> newValue = [
+      ...locations[group]!,
+      value,
+    ];
+
+    locations = {
+      ...locations,
+      group: newValue,
+    };
   }
 }
 
 class LocationsScope
-  extends InheritedNotifier<ValueNotifier<List<Location>>>
+  extends InheritedNotifier<ValueNotifier<Map<String, List<Location>>>>
   with InitializeBinder, LocationsPreferences, _Locations, _Location
 {
   LocationsScope({
     super.key,
     required super.child,
-  }) : super(notifier: ValueNotifier<List<Location>>(<Location>[])) {
+  }) : super(notifier: ValueNotifier<Map<String, List<Location>>>(<String, List<Location>>{})) {
     initialize();
   }
 
@@ -84,7 +94,7 @@ class LocationsScope
   }
 
   @override
-  ValueNotifier<List<Location>> get notifier => super.notifier!;
+  ValueNotifier<Map<String, List<Location>>> get notifier => super.notifier!;
 }
 
 mixin _Groups on InitializeBinder, GroupsPreferences {

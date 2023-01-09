@@ -10,9 +10,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../data/bookmark.dart';
 
 abstract class LocationsPersistent {
-  FutureOr<List<Location>?> loadLocations();
+  FutureOr<Map<String, List<Location>>?> loadLocations();
 
-  FutureOr<void> saveLocations(List<Location>? locations);
+  FutureOr<void> saveLocations(Map<String, List<Location>>? locations);
 }
 
 abstract class GroupsPersistent {
@@ -22,22 +22,29 @@ abstract class GroupsPersistent {
 }
 
 mixin LocationsPreferences implements LocationsPersistent {
-  static const String _key = 'bookmark';
+  static const String _key = 'locations';
 
   @override
-  Future<List<Location>?> loadLocations() async {
+  Future<Map<String, List<Location>>?> loadLocations() async {
     final SharedPreferences sp = await SharedPreferences.getInstance();
     final String? value = sp.getString(_key);
     if (value == null) {
       return null;
     }
 
-    final List<dynamic> locations = jsonDecode(value);
-    return locations.map((e) => Location.fromJson(e)).toList(growable: false);
+    final Map<String, dynamic> locations = jsonDecode(value);
+    return locations.map(
+      (String key, dynamic value) => MapEntry(
+        key,
+        (value as List<dynamic>).map(
+          (dynamic e) => Location.fromJson(e as Map<String, dynamic>),
+        ).toList(growable: false),
+      ),
+    );
   }
 
   @override
-  FutureOr<void> saveLocations(List<Location>? locations) {
+  FutureOr<void> saveLocations(Map<String, List<Location>>? locations) {
     if (locations != null) {
       return SharedPreferences.getInstance().then(
         (SharedPreferences sp) => sp.setString(_key, jsonEncode(locations)),

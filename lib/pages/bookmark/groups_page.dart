@@ -5,15 +5,8 @@
 import 'package:flutter/material.dart';
 
 import '../../data/bookmark.dart';
-import '../../data/translation_size.dart';
-import '../../data/transliteration_size.dart';
-import '../../widgets/annotation.dart';
-import '../../widgets/font_size_menu.dart';
-import '../../widgets/draggable_menu.dart';
-import '../../widgets/pop_up_menu.dart';
+import '../../routes.dart';
 import '../../widgets/rounded_ink_well.dart';
-import '../../widgets/translation.dart';
-import '../../widgets/transliteration.dart';
 import '../quran_drawer.dart';
 
 class GroupsPage extends StatelessWidget {
@@ -26,13 +19,13 @@ class GroupsPage extends StatelessWidget {
         title: const Text('Penanda'),
       ),
       drawer: const QuranDrawer(),
-      body: const _BookmarkList(),
+      body: const _GroupsList(),
     );
   }
 }
 
-class _BookmarkList extends StatelessWidget {
-  const _BookmarkList();
+class _GroupsList extends StatelessWidget {
+  const _GroupsList();
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +40,14 @@ class _BookmarkList extends StatelessWidget {
       itemBuilder: (BuildContext context, int index) {
         return ListTile(
           title: Text(groups[index]),
+          onTap: () {
+            Navigator.of(context).pushNamed(
+              LocationsRoute.name,
+              arguments: {
+                'group': groups[index],
+              }
+            );
+          },
         );
       },
     );
@@ -93,118 +94,6 @@ class _EmptyList extends StatelessWidget {
           gs.group = group;
         },
       ),
-    );
-  }
-}
-
-class _SurahItem extends StatelessWidget {
-  const _SurahItem({
-    required this.surah,
-    required this.ayah,
-  });
-
-  final int surah;
-  final int ayah;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      leading: Text('($surah:$ayah)'),
-      title: Column(
-        children: <Widget>[
-          _TransliterationMenu(
-            surah: surah,
-            ayah: ayah,
-            child: Transliteration(surah: surah, ayah: ayah),
-          ),
-          _TranslationMenu(
-            surah: surah,
-            ayah: ayah,
-            child: Translation(surah: surah, ayah: ayah),
-          ),
-        ],
-      ),
-      subtitle: Annotation(surah: surah, ayah: ayah),
-    );
-  }
-}
-
-class _TransliterationMenu extends StatelessWidget {
-  const _TransliterationMenu({
-    required this.surah,
-    required this.ayah,
-    required this.child,
-  });
-
-  final int surah;
-  final int ayah;
-  final Widget child;
-
-  @override
-  Widget build(BuildContext context) {
-    return PopUpMenu(
-      menuBuilder: (TapUpDetails details) {
-        return DraggableMenu(
-          left: details.globalPosition.dx,
-          top: details.globalPosition.dy,
-          child: Card(
-            child: IntrinsicWidth(
-              child: Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    FontSizeMenu(
-                      data: (context) => TransliterationSize.of(context),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        );
-      },
-      child: child,
-    );
-  }
-}
-
-class _TranslationMenu extends StatelessWidget {
-  const _TranslationMenu({
-    required this.surah,
-    required this.ayah,
-    required this.child,
-  });
-
-  final int surah;
-  final int ayah;
-  final Widget child;
-
-  @override
-  Widget build(BuildContext context) {
-    return PopUpMenu(
-      menuBuilder: (TapUpDetails details) {
-        return DraggableMenu(
-          left: details.globalPosition.dx,
-          top: details.globalPosition.dy,
-          child: Card(
-            child: IntrinsicWidth(
-              child: Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    FontSizeMenu(
-                      data: (context) => TranslationSize.of(context),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        );
-      },
-      child: child,
     );
   }
 }

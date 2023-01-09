@@ -5,6 +5,7 @@
 import 'package:flutter/material.dart';
 
 import 'pages/bookmark/groups_page.dart';
+import 'pages/bookmark/locations_page.dart';
 import 'pages/home_page.dart';
 import 'pages/surah_page.dart';
 
@@ -61,13 +62,28 @@ mixin SurahRoute on GenerateRoute {
   }
 }
 
-mixin BookmarkRoute on GenerateRoute {
-  static const String name = '/bookmark';
+mixin GroupsRoute on GenerateRoute {
+  static const String name = '/groups';
 
   @override
   WidgetBuilder? onGenerateBuilder(RouteSettings settings) {
     if (settings.name == name) {
       return (BuildContext context) => const GroupsPage();
+    }
+
+    return super.onGenerateBuilder(settings);
+  }
+}
+
+mixin LocationsRoute on GenerateRoute {
+  static const String name = '/locations';
+
+  @override
+  WidgetBuilder? onGenerateBuilder(RouteSettings settings) {
+    if (settings.name == name) {
+      final arguments = settings.arguments as Map<String, dynamic>?;
+
+      return (BuildContext context) => LocationsPage(group: arguments?['group']);
     }
 
     return super.onGenerateBuilder(settings);

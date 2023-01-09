@@ -14,7 +14,8 @@ void main() {
 }
 
 class QuranApp extends StatelessWidget with
-  UnknownRoute, GenerateRoute, HomeRoute, SurahRoute, BookmarkRoute
+  UnknownRoute, GenerateRoute, HomeRoute, SurahRoute, GroupsRoute,
+  LocationsRoute
 {
   const QuranApp({ super.key });
 

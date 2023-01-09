@@ -19,7 +19,7 @@ class QuranDrawer extends StatelessWidget {
             onTap: () {
               Navigator.of(context).pushNamedAndRemoveUntil(
                 HomeRoute.name,
-                    (route) => false,
+                (route) => false,
               );
             },
           ),
@@ -27,7 +27,7 @@ class QuranDrawer extends StatelessWidget {
             title: const Text('Penanda'),
             onTap: () {
               Navigator.of(context).pushNamedAndRemoveUntil(
-                BookmarkRoute.name,
+                GroupsRoute.name,
                 (route) => false,
               );
             },

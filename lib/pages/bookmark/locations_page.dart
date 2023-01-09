@@ -3,38 +3,57 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:quran_app/data/bookmark.dart';
 
-import '../data/bookmark.dart';
-import '../data/translation_size.dart';
-import '../data/transliteration_size.dart';
-import '../quran/quran.dart';
-import '../widgets/annotation.dart';
-import '../widgets/draggable_menu.dart';
-import '../widgets/font_size_menu.dart';
-import '../widgets/pop_up_menu.dart';
-import '../widgets/rounded_ink_well.dart';
-import '../widgets/translation.dart';
-import '../widgets/transliteration.dart';
+import '../../data/translation_size.dart';
+import '../../data/transliteration_size.dart';
+import '../../widgets/annotation.dart';
+import '../../widgets/draggable_menu.dart';
+import '../../widgets/font_size_menu.dart';
+import '../../widgets/pop_up_menu.dart';
+import '../../widgets/translation.dart';
+import '../../widgets/transliteration.dart';
 
-class SurahPage extends StatelessWidget {
-  const SurahPage({ required this.surah, super.key });
+class LocationsPage extends StatelessWidget {
+  const LocationsPage({
+    super.key,
+    required this.group,
+  });
 
-  final int surah;
+  final String group;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(Quran.instance.getLatin(surah)),
+        title: Text(group),
       ),
-      body: ListView.builder(
-        itemCount: Quran.instance.getLength(surah),
-        itemBuilder: (BuildContext context, int index) {
-          final int ayah = index + 1;
+      body: _LocationsList(group),
+    );
+  }
+}
 
-          return _SurahItem(surah: surah, ayah: ayah);
-        },
-      ),
+class _LocationsList extends StatelessWidget {
+  const _LocationsList(this.group);
+
+  final String group;
+
+  @override
+  Widget build(BuildContext context) {
+    final List<Location> locations = LocationsScope.of(context).locations[group] ?? [];
+
+    if (locations.isEmpty) {
+      return const Center(child: Text('Belum ada bookmark'));
+    }
+
+    return ListView.builder(
+      itemCount: locations.length,
+      itemBuilder: (BuildContext context, int index) {
+        return _SurahItem(
+          surah: locations[index].surah,
+          ayah: locations[index].ayah,
+        );
+      },
     );
   }
 }
@@ -51,7 +70,7 @@ class _SurahItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Text('$ayah'),
+      leading: Text('($surah:$ayah)'),
       title: Column(
         children: <Widget>[
           _TransliterationMenu(
@@ -99,7 +118,6 @@ class _TransliterationMenu extends StatelessWidget {
                     FontSizeMenu(
                       data: (context) => TransliterationSize.of(context),
                     ),
-                    _BookmarkMenu(surah: surah, ayah: ayah),
                   ],
                 ),
               ),
@@ -140,7 +158,6 @@ class _TranslationMenu extends StatelessWidget {
                     FontSizeMenu(
                       data: (context) => TranslationSize.of(context),
                     ),
-                    _BookmarkMenu(surah: surah, ayah: ayah),
                   ],
                 ),
               ),
@@ -149,31 +166,6 @@ class _TranslationMenu extends StatelessWidget {
         );
       },
       child: child,
-    );
-  }
-}
-
-class _BookmarkMenu extends StatelessWidget {
-  const _BookmarkMenu({
-    required this.surah,
-    required this.ayah,
-  });
-
-  final int surah;
-  final int ayah;
-
-  @override
-  Widget build(BuildContext context) {
-    return RoundedInkWell(
-      child: const Padding(
-        padding: EdgeInsets.all(4.0),
-        child: Text('Tandai'),
-      ),
-      onTap: () {
-        final Location location = Location(surah, ayah);
-        LocationsScope.of(context).setLocation('tes', location);
-        Navigator.of(context).pop();
-      },
     );
   }
 }
