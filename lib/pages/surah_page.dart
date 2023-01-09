@@ -187,7 +187,7 @@ class _GroupsMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> groups = GroupsScope.of(context).groups;
+    final List<String> groups = GroupsScope.watchOf(context).groups;
 
     return Card(
       child:  LimitedBox(
@@ -198,7 +198,7 @@ class _GroupsMenu extends StatelessWidget {
           itemCount: groups.length,
           itemBuilder: (BuildContext context, int index) {
             return _GroupsItem(
-              group: groups[0],
+              group: groups[index],
               location: location,
             );
           },
@@ -222,7 +222,7 @@ class _GroupsItem extends StatelessWidget {
     return ListTile(
       title: Text(group),
       onTap: () {
-        LocationsScope.of(context).setLocation(group, location);
+        LocationsScope.readOf(context).addLocation(group, location);
         Navigator.of(context).pop();
       },
     );

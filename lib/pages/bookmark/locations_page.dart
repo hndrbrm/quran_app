@@ -40,7 +40,7 @@ class _LocationsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Location> locations = LocationsScope.of(context).locations[group] ?? [];
+    final List<Location> locations = LocationsScope.watchOf(context).locations[group] ?? [];
 
     if (locations.isEmpty) {
       return const Center(child: Text('Belum ada bookmark'));

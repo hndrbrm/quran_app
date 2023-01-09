@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 
 import '../../data/bookmark.dart';
 import '../../routes.dart';
+import '../../widgets/draggable_menu.dart';
+import '../../widgets/pop_up_menu.dart';
 import '../../widgets/rounded_ink_well.dart';
 import '../quran_drawer.dart';
 
@@ -35,7 +37,7 @@ class _GroupsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> groups = GroupsScope.of(context).groups;
+    final List<String> groups = GroupsScope.watchOf(context).groups;
 
     if (groups.isEmpty) {
       return const _EmptyList();
@@ -44,17 +46,105 @@ class _GroupsList extends StatelessWidget {
     return ListView.builder(
       itemCount: groups.length,
       itemBuilder: (BuildContext context, int index) {
-        return ListTile(
-          title: Text(groups[index]),
-          onTap: () {
-            Navigator.of(context).pushNamed(
-              LocationsRoute.name,
-              arguments: {
-                'group': groups[index],
-              }
-            );
+        return _GroupsItem(group: groups[index]);
+      },
+    );
+  }
+}
+
+class _GroupsItem extends StatelessWidget {
+  const _GroupsItem({
+    required this.group,
+  });
+
+  final String group;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      title: _GroupsMenu(
+        group: group,
+        child: Text(group),
+      ),
+    );
+  }
+}
+
+class _GroupsMenu extends StatelessWidget {
+  const _GroupsMenu({
+    required this.group,
+    required this.child,
+  });
+
+  final String group;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return PopUpMenu(
+      menuBuilder: (TapUpDetails details) {
+        return DraggableMenu(
+          left: details.globalPosition.dx,
+          top: details.globalPosition.dy,
+          child: Card(
+            child: IntrinsicWidth(
+              child: Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    _LocationMenuItem(group: group),
+                    _RemoveMenuItem(group: group),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        );
+      },
+      child: child,
+    );
+  }
+}
+
+class _LocationMenuItem extends StatelessWidget {
+  const _LocationMenuItem({
+    required this.group,
+  });
+
+  final String group;
+
+  @override
+  Widget build(BuildContext context) {
+    return RoundedInkWell(
+      child: const Text('Location'),
+      onTap: () {
+        Navigator.of(context).pushNamed(
+          LocationsRoute.name,
+          arguments: {
+            'group': group,
           },
         );
+      },
+    );
+  }
+}
+
+class _RemoveMenuItem extends StatelessWidget {
+  const _RemoveMenuItem({
+    required this.group,
+  });
+
+  final String group;
+
+  @override
+  Widget build(BuildContext context) {
+    return RoundedInkWell(
+      child: const Text('Remove'),
+      onTap: () {
+        GroupsScope.readOf(context).removeGroup(group);
+        LocationsScope.readOf(context).removeLocation(group);
+        Navigator.of(context).pop();
       },
     );
   }
@@ -78,7 +168,7 @@ class _EmptyList extends StatelessWidget {
 }
 
 Future<void> _createGroup(BuildContext context) async {
-  final GroupsScope gs = GroupsScope.of(context);
+  final GroupsScope gs = GroupsScope.readOf(context);
   final String? group = await showDialog(
     context: context,
     builder: (BuildContext context) {
@@ -105,6 +195,6 @@ Future<void> _createGroup(BuildContext context) async {
   );
 
   if (group != null) {
-    gs.group = group;
+    gs.addGroup(group);
   }
 }

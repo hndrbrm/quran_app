@@ -25,6 +25,7 @@ class QuranApp extends StatelessWidget with
       child: TranslationSizeData(
         child: BookmarkScope(
           child: MaterialApp(
+            debugShowCheckedModeBanner: false,
             title: 'Quran',
             onGenerateRoute: onGenerateRoute,
             onUnknownRoute: onUnknownRoute,

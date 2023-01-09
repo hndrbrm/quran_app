@@ -59,22 +59,33 @@ mixin _Locations on InitializeBinder, LocationsPreferences {
 }
 
 mixin _Location on _Locations {
-  void setLocation(String group, Location value) {
+  void addLocation(String group, Location location) {
     locations[group] ??= [];
 
-    if (locations[group]!.contains(value)) {
+    if (locations[group]!.contains(location)) {
       return;
     }
 
     final List<Location> newValue = [
       ...locations[group]!,
-      value,
+      location,
     ];
 
     locations = {
       ...locations,
       group: newValue,
     };
+  }
+
+  void removeLocation(String group, [ Location? location ]) {
+    if (locations[group] != null) {
+      final bool exist = location == null
+        ? locations.remove(group) != null
+        : locations[group]!.remove(location);
+      if (exist) {
+        locations = Map.from(locations);
+      }
+    }
   }
 }
 
@@ -89,8 +100,12 @@ class LocationsScope
     initialize();
   }
 
-  static LocationsScope of(BuildContext context) {
+  static LocationsScope watchOf(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<LocationsScope>()!;
+  }
+
+  static LocationsScope readOf(BuildContext context) {
+    return context.findAncestorWidgetOfExactType<LocationsScope>()!;
   }
 
   @override
@@ -118,12 +133,20 @@ mixin _Groups on InitializeBinder, GroupsPreferences {
 }
 
 mixin _Group on _Groups {
-  set group(String value) {
-    if (groups.contains(value)) {
+  void addGroup(String group) {
+    if (groups.contains(group)) {
       return;
     }
 
-    groups = <String>[ value, ...groups ];
+    groups = <String>[ group, ...groups ];
+  }
+
+  void removeGroup(String group) {
+    if (groups.contains(group)) {
+      groups = <String>[
+        ...groups.where((element) => element != group)
+      ];
+    }
   }
 }
 
@@ -138,8 +161,12 @@ class GroupsScope
     initialize();
   }
 
-  static GroupsScope of(BuildContext context) {
+  static GroupsScope watchOf(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<GroupsScope>()!;
+  }
+
+  static GroupsScope readOf(BuildContext context) {
+    return context.findAncestorWidgetOfExactType<GroupsScope>()!;
   }
 
   @override
