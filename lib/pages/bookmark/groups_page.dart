@@ -17,6 +17,12 @@ class GroupsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Penanda'),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () => _createGroup(context),
+            icon: const Icon(Icons.add),
+          ),
+        ],
       ),
       drawer: const QuranDrawer(),
       body: const _GroupsList(),
@@ -65,35 +71,40 @@ class _EmptyList extends StatelessWidget {
           padding: EdgeInsets.all(8.0),
           child: Text('Create Group'),
         ),
-        onTap: () async {
-          final GroupsScope gs = GroupsScope.of(context);
-          final String group = await showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              final TextEditingController controller = TextEditingController();
-              return AlertDialog(
-                title: TextField(
-                  controller: controller,
-                  decoration: const InputDecoration(
-                    labelText: 'Group Name',
-                  ),
-                ),
-                actions: <Widget>[
-                  TextButton(
-                    onPressed: () => Navigator.of(context).pop(),
-                    child: const Text('Cancel'),
-                  ),
-                  TextButton(
-                    onPressed: () => Navigator.of(context).pop(controller.text),
-                    child: const Text('Ok'),
-                  ),
-                ],
-              );
-            },
-          );
-          gs.group = group;
-        },
+        onTap: () => _createGroup(context),
       ),
     );
+  }
+}
+
+Future<void> _createGroup(BuildContext context) async {
+  final GroupsScope gs = GroupsScope.of(context);
+  final String? group = await showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      final TextEditingController controller = TextEditingController();
+      return AlertDialog(
+        title: TextField(
+          controller: controller,
+          decoration: const InputDecoration(
+            labelText: 'Group Name',
+          ),
+        ),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: const Text('Cancel'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(controller.text),
+            child: const Text('Ok'),
+          ),
+        ],
+      );
+    },
+  );
+
+  if (group != null) {
+    gs.group = group;
   }
 }
