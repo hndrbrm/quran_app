@@ -12,7 +12,6 @@ import '../widgets/annotation.dart';
 import '../widgets/draggable_menu.dart';
 import '../widgets/font_size_menu.dart';
 import '../widgets/pop_up_menu.dart';
-import '../widgets/rounded_ink_well.dart';
 import '../widgets/translation.dart';
 import '../widgets/transliteration.dart';
 
@@ -164,14 +163,66 @@ class _BookmarkMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RoundedInkWell(
-      child: const Padding(
-        padding: EdgeInsets.all(4.0),
-        child: Text('Tandai'),
+    return PopUpMenu(
+      menuBuilder: (TapUpDetails details) {
+        return DraggableMenu(
+          left: details.globalPosition.dx,
+          top: details.globalPosition.dy,
+          child: _GroupsMenu(
+            location: Location(surah, ayah),
+          ),
+        );
+      },
+      child: const Text('Tandai...'),
+    );
+  }
+}
+
+class _GroupsMenu extends StatelessWidget {
+  const _GroupsMenu({
+    required this.location,
+  });
+
+  final Location location;
+
+  @override
+  Widget build(BuildContext context) {
+    final List<String> groups = GroupsScope.of(context).groups;
+
+    return Card(
+      child:  LimitedBox(
+        maxWidth: MediaQuery.of(context).size.width * 0.50,
+        maxHeight: MediaQuery.of(context).size.height * 0.50,
+        child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: groups.length,
+          itemBuilder: (BuildContext context, int index) {
+            return _GroupsItem(
+              group: groups[0],
+              location: location,
+            );
+          },
+        ),
       ),
+    );
+  }
+}
+
+class _GroupsItem extends StatelessWidget {
+  const _GroupsItem({
+    required this.group,
+    required this.location,
+  });
+
+  final String group;
+  final Location location;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      title: Text(group),
       onTap: () {
-        final Location location = Location(surah, ayah);
-        LocationsScope.of(context).setLocation('tes', location);
+        LocationsScope.of(context).setLocation(group, location);
         Navigator.of(context).pop();
       },
     );
