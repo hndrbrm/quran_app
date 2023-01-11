@@ -7,12 +7,12 @@ import 'package:flutter/material.dart';
 import '../../data/bookmark/locations_scope.dart';
 import '../../data/font_size/translation_size_scope.dart';
 import '../../data/font_size/transliteration_size_scope.dart';
-import '../../widgets/annotation.dart';
-import '../../widgets/draggable_menu.dart';
-import '../../widgets/font_size_menu.dart';
-import '../../widgets/pop_up_menu.dart';
-import '../../widgets/translation.dart';
-import '../../widgets/transliteration.dart';
+import '../../widget/annotation.dart';
+import '../../widget/draggable_menu.dart';
+import '../../widget/font_size_menu.dart';
+import '../../widget/pop_up_menu.dart';
+import '../../widget/translation.dart';
+import '../../widget/transliteration.dart';
 
 class LocationsPage extends StatelessWidget {
   const LocationsPage({

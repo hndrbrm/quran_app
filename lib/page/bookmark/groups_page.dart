@@ -7,9 +7,9 @@ import 'package:flutter/material.dart';
 import '../../data/bookmark/groups_scope.dart';
 import '../../data/bookmark/locations_scope.dart';
 import '../../routes.dart';
-import '../../widgets/draggable_menu.dart';
-import '../../widgets/pop_up_menu.dart';
-import '../../widgets/rounded_ink_well.dart';
+import '../../widget/draggable_menu.dart';
+import '../../widget/pop_up_menu.dart';
+import '../../widget/rounded_ink_well.dart';
 import '../quran_drawer.dart';
 
 class GroupsPage extends StatelessWidget {
