@@ -176,6 +176,7 @@ Future<void> _createGroup(BuildContext context) async {
       return AlertDialog(
         title: TextField(
           controller: controller,
+          focusNode: FocusNode()..requestFocus(),
           decoration: const InputDecoration(
             labelText: 'Group Name',
           ),
