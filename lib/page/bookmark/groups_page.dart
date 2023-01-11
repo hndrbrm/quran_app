@@ -22,8 +22,8 @@ class GroupsPage extends StatelessWidget {
         title: const Text('Penanda'),
         actions: <Widget>[
           IconButton(
-            onPressed: () => _createGroup(context),
             icon: const Icon(Icons.add),
+            onPressed: () => _createGroup(context),
           ),
         ],
       ),
