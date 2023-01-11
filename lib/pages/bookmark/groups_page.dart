@@ -173,10 +173,13 @@ Future<void> _createGroup(BuildContext context) async {
     context: context,
     builder: (BuildContext context) {
       final TextEditingController controller = TextEditingController();
+      void submit(String group) => Navigator.of(context).pop(group);
+
       return AlertDialog(
         title: TextField(
           controller: controller,
           focusNode: FocusNode()..requestFocus(),
+          onSubmitted: submit,
           decoration: const InputDecoration(
             labelText: 'Group Name',
           ),
@@ -187,7 +190,7 @@ Future<void> _createGroup(BuildContext context) async {
             child: const Text('Cancel'),
           ),
           TextButton(
-            onPressed: () => Navigator.of(context).pop(controller.text),
+            onPressed: () => submit(controller.text),
             child: const Text('Ok'),
           ),
         ],
