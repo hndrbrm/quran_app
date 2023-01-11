@@ -4,7 +4,7 @@
 
 import 'package:flutter/widgets.dart';
 
-import '../data/translation_size.dart';
+import '../data/font_size/translation_size_scope.dart';
 import '../quran/quran.dart';
 
 class Translation extends StatelessWidget {
@@ -26,7 +26,7 @@ class Translation extends StatelessWidget {
       child: Text(
         translate,
         style: TextStyle(
-          fontSize: TranslationSize.of(context).fontSize,
+          fontSize: TranslationSizeScope.watchOf(context).fontSize,
         ),
       ),
     );

@@ -5,8 +5,8 @@
 import 'package:flutter/material.dart';
 
 import '../../data/bookmark/locations_scope.dart';
-import '../../data/translation_size.dart';
-import '../../data/transliteration_size.dart';
+import '../../data/font_size/translation_size_scope.dart';
+import '../../data/font_size/transliteration_size_scope.dart';
 import '../../widgets/annotation.dart';
 import '../../widgets/draggable_menu.dart';
 import '../../widgets/font_size_menu.dart';
@@ -104,6 +104,7 @@ class _TransliterationMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PopUpMenu(
+      child: child,
       menuBuilder: (TapUpDetails details) {
         return DraggableMenu(
           left: details.globalPosition.dx,
@@ -115,8 +116,10 @@ class _TransliterationMenu extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    FontSizeMenu(
-                      data: (context) => TransliterationSize.of(context),
+                    FontSizeMenu<TransliterationSizeScope>(
+                      data: (BuildContext context) {
+                        return TransliterationSizeScope.watchOf(context);
+                      },
                     ),
                   ],
                 ),
@@ -125,7 +128,6 @@ class _TransliterationMenu extends StatelessWidget {
           ),
         );
       },
-      child: child,
     );
   }
 }
@@ -144,6 +146,7 @@ class _TranslationMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PopUpMenu(
+      child: child,
       menuBuilder: (TapUpDetails details) {
         return DraggableMenu(
           left: details.globalPosition.dx,
@@ -155,8 +158,10 @@ class _TranslationMenu extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    FontSizeMenu(
-                      data: (context) => TranslationSize.of(context),
+                    FontSizeMenu<TranslationSizeScope>(
+                      data: (BuildContext context) {
+                        return TranslationSizeScope.watchOf(context);
+                      },
                     ),
                   ],
                 ),
@@ -165,7 +170,6 @@ class _TranslationMenu extends StatelessWidget {
           ),
         );
       },
-      child: child,
     );
   }
 }
