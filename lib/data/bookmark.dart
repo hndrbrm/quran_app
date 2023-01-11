@@ -4,6 +4,7 @@
 
 import 'package:flutter/widgets.dart';
 
+import '../mixin/initialize_binder.dart';
 import '../persistent/bookmark.dart';
 
 class Location {
@@ -32,10 +33,6 @@ class Location {
 
   @override
   int get hashCode => Object.hash(surah, ayah);
-}
-
-mixin InitializeBinder {
-  void initialize() {}
 }
 
 mixin _Locations on InitializeBinder, LocationsPreferences {
