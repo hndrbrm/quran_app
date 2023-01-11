@@ -31,12 +31,7 @@ class HomePage extends StatelessWidget {
             trailing: Text(
               transliteration.forward(Quran.instance.getTransliterate(index + 1)),
             ),
-            onTap: () => Navigator.of(context).pushNamed(
-              SurahRoute.name,
-              arguments: {
-                'surah': index + 1,
-              },
-            ),
+            onTap: () => SurahRoute.pushNamed(context, index + 1),
           );
         },
       ),

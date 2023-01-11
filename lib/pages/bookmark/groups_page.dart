@@ -62,10 +62,16 @@ class _GroupsItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: _GroupsMenu(
-        group: group,
-        child: Text(group),
+      title: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          _GroupsMenu(
+            group: group,
+            child: Text(group),
+          ),
+        ],
       ),
+      onTap: () => LocationsRoute.push(context, group),
     );
   }
 }
@@ -118,14 +124,7 @@ class _LocationMenuItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return RoundedInkWell(
       child: const Text('Location'),
-      onTap: () {
-        Navigator.of(context).pushNamed(
-          LocationsRoute.name,
-          arguments: {
-            'group': group,
-          },
-        );
-      },
+      onTap: () => LocationsRoute.push(context, group),
     );
   }
 }

@@ -16,21 +16,11 @@ class QuranDrawer extends StatelessWidget {
         children: <Widget>[
           ListTile(
             title: const Text('Beranda'),
-            onTap: () {
-              Navigator.of(context).pushNamedAndRemoveUntil(
-                HomeRoute.name,
-                (route) => false,
-              );
-            },
+            onTap: () => HomeRoute.root(context),
           ),
           ListTile(
             title: const Text('Penanda'),
-            onTap: () {
-              Navigator.of(context).pushNamedAndRemoveUntil(
-                GroupsRoute.name,
-                (route) => false,
-              );
-            },
+            onTap: () => GroupsRoute.root(context),
           ),
         ],
       ),

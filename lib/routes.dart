@@ -37,6 +37,13 @@ mixin UnknownRoute {
 mixin HomeRoute on GenerateRoute {
   static const String name = '/';
 
+  static Future<T?> root<T extends Object?>(BuildContext context) {
+    return Navigator.of(context).pushNamedAndRemoveUntil(
+      name,
+      (route) => false,
+    );
+  }
+
   @override
   WidgetBuilder? onGenerateBuilder(RouteSettings settings) {
     if (settings.name == name) {
@@ -49,6 +56,13 @@ mixin HomeRoute on GenerateRoute {
 
 mixin SurahRoute on GenerateRoute {
   static const String name = '/surah';
+
+  static Future<T?> pushNamed<T extends Object?>(BuildContext context, int surah) {
+    return Navigator.of(context).pushNamed(
+      name,
+      arguments: { 'surah': surah },
+    );
+  }
 
   @override
   WidgetBuilder? onGenerateBuilder(RouteSettings settings) {
@@ -65,6 +79,13 @@ mixin SurahRoute on GenerateRoute {
 mixin GroupsRoute on GenerateRoute {
   static const String name = '/groups';
 
+  static Future<T?> root<T extends Object?>(BuildContext context) {
+    return Navigator.of(context).pushNamedAndRemoveUntil(
+      name,
+      (route) => false,
+    );
+  }
+
   @override
   WidgetBuilder? onGenerateBuilder(RouteSettings settings) {
     if (settings.name == name) {
@@ -77,6 +98,13 @@ mixin GroupsRoute on GenerateRoute {
 
 mixin LocationsRoute on GenerateRoute {
   static const String name = '/locations';
+
+  static Future<T?> push<T extends Object?>(BuildContext context, String group) {
+    return Navigator.of(context).pushNamed(
+      name,
+      arguments: { 'group': group },
+    );
+  }
 
   @override
   WidgetBuilder? onGenerateBuilder(RouteSettings settings) {
