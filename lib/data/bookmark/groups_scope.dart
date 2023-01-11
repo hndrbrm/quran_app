@@ -14,9 +14,11 @@ class GroupsScope
   GroupsScope({
     super.key,
     required super.child,
-  }) : super(notifier: ValueNotifier<List<String>>(<String>[])) {
+  }) : super(notifier: ValueNotifier<List<String>>(defaultGroups)) {
     initialize();
   }
+
+  static const List<String> defaultGroups = <String>[];
 
   static GroupsScope watchOf(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<GroupsScope>()!;
@@ -44,8 +46,10 @@ mixin _Groups on InitializeBinder, GroupsPreferences {
     super.initialize();
 
     () async {
-      final List<String> locations = await loadGroups() ?? [];
-      notifier.value = locations;
+      final List<String>? locations = await loadGroups();
+      if (locations != null) {
+        notifier.value = locations;
+      }
     }();
   }
 }

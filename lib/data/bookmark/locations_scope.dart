@@ -14,9 +14,11 @@ class LocationsScope
   LocationsScope({
     super.key,
     required super.child,
-  }) : super(notifier: ValueNotifier<Map<String, List<Location>>>(<String, List<Location>>{})) {
+  }) : super(notifier: ValueNotifier<Map<String, List<Location>>>(defaultLocations)) {
     initialize();
   }
+
+  static const Map<String, List<Location>> defaultLocations = <String, List<Location>>{};
 
   static LocationsScope watchOf(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<LocationsScope>()!;
@@ -72,8 +74,10 @@ mixin _Locations on InitializeBinder, LocationsPreferences {
     super.initialize();
 
     () async {
-      final Map<String, List<Location>> locations = await loadLocations() ?? {};
-      notifier.value = locations;
+      final Map<String, List<Location>>? locations = await loadLocations();
+      if (locations != null) {
+        notifier.value = locations;
+      }
     }();
   }
 }
