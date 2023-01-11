@@ -4,7 +4,8 @@
 
 import 'package:flutter/material.dart';
 
-import '../data/bookmark.dart';
+import '../data/bookmark/groups_scope.dart';
+import '../data/bookmark/locations_scope.dart';
 import '../data/translation_size.dart';
 import '../data/transliteration_size.dart';
 import '../quran/quran.dart';

@@ -3,8 +3,8 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:quran_app/data/bookmark.dart';
 
+import '../../data/bookmark/locations_scope.dart';
 import '../../data/translation_size.dart';
 import '../../data/transliteration_size.dart';
 import '../../widgets/annotation.dart';

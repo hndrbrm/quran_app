@@ -4,7 +4,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'data/bookmark.dart';
+import 'data/bookmark/bookmark_nest.dart';
 import 'data/translation_size.dart';
 import 'data/transliteration_size.dart';
 import 'routes.dart';
@@ -23,7 +23,7 @@ class QuranApp extends StatelessWidget with
   Widget build(BuildContext context) {
     return TransliterationSizeData(
       child: TranslationSizeData(
-        child: BookmarkScope(
+        child: BookmarkNest(
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Quran',

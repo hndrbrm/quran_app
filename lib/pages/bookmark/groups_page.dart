@@ -4,7 +4,8 @@
 
 import 'package:flutter/material.dart';
 
-import '../../data/bookmark.dart';
+import '../../data/bookmark/groups_scope.dart';
+import '../../data/bookmark/locations_scope.dart';
 import '../../routes.dart';
 import '../../widgets/draggable_menu.dart';
 import '../../widgets/pop_up_menu.dart';
