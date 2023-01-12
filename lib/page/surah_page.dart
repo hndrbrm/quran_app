@@ -4,17 +4,9 @@
 
 import 'package:flutter/material.dart';
 
-import '../data/bookmark/groups_scope.dart';
-import '../data/bookmark/locations_scope.dart';
-import '../data/font_size/translation_size_scope.dart';
-import '../data/font_size/transliteration_size_scope.dart';
+import '../data.dart';
 import '../quran/quran.dart';
-import '../widget/annotation.dart';
-import '../widget/draggable_menu.dart';
-import '../widget/font_size_menu.dart';
-import '../widget/pop_up_menu.dart';
-import '../widget/translation.dart';
-import '../widget/transliteration.dart';
+import '../widget.dart';
 
 class SurahPage extends StatelessWidget {
   const SurahPage({ required this.surah, super.key });

@@ -4,10 +4,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'page/bookmark/groups_page.dart';
-import 'page/bookmark/locations_page.dart';
-import 'page/home_page.dart';
-import 'page/surah_page.dart';
+import 'page.dart';
 
 abstract class GenerateRoute {
   Route<dynamic>? onGenerateRoute(RouteSettings settings) {

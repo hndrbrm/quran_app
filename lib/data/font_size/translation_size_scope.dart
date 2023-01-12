@@ -5,9 +5,9 @@
 import 'dart:async';
 
 import 'package:flutter/widgets.dart';
-import 'package:quran_app/data/font_size/font_size_base.dart';
 
 import '../../persistent/translation_size.dart';
+import 'font_size_base.dart';
 
 class TranslationSizeScope
   extends FontSizeScopeBase
