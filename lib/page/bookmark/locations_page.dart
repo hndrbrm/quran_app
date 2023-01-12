@@ -4,7 +4,6 @@
 
 import 'package:flutter/material.dart';
 
-import '../../data/bookmark/groups_scope.dart';
 import '../../data/bookmark/locations_scope.dart';
 import '../../data/font_size/translation_size_scope.dart';
 import '../../data/font_size/transliteration_size_scope.dart';
