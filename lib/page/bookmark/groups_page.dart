@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../data/bookmark/groups_scope.dart';
 import '../../data/bookmark/locations_scope.dart';
+import '../../mixin/bookmark_mixin.dart';
 import '../../routes.dart';
 import '../../widget/draggable_menu.dart';
 import '../../widget/pop_up_menu.dart';
@@ -130,7 +131,7 @@ class _LocationMenuItem extends StatelessWidget {
   }
 }
 
-class _RemoveMenuItem extends StatelessWidget {
+class _RemoveMenuItem extends StatelessWidget with BookmarkMixin {
   const _RemoveMenuItem({
     required this.group,
   });
@@ -141,11 +142,7 @@ class _RemoveMenuItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return RoundedInkWell(
       child: const Text('Remove'),
-      onTap: () {
-        GroupsScope.readOf(context).removeGroup(group);
-        LocationsScope.readOf(context).removeLocation(group);
-        Navigator.of(context).pop();
-      },
+      onTap: () => removeGroupThenPop(context, group),
     );
   }
 }
