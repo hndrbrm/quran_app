@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../data.dart';
 import '../../mixin/bookmark_mixin.dart';
+import '../../routes.dart';
 import '../../widget.dart';
 
 class LocationsPage extends StatelessWidget with BookmarkMixin {
@@ -116,6 +117,7 @@ class _TransliterationMenu extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
+                    _SurahMenu(surah: surah),
                     FontSizeMenu<TransliterationSizeScope>(
                       data: (BuildContext context) {
                         return TransliterationSizeScope.watchOf(context);
@@ -158,6 +160,7 @@ class _TranslationMenu extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
+                    _SurahMenu(surah: surah),
                     FontSizeMenu<TranslationSizeScope>(
                       data: (BuildContext context) {
                         return TranslationSizeScope.watchOf(context);
@@ -170,6 +173,20 @@ class _TranslationMenu extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class _SurahMenu extends StatelessWidget {
+  const _SurahMenu({ required this.surah });
+
+  final int surah;
+
+  @override
+  Widget build(BuildContext context) {
+    return RoundedInkWell(
+      child: const Text('Go to Surah'),
+      onTap: () => SurahRoute.pushNamed(context, surah),
     );
   }
 }
