@@ -9,23 +9,45 @@ import '../quran/quran.dart';
 import '../widget.dart';
 
 class SurahPage extends StatelessWidget {
-  const SurahPage({ required this.surah, super.key });
+  const SurahPage({
+    super.key,
+    required this.surah,
+    int? ayah,
+  }) : ayah = ayah ?? 1;
 
   final int surah;
+  final int ayah;
 
   @override
   Widget build(BuildContext context) {
+    const Key centerKey = ValueKey('center');
+    final int total = Quran.instance.getLength(surah);
+
     return Scaffold(
       appBar: AppBar(
         title: Text(Quran.instance.getLatin(surah)),
       ),
-      body: ListView.builder(
-        itemCount: Quran.instance.getLength(surah),
-        itemBuilder: (BuildContext context, int index) {
-          final int ayah = index + 1;
-
-          return _SurahItem(surah: surah, ayah: ayah);
-        },
+      body: CustomScrollView(
+        center: centerKey,
+        slivers: <Widget>[
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                return _SurahItem(surah: surah, ayah: ayah - index - 1);
+              },
+              childCount: ayah - 1,
+            ),
+          ),
+          SliverList(
+            key: centerKey,
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                return _SurahItem(surah: surah, ayah: ayah + index);
+              },
+              childCount: total - ayah + 1,
+            ),
+          ),
+        ],
       ),
     );
   }

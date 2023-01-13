@@ -117,7 +117,7 @@ class _TransliterationMenu extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    _SurahMenu(surah: surah),
+                    _SurahMenu(surah: surah, ayah: ayah),
                     FontSizeMenu<TransliterationSizeScope>(
                       data: (BuildContext context) {
                         return TransliterationSizeScope.watchOf(context);
@@ -160,7 +160,7 @@ class _TranslationMenu extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    _SurahMenu(surah: surah),
+                    _SurahMenu(surah: surah, ayah: ayah),
                     FontSizeMenu<TranslationSizeScope>(
                       data: (BuildContext context) {
                         return TranslationSizeScope.watchOf(context);
@@ -178,15 +178,19 @@ class _TranslationMenu extends StatelessWidget {
 }
 
 class _SurahMenu extends StatelessWidget {
-  const _SurahMenu({ required this.surah });
+  const _SurahMenu({
+    required this.surah,
+    required this.ayah,
+  });
 
   final int surah;
+  final int ayah;
 
   @override
   Widget build(BuildContext context) {
     return RoundedInkWell(
       child: const Text('Go to Surah'),
-      onTap: () => SurahRoute.pushNamed(context, surah),
+      onTap: () => SurahRoute.pushNamed(context, surah, ayah),
     );
   }
 }

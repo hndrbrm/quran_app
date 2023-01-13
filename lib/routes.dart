@@ -54,10 +54,17 @@ mixin HomeRoute on GenerateRoute {
 mixin SurahRoute on GenerateRoute {
   static const String name = '/surah';
 
-  static Future<T?> pushNamed<T extends Object?>(BuildContext context, int surah) {
+  static Future<T?> pushNamed<T extends Object?>(
+    BuildContext context,
+    int surah, [
+    int? ayah,
+  ]) {
     return Navigator.of(context).pushNamed(
       name,
-      arguments: { 'surah': surah },
+      arguments: {
+        'surah': surah,
+        'ayah': ayah,
+      },
     );
   }
 
@@ -66,7 +73,10 @@ mixin SurahRoute on GenerateRoute {
     if (settings.name == name) {
       final arguments = settings.arguments as Map<String, dynamic>?;
 
-      return (BuildContext context) => SurahPage(surah: arguments?['surah']);
+      return (BuildContext context) => SurahPage(
+        surah: arguments?['surah'],
+        ayah: arguments?['ayah'],
+      );
     }
 
     return super.onGenerateBuilder(settings);
