@@ -4,12 +4,13 @@
 
 import 'package:meta/meta.dart';
 
+import 'location.dart';
 import 'quran.dart';
 
 mixin AyahTafsirWajiz on Ayah {
   @protected
   @mustCallSuper
-  String getAyahTafsirWajiz(int surah, int ayah) => '';
+  String getAyahTafsirWajiz(Location location) => '';
 }
 
 mixin FatihahTafsirWajiz on AyahTafsirWajiz {
@@ -24,12 +25,12 @@ mixin FatihahTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 1) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 1) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -324,12 +325,12 @@ mixin BaqarahTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 2) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 2) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -538,12 +539,12 @@ mixin ImranTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 3) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 3) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -728,12 +729,12 @@ mixin NisaTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 4) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 4) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -862,12 +863,12 @@ mixin MaidahTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 5) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 5) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -1041,12 +1042,12 @@ mixin AnamTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 6) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 6) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -1261,12 +1262,12 @@ mixin ArafTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 7) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 7) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -1350,12 +1351,12 @@ mixin AnfalTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 8) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 8) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -1493,12 +1494,12 @@ mixin TaubahTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 9) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 9) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -1616,12 +1617,12 @@ mixin YunusTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 10) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 10) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -1753,12 +1754,12 @@ mixin HudTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 11) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 11) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -1878,12 +1879,12 @@ mixin YusufTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 12) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 12) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -1935,12 +1936,12 @@ mixin RadTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 13) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 13) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -2001,12 +2002,12 @@ mixin IbrahimTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 14) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 14) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -2114,12 +2115,12 @@ mixin HijrTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 15) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 15) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -2256,12 +2257,12 @@ mixin NahlTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 16) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 16) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -2381,12 +2382,12 @@ mixin IsraTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 17) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 17) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -2505,12 +2506,12 @@ mixin KahfTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 18) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 18) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -2617,12 +2618,12 @@ mixin MaryamTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 19) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 19) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -2766,12 +2767,12 @@ mixin TahaTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 20) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 20) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -2892,12 +2893,12 @@ mixin AnbiyaTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 21) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 21) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -2984,12 +2985,12 @@ mixin HajjTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 22) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 22) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -3116,12 +3117,12 @@ mixin MukminunTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 23) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 23) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -3194,12 +3195,12 @@ mixin NurTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 24) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 24) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -3285,12 +3286,12 @@ mixin FurqanTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 25) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 25) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -3526,12 +3527,12 @@ mixin SyuaraTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 26) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 26) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -3633,12 +3634,12 @@ mixin NamlTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 27) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 27) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -3735,12 +3736,12 @@ mixin QasasTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 28) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 28) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -3818,12 +3819,12 @@ mixin AnkabutTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 29) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 29) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -3892,12 +3893,12 @@ mixin RumTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 30) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 30) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -3940,12 +3941,12 @@ mixin LuqmanTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 31) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 31) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -3984,12 +3985,12 @@ mixin SajdahTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 32) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 32) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -4071,12 +4072,12 @@ mixin AhzabTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 33) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 33) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -4139,12 +4140,12 @@ mixin SabaTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 34) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 34) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -4198,12 +4199,12 @@ mixin FatirTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 35) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 35) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -4295,12 +4296,12 @@ mixin YasinTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 36) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 36) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -4491,12 +4492,12 @@ mixin SaffatTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 37) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 37) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -4593,12 +4594,12 @@ mixin SadTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 38) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 38) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -4682,12 +4683,12 @@ mixin ZumarTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 39) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 39) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -4781,12 +4782,12 @@ mixin GafirTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 40) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 40) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -4849,12 +4850,12 @@ mixin FussilatTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 41) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 41) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -4916,12 +4917,12 @@ mixin SyuraTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 42) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 42) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -5019,12 +5020,12 @@ mixin ZukhrufTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 43) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 43) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -5092,12 +5093,12 @@ mixin DukhanTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 44) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 44) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -5143,12 +5144,12 @@ mixin JasiyahTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 45) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 45) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -5192,12 +5193,12 @@ mixin AhqafTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 46) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 46) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -5244,12 +5245,12 @@ mixin MuhammadTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 47) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 47) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -5287,12 +5288,12 @@ mixin FathTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 48) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 48) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -5319,12 +5320,12 @@ mixin HujuratTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 49) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 49) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -5378,12 +5379,12 @@ mixin QafTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 50) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 50) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -5452,12 +5453,12 @@ mixin ZariyatTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 51) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 51) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -5515,12 +5516,12 @@ mixin TurTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 52) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 52) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -5591,12 +5592,12 @@ mixin NajmTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 53) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 53) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -5660,12 +5661,12 @@ mixin QamarTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 54) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 54) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -5752,12 +5753,12 @@ mixin RahmanTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 55) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 55) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -5862,12 +5863,12 @@ mixin WaqiahTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 56) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 56) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -5905,12 +5906,12 @@ mixin HadidTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 57) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 57) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -5941,12 +5942,12 @@ mixin MujadalahTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 58) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 58) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -5979,12 +5980,12 @@ mixin HasyrTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 59) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 59) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -6006,12 +6007,12 @@ mixin MumtahanahTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 60) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 60) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -6034,12 +6035,12 @@ mixin SaffTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 61) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 61) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -6059,12 +6060,12 @@ mixin JumuahTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 62) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 62) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -6084,12 +6085,12 @@ mixin MunafiqunTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 63) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 63) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -6116,12 +6117,12 @@ mixin TagabunTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 64) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 64) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -6142,12 +6143,12 @@ mixin TalaqTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 65) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 65) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -6168,12 +6169,12 @@ mixin TahrimTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 66) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 66) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -6212,12 +6213,12 @@ mixin MulkTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 67) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 67) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -6278,12 +6279,12 @@ mixin QalamTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 68) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 68) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -6344,12 +6345,12 @@ mixin HaqqahTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 69) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 69) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -6402,12 +6403,12 @@ mixin MaarijTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 70) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 70) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -6444,12 +6445,12 @@ mixin NuhTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 71) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 71) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -6486,12 +6487,12 @@ mixin JinnTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 72) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 72) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -6520,12 +6521,12 @@ mixin MuzzamilTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 73) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 73) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -6590,12 +6591,12 @@ mixin MuddassirTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 74) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 74) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -6644,12 +6645,12 @@ mixin QiyamahTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 75) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 75) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -6689,12 +6690,12 @@ mixin InsanTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 76) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 76) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -6753,12 +6754,12 @@ mixin MursalatTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 77) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 77) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -6807,12 +6808,12 @@ mixin NabaTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 78) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 78) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -6867,12 +6868,12 @@ mixin NaziatTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 79) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 79) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -6923,12 +6924,12 @@ mixin AbasaTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 80) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 80) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -6966,12 +6967,12 @@ mixin TakwirTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 81) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 81) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -6999,12 +7000,12 @@ mixin InfitarTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 82) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 82) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7049,12 +7050,12 @@ mixin MutaffifinTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 83) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 83) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7088,12 +7089,12 @@ mixin InsyiqaqTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 84) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 84) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7124,12 +7125,12 @@ mixin BurujTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 85) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 85) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7155,12 +7156,12 @@ mixin TariqTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 86) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 86) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7188,12 +7189,12 @@ mixin AklaTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 87) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 87) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7228,12 +7229,12 @@ mixin GasyiyahTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 88) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 88) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7272,12 +7273,12 @@ mixin FajrTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 89) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 89) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7306,12 +7307,12 @@ mixin BaladTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 90) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 90) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7335,12 +7336,12 @@ mixin SyamsTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 91) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 91) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7370,12 +7371,12 @@ mixin LailTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 92) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 92) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7395,12 +7396,12 @@ mixin DuhaTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 93) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 93) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7417,12 +7418,12 @@ mixin SyarhTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 94) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 94) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7439,12 +7440,12 @@ mixin TinTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 95) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 95) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7472,12 +7473,12 @@ mixin AlaqTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 96) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 96) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7491,12 +7492,12 @@ mixin QadrTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 97) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 97) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7513,12 +7514,12 @@ mixin BayyinahTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 98) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 98) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7535,12 +7536,12 @@ mixin ZalzalahTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 99) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 99) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7560,12 +7561,12 @@ mixin AdiyatTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 100) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 100) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7585,12 +7586,12 @@ mixin QariahTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 101) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 101) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7607,12 +7608,12 @@ mixin TakasurTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 102) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 102) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7624,12 +7625,12 @@ mixin AsrTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 103) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 103) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7647,12 +7648,12 @@ mixin HumazahTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 104) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 104) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7666,12 +7667,12 @@ mixin FilTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 105) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 105) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7684,12 +7685,12 @@ mixin QuraisyTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 106) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 106) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7705,12 +7706,12 @@ mixin MaunTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 107) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 107) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7722,12 +7723,12 @@ mixin KausarTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 108) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 108) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7742,12 +7743,12 @@ mixin KafirunTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 109) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 109) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7759,12 +7760,12 @@ mixin NasrTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 110) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 110) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7778,12 +7779,12 @@ mixin LahabTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 111) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 111) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7796,12 +7797,12 @@ mixin IkhlasTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 112) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 112) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7815,12 +7816,12 @@ mixin FalaqTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 113) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 113) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
 
@@ -7835,11 +7836,11 @@ mixin NasTafsirWajiz on AyahTafsirWajiz {
   ];
 
   @override
-  String getAyahTafsirWajiz(int surah, int ayah) {
-    if (surah == 114) {
-      return ayahs[ayah - 1];
+  String getAyahTafsirWajiz(Location location) {
+    if (location.surah == 114) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTafsirWajiz(surah, ayah);
+    return super.getAyahTafsirWajiz(location);
   }
 }
