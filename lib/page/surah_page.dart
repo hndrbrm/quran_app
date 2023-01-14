@@ -5,7 +5,7 @@
 import 'package:flutter/material.dart';
 
 import '../data.dart';
-import '../quran/quran.dart';
+import '../quran.dart';
 import '../widget.dart';
 
 class SurahPage extends StatelessWidget {

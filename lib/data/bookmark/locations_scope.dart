@@ -6,6 +6,7 @@ import 'package:flutter/widgets.dart';
 
 import '../../mixin/initialize_binder.dart';
 import '../../persistent/bookmark.dart';
+import '../../quran/location.dart';
 
 class LocationsScope
   extends InheritedNotifier<ValueNotifier<Map<String, List<Location>>>>
@@ -30,34 +31,6 @@ class LocationsScope
 
   @override
   ValueNotifier<Map<String, List<Location>>> get notifier => super.notifier!;
-}
-
-class Location {
-  const Location(this.surah, this.ayah)
-    : assert(1 <= surah && surah <= 114);
-
-  Location.fromJson(Map<String, dynamic> json)
-    : surah = json['surah'],
-      ayah = json['ayah'];
-
-  final int surah;
-  final int ayah;
-
-  Map<String, dynamic> toJson() => {
-    'surah': surah,
-    'ayah': ayah,
-  };
-
-  @override
-  bool operator ==(Object other) {
-    return
-      other is Location &&
-      other.surah == surah &&
-      other.ayah == ayah;
-  }
-
-  @override
-  int get hashCode => Object.hash(surah, ayah);
 }
 
 mixin _Locations on InitializeBinder, LocationsPreferences {

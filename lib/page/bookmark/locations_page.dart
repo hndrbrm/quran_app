@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../data.dart';
 import '../../mixin/bookmark_mixin.dart';
+import '../../quran/location.dart';
 import '../../routes.dart';
 import '../../widget.dart';
 

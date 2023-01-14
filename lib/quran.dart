@@ -8,6 +8,7 @@ export 'quran/ayah_tafsir_tahlili.dart';
 export 'quran/ayah_tafsir_wajiz.dart';
 export 'quran/ayah_translate.dart';
 export 'quran/ayah_transliterate.dart';
+export 'quran/location.dart';
 export 'quran/quran.dart';
 export 'quran/surah_alphabet.dart';
 export 'quran/surah_latin.dart';
