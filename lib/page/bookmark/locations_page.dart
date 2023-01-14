@@ -51,56 +51,45 @@ class _LocationsList extends StatelessWidget {
     return ListView.builder(
       itemCount: locations.length,
       itemBuilder: (BuildContext context, int index) {
-        return _SurahItem(
-          surah: locations[index].surah,
-          ayah: locations[index].ayah,
-        );
+        return _SurahItem(locations[index]);
       },
     );
   }
 }
 
 class _SurahItem extends StatelessWidget {
-  const _SurahItem({
-    required this.surah,
-    required this.ayah,
-  });
+  const _SurahItem(this.location);
 
-  final int surah;
-  final int ayah;
+  final Location location;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Text('($surah:$ayah)'),
+      leading: Text('(${location.surah}:${location.ayah})'),
       title: Column(
         children: <Widget>[
           _TransliterationMenu(
-            surah: surah,
-            ayah: ayah,
-            child: Transliteration(location: Location(surah, ayah)),
+            location: location,
+            child: Transliteration(location: location),
           ),
           _TranslationMenu(
-            surah: surah,
-            ayah: ayah,
-            child: Translation(location: Location(surah, ayah)),
+            location: location,
+            child: Translation(location: location),
           ),
         ],
       ),
-      subtitle: Annotation(surah: surah, ayah: ayah),
+      subtitle: Annotation(location: location),
     );
   }
 }
 
 class _TransliterationMenu extends StatelessWidget {
   const _TransliterationMenu({
-    required this.surah,
-    required this.ayah,
+    required this.location,
     required this.child,
   });
 
-  final int surah;
-  final int ayah;
+  final Location location;
   final Widget child;
 
   @override
@@ -118,7 +107,7 @@ class _TransliterationMenu extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    _SurahMenu(surah: surah, ayah: ayah),
+                    _SurahMenu(location),
                     FontSizeMenu<TransliterationSizeScope>(
                       data: (BuildContext context) {
                         return TransliterationSizeScope.watchOf(context);
@@ -137,13 +126,11 @@ class _TransliterationMenu extends StatelessWidget {
 
 class _TranslationMenu extends StatelessWidget {
   const _TranslationMenu({
-    required this.surah,
-    required this.ayah,
+    required this.location,
     required this.child,
   });
 
-  final int surah;
-  final int ayah;
+  final Location location;
   final Widget child;
 
   @override
@@ -161,7 +148,7 @@ class _TranslationMenu extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    _SurahMenu(surah: surah, ayah: ayah),
+                    _SurahMenu(location),
                     FontSizeMenu<TranslationSizeScope>(
                       data: (BuildContext context) {
                         return TranslationSizeScope.watchOf(context);
@@ -179,19 +166,15 @@ class _TranslationMenu extends StatelessWidget {
 }
 
 class _SurahMenu extends StatelessWidget {
-  const _SurahMenu({
-    required this.surah,
-    required this.ayah,
-  });
+  const _SurahMenu(this.location);
 
-  final int surah;
-  final int ayah;
+  final Location location;
 
   @override
   Widget build(BuildContext context) {
     return RoundedInkWell(
       child: const Text('Go to Surah'),
-      onTap: () => SurahRoute.pushNamed(context, surah, ayah),
+      onTap: () => SurahRoute.pushNamed(context, location.surah, location.ayah),
     );
   }
 }

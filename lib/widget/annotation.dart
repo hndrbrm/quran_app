@@ -4,21 +4,19 @@
 
 import 'package:flutter/widgets.dart';
 
-import '../quran/quran.dart';
+import '../quran.dart';
 
 class Annotation extends StatelessWidget {
   const Annotation({
     super.key,
-    required this.surah,
-    required this.ayah,
+    required this.location,
   });
 
-  final int surah;
-  final int ayah;
+  final Location location;
 
   @override
   Widget build(BuildContext context) {
-    final String annotation = Quran.instance.getAyahAnnotation(surah, ayah);
+    final String annotation = Quran.instance.getAyahAnnotation(location);
 
     return Align(
       alignment: AlignmentDirectional.centerStart,

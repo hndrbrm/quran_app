@@ -35,12 +35,12 @@ mixin ${alphabet}AyahAnnotation on AyahAnnotation {
   ];
 
   @override
-  String getAyahAnnotation(int surah, int ayah) {
-    if (surah == $surah) {
-      return ayahs[ayah - 1];
+  String getAyahAnnotation(Location location) {
+    if (location.surah == $surah) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahAnnotation(surah, ayah);
+    return super.getAyahAnnotation(location);
   }
 }
 '''

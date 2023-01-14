@@ -33,7 +33,8 @@ class SurahPage extends StatelessWidget {
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
-                return _SurahItem(surah: surah, ayah: ayah - index - 1);
+                final Location location = Location(surah,  ayah - index - 1);
+                return _SurahItem(location);
               },
               childCount: ayah - 1,
             ),
@@ -42,7 +43,8 @@ class SurahPage extends StatelessWidget {
             key: centerKey,
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
-                return _SurahItem(surah: surah, ayah: ayah + index);
+                final Location location = Location(surah,  ayah + index);
+                return _SurahItem(location);
               },
               childCount: total - ayah + 1,
             ),
@@ -54,33 +56,29 @@ class SurahPage extends StatelessWidget {
 }
 
 class _SurahItem extends StatelessWidget {
-  const _SurahItem({
-    required this.surah,
-    required this.ayah,
-  });
+  const _SurahItem(this.location);
 
-  final int surah;
-  final int ayah;
+  final Location location;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Text('$ayah'),
+      leading: Text('${location.ayah}'),
       title: Column(
         children: <Widget>[
           _TransliterationMenu(
-            surah: surah,
-            ayah: ayah,
-            child: Transliteration(location: Location(surah, ayah)),
+            surah: location.surah,
+            ayah: location.ayah,
+            child: Transliteration(location: location),
           ),
           _TranslationMenu(
-            surah: surah,
-            ayah: ayah,
-            child: Translation(location: Location(surah, ayah)),
+            surah: location.surah,
+            ayah: location.ayah,
+            child: Translation(location: location),
           ),
         ],
       ),
-      subtitle: Annotation(surah: surah, ayah: ayah),
+      subtitle: Annotation(location: location),
     );
   }
 }
