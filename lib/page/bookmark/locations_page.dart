@@ -78,7 +78,7 @@ class _SurahItem extends StatelessWidget {
           _TransliterationMenu(
             surah: surah,
             ayah: ayah,
-            child: Transliteration(surah: surah, ayah: ayah),
+            child: Transliteration(location: Location(surah, ayah)),
           ),
           _TranslationMenu(
             surah: surah,

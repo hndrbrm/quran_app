@@ -5,26 +5,24 @@
 import 'package:flutter/widgets.dart';
 
 import '../data/font_size/transliteration_size_scope.dart';
-import '../quran/quran.dart';
+import '../quran.dart';
 
 class Transliteration extends StatelessWidget {
   const Transliteration({
     super.key,
-    required this.surah,
-    required this.ayah,
+    required this.location,
   });
 
-  final int surah;
-  final int ayah;
+  final Location location;
 
   @override
   Widget build(BuildContext context) {
-    final String transliterate = Quran.instance.getAyahTransliterate(surah, ayah);
+    final String transliterate = Quran.instance.getAyahTransliterate(location);
 
     return Align(
       alignment: AlignmentDirectional.centerEnd,
       child: Text(
-        '$transliterate ${ayah.toArabic()}',
+        '$transliterate ${location.ayah.toArabic()}',
         textDirection: TextDirection.rtl,
         style: TextStyle(
           fontSize: TransliterationSizeScope.watchOf(context).fontSize,
