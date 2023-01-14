@@ -35,12 +35,12 @@ mixin ${alphabet}AyahTranslate on AyahTranslate {
   ];
 
   @override
-  String getAyahTranslate(int surah, int ayah) {
-    if (surah == $surah) {
-      return ayahs[ayah - 1];
+  String getAyahTranslate(Location location) {
+    if (location.surah == $surah) {
+      return ayahs[location.ayah - 1];
     }
 
-    return super.getAyahTranslate(surah, ayah);
+    return super.getAyahTranslate(location);
   }
 }
 '''

@@ -5,21 +5,19 @@
 import 'package:flutter/widgets.dart';
 
 import '../data/font_size/translation_size_scope.dart';
-import '../quran/quran.dart';
+import '../quran.dart';
 
 class Translation extends StatelessWidget {
   const Translation({
     super.key,
-    required this.surah,
-    required this.ayah,
+    required this.location,
   });
 
-  final int surah;
-  final int ayah;
+  final Location location;
 
   @override
   Widget build(BuildContext context) {
-    final String translate = Quran.instance.getAyahTranslate(surah, ayah);
+    final String translate = Quran.instance.getAyahTranslate(location);
 
     return Align(
       alignment: AlignmentDirectional.centerStart,
