@@ -55,29 +55,32 @@ mixin _Locations on InitializeBinder, LocationsPreferences {
   }
 }
 
+extension _MapExtension on Map<String, List<Location>> {
+  Map<String, List<Location>> copyWithout(String group) {
+    return {
+      for (final MapEntry<String, List<Location>> entry in entries)
+        if (entry.key != group)
+          ...{ entry.key: entry.value },
+    };
+  }
+}
+
 mixin _Location on _Locations {
   void addLocation(String group, Location location) {
-    locations[group] ??= List.empty();
-
-    if (locations[group]!.contains(location)) {
+    final List<Location> loc = locations[group] ?? [];
+    if (loc.contains(location)) {
       return;
     }
 
-    final List<Location> newValue = <Location>[
-      ...locations[group]!,
-      location,
-    ];
-
-    locations = <String, List<Location>>{
-      ...locations,
-      group: newValue,
+    locations = {
+      ...locations.copyWithout(group),
+      group: <Location>[ ...loc, location ],
     };
   }
 
   void removeLocations(String group) {
     if (locations[group] != null) {
-      locations.remove(group);
-      locations = Map.from(locations);
+      locations = locations.copyWithout(group);
     }
   }
 
@@ -86,9 +89,14 @@ mixin _Location on _Locations {
       final List<Location> loc = locations[group]!;
 
       if (loc.contains(location)) {
+        final List<Location> newValue = List.from(
+          loc.where((Location element) => element != location),
+        );
+
         locations = {
-          ...locations..remove(group),
-          group: List.from(loc.where((element) => element != location)),
+          ...locations.copyWithout(group),
+          if (newValue.isEmpty)
+          group: newValue,
         };
       }
     }
