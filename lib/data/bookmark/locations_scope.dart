@@ -57,30 +57,39 @@ mixin _Locations on InitializeBinder, LocationsPreferences {
 
 mixin _Location on _Locations {
   void addLocation(String group, Location location) {
-    locations[group] ??= [];
+    locations[group] ??= List.empty();
 
     if (locations[group]!.contains(location)) {
       return;
     }
 
-    final List<Location> newValue = [
+    final List<Location> newValue = <Location>[
       ...locations[group]!,
       location,
     ];
 
-    locations = {
+    locations = <String, List<Location>>{
       ...locations,
       group: newValue,
     };
   }
 
-  void removeLocation(String group, [ Location? location ]) {
+  void removeLocations(String group) {
     if (locations[group] != null) {
-      final bool exist = location == null
-        ? locations.remove(group) != null
-        : locations[group]!.remove(location);
-      if (exist) {
-        locations = Map.from(locations);
+      locations.remove(group);
+      locations = Map.from(locations);
+    }
+  }
+
+  void removeLocation(String group, Location location) {
+    if (locations[group] != null) {
+      final List<Location> loc = locations[group]!;
+
+      if (loc.contains(location)) {
+        locations = {
+          ...locations..remove(group),
+          group: List.from(loc.where((element) => element != location)),
+        };
       }
     }
   }

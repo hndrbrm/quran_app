@@ -9,7 +9,7 @@ import '../data/bookmark.dart';
 mixin BookmarkMixin {
   void removeGroup(BuildContext context, String group) {
     GroupsScope.readOf(context).removeGroup(group);
-    LocationsScope.readOf(context).removeLocation(group);
+    LocationsScope.readOf(context).removeLocations(group);
   }
 
   void removeGroupThenPop(BuildContext context, String group) {

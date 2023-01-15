@@ -42,7 +42,9 @@ class _LocationsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Location> locations = LocationsScope.watchOf(context).locations[group] ?? [];
+    final List<Location> locations =
+      LocationsScope.watchOf(context).locations[group] ??
+      List.empty();
 
     if (locations.isEmpty) {
       return const Center(child: Text('Belum ada bookmark'));
@@ -51,15 +53,19 @@ class _LocationsList extends StatelessWidget {
     return ListView.builder(
       itemCount: locations.length,
       itemBuilder: (BuildContext context, int index) {
-        return _SurahItem(locations[index]);
+        return _SurahItem(group: group, location: locations[index]);
       },
     );
   }
 }
 
 class _SurahItem extends StatelessWidget {
-  const _SurahItem(this.location);
+  const _SurahItem({
+    required this.group,
+    required this.location,
+  });
 
+  final String group;
   final Location location;
 
   @override
@@ -69,10 +75,12 @@ class _SurahItem extends StatelessWidget {
       title: Column(
         children: <Widget>[
           _TransliterationMenu(
+            group: group,
             location: location,
             child: Transliteration(location: location),
           ),
           _TranslationMenu(
+            group: group,
             location: location,
             child: Translation(location: location),
           ),
@@ -85,10 +93,12 @@ class _SurahItem extends StatelessWidget {
 
 class _TransliterationMenu extends StatelessWidget {
   const _TransliterationMenu({
+    required this.group,
     required this.location,
     required this.child,
   });
 
+  final String group;
   final Location location;
   final Widget child;
 
@@ -108,6 +118,7 @@ class _TransliterationMenu extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     _SurahMenu(location),
+                    _RemoveMenu(group: group, location: location),
                     FontSizeMenu<TransliterationSizeScope>(
                       data: (BuildContext context) {
                         return TransliterationSizeScope.watchOf(context);
@@ -126,10 +137,12 @@ class _TransliterationMenu extends StatelessWidget {
 
 class _TranslationMenu extends StatelessWidget {
   const _TranslationMenu({
+    required this.group,
     required this.location,
     required this.child,
   });
 
+  final String group;
   final Location location;
   final Widget child;
 
@@ -149,6 +162,7 @@ class _TranslationMenu extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     _SurahMenu(location),
+                    _RemoveMenu(group: group, location: location),
                     FontSizeMenu<TranslationSizeScope>(
                       data: (BuildContext context) {
                         return TranslationSizeScope.watchOf(context);
@@ -175,6 +189,27 @@ class _SurahMenu extends StatelessWidget {
     return RoundedInkWell(
       child: const Text('Go to Surah'),
       onTap: () => SurahRoute.pushNamed(context, location.surah, location.ayah),
+    );
+  }
+}
+
+class _RemoveMenu extends StatelessWidget {
+  const _RemoveMenu({
+    required this.group,
+    required this.location,
+  });
+
+  final String group;
+  final Location location;
+
+  @override
+  Widget build(BuildContext context) {
+    return RoundedInkWell(
+      child: const Text('Remove'),
+      onTap: () {
+        LocationsScope.readOf(context).removeLocation(group, location);
+        Navigator.of(context).pop();
+      },
     );
   }
 }
