@@ -5,6 +5,7 @@
 import 'package:flutter/material.dart';
 
 import '../data.dart';
+import '../mixin/bookmark_mixin.dart';
 import '../quran.dart';
 import '../widget.dart';
 
@@ -67,13 +68,11 @@ class _SurahItem extends StatelessWidget {
       title: Column(
         children: <Widget>[
           _TransliterationMenu(
-            surah: location.surah,
-            ayah: location.ayah,
+            location: location,
             child: Transliteration(location: location),
           ),
           _TranslationMenu(
-            surah: location.surah,
-            ayah: location.ayah,
+            location: location,
             child: Translation(location: location),
           ),
         ],
@@ -85,13 +84,11 @@ class _SurahItem extends StatelessWidget {
 
 class _TransliterationMenu extends StatelessWidget {
   const _TransliterationMenu({
-    required this.surah,
-    required this.ayah,
+    required this.location,
     required this.child,
   });
 
-  final int surah;
-  final int ayah;
+  final Location location;
   final Widget child;
 
   @override
@@ -114,7 +111,7 @@ class _TransliterationMenu extends StatelessWidget {
                         return TransliterationSizeScope.watchOf(context);
                       },
                     ),
-                    _BookmarkMenu(surah: surah, ayah: ayah),
+                    _BookmarkMenu(location),
                   ],
                 ),
               ),
@@ -128,13 +125,11 @@ class _TransliterationMenu extends StatelessWidget {
 
 class _TranslationMenu extends StatelessWidget {
   const _TranslationMenu({
-    required this.surah,
-    required this.ayah,
+    required this.location,
     required this.child,
   });
 
-  final int surah;
-  final int ayah;
+  final Location location;
   final Widget child;
 
   @override
@@ -156,7 +151,7 @@ class _TranslationMenu extends StatelessWidget {
                         return TranslationSizeScope.watchOf(context);
                       },
                     ),
-                    _BookmarkMenu(surah: surah, ayah: ayah),
+                    _BookmarkMenu(location),
                   ],
                 ),
               ),
@@ -169,28 +164,41 @@ class _TranslationMenu extends StatelessWidget {
   }
 }
 
-class _BookmarkMenu extends StatelessWidget {
-  const _BookmarkMenu({
-    required this.surah,
-    required this.ayah,
-  });
+class _BookmarkMenu extends StatelessWidget with BookmarkMixin {
+  const _BookmarkMenu(this.location);
 
-  final int surah;
-  final int ayah;
+  final Location location;
 
   @override
   Widget build(BuildContext context) {
+    const Widget child = Text('Tandai...');
+    final List<String> groups = GroupsScope.watchOf(context).groups;
+
+    if (groups.isEmpty) {
+      return RoundedInkWell(
+        child: child,
+        onTap: () => createGroup(context).then(
+          (String? group) {
+            if (group != null) {
+              _addLocation(context, group, location);
+            }
+          },
+        ),
+      );
+    }
+
     return PopUpMenu(
+      child: child,
       menuBuilder: (TapUpDetails details) {
         return DraggableMenu(
           left: details.globalPosition.dx,
           top: details.globalPosition.dy,
           child: _GroupsMenu(
-            location: Location(surah, ayah),
+            groups: groups,
+            location: location,
           ),
         );
       },
-      child: const Text('Tandai...'),
     );
   }
 }
@@ -198,14 +206,14 @@ class _BookmarkMenu extends StatelessWidget {
 class _GroupsMenu extends StatelessWidget {
   const _GroupsMenu({
     required this.location,
-  });
+    required this.groups,
+  }) : assert(groups.length > 0);
 
   final Location location;
+  final List<String> groups;
 
   @override
   Widget build(BuildContext context) {
-    final List<String> groups = GroupsScope.watchOf(context).groups;
-
     return Card(
       child:  LimitedBox(
         maxWidth: MediaQuery.of(context).size.width * 0.50,
@@ -214,10 +222,7 @@ class _GroupsMenu extends StatelessWidget {
           shrinkWrap: true,
           itemCount: groups.length,
           itemBuilder: (BuildContext context, int index) {
-            return _GroupsItem(
-              group: groups[index],
-              location: location,
-            );
+            return _GroupsItem(group: groups[index], location: location);
           },
         ),
       ),
@@ -238,10 +243,12 @@ class _GroupsItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       title: Text(group),
-      onTap: () {
-        LocationsScope.readOf(context).addLocation(group, location);
-        Navigator.of(context).pop();
-      },
+      onTap: () => _addLocation(context, group, location),
     );
   }
+}
+
+void _addLocation(BuildContext context, String group, Location location) {
+  LocationsScope.readOf(context).addLocation(group, location);
+  Navigator.of(context).pop();
 }

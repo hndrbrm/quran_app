@@ -10,7 +10,7 @@ import '../../routes.dart';
 import '../../widget.dart';
 import '../quran_drawer.dart';
 
-class GroupsPage extends StatelessWidget {
+class GroupsPage extends StatelessWidget with BookmarkMixin {
   const GroupsPage({ super.key });
 
   @override
@@ -21,7 +21,7 @@ class GroupsPage extends StatelessWidget {
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.add),
-            onPressed: () => _createGroup(context),
+            onPressed: () => createGroup(context),
           ),
         ],
       ),
@@ -144,7 +144,7 @@ class _RemoveMenuItem extends StatelessWidget with BookmarkMixin {
   }
 }
 
-class _EmptyList extends StatelessWidget {
+class _EmptyList extends StatelessWidget with BookmarkMixin {
   const _EmptyList();
 
   @override
@@ -155,44 +155,8 @@ class _EmptyList extends StatelessWidget {
           padding: EdgeInsets.all(8.0),
           child: Text('Create Group'),
         ),
-        onTap: () => _createGroup(context),
+        onTap: () => createGroup(context),
       ),
     );
-  }
-}
-
-Future<void> _createGroup(BuildContext context) async {
-  final GroupsScope gs = GroupsScope.readOf(context);
-  final String? group = await showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      final TextEditingController controller = TextEditingController();
-      void submit(String group) => Navigator.of(context).pop(group);
-
-      return AlertDialog(
-        title: TextField(
-          controller: controller,
-          focusNode: FocusNode()..requestFocus(),
-          onSubmitted: submit,
-          decoration: const InputDecoration(
-            labelText: 'Group Name',
-          ),
-        ),
-        actions: <Widget>[
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: const Text('Cancel'),
-          ),
-          TextButton(
-            onPressed: () => submit(controller.text),
-            child: const Text('Ok'),
-          ),
-        ],
-      );
-    },
-  );
-
-  if (group != null) {
-    gs.addGroup(group);
   }
 }
