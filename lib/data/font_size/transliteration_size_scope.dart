@@ -6,7 +6,7 @@ import 'dart:async';
 
 import 'package:flutter/widgets.dart';
 
-import '../../persistent/transliteration_size.dart';
+import '../../persistent.dart';
 import 'font_size_base.dart';
 
 class TransliterationSizeScope
