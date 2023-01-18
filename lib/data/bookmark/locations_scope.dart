@@ -4,9 +4,9 @@
 
 import 'package:flutter/widgets.dart';
 
-import '../../mixin/initialize_binder.dart';
-import '../../persistent/bookmark.dart';
-import '../../quran/location.dart';
+import '../../mixin.dart';
+import '../../persistent.dart';
+import '../../quran.dart';
 
 class LocationsScope
   extends InheritedNotifier<ValueNotifier<Map<String, List<Location>>>>

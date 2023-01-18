@@ -4,6 +4,7 @@
 
 import 'package:flutter/widgets.dart';
 
+import '../data.dart';
 import '../quran.dart';
 
 class Annotation extends StatelessWidget {
@@ -16,8 +17,12 @@ class Annotation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String annotation = Quran.instance.getAyahAnnotation(location);
+    final bool visible = AnnotationScope.watchOf(context).visible;
+    if (!visible) {
+      return const SizedBox.shrink();
+    }
 
+    final String annotation = Quran.instance.getAyahAnnotation(location);
     return Align(
       alignment: AlignmentDirectional.centerStart,
       child: Text(annotation),

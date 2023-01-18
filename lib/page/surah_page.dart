@@ -5,7 +5,7 @@
 import 'package:flutter/material.dart';
 
 import '../data.dart';
-import '../mixin/bookmark_mixin.dart';
+import '../mixin.dart';
 import '../quran.dart';
 import '../widget.dart';
 
@@ -77,7 +77,9 @@ class _SurahItem extends StatelessWidget {
           ),
         ],
       ),
-      subtitle: Annotation(location: location),
+      subtitle: _AnnotationMenu(
+        child: Annotation(location: location),
+      ),
     );
   }
 }
@@ -152,6 +154,10 @@ class _TranslationMenu extends StatelessWidget {
                       },
                     ),
                     _BookmarkMenu(location),
+                    const _AnnotationToggle(
+                      visible: false,
+                      title: 'Show Annotation',
+                    ),
                   ],
                 ),
               ),
@@ -161,6 +167,66 @@ class _TranslationMenu extends StatelessWidget {
       },
       child: child,
     );
+  }
+}
+
+class _AnnotationMenu extends StatelessWidget {
+  const _AnnotationMenu({ required this.child });
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return PopUpMenu(
+      menuBuilder: (TapUpDetails details) {
+        return DraggableMenu(
+          left: details.globalPosition.dx,
+          top: details.globalPosition.dy,
+          child: Card(
+            child: IntrinsicWidth(
+              child: Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: const <Widget>[
+                    _AnnotationToggle(
+                      visible: true,
+                      title: 'Hide',
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        );
+      },
+      child: child,
+    );
+  }
+}
+
+class _AnnotationToggle extends StatelessWidget {
+  const _AnnotationToggle({
+    required this.visible,
+    required this.title
+  });
+
+  final bool visible;
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    if (AnnotationScope.watchOf(context).visible == visible) {
+      return RoundedInkWell(
+        onTap: () {
+          AnnotationScope.readOf(context).toggle();
+          Navigator.of(context).pop();
+        },
+        child: Text(title),
+      );
+    }
+
+    return const SizedBox.shrink();
   }
 }
 

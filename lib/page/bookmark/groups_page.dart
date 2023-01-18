@@ -4,8 +4,8 @@
 
 import 'package:flutter/material.dart';
 
-import '../../data/bookmark/groups_scope.dart';
-import '../../mixin/bookmark_mixin.dart';
+import '../../data.dart';
+import '../../mixin.dart';
 import '../../routes.dart';
 import '../../widget.dart';
 import '../quran_drawer.dart';

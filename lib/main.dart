@@ -12,24 +12,39 @@ void main() {
 }
 
 class QuranApp extends StatelessWidget with
-  UnknownRoute, GenerateRoute, HomeRoute, SurahRoute, GroupsRoute,
+  GenerateRoute, UnknownRoute, HomeRoute, SurahRoute, GroupsRoute,
   LocationsRoute
 {
   const QuranApp({ super.key });
 
   @override
   Widget build(BuildContext context) {
+    return _ScopedData(
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Quran',
+        onGenerateRoute: onGenerateRoute,
+        onUnknownRoute: onUnknownRoute,
+        theme: ThemeData(
+          fontFamily: 'Kemenag',
+        ),
+      ),
+    );
+  }
+}
+
+class _ScopedData extends StatelessWidget {
+  const _ScopedData({ required this.child });
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
     return TransliterationSizeScope(
       child: TranslationSizeScope(
         child: BookmarkNest(
-          child: MaterialApp(
-            debugShowCheckedModeBanner: false,
-            title: 'Quran',
-            onGenerateRoute: onGenerateRoute,
-            onUnknownRoute: onUnknownRoute,
-            theme: ThemeData(
-              fontFamily: 'Kemenag',
-            ),
+          child: AnnotationScope(
+            child: child,
           ),
         ),
       ),

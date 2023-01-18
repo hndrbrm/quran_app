@@ -6,7 +6,7 @@ import 'dart:async';
 
 import 'package:flutter/widgets.dart';
 
-import '../../mixin/initialize_binder.dart';
+import '../../mixin.dart';
 
 abstract class FontSizeScopeBase
   extends InheritedNotifier<ValueNotifier<double>>

@@ -4,8 +4,8 @@
 
 import 'package:flutter/widgets.dart';
 
-import '../../mixin/initialize_binder.dart';
-import '../../persistent/bookmark.dart';
+import '../../mixin.dart';
+import '../../persistent.dart';
 
 class GroupsScope
   extends InheritedNotifier<ValueNotifier<List<String>>>

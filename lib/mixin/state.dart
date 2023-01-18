@@ -2,5 +2,4 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-export 'mixin/none.dart';
-export 'mixin/state.dart';
+export 'state/annotation_mixin.dart';
