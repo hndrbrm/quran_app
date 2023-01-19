@@ -4,8 +4,9 @@
 
 import 'package:flutter/widgets.dart';
 
-import '../data.dart';
-import '../quran.dart';
+import '../data/font_size/transliteration_size_scope.dart';
+import '../quran/location.dart';
+import '../quran/quran.dart';
 
 class Transliteration extends StatelessWidget {
   const Transliteration({

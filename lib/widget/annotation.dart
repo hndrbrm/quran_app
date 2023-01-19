@@ -4,8 +4,9 @@
 
 import 'package:flutter/widgets.dart';
 
-import '../data.dart';
-import '../quran.dart';
+import '../data/annotation_scope.dart';
+import '../quran/location.dart';
+import '../quran/quran.dart';
 
 class Annotation extends StatelessWidget {
   const Annotation({

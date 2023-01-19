@@ -4,10 +4,12 @@
 
 import 'package:flutter/material.dart';
 
-import '../../data.dart';
-import '../../mixin.dart';
+import '../../data/bookmark/groups_scope.dart';
+import '../../mixin/none/bookmark_mixin.dart';
 import '../../routes.dart';
-import '../../widget.dart';
+import '../../widget/draggable_menu.dart';
+import '../../widget/pop_up_menu.dart';
+import '../../widget/rounded_ink_well.dart';
 import '../quran_drawer.dart';
 
 class GroupsPage extends StatelessWidget with BookmarkMixin {

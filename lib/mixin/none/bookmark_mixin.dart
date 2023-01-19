@@ -4,7 +4,8 @@
 
 import 'package:flutter/material.dart';
 
-import '../../data.dart';
+import '../../data/bookmark/groups_scope.dart';
+import '../../data/bookmark/locations_scope.dart';
 
 mixin BookmarkMixin {
   void _removeGroup(BuildContext context, String group) {

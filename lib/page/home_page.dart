@@ -5,7 +5,7 @@
 import 'package:flutter/material.dart';
 import 'package:quran_transliteration/quran_transliteration.dart';
 
-import '../quran.dart';
+import '../quran/quran.dart';
 import '../routes.dart';
 import 'quran_drawer.dart';
 

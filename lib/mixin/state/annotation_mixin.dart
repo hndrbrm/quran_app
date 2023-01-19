@@ -4,7 +4,7 @@
 
 import 'package:flutter/widgets.dart';
 
-import '../../data.dart';
+import '../../data/annotation_scope.dart';
 
 mixin AnnotationMixin on State {
   AnnotationScope get annotation => AnnotationScope.readOf(context);
