@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:quran_app/data/finder.dart';
 
 import '../../data/bookmark/groups_scope.dart';
 import '../../mixin/none/bookmark_mixin.dart';
@@ -38,7 +39,7 @@ class _GroupsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> groups = GroupsScope.watchOf(context).groups;
+    final List<String> groups = context.watch<GroupsScope>().groups;
 
     if (groups.isEmpty) {
       return const _EmptyList();

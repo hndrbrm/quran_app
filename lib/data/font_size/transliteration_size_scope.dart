@@ -4,8 +4,6 @@
 
 import 'dart:async';
 
-import 'package:flutter/widgets.dart';
-
 import '../../persistent/transliteration_size.dart';
 import 'font_size_base.dart';
 
@@ -17,10 +15,6 @@ class TransliterationSizeScope
     super.key,
     required super.child,
   });
-
-  static TransliterationSizeScope watchOf(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<TransliterationSizeScope>()!;
-  }
 
   @override
   Future<double?> loadFontSize() => loadTransliterationSize();

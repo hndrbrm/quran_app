@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:quran_app/data/finder.dart';
 
 import '../data/annotation_scope.dart';
 import '../data/bookmark/groups_scope.dart';
@@ -121,7 +122,7 @@ class _TransliterationMenu extends StatelessWidget {
                   children: <Widget>[
                     FontSizeMenu<TransliterationSizeScope>(
                       data: (BuildContext context) {
-                        return TransliterationSizeScope.watchOf(context);
+                        return context.watch<TransliterationSizeScope>();
                       },
                     ),
                     _BookmarkMenu(location),
@@ -161,7 +162,7 @@ class _TranslationMenu extends StatelessWidget {
                   children: <Widget>[
                     FontSizeMenu<TranslationSizeScope>(
                       data: (BuildContext context) {
-                        return TranslationSizeScope.watchOf(context);
+                        return context.watch<TranslationSizeScope>();
                       },
                     ),
                     _BookmarkMenu(location),
@@ -227,10 +228,10 @@ class _AnnotationToggle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (AnnotationScope.watchOf(context).visible == visible) {
+    if (context.watch<AnnotationScope>().visible == visible) {
       return RoundedInkWell(
         onTap: () {
-          AnnotationScope.readOf(context).toggle();
+          context.read<AnnotationScope>().toggle();
           Navigator.of(context).pop();
         },
         child: Text(title),
@@ -249,7 +250,7 @@ class _BookmarkMenu extends StatelessWidget with BookmarkMixin {
   @override
   Widget build(BuildContext context) {
     const Widget child = Text('Tandai...');
-    final List<String> groups = GroupsScope.watchOf(context).groups;
+    final List<String> groups = context.watch<GroupsScope>().groups;
 
     if (groups.isEmpty) {
       return RoundedInkWell(
@@ -326,6 +327,6 @@ class _GroupsItem extends StatelessWidget {
 }
 
 void _addLocation(BuildContext context, String group, Location location) {
-  LocationsScope.readOf(context).addLocation(group, location);
+  context.read<LocationsScope>().addLocation(group, location);
   Navigator.of(context).pop();
 }

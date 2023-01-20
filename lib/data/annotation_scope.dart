@@ -20,14 +20,6 @@ class AnnotationScope
 
   static const bool defaultVisibility = true;
 
-  static AnnotationScope watchOf(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<AnnotationScope>()!;
-  }
-
-  static AnnotationScope readOf(BuildContext context) {
-    return context.findAncestorWidgetOfExactType<AnnotationScope>()!;
-  }
-
   @override
   ValueNotifier<bool> get notifier => super.notifier!;
 }

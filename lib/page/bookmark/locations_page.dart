@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:quran_app/data/finder.dart';
 
 import '../../data/bookmark/locations_scope.dart';
 import '../../data/font_size/translation_size_scope.dart';
@@ -51,7 +52,7 @@ class _LocationsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Location> locations =
-      LocationsScope.watchOf(context).locations[group] ??
+      context.watch<LocationsScope>().locations[group] ??
       List.empty();
 
     if (locations.isEmpty) {
@@ -129,7 +130,7 @@ class _TransliterationMenu extends StatelessWidget {
                     _RemoveMenu(group: group, location: location),
                     FontSizeMenu<TransliterationSizeScope>(
                       data: (BuildContext context) {
-                        return TransliterationSizeScope.watchOf(context);
+                        return context.watch<TransliterationSizeScope>();
                       },
                     ),
                   ],
@@ -173,7 +174,7 @@ class _TranslationMenu extends StatelessWidget {
                     _RemoveMenu(group: group, location: location),
                     FontSizeMenu<TranslationSizeScope>(
                       data: (BuildContext context) {
-                        return TranslationSizeScope.watchOf(context);
+                        return context.watch<TranslationSizeScope>();
                       },
                     ),
                   ],
@@ -215,7 +216,7 @@ class _RemoveMenu extends StatelessWidget {
     return RoundedInkWell(
       child: const Text('Remove'),
       onTap: () {
-        LocationsScope.readOf(context).removeLocation(group, location);
+        context.read<LocationsScope>().removeLocation(group, location);
         Navigator.of(context).pop();
       },
     );

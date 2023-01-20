@@ -5,9 +5,10 @@
 import 'package:flutter/widgets.dart';
 
 import '../../data/annotation_scope.dart';
+import '../../data/finder.dart';
 
 mixin AnnotationMixin on State {
-  AnnotationScope get annotation => AnnotationScope.readOf(context);
+  AnnotationScope get annotation => context.read<AnnotationScope>();
 
-  bool get visible => AnnotationScope.watchOf(context).visible;
+  bool get visible => context.watch<AnnotationScope>().visible;
 }

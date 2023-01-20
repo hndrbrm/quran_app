@@ -5,6 +5,7 @@
 import 'package:flutter/widgets.dart';
 
 import '../data/annotation_scope.dart';
+import '../data/finder.dart';
 import '../quran/location.dart';
 import '../quran/quran.dart';
 
@@ -18,7 +19,7 @@ class Annotation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool visible = AnnotationScope.watchOf(context).visible;
+    final bool visible = context.watch<AnnotationScope>().visible;
     if (!visible) {
       return const SizedBox.shrink();
     }

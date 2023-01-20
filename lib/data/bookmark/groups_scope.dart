@@ -20,14 +20,6 @@ class GroupsScope
 
   static const List<String> defaultGroups = <String>[];
 
-  static GroupsScope watchOf(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<GroupsScope>()!;
-  }
-
-  static GroupsScope readOf(BuildContext context) {
-    return context.findAncestorWidgetOfExactType<GroupsScope>()!;
-  }
-
   @override
   ValueNotifier<List<String>> get notifier => super.notifier!;
 }

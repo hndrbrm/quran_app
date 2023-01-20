@@ -21,14 +21,6 @@ class LocationsScope
 
   static const Map<String, List<Location>> defaultLocations = <String, List<Location>>{};
 
-  static LocationsScope watchOf(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<LocationsScope>()!;
-  }
-
-  static LocationsScope readOf(BuildContext context) {
-    return context.findAncestorWidgetOfExactType<LocationsScope>()!;
-  }
-
   @override
   ValueNotifier<Map<String, List<Location>>> get notifier => super.notifier!;
 }
