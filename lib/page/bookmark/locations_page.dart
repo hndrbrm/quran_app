@@ -3,13 +3,12 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:quran_app/data/finder.dart';
 
-import '../../data/bookmark/locations_scope.dart';
+import '../../data/bookmark/locations_mixin.dart';
 import '../../data/font_size/translation_size_scope.dart';
+import '../../data/font_size/transliteration_size_mixin.dart';
 import '../../data/font_size/transliteration_size_scope.dart';
-import '../../mixin/none/bookmark_mixin.dart';
-import '../../quran/location.dart';
+import '../../data/bookmark/bookmark_mixin.dart';
 import '../../routes.dart';
 import '../../widget/annotation.dart';
 import '../../widget/draggable_menu.dart';
@@ -19,7 +18,7 @@ import '../../widget/rounded_ink_well.dart';
 import '../../widget/translation.dart';
 import '../../widget/transliteration.dart';
 
-class LocationsPage extends StatelessWidget with BookmarkMixin {
+class LocationsPage extends StatelessWidget with FinderMixin, BookmarkMixin {
   const LocationsPage({
     super.key,
     required this.group,
@@ -44,16 +43,14 @@ class LocationsPage extends StatelessWidget with BookmarkMixin {
   }
 }
 
-class _LocationsList extends StatelessWidget {
+class _LocationsList extends StatelessWidget with FinderMixin, LocationsMixin {
   const _LocationsList(this.group);
 
   final String group;
 
   @override
   Widget build(BuildContext context) {
-    final List<Location> locations =
-      context.watch<LocationsScope>().locations[group] ??
-      List.empty();
+    final List<Location> locations = this.locations(context, group);
 
     if (locations.isEmpty) {
       return const Center(child: Text('Belum ada bookmark'));
@@ -100,7 +97,10 @@ class _SurahItem extends StatelessWidget {
   }
 }
 
-class _TransliterationMenu extends StatelessWidget {
+class _TransliterationMenu
+  extends StatelessWidget
+  with FinderMixin, TransliterationSizeMixin
+{
   const _TransliterationMenu({
     required this.group,
     required this.location,
@@ -130,7 +130,7 @@ class _TransliterationMenu extends StatelessWidget {
                     _RemoveMenu(group: group, location: location),
                     FontSizeMenu<TransliterationSizeScope>(
                       data: (BuildContext context) {
-                        return context.watch<TransliterationSizeScope>();
+                        return watch<TransliterationSizeScope>(context);
                       },
                     ),
                   ],
@@ -144,7 +144,7 @@ class _TransliterationMenu extends StatelessWidget {
   }
 }
 
-class _TranslationMenu extends StatelessWidget {
+class _TranslationMenu extends StatelessWidget with FinderMixin {
   const _TranslationMenu({
     required this.group,
     required this.location,
@@ -174,7 +174,7 @@ class _TranslationMenu extends StatelessWidget {
                     _RemoveMenu(group: group, location: location),
                     FontSizeMenu<TranslationSizeScope>(
                       data: (BuildContext context) {
-                        return context.watch<TranslationSizeScope>();
+                        return watch<TranslationSizeScope>(context);
                       },
                     ),
                   ],
@@ -202,7 +202,7 @@ class _SurahMenu extends StatelessWidget {
   }
 }
 
-class _RemoveMenu extends StatelessWidget {
+class _RemoveMenu extends StatelessWidget with FinderMixin, LocationsMixin {
   const _RemoveMenu({
     required this.group,
     required this.location,
@@ -216,7 +216,7 @@ class _RemoveMenu extends StatelessWidget {
     return RoundedInkWell(
       child: const Text('Remove'),
       onTap: () {
-        context.read<LocationsScope>().removeLocation(group, location);
+        removeLocation(context, group, location);
         Navigator.of(context).pop();
       },
     );

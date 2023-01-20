@@ -3,15 +3,17 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:quran_app/data/finder.dart';
 
-import '../../data/bookmark/groups_scope.dart';
-import '../../data/bookmark/locations_scope.dart';
+import 'groups_scope.dart';
+import 'locations_scope.dart';
+import '../finder_mixin.dart';
 
-mixin BookmarkMixin {
+export '../finder_mixin.dart';
+
+mixin BookmarkMixin on FinderMixin {
   void _removeGroup(BuildContext context, String group) {
-    context.read<GroupsScope>().removeGroup(group);
-    context.read<LocationsScope>().removeLocations(group);
+    read<GroupsScope>(context).removeGroup(group);
+    read<LocationsScope>(context).removeLocations(group);
   }
 
   void removeGroupThenPop(BuildContext context, String group) {
@@ -20,7 +22,7 @@ mixin BookmarkMixin {
   }
 
   Future<String?> createGroup(BuildContext context) async {
-    final GroupsScope gs = context.read<GroupsScope>();
+    final GroupsScope gs = read<GroupsScope>(context);
 
     final String? group = await showDialog(
       context: context,

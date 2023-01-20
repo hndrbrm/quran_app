@@ -3,15 +3,13 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:quran_app/data/finder.dart';
 
-import '../data/annotation_scope.dart';
-import '../data/bookmark/groups_scope.dart';
-import '../data/bookmark/locations_scope.dart';
+import '../data/annotation/annotation_mixin.dart';
+import '../data/bookmark/groups_mixin.dart';
+import '../data/bookmark/locations_mixin.dart';
 import '../data/font_size/translation_size_scope.dart';
 import '../data/font_size/transliteration_size_scope.dart';
-import '../mixin/none/bookmark_mixin.dart';
-import '../quran/location.dart';
+import '../data/bookmark/bookmark_mixin.dart';
 import '../quran/quran.dart';
 import '../widget/annotation.dart';
 import '../widget/draggable_menu.dart';
@@ -96,7 +94,7 @@ class _SurahItem extends StatelessWidget {
   }
 }
 
-class _TransliterationMenu extends StatelessWidget {
+class _TransliterationMenu extends StatelessWidget with FinderMixin {
   const _TransliterationMenu({
     required this.location,
     required this.child,
@@ -122,7 +120,7 @@ class _TransliterationMenu extends StatelessWidget {
                   children: <Widget>[
                     FontSizeMenu<TransliterationSizeScope>(
                       data: (BuildContext context) {
-                        return context.watch<TransliterationSizeScope>();
+                        return watch<TransliterationSizeScope>(context);
                       },
                     ),
                     _BookmarkMenu(location),
@@ -137,7 +135,7 @@ class _TransliterationMenu extends StatelessWidget {
   }
 }
 
-class _TranslationMenu extends StatelessWidget {
+class _TranslationMenu extends StatelessWidget with FinderMixin {
   const _TranslationMenu({
     required this.location,
     required this.child,
@@ -162,12 +160,12 @@ class _TranslationMenu extends StatelessWidget {
                   children: <Widget>[
                     FontSizeMenu<TranslationSizeScope>(
                       data: (BuildContext context) {
-                        return context.watch<TranslationSizeScope>();
+                        return watch<TranslationSizeScope>(context);
                       },
                     ),
                     _BookmarkMenu(location),
                     const _AnnotationToggle(
-                      visible: false,
+                      whenVisible: false,
                       title: 'Show Annotation',
                     ),
                   ],
@@ -202,7 +200,7 @@ class _AnnotationMenu extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: const <Widget>[
                     _AnnotationToggle(
-                      visible: true,
+                      whenVisible: true,
                       title: 'Hide',
                     ),
                   ],
@@ -217,21 +215,24 @@ class _AnnotationMenu extends StatelessWidget {
   }
 }
 
-class _AnnotationToggle extends StatelessWidget {
+class _AnnotationToggle
+  extends StatelessWidget
+  with FinderMixin, AnnotationMixin
+{
   const _AnnotationToggle({
-    required this.visible,
+    required this.whenVisible,
     required this.title
   });
 
-  final bool visible;
+  final bool whenVisible;
   final String title;
 
   @override
   Widget build(BuildContext context) {
-    if (context.watch<AnnotationScope>().visible == visible) {
+    if (visible(context) == whenVisible) {
       return RoundedInkWell(
         onTap: () {
-          context.read<AnnotationScope>().toggle();
+          toggle(context);
           Navigator.of(context).pop();
         },
         child: Text(title),
@@ -242,7 +243,10 @@ class _AnnotationToggle extends StatelessWidget {
   }
 }
 
-class _BookmarkMenu extends StatelessWidget with BookmarkMixin {
+class _BookmarkMenu
+  extends StatelessWidget
+  with FinderMixin, BookmarkMixin, GroupsMixin, LocationsMixin, _LocationsMixin
+{
   const _BookmarkMenu(this.location);
 
   final Location location;
@@ -250,7 +254,7 @@ class _BookmarkMenu extends StatelessWidget with BookmarkMixin {
   @override
   Widget build(BuildContext context) {
     const Widget child = Text('Tandai...');
-    final List<String> groups = context.watch<GroupsScope>().groups;
+    final List<String> groups = this.groups(context);
 
     if (groups.isEmpty) {
       return RoundedInkWell(
@@ -308,7 +312,10 @@ class _GroupsMenu extends StatelessWidget {
   }
 }
 
-class _GroupsItem extends StatelessWidget {
+class _GroupsItem
+  extends StatelessWidget
+  with FinderMixin, LocationsMixin, _LocationsMixin
+{
   const _GroupsItem({
     required this.group,
     required this.location,
@@ -326,7 +333,9 @@ class _GroupsItem extends StatelessWidget {
   }
 }
 
-void _addLocation(BuildContext context, String group, Location location) {
-  context.read<LocationsScope>().addLocation(group, location);
-  Navigator.of(context).pop();
+mixin _LocationsMixin on FinderMixin, LocationsMixin {
+  void _addLocation(BuildContext context, String group, Location location) {
+    addLocation(context, group, location);
+    Navigator.of(context).pop();
+  }
 }

@@ -4,8 +4,8 @@
 
 import 'package:flutter/widgets.dart';
 
-import '../mixin/none/initialize_binder.dart';
-import '../persistent/annotation.dart';
+import '../initialize_binder.dart';
+import '../../persistent/annotation.dart';
 
 class AnnotationScope
   extends InheritedNotifier<ValueNotifier<bool>>

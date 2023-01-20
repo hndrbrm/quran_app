@@ -4,12 +4,14 @@
 
 import 'package:flutter/widgets.dart';
 
-import '../data/finder.dart';
-import '../data/font_size/translation_size_scope.dart';
+import '../data/font_size/translation_size_mixin.dart';
 import '../quran/location.dart';
 import '../quran/quran.dart';
 
-class Translation extends StatelessWidget {
+class Translation
+  extends StatelessWidget
+  with FinderMixin, TranslationSizeMixin
+{
   const Translation({
     super.key,
     required this.location,
@@ -26,7 +28,7 @@ class Translation extends StatelessWidget {
       child: Text(
         translate,
         style: TextStyle(
-          fontSize: context.watch<TranslationSizeScope>().fontSize,
+          fontSize: fontSize(context),
         ),
       ),
     );

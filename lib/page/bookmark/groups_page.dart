@@ -3,17 +3,16 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:quran_app/data/finder.dart';
 
-import '../../data/bookmark/groups_scope.dart';
-import '../../mixin/none/bookmark_mixin.dart';
+import '../../data/bookmark/groups_mixin.dart';
+import '../../data/bookmark/bookmark_mixin.dart';
 import '../../routes.dart';
 import '../../widget/draggable_menu.dart';
 import '../../widget/pop_up_menu.dart';
 import '../../widget/rounded_ink_well.dart';
 import '../quran_drawer.dart';
 
-class GroupsPage extends StatelessWidget with BookmarkMixin {
+class GroupsPage extends StatelessWidget with FinderMixin, BookmarkMixin {
   const GroupsPage({ super.key });
 
   @override
@@ -34,12 +33,12 @@ class GroupsPage extends StatelessWidget with BookmarkMixin {
   }
 }
 
-class _GroupsList extends StatelessWidget {
+class _GroupsList extends StatelessWidget with FinderMixin, GroupsMixin {
   const _GroupsList();
 
   @override
   Widget build(BuildContext context) {
-    final List<String> groups = context.watch<GroupsScope>().groups;
+    final List<String> groups = this.groups(context);
 
     if (groups.isEmpty) {
       return const _EmptyList();
@@ -131,7 +130,7 @@ class _LocationMenuItem extends StatelessWidget {
   }
 }
 
-class _RemoveMenuItem extends StatelessWidget with BookmarkMixin {
+class _RemoveMenuItem extends StatelessWidget with FinderMixin, BookmarkMixin {
   const _RemoveMenuItem({
     required this.group,
   });
@@ -147,7 +146,7 @@ class _RemoveMenuItem extends StatelessWidget with BookmarkMixin {
   }
 }
 
-class _EmptyList extends StatelessWidget with BookmarkMixin {
+class _EmptyList extends StatelessWidget with FinderMixin, BookmarkMixin {
   const _EmptyList();
 
   @override

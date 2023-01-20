@@ -4,7 +4,7 @@
 
 import 'package:flutter/widgets.dart';
 
-import '../../mixin/none/initialize_binder.dart';
+import '../initialize_binder.dart';
 import '../../persistent/bookmark.dart';
 import '../../quran/location.dart';
 

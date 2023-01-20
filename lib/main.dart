@@ -4,7 +4,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'data/annotation_scope.dart';
+import 'data/annotation/annotation_scope.dart';
 import 'data/bookmark/bookmark_nest.dart';
 import 'data/font_size/translation_size_scope.dart';
 import 'data/font_size/transliteration_size_scope.dart';

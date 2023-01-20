@@ -4,12 +4,11 @@
 
 import 'package:flutter/widgets.dart';
 
-import '../data/annotation_scope.dart';
-import '../data/finder.dart';
+import '../data/annotation/annotation_mixin.dart';
 import '../quran/location.dart';
 import '../quran/quran.dart';
 
-class Annotation extends StatelessWidget {
+class Annotation extends StatelessWidget with FinderMixin, AnnotationMixin {
   const Annotation({
     super.key,
     required this.location,
@@ -19,7 +18,7 @@ class Annotation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool visible = context.watch<AnnotationScope>().visible;
+    final bool visible = this.visible(context);
     if (!visible) {
       return const SizedBox.shrink();
     }
