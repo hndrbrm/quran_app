@@ -12,3 +12,6 @@ Siapapun boleh menggunakan atau mengubah Source Code ini asalkan dg tujuan yg ba
   [kemenag](https://quran.kemenag.go.id "kemenag")
 * Font Arabic saya ambil dari Kemenag dg nama "LPMQ Isep Misbah".
   Dengan modifikasi penambahan karakter Latin yg tidak ada.
+* Ayah sajdah saya ambil dari Al Quran dg judul:
+  "AL-KHOBIR (AL-QUR'AN TAJWID UNTUK PEMULA)"
+  Terbitan 'NUR ILMU (SURABAYA)'

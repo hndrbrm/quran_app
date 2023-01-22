@@ -4,6 +4,7 @@
 
 import 'ayah_annotation.dart';
 import 'ayah_length.dart';
+import 'ayah_sajdah.dart';
 import 'ayah_translate.dart';
 import 'ayah_transliterate.dart';
 import 'surah_alphabet.dart';
@@ -18,7 +19,7 @@ abstract class QuranBinder {
 class Quran extends QuranBinder with
   SurahAlphabet, SurahLatin, SurahTranslate, SurahTransliterate,
 
-  AyahLength, AyahTransliterate, AyahTranslate, AyahAnnotation,
+  AyahLength, AyahTransliterate, AyahTranslate, AyahAnnotation, AyahSajdah,
 
   FatihahAlphabet, BaqarahAlphabet, ImranAlphabet, NisaAlphabet, MaidahAlphabet,
   AnamAlphabet, ArafAlphabet, AnfalAlphabet, TaubahAlphabet, YunusAlphabet,
@@ -266,7 +267,12 @@ class Quran extends QuranBinder with
   AsrAyahAnnotation, HumazahAyahAnnotation, FilAyahAnnotation,
   QuraisyAyahAnnotation, MaunAyahAnnotation, KausarAyahAnnotation,
   KafirunAyahAnnotation, NasrAyahAnnotation, LahabAyahAnnotation,
-  IkhlasAyahAnnotation, FalaqAyahAnnotation, NasAyahAnnotation
+  IkhlasAyahAnnotation, FalaqAyahAnnotation, NasAyahAnnotation,
+
+  ArafAyahSajdah, RadAyahSajdah, NahlAyahSajdah, IsraAyahSajdah,
+  MaryamAyahSajdah, HajjAyahSajdah, FurqanAyahSajdah, NamlAyahSajdah,
+  SajdahAyahSajdah, SadAyahSajdah, FussilatAyahSajdah, NajmAyahSajdah,
+  InsyiqaqAyahSajdah, AlaqAyahSajdah
 {
   const Quran._();
 
