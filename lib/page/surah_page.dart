@@ -135,7 +135,10 @@ class _TransliterationMenu extends StatelessWidget with FinderMixin {
   }
 }
 
-class _TranslationMenu extends StatelessWidget with FinderMixin {
+class _TranslationMenu
+  extends StatelessWidget
+  with FinderMixin, _AnnotationMixin
+{
   const _TranslationMenu({
     required this.location,
     required this.child,
@@ -164,8 +167,9 @@ class _TranslationMenu extends StatelessWidget with FinderMixin {
                       },
                     ),
                     _BookmarkMenu(location),
+                    if (hasAnnotation(location))
                     const _AnnotationToggle(
-                      whenVisible: false,
+                      showWhenVisible: false,
                       title: 'Show Annotation',
                     ),
                   ],
@@ -180,37 +184,42 @@ class _TranslationMenu extends StatelessWidget with FinderMixin {
   }
 }
 
-class _AnnotationMenu extends StatelessWidget {
-  const _AnnotationMenu({ required this.child });
+class _AnnotationMenu extends StatelessWidget with FinderMixin, AnnotationMixin {
+  const _AnnotationMenu({
+    required this.child,
+  });
 
   final Widget child;
 
   @override
   Widget build(BuildContext context) {
-    return PopUpMenu(
-      menuBuilder: (TapUpDetails details) {
-        return DraggableMenu(
-          left: details.globalPosition.dx,
-          top: details.globalPosition.dy,
-          child: Card(
-            child: IntrinsicWidth(
-              child: Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: const <Widget>[
-                    _AnnotationToggle(
-                      whenVisible: true,
-                      title: 'Hide',
-                    ),
-                  ],
+    return Visibility(
+      visible: visible(context),
+      child: PopUpMenu(
+        menuBuilder: (TapUpDetails details) {
+          return DraggableMenu(
+            left: details.globalPosition.dx,
+            top: details.globalPosition.dy,
+            child: Card(
+              child: IntrinsicWidth(
+                child: Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: const <Widget>[
+                      _AnnotationToggle(
+                        showWhenVisible: true,
+                        title: 'Hide',
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-        );
-      },
-      child: child,
+          );
+        },
+        child: child,
+      ),
     );
   }
 }
@@ -220,26 +229,25 @@ class _AnnotationToggle
   with FinderMixin, AnnotationMixin
 {
   const _AnnotationToggle({
-    required this.whenVisible,
-    required this.title
+    required this.showWhenVisible,
+    required this.title,
   });
 
-  final bool whenVisible;
+  final bool showWhenVisible;
   final String title;
 
   @override
   Widget build(BuildContext context) {
-    if (visible(context) == whenVisible) {
-      return RoundedInkWell(
+    return Visibility(
+      visible: visible(context) == showWhenVisible,
+      child: RoundedInkWell(
         onTap: () {
           toggle(context);
           Navigator.of(context).pop();
         },
         child: Text(title),
-      );
-    }
-
-    return const SizedBox.shrink();
+      ),
+    );
   }
 }
 
@@ -338,4 +346,9 @@ mixin _LocationsMixin on FinderMixin, LocationsMixin {
     addLocation(context, group, location);
     Navigator.of(context).pop();
   }
+}
+
+mixin _AnnotationMixin {
+  bool hasAnnotation(Location location) =>
+    Quran.instance.getAyahAnnotation(location).isNotEmpty;
 }
