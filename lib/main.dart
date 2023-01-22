@@ -29,7 +29,7 @@ class QuranApp extends StatelessWidget with
         onGenerateRoute: onGenerateRoute,
         onUnknownRoute: onUnknownRoute,
         theme: ThemeData(
-          fontFamily: 'Kemenag',
+          fontFamily: 'Quran',
         ),
       ),
     );

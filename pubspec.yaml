@@ -103,7 +103,7 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
   fonts:
-    - family: Kemenag
+    - family: Quran
       fonts:
-        - asset: fonts/Kemenag-Regular.ttf
+        - asset: fonts/Quran-Regular.ttf
           weight: 400
