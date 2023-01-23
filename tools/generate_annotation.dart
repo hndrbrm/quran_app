@@ -25,26 +25,43 @@ void main() {
       }
     }
 
-    final String alphabet = Quran.instance.getSurahAlphabet(surah);
-    // ignore: avoid_print
-    print(
-'''
+    final List<String> eachAnnotation = <String>[];
+    for (int j = 0; j < ayahs.length; j++) {
+      final Ayah ayah = ayahs[j];
+
+      final bool isEmpty = ayah.annotation.contents.reduce(
+        (value, element) => value + element
+      ).trim().isEmpty;
+
+      if (isEmpty) {
+        continue;
+      }
+
+      eachAnnotation.add('$j: \'${ayah.annotation}\'');
+    }
+
+    if (eachAnnotation.isNotEmpty) {
+      final String alphabet = Quran.instance.getSurahAlphabet(surah);
+      // ignore: avoid_print
+      print(
+          '''
 mixin ${alphabet}AyahAnnotation on AyahAnnotation {
-  static const List ayahs = <String>[
-    ${ayahs.map((e) => '\'${e.annotation}\'').join(',\n    ')}
-  ];
+  static const Map<int, String> ayahs = <int, String>{
+    ${eachAnnotation.join(',\n    ')}
+  };
 
   @override
   String getAyahAnnotation(Location location) {
     if (location.surah == $surah) {
-      return ayahs[location.ayah - 1];
+      return ayahs[location.ayah - 1] ?? '';
     }
 
     return super.getAyahAnnotation(location);
   }
 }
 '''
-    );
+      );
+    }
     surah = ayah.location.surah;
     ayahs.clear();
     ayahs.add(ayah);
