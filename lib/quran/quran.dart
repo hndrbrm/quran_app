@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'ayah_annotation.dart';
+import 'ayah_lafaz.dart';
 import 'ayah_length.dart';
 import 'ayah_sajdah.dart';
 import 'ayah_translate.dart';
@@ -19,7 +20,8 @@ abstract class QuranBinder {
 class Quran extends QuranBinder with
   SurahAlphabet, SurahLatin, SurahTranslate, SurahTransliterate,
 
-  AyahLength, AyahTransliterate, AyahTranslate, AyahAnnotation, AyahSajdah,
+  AyahLength, AyahTransliterate, AyahLafaz, AyahTranslate, AyahAnnotation,
+  AyahSajdah,
 
   FatihahAlphabet, BaqarahAlphabet, ImranAlphabet, NisaAlphabet, MaidahAlphabet,
   AnamAlphabet, ArafAlphabet, AnfalAlphabet, TaubahAlphabet, YunusAlphabet,
@@ -193,6 +195,35 @@ class Quran extends QuranBinder with
   QuraisyAyahTransliterate, MaunAyahTransliterate, KausarAyahTransliterate,
   KafirunAyahTransliterate, NasrAyahTransliterate, LahabAyahTransliterate,
   IkhlasAyahTransliterate, FalaqAyahTransliterate, NasAyahTransliterate,
+
+  FatihahAyahLafaz, BaqarahAyahLafaz, ImranAyahLafaz, NisaAyahLafaz,
+  MaidahAyahLafaz, AnamAyahLafaz, ArafAyahLafaz, AnfalAyahLafaz,
+  TaubahAyahLafaz, YunusAyahLafaz, HudAyahLafaz, YusufAyahLafaz, RadAyahLafaz,
+  IbrahimAyahLafaz, HijrAyahLafaz, NahlAyahLafaz, IsraAyahLafaz, KahfAyahLafaz,
+  MaryamAyahLafaz, TahaAyahLafaz, AnbiyaAyahLafaz, HajjAyahLafaz,
+  MukminunAyahLafaz, NurAyahLafaz, FurqanAyahLafaz, SyuaraAyahLafaz,
+  NamlAyahLafaz, QasasAyahLafaz, AnkabutAyahLafaz, RumAyahLafaz,
+  LuqmanAyahLafaz, SajdahAyahLafaz, AhzabAyahLafaz, SabaAyahLafaz,
+  FatirAyahLafaz, YasinAyahLafaz, SaffatAyahLafaz, SadAyahLafaz,
+  ZumarAyahLafaz, GafirAyahLafaz, FussilatAyahLafaz, SyuraAyahLafaz,
+  ZukhrufAyahLafaz, DukhanAyahLafaz, JasiyahAyahLafaz, AhqafAyahLafaz,
+  MuhammadAyahLafaz, FathAyahLafaz, HujuratAyahLafaz, QafAyahLafaz,
+  ZariyatAyahLafaz, TurAyahLafaz, NajmAyahLafaz, QamarAyahLafaz,
+  RahmanAyahLafaz, WaqiahAyahLafaz, HadidAyahLafaz, MujadalahAyahLafaz,
+  HasyrAyahLafaz, MumtahanahAyahLafaz, SaffAyahLafaz, JumuahAyahLafaz,
+  MunafiqunAyahLafaz, TagabunAyahLafaz, TalaqAyahLafaz, TahrimAyahLafaz,
+  MulkAyahLafaz, QalamAyahLafaz, HaqqahAyahLafaz, MaarijAyahLafaz,
+  NuhAyahLafaz, JinnAyahLafaz, MuzzamilAyahLafaz, MuddassirAyahLafaz,
+  QiyamahAyahLafaz, InsanAyahLafaz, MursalatAyahLafaz, NabaAyahLafaz,
+  NaziatAyahLafaz, AbasaAyahLafaz, TakwirAyahLafaz, InfitarAyahLafaz,
+  MutaffifinAyahLafaz, InsyiqaqAyahLafaz, BurujAyahLafaz, TariqAyahLafaz,
+  AklaAyahLafaz, GasyiyahAyahLafaz, FajrAyahLafaz, BaladAyahLafaz,
+  SyamsAyahLafaz, LailAyahLafaz, DuhaAyahLafaz, SyarhAyahLafaz, TinAyahLafaz,
+  AlaqAyahLafaz, QadrAyahLafaz, BayyinahAyahLafaz, ZalzalahAyahLafaz,
+  AdiyatAyahLafaz, QariahAyahLafaz, TakasurAyahLafaz, AsrAyahLafaz,
+  HumazahAyahLafaz, FilAyahLafaz, QuraisyAyahLafaz, MaunAyahLafaz,
+  KausarAyahLafaz, KafirunAyahLafaz, NasrAyahLafaz, LahabAyahLafaz,
+  IkhlasAyahLafaz, FalaqAyahLafaz, NasAyahLafaz,
 
   FatihahAyahTranslate, BaqarahAyahTranslate, ImranAyahTranslate,
   NisaAyahTranslate, MaidahAyahTranslate, AnamAyahTranslate, ArafAyahTranslate,
