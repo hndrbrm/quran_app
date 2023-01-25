@@ -8,7 +8,12 @@ import 'data/annotation/annotation_scope.dart';
 import 'data/bookmark/bookmark_nest.dart';
 import 'data/font_size/translation_size_scope.dart';
 import 'data/font_size/transliteration_size_scope.dart';
-import 'routes.dart';
+import 'route/generate_route.dart';
+import 'route/groups_route.dart';
+import 'route/home_route.dart';
+import 'route/locations_route.dart';
+import 'route/surah_route.dart';
+import 'route/unknown_route.dart';
 
 void main() {
   runApp(const QuranApp());

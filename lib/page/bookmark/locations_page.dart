@@ -9,7 +9,7 @@ import '../../data/font_size/translation_size_scope.dart';
 import '../../data/font_size/transliteration_size_mixin.dart';
 import '../../data/font_size/transliteration_size_scope.dart';
 import '../../data/bookmark/bookmark_mixin.dart';
-import '../../routes.dart';
+import '../../route/surah_route.dart';
 import '../../widget/annotation.dart';
 import '../../widget/draggable_menu.dart';
 import '../../widget/font_size_menu.dart';

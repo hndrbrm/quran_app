@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../data/bookmark/groups_mixin.dart';
 import '../../data/bookmark/bookmark_mixin.dart';
-import '../../routes.dart';
+import '../../route/locations_route.dart';
 import '../../widget/draggable_menu.dart';
 import '../../widget/pop_up_menu.dart';
 import '../../widget/rounded_ink_well.dart';
