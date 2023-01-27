@@ -3,13 +3,14 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:quran_app/data/lafaz/lafaz_mixin.dart';
 
 import '../data/annotation/annotation_mixin.dart';
+import '../data/bookmark/bookmark_mixin.dart';
 import '../data/bookmark/groups_mixin.dart';
 import '../data/bookmark/locations_mixin.dart';
 import '../data/font_size/translation_size_scope.dart';
 import '../data/font_size/transliteration_size_scope.dart';
-import '../data/bookmark/bookmark_mixin.dart';
 import '../quran/quran.dart';
 import '../widget/annotation.dart';
 import '../widget/draggable_menu.dart';
@@ -18,6 +19,7 @@ import '../widget/pop_up_menu.dart';
 import '../widget/rounded_ink_well.dart';
 import '../widget/translation.dart';
 import '../widget/transliteration.dart';
+import '../widget/transliteration_lafaz.dart';
 
 class SurahPage extends StatelessWidget {
   const SurahPage({
@@ -81,6 +83,10 @@ class _SurahItem extends StatelessWidget {
             location: location,
             child: Transliteration(location: location),
           ),
+          _LafazMenu(
+            location: location,
+            child: TransliterationLafaz(location: location),
+          ),
           _TranslationMenu(
             location: location,
             child: Translation(location: location),
@@ -124,6 +130,10 @@ class _TransliterationMenu extends StatelessWidget with FinderMixin {
                       },
                     ),
                     _BookmarkMenu(location),
+                    const _LafazToggle(
+                      showWhenVisible: false,
+                      title: 'Show Lafaz',
+                    ),
                   ],
                 ),
               ),
@@ -131,6 +141,48 @@ class _TransliterationMenu extends StatelessWidget with FinderMixin {
           ),
         );
       },
+    );
+  }
+}
+
+class _LafazMenu extends StatelessWidget with FinderMixin, LafazMixin {
+  const _LafazMenu({
+    required this.location,
+    required this.child,
+  });
+
+  final Location location;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return Visibility(
+      visible: visible(context),
+      child: PopUpMenu(
+        child: child,
+        menuBuilder: (TapUpDetails details) {
+          return DraggableMenu(
+            left: details.globalPosition.dx,
+            top: details.globalPosition.dy,
+            child: Card(
+              child: IntrinsicWidth(
+                child: Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: const <Widget>[
+                      _LafazToggle(
+                        showWhenVisible: true,
+                        title: 'Hide',
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          );
+        },
+      ),
     );
   }
 }
@@ -229,6 +281,33 @@ class _AnnotationToggle
   with FinderMixin, AnnotationMixin
 {
   const _AnnotationToggle({
+    required this.showWhenVisible,
+    required this.title,
+  });
+
+  final bool showWhenVisible;
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Visibility(
+      visible: visible(context) == showWhenVisible,
+      child: RoundedInkWell(
+        onTap: () {
+          toggle(context);
+          Navigator.of(context).pop();
+        },
+        child: Text(title),
+      ),
+    );
+  }
+}
+
+class _LafazToggle
+  extends StatelessWidget
+  with FinderMixin, LafazMixin
+{
+  const _LafazToggle({
     required this.showWhenVisible,
     required this.title,
   });

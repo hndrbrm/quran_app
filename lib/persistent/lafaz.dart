@@ -6,14 +6,14 @@ import 'dart:async';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
-abstract class AnnotationPersistent {
+abstract class LafazPersistent {
   FutureOr<bool> loadVisibility();
 
   FutureOr<void> saveVisibility(bool value);
 }
 
-mixin AnnotationPreferences implements AnnotationPersistent {
-  static const String _key = 'annotation_visibility';
+mixin LafazPreferences implements LafazPersistent {
+  static const String _key = 'lafaz_visibility';
 
   @override
   Future<bool> loadVisibility() async {

@@ -4,14 +4,14 @@
 
 import 'package:flutter/widgets.dart';
 
+import '../../persistent/lafaz.dart';
 import '../initialize_binder.dart';
-import '../../persistent/annotation.dart';
 
-class AnnotationScope
+class LafazScope
   extends InheritedNotifier<ValueNotifier<bool>>
-  with InitializeBinder, AnnotationPreferences, _Visibility
+  with InitializeBinder, LafazPreferences, _Visibility
 {
-  AnnotationScope({
+  LafazScope({
     super.key,
     required super.child,
   }) : super(notifier: ValueNotifier<bool>(defaultVisibility)) {
@@ -24,7 +24,7 @@ class AnnotationScope
   ValueNotifier<bool> get notifier => super.notifier!;
 }
 
-mixin _Visibility on InitializeBinder, AnnotationPreferences {
+mixin _Visibility on InitializeBinder, LafazPreferences {
   ValueNotifier<bool> get notifier;
 
   bool get visible => notifier.value;
