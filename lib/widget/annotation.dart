@@ -4,7 +4,7 @@
 
 import 'package:flutter/widgets.dart';
 
-import '../data/annotation/annotation_mixin.dart';
+import '../data/visibility/annotation_mixin.dart';
 import '../quran/location.dart';
 import '../quran/quran.dart';
 

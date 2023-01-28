@@ -4,12 +4,14 @@
 
 import 'package:flutter/widgets.dart';
 
-import '../../persistent/lafaz.dart';
+import '../../persistent/visibility/lafaz.dart';
 import '../initialize_binder.dart';
 
 class LafazScope
   extends InheritedNotifier<ValueNotifier<bool>>
-  with InitializeBinder, Preferences, LafazPreferences, _Visibility
+  with
+    InitializeBinder,
+    Preferences, VisibilityPreferences, LafazPreferences, _Visibility
 {
   LafazScope({
     super.key,
@@ -29,7 +31,7 @@ mixin _Visibility on InitializeBinder, LafazPreferences {
 
   bool get visible => notifier.value;
   set visible(bool value) {
-    saveVisibility(value);
+    saveLafazVisibility(value);
     notifier.value = value;
   }
 
@@ -37,7 +39,7 @@ mixin _Visibility on InitializeBinder, LafazPreferences {
   void initialize() {
     super.initialize();
 
-    loadVisibility().then(
+    loadLafazVisibility().then(
       (bool value) => notifier.value = value,
     );
   }

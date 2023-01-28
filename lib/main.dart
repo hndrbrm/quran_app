@@ -4,11 +4,11 @@
 
 import 'package:flutter/material.dart';
 
-import 'data/annotation/annotation_scope.dart';
 import 'data/bookmark/bookmark_nest.dart';
 import 'data/font_size/translation_size_scope.dart';
 import 'data/font_size/transliteration_size_scope.dart';
-import 'data/lafaz/lafaz_scope.dart';
+import 'data/visibility/annotation_scope.dart';
+import 'data/visibility/lafaz_scope.dart';
 import 'route/generate_route.dart';
 import 'route/groups_route.dart';
 import 'route/home_route.dart';

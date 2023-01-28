@@ -7,7 +7,7 @@ import 'package:flutter/widgets.dart';
 import '../finder_mixin.dart';
 import 'lafaz_scope.dart';
 
-export '../../data/finder_mixin.dart';
+export '../finder_mixin.dart';
 
 mixin LafazMixin on FinderMixin {
   bool visible(BuildContext context) => watch<LafazScope>(context).visible;

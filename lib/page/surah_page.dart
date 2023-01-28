@@ -3,9 +3,9 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:quran_app/data/lafaz/lafaz_mixin.dart';
+import 'package:quran_app/data/visibility/lafaz_mixin.dart';
 
-import '../data/annotation/annotation_mixin.dart';
+import '../data/visibility/annotation_mixin.dart';
 import '../data/bookmark/bookmark_mixin.dart';
 import '../data/bookmark/groups_mixin.dart';
 import '../data/bookmark/locations_mixin.dart';

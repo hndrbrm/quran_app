@@ -4,12 +4,14 @@
 
 import 'package:flutter/widgets.dart';
 
+import '../../persistent/visibility/annotation.dart';
 import '../initialize_binder.dart';
-import '../../persistent/annotation.dart';
 
 class AnnotationScope
   extends InheritedNotifier<ValueNotifier<bool>>
-  with InitializeBinder, Preferences, AnnotationPreferences, _Visibility
+  with
+    InitializeBinder,
+    Preferences, VisibilityPreferences, AnnotationPreferences, _Visibility
 {
   AnnotationScope({
     super.key,
@@ -29,7 +31,7 @@ mixin _Visibility on InitializeBinder, AnnotationPreferences {
 
   bool get visible => notifier.value;
   set visible(bool value) {
-    saveVisibility(value);
+    saveAnnotationVisibility(value);
     notifier.value = value;
   }
 
@@ -37,7 +39,7 @@ mixin _Visibility on InitializeBinder, AnnotationPreferences {
   void initialize() {
     super.initialize();
 
-    loadVisibility().then(
+    loadAnnotationVisibility().then(
       (bool value) => notifier.value = value,
     );
   }
