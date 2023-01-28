@@ -27,7 +27,7 @@ abstract class FontSizeScopeBase
 
 mixin _FontSizePersistent {
   FutureOr<double?> loadFontSize();
-  FutureOr<void> saveFontSize(double? value);
+  FutureOr<void> saveFontSize(double value);
 }
 
 mixin _FontSize on InitializeBinder, _FontSizePersistent {

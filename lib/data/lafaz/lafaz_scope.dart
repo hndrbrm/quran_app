@@ -9,7 +9,7 @@ import '../initialize_binder.dart';
 
 class LafazScope
   extends InheritedNotifier<ValueNotifier<bool>>
-  with InitializeBinder, LafazPreferences, _Visibility
+  with InitializeBinder, Preferences, LafazPreferences, _Visibility
 {
   LafazScope({
     super.key,

@@ -9,7 +9,7 @@ import '../../persistent/annotation.dart';
 
 class AnnotationScope
   extends InheritedNotifier<ValueNotifier<bool>>
-  with InitializeBinder, AnnotationPreferences, _Visibility
+  with InitializeBinder, Preferences, AnnotationPreferences, _Visibility
 {
   AnnotationScope({
     super.key,

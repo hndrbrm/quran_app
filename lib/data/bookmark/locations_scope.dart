@@ -4,13 +4,13 @@
 
 import 'package:flutter/widgets.dart';
 
+import '../../persistent/bookmark/locations.dart';
 import '../initialize_binder.dart';
-import '../../persistent/bookmark.dart';
 import '../../quran/location.dart';
 
 class LocationsScope
   extends InheritedNotifier<ValueNotifier<Map<String, List<Location>>>>
-  with InitializeBinder, LocationsPreferences, _Locations, _Location
+  with InitializeBinder, Preferences, LocationsPreferences, _Locations, _Location
 {
   LocationsScope({
     super.key,

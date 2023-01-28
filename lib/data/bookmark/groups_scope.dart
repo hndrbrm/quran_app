@@ -4,12 +4,12 @@
 
 import 'package:flutter/widgets.dart';
 
+import '../../persistent/bookmark/groups.dart';
 import '../initialize_binder.dart';
-import '../../persistent/bookmark.dart';
 
 class GroupsScope
   extends InheritedNotifier<ValueNotifier<List<String>>>
-  with InitializeBinder, GroupsPreferences, _Groups, _Group
+  with InitializeBinder, Preferences, GroupsPreferences, _Groups, _Group
 {
   GroupsScope({
     super.key,

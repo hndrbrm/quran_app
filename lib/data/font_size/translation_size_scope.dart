@@ -4,12 +4,12 @@
 
 import 'dart:async';
 
-import '../../persistent/translation_size.dart';
+import '../../persistent/font_size/translation_size.dart';
 import 'font_size_base.dart';
 
 class TranslationSizeScope
   extends FontSizeScopeBase
-  with TranslationSizePreferences
+  with Preferences, TranslationSizePreferences
 {
   TranslationSizeScope({
     super.key,
@@ -20,5 +20,5 @@ class TranslationSizeScope
   Future<double?> loadFontSize() => loadTranslationSize();
 
   @override
-  FutureOr<void> saveFontSize(double? value) => saveTranslationSize(value);
+  Future<void> saveFontSize(double value) => saveTranslationSize(value);
 }

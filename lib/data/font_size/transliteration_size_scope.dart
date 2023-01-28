@@ -4,12 +4,12 @@
 
 import 'dart:async';
 
-import '../../persistent/transliteration_size.dart';
+import '../../persistent/font_size/transliteration_size.dart';
 import 'font_size_base.dart';
 
 class TransliterationSizeScope
   extends FontSizeScopeBase
-  with TransliterationSizePreferences
+  with Preferences, TransliterationSizePreferences
 {
   TransliterationSizeScope({
     super.key,
@@ -20,5 +20,5 @@ class TransliterationSizeScope
   Future<double?> loadFontSize() => loadTransliterationSize();
 
   @override
-  FutureOr<void> saveFontSize(double? value) => saveTransliterationSize(value);
+  Future<void> saveFontSize(double value) => saveTransliterationSize(value);
 }
