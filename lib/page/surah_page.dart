@@ -19,7 +19,7 @@ import '../widget/pop_up_menu.dart';
 import '../widget/rounded_ink_well.dart';
 import '../widget/translation.dart';
 import '../widget/transliteration.dart';
-import '../widget/transliteration_lafaz.dart';
+import '../widget/lafaz_card.dart';
 
 class SurahPage extends StatelessWidget {
   const SurahPage({
@@ -85,7 +85,7 @@ class _SurahItem extends StatelessWidget {
           ),
           _LafazMenu(
             location: location,
-            child: TransliterationLafaz(location: location),
+            child: LafazCard(location: location),
           ),
           _TranslationMenu(
             location: location,

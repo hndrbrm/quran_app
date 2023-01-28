@@ -4,12 +4,14 @@
 
 import 'package:flutter/material.dart';
 
+import '../data/font_size/translation_size_mixin.dart';
+import '../data/font_size/transliteration_size_mixin.dart';
 import '../mixin/none/number_mixin.dart';
 import '../quran/location.dart';
 import '../quran/quran.dart';
 
-class TransliterationLafaz extends StatelessWidget with NumberMixin {
-  const TransliterationLafaz({
+class LafazCard extends StatelessWidget with NumberMixin {
+  const LafazCard({
     super.key,
     required this.location,
   });
@@ -60,13 +62,50 @@ class _Envelope extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 6.0),
         child: Column(
           children: <Widget>[
-            Text(
-              transliteration,
-              textDirection: TextDirection.rtl,
-            ),
-            Text(translation),
+            _Lafaz(transliteration),
+            _Translation(translation),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _Lafaz
+  extends StatelessWidget
+  with FinderMixin, TransliterationSizeMixin
+{
+  const _Lafaz(this.transliteration);
+
+  final String transliteration;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      transliteration,
+      textDirection: TextDirection.rtl,
+      style: TextStyle(
+        fontSize: fontSize(context),
+      ),
+    );
+  }
+}
+
+class _Translation
+  extends StatelessWidget
+  with FinderMixin, TranslationSizeMixin
+{
+  const _Translation(this.translation);
+
+  final String translation;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      translation,
+      textDirection: TextDirection.rtl,
+      style: TextStyle(
+        fontSize: fontSize(context),
       ),
     );
   }
