@@ -3,14 +3,17 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:quran_app/data/visibility/lafaz_mixin.dart';
 
-import '../data/visibility/annotation_mixin.dart';
 import '../data/bookmark/bookmark_mixin.dart';
 import '../data/bookmark/groups_mixin.dart';
 import '../data/bookmark/locations_mixin.dart';
 import '../data/font_size/translation_size_scope.dart';
 import '../data/font_size/transliteration_size_scope.dart';
+import '../data/visibility/annotation_scope.dart';
+import '../data/visibility/lafaz_scope.dart';
+import '../data/visibility/translation_scope.dart';
+import '../data/visibility/visibility_mixin.dart';
+import '../data/visibility/visibility_scope.dart';
 import '../quran/quran.dart';
 import '../widget/annotation.dart';
 import '../widget/draggable_menu.dart';
@@ -94,13 +97,17 @@ class _SurahItem extends StatelessWidget {
         ],
       ),
       subtitle: _AnnotationMenu(
+        location: location,
         child: Annotation(location: location),
       ),
     );
   }
 }
 
-class _TransliterationMenu extends StatelessWidget with FinderMixin {
+class _TransliterationMenu
+  extends StatelessWidget
+  with FinderMixin, _AnnotationMixin
+{
   const _TransliterationMenu({
     required this.location,
     required this.child,
@@ -130,9 +137,18 @@ class _TransliterationMenu extends StatelessWidget with FinderMixin {
                       },
                     ),
                     _BookmarkMenu(location),
-                    const _LafazToggle(
+                    const _Toggle<LafazScope>(
                       showWhenVisible: false,
                       title: 'Show Lafaz',
+                    ),
+                    const _Toggle<TranslationScope>(
+                      showWhenVisible: false,
+                      title: 'Show Translation',
+                    ),
+                    if (hasAnnotation(location))
+                    const _Toggle<AnnotationScope>(
+                      showWhenVisible: false,
+                      title: 'Show Annotation',
                     ),
                   ],
                 ),
@@ -145,7 +161,10 @@ class _TransliterationMenu extends StatelessWidget with FinderMixin {
   }
 }
 
-class _LafazMenu extends StatelessWidget with FinderMixin, LafazMixin {
+class _LafazMenu
+  extends StatelessWidget
+  with FinderMixin, VisibilityMixin<LafazScope>, _AnnotationMixin
+{
   const _LafazMenu({
     required this.location,
     required this.child,
@@ -170,10 +189,19 @@ class _LafazMenu extends StatelessWidget with FinderMixin, LafazMixin {
                   padding: const EdgeInsets.all(4.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: const <Widget>[
-                      _LafazToggle(
+                    children: <Widget>[
+                      const _Toggle<TranslationScope>(
+                        showWhenVisible: false,
+                        title: 'Show Translation',
+                      ),
+                      if (hasAnnotation(location))
+                      const _Toggle<AnnotationScope>(
+                        showWhenVisible: false,
+                        title: 'Show Annotation',
+                      ),
+                      const _Toggle<LafazScope>(
                         showWhenVisible: true,
-                        title: 'Hide',
+                        title: 'Hide Lafaz',
                       ),
                     ],
                   ),
@@ -189,7 +217,7 @@ class _LafazMenu extends StatelessWidget with FinderMixin, LafazMixin {
 
 class _TranslationMenu
   extends StatelessWidget
-  with FinderMixin, _AnnotationMixin
+  with FinderMixin, _AnnotationMixin, VisibilityMixin<TranslationScope>
 {
   const _TranslationMenu({
     required this.location,
@@ -197,50 +225,6 @@ class _TranslationMenu
   });
 
   final Location location;
-  final Widget child;
-
-  @override
-  Widget build(BuildContext context) {
-    return PopUpMenu(
-      menuBuilder: (TapUpDetails details) {
-        return DraggableMenu(
-          left: details.globalPosition.dx,
-          top: details.globalPosition.dy,
-          child: Card(
-            child: IntrinsicWidth(
-              child: Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    FontSizeMenu<TranslationSizeScope>(
-                      data: (BuildContext context) {
-                        return watch<TranslationSizeScope>(context);
-                      },
-                    ),
-                    _BookmarkMenu(location),
-                    if (hasAnnotation(location))
-                    const _AnnotationToggle(
-                      showWhenVisible: false,
-                      title: 'Show Annotation',
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        );
-      },
-      child: child,
-    );
-  }
-}
-
-class _AnnotationMenu extends StatelessWidget with FinderMixin, AnnotationMixin {
-  const _AnnotationMenu({
-    required this.child,
-  });
-
   final Widget child;
 
   @override
@@ -258,10 +242,25 @@ class _AnnotationMenu extends StatelessWidget with FinderMixin, AnnotationMixin 
                   padding: const EdgeInsets.all(4.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: const <Widget>[
-                      _AnnotationToggle(
+                    children: <Widget>[
+                      FontSizeMenu<TranslationSizeScope>(
+                        data: (BuildContext context) {
+                          return watch<TranslationSizeScope>(context);
+                        },
+                      ),
+                      _BookmarkMenu(location),
+                      const _Toggle<LafazScope>(
+                        showWhenVisible: false,
+                        title: 'Show Lafaz',
+                      ),
+                      if (hasAnnotation(location))
+                      const _Toggle<AnnotationScope>(
+                        showWhenVisible: false,
+                        title: 'Show Annotation',
+                      ),
+                      const _Toggle<TranslationScope>(
                         showWhenVisible: true,
-                        title: 'Hide',
+                        title: 'Hide Translation',
                       ),
                     ],
                   ),
@@ -276,38 +275,64 @@ class _AnnotationMenu extends StatelessWidget with FinderMixin, AnnotationMixin 
   }
 }
 
-class _AnnotationToggle
+class _AnnotationMenu
   extends StatelessWidget
-  with FinderMixin, AnnotationMixin
+  with FinderMixin, VisibilityMixin<AnnotationScope>, _AnnotationMixin
 {
-  const _AnnotationToggle({
-    required this.showWhenVisible,
-    required this.title,
+  const _AnnotationMenu({
+    required this.location,
+    required this.child,
   });
 
-  final bool showWhenVisible;
-  final String title;
+  final Location location;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
     return Visibility(
-      visible: visible(context) == showWhenVisible,
-      child: RoundedInkWell(
-        onTap: () {
-          toggle(context);
-          Navigator.of(context).pop();
+      visible: visible(context) && hasAnnotation(location),
+      child: PopUpMenu(
+        menuBuilder: (TapUpDetails details) {
+          return DraggableMenu(
+            left: details.globalPosition.dx,
+            top: details.globalPosition.dy,
+            child: Card(
+              child: IntrinsicWidth(
+                child: Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: const <Widget>[
+                      _Toggle<LafazScope>(
+                        showWhenVisible: false,
+                        title: 'Show Lafaz',
+                      ),
+                      _Toggle<TranslationScope>(
+                        showWhenVisible: false,
+                        title: 'Show Translation',
+                      ),
+                      _Toggle<AnnotationScope>(
+                        showWhenVisible: true,
+                        title: 'Hide Annotation',
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          );
         },
-        child: Text(title),
+        child: child,
       ),
     );
   }
 }
 
-class _LafazToggle
+class _Toggle<T extends VisibilityScope>
   extends StatelessWidget
-  with FinderMixin, LafazMixin
+  with FinderMixin, VisibilityMixin<T>
 {
-  const _LafazToggle({
+  const _Toggle({
     required this.showWhenVisible,
     required this.title,
   });

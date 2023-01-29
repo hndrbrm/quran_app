@@ -4,11 +4,15 @@
 
 import 'package:flutter/widgets.dart';
 
-import '../data/visibility/annotation_mixin.dart';
+import '../data/visibility/annotation_scope.dart';
+import '../data/visibility/visibility_mixin.dart';
 import '../quran/location.dart';
 import '../quran/quran.dart';
 
-class Annotation extends StatelessWidget with FinderMixin, AnnotationMixin {
+class Annotation
+  extends StatelessWidget
+  with FinderMixin, VisibilityMixin<AnnotationScope>
+{
   const Annotation({
     super.key,
     required this.location,

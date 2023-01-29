@@ -4,12 +4,12 @@
 
 import 'package:flutter/widgets.dart';
 
-import 'lafaz_scope.dart';
+import 'translation_scope.dart';
 import 'visibility_mixin.dart';
 
 export '../finder_mixin.dart';
 
-mixin LafazMixin on VisibilityMixin<LafazScope> {
-  bool lafazVisible(BuildContext context) => visible(context);
-  void lafazToggle(BuildContext context) => toggle(context);
+mixin TranslationMixin on VisibilityMixin<TranslationScope> {
+  bool translationVisible(BuildContext context) => visible(context);
+  void translationToggle(BuildContext context) => toggle(context);
 }
