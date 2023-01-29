@@ -131,11 +131,7 @@ class _TransliterationMenu
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    FontSizeMenu<TransliterationSizeScope>(
-                      data: (BuildContext context) {
-                        return watch<TransliterationSizeScope>(context);
-                      },
-                    ),
+                    const FontSizeMenu<TransliterationSizeScope>(),
                     _BookmarkMenu(location),
                     const _Toggle<LafazScope>(
                       showWhenVisible: false,
@@ -243,11 +239,7 @@ class _TranslationMenu
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
-                      FontSizeMenu<TranslationSizeScope>(
-                        data: (BuildContext context) {
-                          return watch<TranslationSizeScope>(context);
-                        },
-                      ),
+                      const FontSizeMenu<TranslationSizeScope>(),
                       _BookmarkMenu(location),
                       const _Toggle<LafazScope>(
                         showWhenVisible: false,

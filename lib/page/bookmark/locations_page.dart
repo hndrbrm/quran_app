@@ -128,11 +128,7 @@ class _TransliterationMenu
                   children: <Widget>[
                     _SurahMenu(location),
                     _RemoveMenu(group: group, location: location),
-                    FontSizeMenu<TransliterationSizeScope>(
-                      data: (BuildContext context) {
-                        return watch<TransliterationSizeScope>(context);
-                      },
-                    ),
+                    const FontSizeMenu<TransliterationSizeScope>(),
                   ],
                 ),
               ),
@@ -172,11 +168,7 @@ class _TranslationMenu extends StatelessWidget with FinderMixin {
                   children: <Widget>[
                     _SurahMenu(location),
                     _RemoveMenu(group: group, location: location),
-                    FontSizeMenu<TranslationSizeScope>(
-                      data: (BuildContext context) {
-                        return watch<TranslationSizeScope>(context);
-                      },
-                    ),
+                    const FontSizeMenu<TranslationSizeScope>(),
                   ],
                 ),
               ),
