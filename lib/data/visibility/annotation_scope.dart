@@ -2,47 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:flutter/widgets.dart';
-
 import '../../persistent/visibility/annotation.dart';
-import '../initialize_binder.dart';
+import 'visibility_scope.dart';
 
-class AnnotationScope
-  extends InheritedNotifier<ValueNotifier<bool>>
-  with
-    InitializeBinder,
-    Preferences, VisibilityPreferences, AnnotationPreferences, _Visibility
-{
+class AnnotationScope extends VisibilityScope with AnnotationPreferences {
   AnnotationScope({
     super.key,
     required super.child,
-  }) : super(notifier: ValueNotifier<bool>(defaultVisibility)) {
-    initialize();
-  }
-
-  static const bool defaultVisibility = true;
+  });
 
   @override
-  ValueNotifier<bool> get notifier => super.notifier!;
-}
-
-mixin _Visibility on InitializeBinder, AnnotationPreferences {
-  ValueNotifier<bool> get notifier;
-
-  bool get visible => notifier.value;
-  set visible(bool value) {
-    saveAnnotationVisibility(value);
-    notifier.value = value;
-  }
+  Future<bool> loadVisibility() => loadAnnotationVisibility();
 
   @override
-  void initialize() {
-    super.initialize();
-
-    loadAnnotationVisibility().then(
-      (bool value) => notifier.value = value,
-    );
-  }
-
-  void toggle() => visible = !visible;
+  Future<void> saveVisibility(bool value) => saveAnnotationVisibility(value);
 }

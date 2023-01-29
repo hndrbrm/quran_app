@@ -8,8 +8,8 @@ import '../preferences.dart';
 
 export '../preferences.dart';
 
-mixin VisibilityPreferences on Preferences {
-  Future<bool> loadVisibility(String key) => loadBool(key);
+mixin VisibilityByKeyPreferences on Preferences {
+  Future<bool> loadVisibilityByKey(String key) => loadBool(key);
 
-  Future<void> saveVisibility(String key, bool value) => saveBool(key, value);
+  Future<void> saveVisibilityByKey(String key, bool value) => saveBool(key, value);
 }

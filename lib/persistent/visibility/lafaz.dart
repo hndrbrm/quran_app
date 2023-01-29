@@ -16,14 +16,14 @@ abstract class LafazPersistent {
 }
 
 mixin LafazPreferences
-  on Preferences, VisibilityPreferences
+  on Preferences, VisibilityByKeyPreferences
   implements LafazPersistent
 {
   static const String _key = 'lafaz_visibility';
 
   @override
-  Future<bool> loadLafazVisibility() => loadVisibility(_key);
+  Future<bool> loadLafazVisibility() => loadVisibilityByKey(_key);
 
   @override
-  Future<void> saveLafazVisibility(bool value) => saveVisibility(_key, value);
+  Future<void> saveLafazVisibility(bool value) => saveVisibilityByKey(_key, value);
 }

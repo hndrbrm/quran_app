@@ -16,14 +16,14 @@ abstract class AnnotationPersistent {
 }
 
 mixin AnnotationPreferences
-  on Preferences, VisibilityPreferences
+  on Preferences, VisibilityByKeyPreferences
   implements AnnotationPersistent
 {
   static const String _key = 'annotation_visibility';
 
   @override
-  Future<bool> loadAnnotationVisibility() => loadVisibility(_key);
+  Future<bool> loadAnnotationVisibility() => loadVisibilityByKey(_key);
 
   @override
-  Future<void> saveAnnotationVisibility(bool value) => saveVisibility(_key, value);
+  Future<void> saveAnnotationVisibility(bool value) => saveVisibilityByKey(_key, value);
 }
