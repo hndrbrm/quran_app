@@ -12,6 +12,7 @@ import '../data/font_size/transliteration_size_scope.dart';
 import '../data/visibility/annotation_scope.dart';
 import '../data/visibility/lafaz_scope.dart';
 import '../data/visibility/translation_scope.dart';
+import '../data/visibility/transliteration_scope.dart';
 import '../data/visibility/visibility_mixin.dart';
 import '../data/visibility/visibility_scope.dart';
 import '../quran/quran.dart';
@@ -106,7 +107,7 @@ class _SurahItem extends StatelessWidget {
 
 class _TransliterationMenu
   extends StatelessWidget
-  with FinderMixin, _AnnotationMixin
+  with FinderMixin, _AnnotationMixin, VisibilityMixin<TransliterationScope>
 {
   const _TransliterationMenu({
     required this.location,
@@ -118,41 +119,48 @@ class _TransliterationMenu
 
   @override
   Widget build(BuildContext context) {
-    return PopUpMenu(
-      child: child,
-      menuBuilder: (TapUpDetails details) {
-        return DraggableMenu(
-          left: details.globalPosition.dx,
-          top: details.globalPosition.dy,
-          child: Card(
-            child: IntrinsicWidth(
-              child: Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    const FontSizeMenu<TransliterationSizeScope>(),
-                    _BookmarkMenu(location),
-                    const _Toggle<LafazScope>(
-                      showWhenVisible: false,
-                      title: 'Show Lafaz',
-                    ),
-                    const _Toggle<TranslationScope>(
-                      showWhenVisible: false,
-                      title: 'Show Translation',
-                    ),
-                    if (hasAnnotation(location))
-                    const _Toggle<AnnotationScope>(
-                      showWhenVisible: false,
-                      title: 'Show Annotation',
-                    ),
-                  ],
+    return Visibility(
+      visible: visible(context),
+      child: PopUpMenu(
+        child: child,
+        menuBuilder: (TapUpDetails details) {
+          return DraggableMenu(
+            left: details.globalPosition.dx,
+            top: details.globalPosition.dy,
+            child: Card(
+              child: IntrinsicWidth(
+                child: Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+                      const FontSizeMenu<TransliterationSizeScope>(),
+                      _BookmarkMenu(location),
+                      const _Toggle<LafazScope>(
+                        showWhenVisible: false,
+                        title: 'Show Lafaz',
+                      ),
+                      const _Toggle<TranslationScope>(
+                        showWhenVisible: false,
+                        title: 'Show Translation',
+                      ),
+                      if (hasAnnotation(location))
+                      const _Toggle<AnnotationScope>(
+                        showWhenVisible: false,
+                        title: 'Show Annotation',
+                      ),
+                      const _Toggle<TransliterationScope>(
+                        showWhenVisible: true,
+                        title: 'Hide Transliteration',
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 }
@@ -186,6 +194,10 @@ class _LafazMenu
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
+                      const _Toggle<TransliterationScope>(
+                        showWhenVisible: false,
+                        title: 'Show Transliteration',
+                      ),
                       const _Toggle<TranslationScope>(
                         showWhenVisible: false,
                         title: 'Show Translation',
@@ -241,6 +253,10 @@ class _TranslationMenu
                     children: <Widget>[
                       const FontSizeMenu<TranslationSizeScope>(),
                       _BookmarkMenu(location),
+                      const _Toggle<TransliterationScope>(
+                        showWhenVisible: false,
+                        title: 'Show Transliteration',
+                      ),
                       const _Toggle<LafazScope>(
                         showWhenVisible: false,
                         title: 'Show Lafaz',
@@ -295,6 +311,10 @@ class _AnnotationMenu
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: const <Widget>[
+                      _Toggle<TransliterationScope>(
+                        showWhenVisible: false,
+                        title: 'Show Transliteration',
+                      ),
                       _Toggle<LafazScope>(
                         showWhenVisible: false,
                         title: 'Show Lafaz',

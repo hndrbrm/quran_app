@@ -4,6 +4,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:quran_app/data/visibility/translation_scope.dart';
+import 'package:quran_app/data/visibility/transliteration_scope.dart';
 
 import 'data/bookmark/bookmark_nest.dart';
 import 'data/font_size/translation_size_scope.dart';
@@ -53,10 +54,12 @@ class _ScopedData extends StatelessWidget {
     return TransliterationSizeScope(
       child: TranslationSizeScope(
         child: BookmarkNest(
-          child: AnnotationScope(
+          child: TransliterationScope(
             child: LafazScope(
               child: TranslationScope(
-                child: child,
+                child: AnnotationScope(
+                  child: child,
+                ),
               ),
             ),
           ),
