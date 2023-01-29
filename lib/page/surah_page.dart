@@ -80,7 +80,9 @@ class _SurahItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Text('${location.ayah}'),
+      leading: _SurahMenu(
+        child: Text('${location.ayah}'),
+      ),
       title: Column(
         children: <Widget>[
           _TransliterationMenu(
@@ -105,6 +107,66 @@ class _SurahItem extends StatelessWidget {
   }
 }
 
+class _Menu extends StatelessWidget {
+  const _Menu({
+    required this.child,
+    required this.menus,
+  });
+
+  final Widget child;
+  final List<Widget> menus;
+
+  @override
+  Widget build(BuildContext context) {
+    return PopUpMenu(
+      child: child,
+      menuBuilder: (TapUpDetails details) {
+        return DraggableMenu(
+          left: details.globalPosition.dx,
+          top: details.globalPosition.dy,
+          child: Card(
+            child: IntrinsicWidth(
+              child: Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: menus,
+                ),
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
+
+class _SurahMenu
+  extends StatelessWidget
+  with FinderMixin, VisibilityMixin<TransliterationScope>
+{
+  const _SurahMenu({ required this.child });
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    if (visible(context)) {
+      return child;
+    }
+
+    return _Menu(
+      menus: const <Widget>[
+        _Toggle<TransliterationScope>(
+          showWhenVisible: false,
+          title: 'Show Transliteration',
+        ),
+      ],
+      child: child,
+    );
+  }
+}
+
 class _TransliterationMenu
   extends StatelessWidget
   with FinderMixin, _AnnotationMixin, VisibilityMixin<TransliterationScope>
@@ -121,45 +183,29 @@ class _TransliterationMenu
   Widget build(BuildContext context) {
     return Visibility(
       visible: visible(context),
-      child: PopUpMenu(
+      child: _Menu(
+        menus: <Widget>[
+          const FontSizeMenu<TransliterationSizeScope>(),
+          _BookmarkMenu(location),
+          const _Toggle<LafazScope>(
+            showWhenVisible: false,
+            title: 'Show Lafaz',
+          ),
+          const _Toggle<TranslationScope>(
+            showWhenVisible: false,
+            title: 'Show Translation',
+          ),
+          if (hasAnnotation(location))
+          const _Toggle<AnnotationScope>(
+            showWhenVisible: false,
+            title: 'Show Annotation',
+          ),
+          const _Toggle<TransliterationScope>(
+            showWhenVisible: true,
+            title: 'Hide Transliteration',
+          ),
+        ],
         child: child,
-        menuBuilder: (TapUpDetails details) {
-          return DraggableMenu(
-            left: details.globalPosition.dx,
-            top: details.globalPosition.dy,
-            child: Card(
-              child: IntrinsicWidth(
-                child: Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: <Widget>[
-                      const FontSizeMenu<TransliterationSizeScope>(),
-                      _BookmarkMenu(location),
-                      const _Toggle<LafazScope>(
-                        showWhenVisible: false,
-                        title: 'Show Lafaz',
-                      ),
-                      const _Toggle<TranslationScope>(
-                        showWhenVisible: false,
-                        title: 'Show Translation',
-                      ),
-                      if (hasAnnotation(location))
-                      const _Toggle<AnnotationScope>(
-                        showWhenVisible: false,
-                        title: 'Show Annotation',
-                      ),
-                      const _Toggle<TransliterationScope>(
-                        showWhenVisible: true,
-                        title: 'Hide Transliteration',
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          );
-        },
       ),
     );
   }
@@ -181,43 +227,27 @@ class _LafazMenu
   Widget build(BuildContext context) {
     return Visibility(
       visible: visible(context),
-      child: PopUpMenu(
+      child: _Menu(
+        menus: <Widget>[
+          const _Toggle<TransliterationScope>(
+            showWhenVisible: false,
+            title: 'Show Transliteration',
+          ),
+          const _Toggle<TranslationScope>(
+            showWhenVisible: false,
+            title: 'Show Translation',
+          ),
+          if (hasAnnotation(location))
+          const _Toggle<AnnotationScope>(
+            showWhenVisible: false,
+            title: 'Show Annotation',
+          ),
+          const _Toggle<LafazScope>(
+            showWhenVisible: true,
+            title: 'Hide Lafaz',
+          ),
+        ],
         child: child,
-        menuBuilder: (TapUpDetails details) {
-          return DraggableMenu(
-            left: details.globalPosition.dx,
-            top: details.globalPosition.dy,
-            child: Card(
-              child: IntrinsicWidth(
-                child: Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: <Widget>[
-                      const _Toggle<TransliterationScope>(
-                        showWhenVisible: false,
-                        title: 'Show Transliteration',
-                      ),
-                      const _Toggle<TranslationScope>(
-                        showWhenVisible: false,
-                        title: 'Show Translation',
-                      ),
-                      if (hasAnnotation(location))
-                      const _Toggle<AnnotationScope>(
-                        showWhenVisible: false,
-                        title: 'Show Annotation',
-                      ),
-                      const _Toggle<LafazScope>(
-                        showWhenVisible: true,
-                        title: 'Hide Lafaz',
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          );
-        },
       ),
     );
   }
@@ -239,44 +269,28 @@ class _TranslationMenu
   Widget build(BuildContext context) {
     return Visibility(
       visible: visible(context),
-      child: PopUpMenu(
-        menuBuilder: (TapUpDetails details) {
-          return DraggableMenu(
-            left: details.globalPosition.dx,
-            top: details.globalPosition.dy,
-            child: Card(
-              child: IntrinsicWidth(
-                child: Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: <Widget>[
-                      const FontSizeMenu<TranslationSizeScope>(),
-                      _BookmarkMenu(location),
-                      const _Toggle<TransliterationScope>(
-                        showWhenVisible: false,
-                        title: 'Show Transliteration',
-                      ),
-                      const _Toggle<LafazScope>(
-                        showWhenVisible: false,
-                        title: 'Show Lafaz',
-                      ),
-                      if (hasAnnotation(location))
-                      const _Toggle<AnnotationScope>(
-                        showWhenVisible: false,
-                        title: 'Show Annotation',
-                      ),
-                      const _Toggle<TranslationScope>(
-                        showWhenVisible: true,
-                        title: 'Hide Translation',
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          );
-        },
+      child: _Menu(
+        menus: <Widget>[
+          const FontSizeMenu<TranslationSizeScope>(),
+          _BookmarkMenu(location),
+          const _Toggle<TransliterationScope>(
+            showWhenVisible: false,
+            title: 'Show Transliteration',
+          ),
+          const _Toggle<LafazScope>(
+            showWhenVisible: false,
+            title: 'Show Lafaz',
+          ),
+          if (hasAnnotation(location))
+          const _Toggle<AnnotationScope>(
+            showWhenVisible: false,
+            title: 'Show Annotation',
+          ),
+          const _Toggle<TranslationScope>(
+            showWhenVisible: true,
+            title: 'Hide Translation',
+          ),
+        ],
         child: child,
       ),
     );
@@ -299,41 +313,25 @@ class _AnnotationMenu
   Widget build(BuildContext context) {
     return Visibility(
       visible: visible(context) && hasAnnotation(location),
-      child: PopUpMenu(
-        menuBuilder: (TapUpDetails details) {
-          return DraggableMenu(
-            left: details.globalPosition.dx,
-            top: details.globalPosition.dy,
-            child: Card(
-              child: IntrinsicWidth(
-                child: Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: const <Widget>[
-                      _Toggle<TransliterationScope>(
-                        showWhenVisible: false,
-                        title: 'Show Transliteration',
-                      ),
-                      _Toggle<LafazScope>(
-                        showWhenVisible: false,
-                        title: 'Show Lafaz',
-                      ),
-                      _Toggle<TranslationScope>(
-                        showWhenVisible: false,
-                        title: 'Show Translation',
-                      ),
-                      _Toggle<AnnotationScope>(
-                        showWhenVisible: true,
-                        title: 'Hide Annotation',
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          );
-        },
+      child: _Menu(
+        menus: const <Widget>[
+          _Toggle<TransliterationScope>(
+            showWhenVisible: false,
+            title: 'Show Transliteration',
+          ),
+          _Toggle<LafazScope>(
+            showWhenVisible: false,
+            title: 'Show Lafaz',
+          ),
+          _Toggle<TranslationScope>(
+            showWhenVisible: false,
+            title: 'Show Translation',
+          ),
+          _Toggle<AnnotationScope>(
+            showWhenVisible: true,
+            title: 'Hide Annotation',
+          ),
+        ],
         child: child,
       ),
     );
