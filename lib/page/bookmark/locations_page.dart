@@ -4,15 +4,14 @@
 
 import 'package:flutter/material.dart';
 
-import '../../data/bookmark/locations_mixin.dart';
-import '../../data/font_size/translation_size_scope.dart';
-import '../../data/font_size/transliteration_size_mixin.dart';
-import '../../data/font_size/transliteration_size_scope.dart';
 import '../../data/bookmark/bookmark_mixin.dart';
+import '../../data/bookmark/locations_mixin.dart';
+import '../../data/font_size/transliteration_size_mixin.dart';
 import '../../route/surah_route.dart';
 import '../../widget/annotation.dart';
 import '../../widget/draggable_menu.dart';
-import '../../widget/font_size_menu.dart';
+import '../../widget/font_size_menu/translation_size_menu.dart';
+import '../../widget/font_size_menu/transliteration_size_menu.dart';
 import '../../widget/pop_up_menu.dart';
 import '../../widget/rounded_ink_well.dart';
 import '../../widget/translation.dart';
@@ -128,7 +127,7 @@ class _TransliterationMenu
                   children: <Widget>[
                     _SurahMenu(location),
                     _RemoveMenu(group: group, location: location),
-                    const FontSizeMenu<TransliterationSizeScope>(),
+                    const TransliterationSizeMenu(),
                   ],
                 ),
               ),
@@ -168,7 +167,7 @@ class _TranslationMenu extends StatelessWidget with FinderMixin {
                   children: <Widget>[
                     _SurahMenu(location),
                     _RemoveMenu(group: group, location: location),
-                    const FontSizeMenu<TranslationSizeScope>(),
+                    const TranslationSizeMenu(),
                   ],
                 ),
               ),

@@ -4,13 +4,18 @@
 
 import 'package:flutter/material.dart';
 
-import '../data/finder_mixin.dart';
-import '../data/font_size/font_size_base.dart';
-import 'draggable_menu.dart';
-import 'pop_up_menu.dart';
+import '../../data/finder_mixin.dart';
+import '../../data/font_size/font_size_base.dart';
+import '../draggable_menu.dart';
+import '../pop_up_menu.dart';
 
 class FontSizeMenu<T extends FontSizeScopeBase> extends StatelessWidget {
-  const FontSizeMenu({ super.key });
+  const FontSizeMenu({
+    super.key,
+    required this.title,
+  });
+
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +27,7 @@ class FontSizeMenu<T extends FontSizeScopeBase> extends StatelessWidget {
           child: _FontSizeSlider<T>(),
         );
       },
-      child: const Text('Ubah Ukuran...'),
+      child: Text(title),
     );
   }
 }

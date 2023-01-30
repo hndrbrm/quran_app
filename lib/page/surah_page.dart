@@ -8,8 +8,6 @@ import 'package:quran_app/data/visibility/translation_mixin.dart';
 import '../data/bookmark/bookmark_mixin.dart';
 import '../data/bookmark/groups_mixin.dart';
 import '../data/bookmark/locations_mixin.dart';
-import '../data/font_size/translation_size_scope.dart';
-import '../data/font_size/transliteration_size_scope.dart';
 import '../data/visibility/annotation_mixin.dart';
 import '../data/visibility/annotation_scope.dart';
 import '../data/visibility/lafaz_mixin.dart';
@@ -22,12 +20,13 @@ import '../data/visibility/visibility_scope.dart';
 import '../quran/quran.dart';
 import '../widget/annotation.dart';
 import '../widget/draggable_menu.dart';
-import '../widget/font_size_menu.dart';
+import '../widget/font_size_menu/translation_size_menu.dart';
+import '../widget/font_size_menu/transliteration_size_menu.dart';
+import '../widget/lafaz_card.dart';
 import '../widget/pop_up_menu.dart';
 import '../widget/rounded_ink_well.dart';
 import '../widget/translation.dart';
 import '../widget/transliteration.dart';
-import '../widget/lafaz_card.dart';
 
 class SurahPage extends StatelessWidget {
   const SurahPage({
@@ -191,7 +190,7 @@ class _TransliterationMenu
       visible: transliterationVisible(context),
       child: _Menu(
         menus: <Widget>[
-          const FontSizeMenu<TransliterationSizeScope>(),
+          const TransliterationSizeMenu(),
           _BookmarkMenu(location),
           const _Toggle<LafazScope>(
             showWhenVisible: false,
@@ -235,6 +234,9 @@ class _LafazMenu
       visible: lafazVisible(context),
       child: _Menu(
         menus: <Widget>[
+          const TransliterationSizeMenu(),
+          const TranslationSizeMenu(),
+          _BookmarkMenu(location),
           const _Toggle<TransliterationScope>(
             showWhenVisible: false,
             title: 'Show Transliteration',
@@ -277,7 +279,7 @@ class _TranslationMenu
       visible: translationVisible(context),
       child: _Menu(
         menus: <Widget>[
-          const FontSizeMenu<TranslationSizeScope>(),
+          const TranslationSizeMenu(),
           _BookmarkMenu(location),
           const _Toggle<TransliterationScope>(
             showWhenVisible: false,
