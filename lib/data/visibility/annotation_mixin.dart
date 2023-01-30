@@ -9,7 +9,7 @@ import 'visibility_mixin.dart';
 
 export '../finder_mixin.dart';
 
-mixin AnnotationMixin on VisibilityMixin<AnnotationScope> {
-  bool annotationVisible(BuildContext context) => visible(context);
-  void annotationToggle(BuildContext context) => toggle(context);
+mixin AnnotationMixin on VisibilityMixin {
+  bool annotationVisible(BuildContext context) => visible<AnnotationScope>(context);
+  void annotationToggle(BuildContext context) => toggle<AnnotationScope>(context);
 }

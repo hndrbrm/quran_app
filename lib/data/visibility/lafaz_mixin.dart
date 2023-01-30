@@ -9,7 +9,7 @@ import 'visibility_mixin.dart';
 
 export '../finder_mixin.dart';
 
-mixin LafazMixin on VisibilityMixin<LafazScope> {
-  bool lafazVisible(BuildContext context) => visible(context);
-  void lafazToggle(BuildContext context) => toggle(context);
+mixin LafazMixin on VisibilityMixin {
+  bool lafazVisible(BuildContext context) => visible<LafazScope>(context);
+  void lafazToggle(BuildContext context) => toggle<LafazScope>(context);
 }

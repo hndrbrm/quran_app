@@ -4,14 +4,14 @@
 
 import 'package:flutter/widgets.dart';
 
-import '../data/visibility/annotation_scope.dart';
+import '../data/visibility/annotation_mixin.dart';
 import '../data/visibility/visibility_mixin.dart';
 import '../quran/location.dart';
 import '../quran/quran.dart';
 
 class Annotation
   extends StatelessWidget
-  with FinderMixin, VisibilityMixin<AnnotationScope>
+  with FinderMixin, VisibilityMixin, AnnotationMixin
 {
   const Annotation({
     super.key,
@@ -22,15 +22,14 @@ class Annotation
 
   @override
   Widget build(BuildContext context) {
-    final bool visible = this.visible(context);
-    if (!visible) {
-      return const SizedBox.shrink();
-    }
-
-    final String annotation = Quran.instance.getAyahAnnotation(location);
-    return Align(
-      alignment: AlignmentDirectional.centerStart,
-      child: Text(annotation),
+    return Visibility(
+      visible: annotationVisible(context),
+      child: Align(
+        alignment: AlignmentDirectional.centerStart,
+        child: Text(
+          Quran.instance.getAyahAnnotation(location),
+        ),
+      ),
     );
   }
 }

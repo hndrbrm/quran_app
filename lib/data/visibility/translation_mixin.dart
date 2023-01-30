@@ -9,7 +9,7 @@ import 'visibility_mixin.dart';
 
 export '../finder_mixin.dart';
 
-mixin TranslationMixin on VisibilityMixin<TranslationScope> {
-  bool translationVisible(BuildContext context) => visible(context);
-  void translationToggle(BuildContext context) => toggle(context);
+mixin TranslationMixin on VisibilityMixin {
+  bool translationVisible(BuildContext context) => visible<TranslationScope>(context);
+  void translationToggle(BuildContext context) => toggle<TranslationScope>(context);
 }

@@ -3,15 +3,19 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:quran_app/data/visibility/translation_mixin.dart';
 
 import '../data/bookmark/bookmark_mixin.dart';
 import '../data/bookmark/groups_mixin.dart';
 import '../data/bookmark/locations_mixin.dart';
 import '../data/font_size/translation_size_scope.dart';
 import '../data/font_size/transliteration_size_scope.dart';
+import '../data/visibility/annotation_mixin.dart';
 import '../data/visibility/annotation_scope.dart';
+import '../data/visibility/lafaz_mixin.dart';
 import '../data/visibility/lafaz_scope.dart';
 import '../data/visibility/translation_scope.dart';
+import '../data/visibility/transliteration_mixin.dart';
 import '../data/visibility/transliteration_scope.dart';
 import '../data/visibility/visibility_mixin.dart';
 import '../data/visibility/visibility_scope.dart';
@@ -80,9 +84,7 @@ class _SurahItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: _SurahMenu(
-        child: Text('${location.ayah}'),
-      ),
+      leading: Text('${location.ayah}'),
       title: Column(
         children: <Widget>[
           _TransliterationMenu(
@@ -97,11 +99,12 @@ class _SurahItem extends StatelessWidget {
             location: location,
             child: Translation(location: location),
           ),
+          _AnnotationMenu(
+            location: location,
+            child: Annotation(location: location),
+          ),
+          const _EmptyMenu(),
         ],
-      ),
-      subtitle: _AnnotationMenu(
-        location: location,
-        child: Annotation(location: location),
       ),
     );
   }
@@ -141,35 +144,38 @@ class _Menu extends StatelessWidget {
   }
 }
 
-class _SurahMenu
+class _EmptyMenu
   extends StatelessWidget
-  with FinderMixin, VisibilityMixin<TransliterationScope>
-{
-  const _SurahMenu({ required this.child });
+  with
+    FinderMixin,
 
-  final Widget child;
+    VisibilityMixin, TransliterationMixin, LafazMixin, TranslationMixin,
+    AnnotationMixin
+{
+  const _EmptyMenu();
 
   @override
   Widget build(BuildContext context) {
-    if (visible(context)) {
-      return child;
-    }
-
-    return _Menu(
-      menus: const <Widget>[
-        _Toggle<TransliterationScope>(
-          showWhenVisible: false,
-          title: 'Show Transliteration',
+    return Visibility(
+      visible:
+        !transliterationVisible(context) &&
+        !lafazVisible(context) &&
+        !translationVisible(context) &&
+        !annotationVisible(context),
+      child: RoundedInkWell(
+        onTap: () => transliterationToggle(context),
+        child: const Align(
+          alignment: AlignmentDirectional.centerStart,
+          child: Text('Show Transliteration'),
         ),
-      ],
-      child: child,
+      ),
     );
   }
 }
 
 class _TransliterationMenu
   extends StatelessWidget
-  with FinderMixin, _AnnotationMixin, VisibilityMixin<TransliterationScope>
+  with FinderMixin, _AnnotationMixin, VisibilityMixin, TransliterationMixin
 {
   const _TransliterationMenu({
     required this.location,
@@ -182,7 +188,7 @@ class _TransliterationMenu
   @override
   Widget build(BuildContext context) {
     return Visibility(
-      visible: visible(context),
+      visible: transliterationVisible(context),
       child: _Menu(
         menus: <Widget>[
           const FontSizeMenu<TransliterationSizeScope>(),
@@ -213,7 +219,7 @@ class _TransliterationMenu
 
 class _LafazMenu
   extends StatelessWidget
-  with FinderMixin, VisibilityMixin<LafazScope>, _AnnotationMixin
+  with FinderMixin, VisibilityMixin, LafazMixin, _AnnotationMixin
 {
   const _LafazMenu({
     required this.location,
@@ -226,7 +232,7 @@ class _LafazMenu
   @override
   Widget build(BuildContext context) {
     return Visibility(
-      visible: visible(context),
+      visible: lafazVisible(context),
       child: _Menu(
         menus: <Widget>[
           const _Toggle<TransliterationScope>(
@@ -255,7 +261,7 @@ class _LafazMenu
 
 class _TranslationMenu
   extends StatelessWidget
-  with FinderMixin, _AnnotationMixin, VisibilityMixin<TranslationScope>
+  with FinderMixin, _AnnotationMixin, VisibilityMixin, TranslationMixin
 {
   const _TranslationMenu({
     required this.location,
@@ -268,7 +274,7 @@ class _TranslationMenu
   @override
   Widget build(BuildContext context) {
     return Visibility(
-      visible: visible(context),
+      visible: translationVisible(context),
       child: _Menu(
         menus: <Widget>[
           const FontSizeMenu<TranslationSizeScope>(),
@@ -299,7 +305,7 @@ class _TranslationMenu
 
 class _AnnotationMenu
   extends StatelessWidget
-  with FinderMixin, VisibilityMixin<AnnotationScope>, _AnnotationMixin
+  with FinderMixin, VisibilityMixin, AnnotationMixin, _AnnotationMixin
 {
   const _AnnotationMenu({
     required this.location,
@@ -312,7 +318,7 @@ class _AnnotationMenu
   @override
   Widget build(BuildContext context) {
     return Visibility(
-      visible: visible(context) && hasAnnotation(location),
+      visible: annotationVisible(context) && hasAnnotation(location),
       child: _Menu(
         menus: const <Widget>[
           _Toggle<TransliterationScope>(
@@ -340,7 +346,7 @@ class _AnnotationMenu
 
 class _Toggle<T extends VisibilityScope>
   extends StatelessWidget
-  with FinderMixin, VisibilityMixin<T>
+  with FinderMixin, VisibilityMixin
 {
   const _Toggle({
     required this.showWhenVisible,
@@ -353,10 +359,10 @@ class _Toggle<T extends VisibilityScope>
   @override
   Widget build(BuildContext context) {
     return Visibility(
-      visible: visible(context) == showWhenVisible,
+      visible: visible<T>(context) == showWhenVisible,
       child: RoundedInkWell(
         onTap: () {
-          toggle(context);
+          toggle<T>(context);
           Navigator.of(context).pop();
         },
         child: Text(title),
