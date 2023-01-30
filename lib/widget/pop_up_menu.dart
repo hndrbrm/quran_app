@@ -29,10 +29,7 @@ class PopUpMenu extends StatelessWidget {
       },
       // Hack to enable tap
       onTap: () {},
-      child: Padding(
-        padding: const EdgeInsets.all(4.0),
-        child: child,
-      ),
+      child: child,
     );
   }
 }
