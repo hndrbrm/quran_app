@@ -3,14 +3,15 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:quran_app/data/visibility/translation_scope.dart';
-import 'package:quran_app/data/visibility/transliteration_scope.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'data/bookmark/bookmark_nest.dart';
 import 'data/font_size/translation_size_scope.dart';
 import 'data/font_size/transliteration_size_scope.dart';
 import 'data/visibility/annotation_scope.dart';
 import 'data/visibility/lafaz_scope.dart';
+import 'data/visibility/translation_scope.dart';
+import 'data/visibility/transliteration_scope.dart';
 import 'route/generate_route.dart';
 import 'route/groups_route.dart';
 import 'route/home_route.dart';
@@ -39,6 +40,8 @@ class QuranApp extends StatelessWidget with
         theme: ThemeData(
           fontFamily: 'Quran',
         ),
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
       ),
     );
   }
