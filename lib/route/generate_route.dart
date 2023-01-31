@@ -3,16 +3,26 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../language.dart';
 
 abstract class GenerateRoute {
   Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     final WidgetBuilder? builder = onGenerateBuilder(settings);
+
     if (builder == null) {
       return null;
     }
 
+    Widget newBuilder(BuildContext context) {
+      LanguageBinding.local = AppLocalizations.of(context)!;
+      return builder(context);
+    }
+
     return MaterialPageRoute(
-      builder: builder,
+      builder: newBuilder,
+      settings: settings,
     );
   }
 

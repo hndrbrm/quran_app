@@ -18,8 +18,10 @@ import 'route/home_route.dart';
 import 'route/locations_route.dart';
 import 'route/surah_route.dart';
 import 'route/unknown_route.dart';
+import 'singleton.dart';
 
 void main() {
+  Singleton.ensureInitialized();
   runApp(const QuranApp());
 }
 

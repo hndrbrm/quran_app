@@ -3,8 +3,8 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:lottie/lottie.dart';
+import 'package:quran_app/language.dart';
 
 import '../route/groups_route.dart';
 import '../route/home_route.dart';
@@ -21,7 +21,7 @@ class QuranDrawer extends StatelessWidget {
             child: Lottie.asset('lottie/drawer.zip'),
           ),
           ListTile(
-            title: Text(AppLocalizations.of(context)!.surahList),
+            title: Text(LanguageBinding.local.surahList),
             onTap: () => HomeRoute.root(context),
           ),
           ListTile(

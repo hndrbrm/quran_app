@@ -3,13 +3,21 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '../language.dart';
 import '../page/home_page.dart';
 
 mixin UnknownRoute {
   Route? onUnknownRoute(RouteSettings settings) {
+    Widget builder(BuildContext context) {
+      LanguageBinding.local = AppLocalizations.of(context)!;
+      return const HomePage();
+    }
+
     return MaterialPageRoute(
-      builder: (BuildContext context) => const HomePage(),
+      builder: builder,
+      settings: settings,
     );
   }
 }
