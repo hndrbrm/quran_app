@@ -5,10 +5,8 @@
 import 'package:meta/meta.dart';
 
 import 'location.dart';
-import 'quran.dart';
 
-mixin AyahTafsirWajiz on Ayah {
-  @protected
+mixin AyahTafsirWajiz {
   @mustCallSuper
   String getAyahTafsirWajiz(Location location) => '';
 }

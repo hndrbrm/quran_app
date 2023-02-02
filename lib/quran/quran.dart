@@ -2,6 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import '../data/initialize_binder.dart';
+import '../singleton.dart';
 import 'ayah_annotation.dart';
 import 'ayah_lafaz.dart';
 import 'ayah_length.dart';
@@ -13,11 +15,20 @@ import 'surah_latin.dart';
 import 'surah_translate.dart';
 import 'surah_transliterate.dart';
 
-abstract class QuranBinder {
-  const QuranBinder();
-}
+export 'ayah_annotation.dart';
+export 'ayah_lafaz.dart';
+export 'ayah_length.dart';
+export 'ayah_sajdah.dart';
+export 'ayah_translate.dart';
+export 'ayah_transliterate.dart';
+export 'surah_alphabet.dart';
+export 'surah_latin.dart';
+export 'surah_translate.dart';
+export 'surah_transliterate.dart';
 
-class Quran extends QuranBinder with
+mixin QuranBinding on
+  SingletonBase, InitializeBinder,
+
   SurahAlphabet, SurahLatin, SurahTranslate, SurahTransliterate,
 
   AyahLength, AyahTransliterate, AyahLafaz, AyahTranslate, AyahAnnotation,
@@ -295,12 +306,12 @@ class Quran extends QuranBinder with
   SajdahAyahSajdah, SadAyahSajdah, FussilatAyahSajdah, NajmAyahSajdah,
   InsyiqaqAyahSajdah, AlaqAyahSajdah
 {
-  const Quran._();
+  @override
+  void initialize() {
+    super.initialize();
+    _instance = this;
+  }
 
-  static Quran get instance => _instance;
-  static const Quran _instance = Quran._();
+  static QuranBinding get instance => SingletonBase.checkInstance(_instance);
+  static QuranBinding? _instance;
 }
-
-mixin Surah implements QuranBinder {}
-
-mixin Ayah implements QuranBinder {}

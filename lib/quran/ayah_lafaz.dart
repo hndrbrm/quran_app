@@ -5,10 +5,8 @@
 import 'package:meta/meta.dart';
 
 import 'location.dart';
-import 'quran.dart';
 
-mixin AyahLafaz implements Ayah {
-  @protected
+mixin AyahLafaz {
   @mustCallSuper
   List<Map<String, String>> getAyahLafaz(Location location) => [];
 }

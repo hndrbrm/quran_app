@@ -26,10 +26,10 @@ class HomePage extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return ListTile(
             leading: Text('${index + 1}'),
-            title: Text(Quran.instance.getLatin(index + 1)),
-            subtitle: Text(Quran.instance.getTranslate(index + 1)),
+            title: Text(QuranBinding.instance.getLatin(index + 1)),
+            subtitle: Text(QuranBinding.instance.getTranslate(index + 1)),
             trailing: Text(
-              transliteration.forward(Quran.instance.getTransliterate(index + 1)),
+              transliteration.forward(QuranBinding.instance.getTransliterate(index + 1)),
             ),
             onTap: () => SurahRoute.pushNamed(context, index + 1),
           );

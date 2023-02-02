@@ -27,7 +27,7 @@ class Annotation
       child: Align(
         alignment: AlignmentDirectional.centerStart,
         child: Text(
-          Quran.instance.getAyahAnnotation(location),
+          QuranBinding.instance.getAyahAnnotation(location),
         ),
       ),
     );

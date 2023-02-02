@@ -4,10 +4,7 @@
 
 import 'package:meta/meta.dart';
 
-import 'quran.dart';
-
-mixin SurahLatin implements Surah {
-  @protected
+mixin SurahLatin {
   @mustCallSuper
   String getLatin(int surah) => '';
 }

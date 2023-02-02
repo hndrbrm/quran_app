@@ -2,10 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'ayah_transliterate.dart';
-import 'quran.dart';
+import 'package:meta/meta.dart';
 
-mixin AyahLength implements Ayah {
+import 'ayah_transliterate.dart';
+
+mixin AyahLength {
+  @mustCallSuper
   int getLength(int surah) => 0;
 }
 

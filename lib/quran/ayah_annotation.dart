@@ -5,10 +5,8 @@
 import 'package:meta/meta.dart';
 
 import 'location.dart';
-import 'quran.dart';
 
-mixin AyahAnnotation implements Ayah {
-  @protected
+mixin AyahAnnotation {
   @mustCallSuper
   String getAyahAnnotation(Location location) => '';
 }

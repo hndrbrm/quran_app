@@ -20,7 +20,7 @@ class LafazCard extends StatelessWidget with NumberMixin {
 
   @override
   Widget build(BuildContext context) {
-    final List<Map<String, String>> lafazs = Quran.instance.getAyahLafaz(location);
+    final List<Map<String, String>> lafazs = QuranBinding.instance.getAyahLafaz(location);
 
     return Align(
       alignment: AlignmentDirectional.centerEnd,

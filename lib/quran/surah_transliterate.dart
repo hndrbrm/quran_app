@@ -4,10 +4,7 @@
 
 import 'package:meta/meta.dart';
 
-import 'quran.dart';
-
-mixin SurahTransliterate implements Surah {
-  @protected
+mixin SurahTransliterate {
   @mustCallSuper
   String getTransliterate(int surah) => '';
 }

@@ -4,7 +4,7 @@
 
 import 'dart:io';
 
-import 'package:quran_app/quran/quran.dart' hide Ayah;
+import 'package:quran_app/quran/quran.dart';
 import 'package:quran_kemenag/quran_kemenag.dart';
 
 void main() {
@@ -25,7 +25,7 @@ void main() {
       }
     }
 
-    final String alphabet = Quran.instance.getSurahAlphabet(surah);
+    final String alphabet = QuranBinding.instance.getSurahAlphabet(surah);
     // ignore: avoid_print
     print(
 '''

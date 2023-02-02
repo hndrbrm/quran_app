@@ -41,11 +41,11 @@ class SurahPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const Key centerKey = ValueKey('center');
-    final int total = Quran.instance.getLength(surah);
+    final int total = QuranBinding.instance.getLength(surah);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(Quran.instance.getLatin(surah)),
+        title: Text(QuranBinding.instance.getLatin(surah)),
       ),
       body: CustomScrollView(
         center: centerKey,
@@ -472,5 +472,5 @@ mixin _LocationsMixin on FinderMixin, LocationsMixin {
 
 mixin _AnnotationMixin {
   bool hasAnnotation(Location location) =>
-    Quran.instance.getAyahAnnotation(location).isNotEmpty;
+    QuranBinding.instance.getAyahAnnotation(location).isNotEmpty;
 }

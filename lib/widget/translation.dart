@@ -21,7 +21,7 @@ class Translation
 
   @override
   Widget build(BuildContext context) {
-    final String translate = Quran.instance.getAyahTranslate(location);
+    final String translate = QuranBinding.instance.getAyahTranslate(location);
 
     return Align(
       alignment: AlignmentDirectional.centerStart,

@@ -22,7 +22,7 @@ class Transliteration
 
   @override
   Widget build(BuildContext context) {
-    final String transliterate = Quran.instance.getAyahTransliterate(location);
+    final String transliterate = QuranBinding.instance.getAyahTransliterate(location);
 
     return Align(
       alignment: AlignmentDirectional.centerEnd,

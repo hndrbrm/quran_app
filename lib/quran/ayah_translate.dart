@@ -5,10 +5,8 @@
 import 'package:meta/meta.dart';
 
 import 'location.dart';
-import 'quran.dart';
 
-mixin AyahTranslate implements Ayah {
-  @protected
+mixin AyahTranslate {
   @mustCallSuper
   String getAyahTranslate(Location location) => '';
 }

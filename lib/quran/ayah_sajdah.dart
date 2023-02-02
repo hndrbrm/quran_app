@@ -2,9 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'quran.dart';
+import 'package:meta/meta.dart';
 
-mixin AyahSajdah implements Ayah {
+mixin AyahSajdah {
+  @mustCallSuper
   List<int> getAyahSajdah(int surah) => List.empty();
 }
 

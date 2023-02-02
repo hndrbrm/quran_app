@@ -4,7 +4,7 @@
 
 import 'dart:io';
 
-import 'package:quran_app/quran/quran.dart' hide Ayah;
+import 'package:quran_app/quran/quran.dart';
 
 void main() {
   final File file = File('./lafazs.tsv');
@@ -17,7 +17,7 @@ void main() {
   List<_Lafaz> oneAyah = <_Lafaz>[];
 
   void writer() {
-    final String alphabet = Quran.instance.getSurahAlphabet(surah);
+    final String alphabet = QuranBinding.instance.getSurahAlphabet(surah);
     sb.write(
 '''
 mixin ${alphabet}AyahLafaz on AyahLafaz {
