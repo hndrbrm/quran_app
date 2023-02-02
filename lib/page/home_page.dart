@@ -5,6 +5,7 @@
 import 'package:flutter/material.dart';
 import 'package:quran_transliteration/quran_transliteration.dart';
 
+import '../language.dart';
 import '../quran/quran.dart';
 import '../route/surah_route.dart';
 import 'quran_drawer.dart';
@@ -18,7 +19,7 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Daftar Surah'),
+        title: Text(LanguageBinding.local.surahList),
       ),
       drawer: const QuranDrawer(),
       body: ListView.builder(

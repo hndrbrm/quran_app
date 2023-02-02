@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../data/finder_mixin.dart';
 import '../../data/font_size/font_size_base.dart';
+import '../../language.dart';
 import '../draggable_menu.dart';
 import '../pop_up_menu.dart';
 
@@ -45,7 +46,7 @@ class _FontSizeSlider<T extends FontSizeScopeBase>
     return Card(
       child: Column(
         children: <Widget>[
-          Text('Ukuran Font ${data.fontSize}'),
+          Text('${LanguageBinding.local.fontSize} ${data.fontSize}'),
           Slider(
             min: 4.0,
             max: 96.0,

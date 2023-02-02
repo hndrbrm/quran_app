@@ -1,3 +1,20 @@
 {
+  "bookmark": "Penanda",
+  "changeTranslationSize": "Ubah Ukuran Terjemahan",
+  "changeTransliterationSize": "Ubah Ukuran Arab",
+  "createGroup": "Buat Grup",
+  "emptyBookmark": "Belum ada bookmark",
+  "fontSize": "Ukuran Font",
+  "goToSurah": "Ke Halaman Surat",
+  "hideAnnotation": "Sembunyikan Keterangan",
+  "hideLafaz": "Sembunyikan Per Kata",
+  "hideTranslation": "Sembunyikan Terjemahan",
+  "hideTransliteration": "Sembunyikan Arab",
+  "location": "Lokasi",
+  "remove": "Hapus",
+  "showAnnotation": "Tampilkan Keterangan",
+  "showLafaz": "Tampilkan Per Kata",
+  "showTranslation": "Tampilkan Terjemahan",
+  "showTransliteration": "Tampilkan Arab",
   "surahList": "Daftar Surat"
 }

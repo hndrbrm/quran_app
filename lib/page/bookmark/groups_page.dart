@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../data/bookmark/groups_mixin.dart';
 import '../../data/bookmark/bookmark_mixin.dart';
+import '../../language.dart';
 import '../../route/locations_route.dart';
 import '../../widget/draggable_menu.dart';
 import '../../widget/pop_up_menu.dart';
@@ -19,7 +20,7 @@ class GroupsPage extends StatelessWidget with FinderMixin, BookmarkMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Penanda'),
+        title: Text(LanguageBinding.local.bookmark),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.add),
@@ -124,7 +125,7 @@ class _LocationMenuItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RoundedInkWell(
-      child: const Text('Location'),
+      child: Text(LanguageBinding.local.location),
       onTap: () => LocationsRoute.push(context, group),
     );
   }
@@ -140,7 +141,7 @@ class _RemoveMenuItem extends StatelessWidget with FinderMixin, BookmarkMixin {
   @override
   Widget build(BuildContext context) {
     return RoundedInkWell(
-      child: const Text('Remove'),
+      child: Text(LanguageBinding.local.remove),
       onTap: () => removeGroupThenPop(context, group),
     );
   }
@@ -153,9 +154,9 @@ class _EmptyList extends StatelessWidget with FinderMixin, BookmarkMixin {
   Widget build(BuildContext context) {
     return Center(
       child: RoundedInkWell(
-        child: const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Text('Create Group'),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(LanguageBinding.local.createGroup),
         ),
         onTap: () => createGroup(context),
       ),

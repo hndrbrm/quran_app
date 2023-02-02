@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import '../../data/bookmark/bookmark_mixin.dart';
 import '../../data/bookmark/locations_mixin.dart';
 import '../../data/font_size/transliteration_size_mixin.dart';
+import '../../language.dart';
 import '../../route/surah_route.dart';
 import '../../widget/annotation.dart';
 import '../../widget/draggable_menu.dart';
@@ -52,7 +53,7 @@ class _LocationsList extends StatelessWidget with FinderMixin, LocationsMixin {
     final List<Location> locations = this.locations(context, group);
 
     if (locations.isEmpty) {
-      return const Center(child: Text('Belum ada bookmark'));
+      return Center(child: Text(LanguageBinding.local.emptyBookmark));
     }
 
     return ListView.builder(
@@ -127,7 +128,7 @@ class _TransliterationMenu
                   children: <Widget>[
                     _SurahMenu(location),
                     _RemoveMenu(group: group, location: location),
-                    const TransliterationSizeMenu(),
+                    TransliterationSizeMenu(),
                   ],
                 ),
               ),
@@ -167,7 +168,7 @@ class _TranslationMenu extends StatelessWidget with FinderMixin {
                   children: <Widget>[
                     _SurahMenu(location),
                     _RemoveMenu(group: group, location: location),
-                    const TranslationSizeMenu(),
+                    TranslationSizeMenu(),
                   ],
                 ),
               ),
@@ -187,7 +188,7 @@ class _SurahMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RoundedInkWell(
-      child: const Text('Go to Surah'),
+      child: Text(LanguageBinding.local.goToSurah),
       onTap: () => SurahRoute.pushNamed(context, location.surah, location.ayah),
     );
   }
@@ -205,7 +206,7 @@ class _RemoveMenu extends StatelessWidget with FinderMixin, LocationsMixin {
   @override
   Widget build(BuildContext context) {
     return RoundedInkWell(
-      child: const Text('Remove'),
+      child: Text(LanguageBinding.local.remove),
       onTap: () {
         removeLocation(context, group, location);
         Navigator.of(context).pop();

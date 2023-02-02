@@ -1,3 +1,20 @@
 {
+  "bookmark": "Bookmark",
+  "changeTranslationSize": "Change Translation Size",
+  "changeTransliterationSize": "Change Transliteration Size",
+  "createGroup": "Create Group",
+  "emptyBookmark": "Empty Bookmark",
+  "fontSize": "Font Size",
+  "goToSurah": "Go to Surah",
+  "hideAnnotation": "Hide Annotation",
+  "hideLafaz": "Hide Lafaz",
+  "hideTranslation": "Hide Translation",
+  "hideTransliteration": "Hide Transliteration",
+  "location": "Location",
+  "remove": "Remove",
+  "showAnnotation": "Show Annotation",
+  "showLafaz": "Show Lafaz",
+  "showTranslation": "Show Translation",
+  "showTransliteration": "Show Transliteration",
   "surahList": "List of Surah"
 }

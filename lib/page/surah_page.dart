@@ -3,7 +3,6 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:quran_app/data/visibility/translation_mixin.dart';
 
 import '../data/bookmark/bookmark_mixin.dart';
 import '../data/bookmark/groups_mixin.dart';
@@ -12,11 +11,13 @@ import '../data/visibility/annotation_mixin.dart';
 import '../data/visibility/annotation_scope.dart';
 import '../data/visibility/lafaz_mixin.dart';
 import '../data/visibility/lafaz_scope.dart';
+import '../data/visibility/translation_mixin.dart';
 import '../data/visibility/translation_scope.dart';
 import '../data/visibility/transliteration_mixin.dart';
 import '../data/visibility/transliteration_scope.dart';
 import '../data/visibility/visibility_mixin.dart';
 import '../data/visibility/visibility_scope.dart';
+import '../language.dart';
 import '../quran/quran.dart';
 import '../widget/annotation.dart';
 import '../widget/draggable_menu.dart';
@@ -163,9 +164,9 @@ class _EmptyMenu
         !annotationVisible(context),
       child: RoundedInkWell(
         onTap: () => transliterationToggle(context),
-        child: const Align(
+        child: Align(
           alignment: AlignmentDirectional.centerStart,
-          child: Text('Show Transliteration'),
+          child: Text(LanguageBinding.local.showTransliteration),
         ),
       ),
     );
@@ -190,24 +191,24 @@ class _TransliterationMenu
       visible: transliterationVisible(context),
       child: _Menu(
         menus: <Widget>[
-          const TransliterationSizeMenu(),
+          TransliterationSizeMenu(),
           _BookmarkMenu(location),
-          const _Toggle<LafazScope>(
+          _Toggle<LafazScope>(
             showWhenVisible: false,
-            title: 'Show Lafaz',
+            title: LanguageBinding.local.showLafaz,
           ),
-          const _Toggle<TranslationScope>(
+          _Toggle<TranslationScope>(
             showWhenVisible: false,
-            title: 'Show Translation',
+            title: LanguageBinding.local.showTranslation,
           ),
           if (hasAnnotation(location))
-          const _Toggle<AnnotationScope>(
+          _Toggle<AnnotationScope>(
             showWhenVisible: false,
-            title: 'Show Annotation',
+            title: LanguageBinding.local.showAnnotation,
           ),
-          const _Toggle<TransliterationScope>(
+          _Toggle<TransliterationScope>(
             showWhenVisible: true,
-            title: 'Hide Transliteration',
+            title: LanguageBinding.local.hideTransliteration,
           ),
         ],
         child: child,
@@ -234,25 +235,25 @@ class _LafazMenu
       visible: lafazVisible(context),
       child: _Menu(
         menus: <Widget>[
-          const TransliterationSizeMenu(),
-          const TranslationSizeMenu(),
+          TransliterationSizeMenu(),
+          TranslationSizeMenu(),
           _BookmarkMenu(location),
-          const _Toggle<TransliterationScope>(
+          _Toggle<TransliterationScope>(
             showWhenVisible: false,
-            title: 'Show Transliteration',
+            title: LanguageBinding.local.showTransliteration,
           ),
-          const _Toggle<TranslationScope>(
+          _Toggle<TranslationScope>(
             showWhenVisible: false,
-            title: 'Show Translation',
+            title: LanguageBinding.local.showTranslation,
           ),
           if (hasAnnotation(location))
-          const _Toggle<AnnotationScope>(
+          _Toggle<AnnotationScope>(
             showWhenVisible: false,
-            title: 'Show Annotation',
+            title: LanguageBinding.local.showAnnotation,
           ),
-          const _Toggle<LafazScope>(
+          _Toggle<LafazScope>(
             showWhenVisible: true,
-            title: 'Hide Lafaz',
+            title: LanguageBinding.local.hideLafaz,
           ),
         ],
         child: child,
@@ -279,24 +280,24 @@ class _TranslationMenu
       visible: translationVisible(context),
       child: _Menu(
         menus: <Widget>[
-          const TranslationSizeMenu(),
+          TranslationSizeMenu(),
           _BookmarkMenu(location),
-          const _Toggle<TransliterationScope>(
+          _Toggle<TransliterationScope>(
             showWhenVisible: false,
-            title: 'Show Transliteration',
+            title: LanguageBinding.local.showTransliteration,
           ),
-          const _Toggle<LafazScope>(
+          _Toggle<LafazScope>(
             showWhenVisible: false,
-            title: 'Show Lafaz',
+            title: LanguageBinding.local.showLafaz,
           ),
           if (hasAnnotation(location))
-          const _Toggle<AnnotationScope>(
+          _Toggle<AnnotationScope>(
             showWhenVisible: false,
-            title: 'Show Annotation',
+            title: LanguageBinding.local.showAnnotation,
           ),
-          const _Toggle<TranslationScope>(
+          _Toggle<TranslationScope>(
             showWhenVisible: true,
-            title: 'Hide Translation',
+            title: LanguageBinding.local.hideTranslation,
           ),
         ],
         child: child,
@@ -322,22 +323,22 @@ class _AnnotationMenu
     return Visibility(
       visible: annotationVisible(context) && hasAnnotation(location),
       child: _Menu(
-        menus: const <Widget>[
+        menus: <Widget>[
           _Toggle<TransliterationScope>(
             showWhenVisible: false,
-            title: 'Show Transliteration',
+            title: LanguageBinding.local.showTransliteration,
           ),
           _Toggle<LafazScope>(
             showWhenVisible: false,
-            title: 'Show Lafaz',
+            title: LanguageBinding.local.showLafaz,
           ),
           _Toggle<TranslationScope>(
             showWhenVisible: false,
-            title: 'Show Translation',
+            title: LanguageBinding.local.showTranslation,
           ),
           _Toggle<AnnotationScope>(
             showWhenVisible: true,
-            title: 'Hide Annotation',
+            title: LanguageBinding.local.hideAnnotation,
           ),
         ],
         child: child,
@@ -383,7 +384,7 @@ class _BookmarkMenu
 
   @override
   Widget build(BuildContext context) {
-    const Widget child = Text('Tandai...');
+    final Widget child = Text('${LanguageBinding.local.bookmark}...');
     final List<String> groups = this.groups(context);
 
     if (groups.isEmpty) {

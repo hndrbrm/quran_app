@@ -3,12 +3,13 @@
 // found in the LICENSE file.
 
 import '../../data/font_size/translation_size_scope.dart';
+import '../../language.dart';
 import 'font_size_menu.dart';
 
 export '../../data/font_size/translation_size_scope.dart' show TranslationSizeScope;
 export 'font_size_menu.dart' show FontSizeMenu;
 
 class TranslationSizeMenu extends FontSizeMenu<TranslationSizeScope> {
-  const TranslationSizeMenu({ super.key })
-    : super(title: 'Ubah Ukuran Terjemah...');
+  TranslationSizeMenu({ super.key })
+    : super(title: '${LanguageBinding.local.changeTranslationSize}...');
 }

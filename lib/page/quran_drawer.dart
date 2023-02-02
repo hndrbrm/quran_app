@@ -25,7 +25,7 @@ class QuranDrawer extends StatelessWidget {
             onTap: () => HomeRoute.root(context),
           ),
           ListTile(
-            title: const Text('Penanda'),
+            title: Text(LanguageBinding.local.bookmark),
             onTap: () => GroupsRoute.root(context),
           ),
         ],
