@@ -7,7 +7,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../language.dart';
 
-abstract class GenerateRoute {
+mixin GenerateRoute {
   Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     final WidgetBuilder? builder = onGenerateBuilder(settings);
 
