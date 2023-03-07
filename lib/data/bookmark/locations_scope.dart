@@ -87,7 +87,7 @@ mixin _Location on _Locations {
 
         locations = {
           ...locations.copyWithout(group),
-          if (newValue.isEmpty)
+          if (newValue.isNotEmpty)
           group: newValue,
         };
       }
