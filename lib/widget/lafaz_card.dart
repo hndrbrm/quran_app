@@ -50,6 +50,7 @@ class _Envelope extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: const Color.fromARGB(0xff, 0xf6, 0xEF, 0xD9),
       elevation: 0.0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(8.0),
