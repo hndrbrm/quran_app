@@ -22,8 +22,10 @@ mixin TranslationPreferences
   static const String _key = 'translation_visibility';
 
   @override
-  Future<bool> loadTranslationVisibility() => loadVisibilityByKey(_key);
+  Future<bool> loadTranslationVisibility() async =>
+    await loadVisibilityByKey(_key) ?? true;
 
   @override
-  Future<void> saveTranslationVisibility(bool value) => saveVisibilityByKey(_key, value);
+  Future<void> saveTranslationVisibility(bool value) =>
+    saveVisibilityByKey(_key, value);
 }

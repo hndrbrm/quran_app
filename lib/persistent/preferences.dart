@@ -7,9 +7,9 @@ import 'dart:async';
 import 'package:shared_preferences/shared_preferences.dart';
 
 mixin Preferences {
-  Future<bool> loadBool(String key) async {
+  Future<bool?> loadBool(String key) async {
     final SharedPreferences sp = await SharedPreferences.getInstance();
-    return sp.getBool(key) ?? false;
+    return sp.getBool(key);
   }
 
   Future<double?> loadDouble(String key) async {

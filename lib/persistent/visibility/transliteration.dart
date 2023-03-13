@@ -22,8 +22,8 @@ mixin TransliterationPreferences
   static const String _key = 'transliteration_visibility';
 
   @override
-  Future<bool> loadTransliterationVisibility() =>
-    loadVisibilityByKey(_key);
+  Future<bool> loadTransliterationVisibility() async =>
+    await loadVisibilityByKey(_key) ?? true;
 
   @override
   Future<void> saveTransliterationVisibility(bool value) =>

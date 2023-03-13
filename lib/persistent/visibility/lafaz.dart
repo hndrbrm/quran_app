@@ -22,8 +22,10 @@ mixin LafazPreferences
   static const String _key = 'lafaz_visibility';
 
   @override
-  Future<bool> loadLafazVisibility() => loadVisibilityByKey(_key);
+  Future<bool> loadLafazVisibility() async =>
+    await loadVisibilityByKey(_key) ?? false;
 
   @override
-  Future<void> saveLafazVisibility(bool value) => saveVisibilityByKey(_key, value);
+  Future<void> saveLafazVisibility(bool value) =>
+    saveVisibilityByKey(_key, value);
 }

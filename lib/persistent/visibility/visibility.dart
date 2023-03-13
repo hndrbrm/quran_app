@@ -9,7 +9,9 @@ import '../preferences.dart';
 export '../preferences.dart';
 
 mixin VisibilityByKeyPreferences on Preferences {
-  Future<bool> loadVisibilityByKey(String key) => loadBool(key);
+  Future<bool?> loadVisibilityByKey(String key) =>
+    loadBool(key);
 
-  Future<void> saveVisibilityByKey(String key, bool value) => saveBool(key, value);
+  Future<void> saveVisibilityByKey(String key, bool value) =>
+    saveBool(key, value);
 }

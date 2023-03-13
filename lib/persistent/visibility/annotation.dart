@@ -22,8 +22,10 @@ mixin AnnotationPreferences
   static const String _key = 'annotation_visibility';
 
   @override
-  Future<bool> loadAnnotationVisibility() => loadVisibilityByKey(_key);
+  Future<bool> loadAnnotationVisibility() async =>
+    await loadVisibilityByKey(_key) ?? false;
 
   @override
-  Future<void> saveAnnotationVisibility(bool value) => saveVisibilityByKey(_key, value);
+  Future<void> saveAnnotationVisibility(bool value) =>
+    saveVisibilityByKey(_key, value);
 }
